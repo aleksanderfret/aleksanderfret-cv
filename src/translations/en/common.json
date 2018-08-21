@@ -1,0 +1,29 @@
+{
+  "contact": {
+    "title": "contact"
+  },
+  "home": {
+    "title": ""
+  },
+  "pages": {
+    "contact": "contact",
+    "education": "education",
+    "experience": "experience",
+    "portfolio": "portfolio",
+    "profile": "professional profile",
+    "skills": "skills"
+  },
+  "profile": {
+    "proffesion": {
+      "frontend": {
+        "adventages": {
+          "0": "experience in developing websites with technologies: HTML, CSS, JavaScript, PHP",
+          "1": "ability to design user interfaces (interest in UI UX, considerable experience in fhe field of graphics)",
+          "2": "currently further development in the direction of creating web applications (React, Angular, Symfony)"
+        },
+        "name": "web developer"
+      }
+    },
+    "title": "professional profile"
+  }
+}

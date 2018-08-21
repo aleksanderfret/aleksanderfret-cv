@@ -1,0 +1,10 @@
+{
+  "cockpit": {
+    "h2": "navigation",
+    "li": "item"
+  },
+  "content": {
+    "h2": "header",
+    "li": "some content"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "cockpit": {
+    "h2": "nawigacja",
+    "li": "pozycja"
+  },
+  "content": {
+    "h2": "nagłowek",
+    "li": "jakaś treść"
+  }
+}
