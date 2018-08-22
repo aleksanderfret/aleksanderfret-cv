@@ -1,0 +1,97 @@
+{
+  "title": "portfolio",
+  "visitLink": "odwiedź",
+  "visitLabel": "odwiedź stronę {{name}} ",
+  "codeLink": "kod",
+  "codeLabel": "kod strony {{name}}",
+  "iamgeAlt": "Podgląd strony {{name}}",
+  "works": [{
+      "name": "Aleksander Fret",
+      "type": "aplikacja",
+      "description": "Finalny projekt Front-End Web Developer Nanodegree (Udacity, Google). Skoncentrowany głownie na bibliotece React oraz wykorzystaniu API, ale angażujący również inne umiejętności: Redux, ES6, service workers, dostępność, RWD.",
+      "technologies": ["React", "Redux", "ES6", "accessibility", "RWD", "CSS", "HTML"],
+      "image": "aleksanderfret",
+      "imageAlt": "Podgląd aplikacji Aleksander Fret",
+      "projectURL": "http://www.aleksander.fret.com.pl",
+      "codeURL": "https://github.com/alemikolo/aleksanderfret",
+      "date": "08.2018"
+    },
+    {
+      "name": "Amusement Parks",
+      "type": "aplikacja",
+      "description": "Finalny projekt Front-End Web Developer Nanodegree (Udacity, Google). Skoncentrowany głownie na bibliotece React oraz wykorzystaniu API, ale angażujący również inne umiejętności: Redux, ES6, service workers, dostępność, RWD.",
+      "technologies": ["React", "Redux", "ES6", "service workers", "accessibility", "RWD", "CSS", "HTML"],
+      "image": "amusementparks",
+      "imageAlt": "Podgląd aplikacji Amusement Parks",
+      "projectURL": "http://www.amusementparks.fret.com.pl",
+      "codeURL": "https://github.com/alemikolo/neighborhoodmap",
+      "date": "08.2018"
+    },
+    {
+      "name": "Arcade Game",
+      "type": "aplikacja",
+      "description": "This arcade game is focused on OOP with ES6 (especially encapsulation and inheritance). It was created in the scope of Front-End Web Developer Nanodegree (Udacity, Google).",
+      "technologies": ["ES6", "CSS", "HTML"],
+      "image": "arcadegame",
+      "imageAlt": "Podgląd aplikacji Arcade Game",
+      "projectURL": "http://www.arcadegame.fret.com.pl",
+      "codeURL": "https://github.com/alemikolo/arcadegame",
+      "date": "04.2018"
+    },
+    {
+      "name": "Memory Game",
+      "type": "aplikacja",
+      "description": "Memory game created in the scope of Front-End Web Developer Nanodegree (Udacity, Google). It is enhanced with confguration options (difficulty level, appearance).",
+      "technologies": ["JavaScript", "CSS", "HTML"],
+      "image": "memorygame",
+      "imageAlt": "Podgląd aplikacji Memory Game",
+      "projectURL": "http://www.memorygame.fret.com.pl",
+      "codeURL": "https://github.com/alemikolo/memorygame",
+      "date": "03.2018"
+    },
+    {
+      "name": "Pixel Art Maker",
+      "type": "aplikacja",
+      "description": "This graphic application was created in the scope of Front-End Web Developer Nanodegree (Udacity, Google). It provides various functionalities to draw on grid-based canvas.",
+      "technologies": ["JavaScript", "jQuery", "CSS", "HTML"],
+      "image": "pixelartmaker",
+      "imageAlt": "Podgląd aplikacji Pixel Art Maker",
+      "projectURL": "http://www.pixel-art-maker.fret.com.pl",
+      "codeURL": "https://github.com/alemikolo/pixel-art-maker",
+      "date": "01.2018"
+    },
+    {
+      "name": "Strona firmy Wilmat",
+      "type": "strona www",
+      "description": "The website for the Wilmat company, which represents the sector of the low voltage installations.",
+      "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML", "Bootstrap"],
+      "image": "wilmat",
+      "imageAlt": "Podgląd strony firmy Wilmat",
+      "projectURL": "http://www.wilmat.com.pl",
+      "codeURL": "https://bitbucket.org/alemikolo/wilmat.com.pl/src/master/",
+      "date": "10.2016"
+    },
+    {
+      "name": "Strona artysty",
+      "type": "strona www",
+      "description": "The website made for Ewa Fret, the artist, in order to promote her works, mainly ilustrations and handicrafts.",
+      "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML"],
+      "image": "artist",
+      "imageAlt": "Podgląd strony artysty",
+      "projectURL": "http://www.ewa.fret.com.pl",
+      "codeURL": "https://bitbucket.org/alemikolo/ewa.fret.com.pl/src",
+      "date": "01.2015"
+    },
+    {
+      "name": "Strona psychoterapeuty",
+      "type": "strona www",
+      "description": "The website created for Emilia Fret, the psychotherapist specializing especially in addiction therapy.",
+      "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML"],
+      "image": "psychoterapist",
+      "imageAlt": "Podgląd strony psychoterapeuty",
+      "projectURL": "http://www.psychoterapia.fret.com.pl",
+      "codeURL": "https://bitbucket.org/alemikolo/psychoterapia.fret.com.pl/src",
+      "date": "06.2015"
+    }
+  ]
+}

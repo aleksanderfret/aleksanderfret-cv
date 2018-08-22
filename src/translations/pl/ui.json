@@ -1,0 +1,8 @@
+{
+  "title": "Aleksander Fret",
+  "subtitle": "Front-End Web Developer",
+  "language": "english",
+  "pages": ["home", "profil", "doświadczenie", "wykształcenie", "umiejętności", "portfolio", "kontakt"],
+  "menu": "menu",
+  "owner": "Aleksander Fret"
+}

@@ -1,29 +1,3 @@
 {
-  "contact": {
-    "title": "kontakt"
-  },
-  "home": {
-    "title": ""
-  },
-  "pages": {
-    "contact": "kontakt",
-    "education": "wykształcenie",
-    "experience": "doświadczenie",
-    "portfolio": "portfolio",
-    "profile": "profil zawodowy",
-    "skills": "umiejętności"
-  },
-  "profile": {
-    "proffesion": {
-      "frontend": {
-        "adventages": {
-          "0": "doświadczenie w tworzeniu stron internetowych z wykorzystaniem HTML5, CSS3, JavaScript, PHP,",
-          "1": "umiejętność projektowania interfejsów (zainteresowanie tematyką UI UX, duże doświadczenie w dziedzinie grafiki),",
-          "2": "obecnie dalszy rozwój w kierunku tworzenia aplikacji internetowych (React, Angular, Symfony)"
-        },
-        "name": "web developer"
-      }
-    },
-    "title": "profil zawodowy"
-  }
+  "title": "tytuł"
 }
