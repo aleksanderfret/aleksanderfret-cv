@@ -1,0 +1,20 @@
+{
+  "title": "profil zawodowy",
+  "professions": [{
+      "name": "web developer",
+      "adventages": [
+        "doświadczenie w tworzeniu stron internetowych z wykorzystaniem HTML5, CSS3, JavaScript, PHP",
+        "umiejętność projektowania interfejsów (zainteresowanie tematyką UI UX, duże doświadczenie w dziedzinie grafiki)",
+        "obecnie dalszy rozwój w kierunku tworzenia aplikacji internetowych (React, Angular, Symfony)"
+      ]
+    },
+    {
+      "name": "kartograf/grafik",
+      "adventages": [
+        "duże doświadczenie w opracowywaniu różnorodnych map",
+        "bogata praktyka redakcyjna – projektowanie i skład publikacji",
+        "szerokie kompetencje w zakresie oprogramowania graficznego"
+      ]
+    }
+  ]
+}

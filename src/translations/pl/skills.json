@@ -1,0 +1,21 @@
+{
+  "title": "umiejętności",
+  "skills": [{
+      "type": "programowanie",
+      "skills": ["HTML5", "CSS3", "SASS", "RWD", "JavaScript", "ES6", "Jquery", "React", "Redux", "PHP", "Symfony", "MySQL", "Twig", "Gulp", "Git"]
+    },
+    {
+      "type": "grafika",
+      "skills": ["CorelDRAW", "Photoshop", "Illustrator", "InDesign", "Photo-Paint"]
+    },
+    {
+      "type": "inne",
+      "skills": ["język angielski (b1)", "Global Mapper"]
+    }
+  ],
+  "traits": [{
+      "type": "cechy",
+      "traits": ["kreatywność", "dbałość o szczegóły,", "rzetelność", "odpowiedzialność", "zaangażowanie"]
+    }
+  ]
+}

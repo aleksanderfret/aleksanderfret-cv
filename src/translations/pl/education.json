@@ -1,0 +1,29 @@
+{
+  "title": "education",
+  "spec": "specjalizacja",
+  "education": [{
+      "school": "Udacity",
+      "start-date": "11.2017",
+      "end-date": "08.2018",
+      "studies": "Google Front-End Web Developer Nanodegree Scholarship",
+      "degree": "",
+      "subject": "Technologie Front-Endowe"
+    },
+    {
+      "school": "Uniwersytet Wrocławski",
+      "start-date": "10.2002",
+      "end-date": "06.2004",
+      "studies": "uzupełniające studia magisterskie, kierunek Geografia, $t(spec)",
+      "degree": "magister",
+      "subject": "Kartografia"
+    },
+    {
+      "school": "Uniwersytet Wrocławski",
+      "start-date": "10.1999",
+      "end-date": "06.2002",
+      "studies": "studia licencjackie, kierunek Geografia",
+      "degree": "licencjat",
+      "subject": "Geografia"
+    }
+  ]
+}

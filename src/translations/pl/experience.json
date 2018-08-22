@@ -1,0 +1,164 @@
+{
+  "title": "doświadczenie",
+  "projectsHeader": "wybrane projekty",
+  "work": [{
+      "company": "Udacity",
+      "position": "student",
+      "duties": [],
+      "start-date": "11.2017",
+      "end-date": "08.2018",
+      "projects": [{
+          "url": "http://www.amusementparks.fret.com.pl",
+          "name": "Amusement Parks"
+        },
+        {
+          "url": "http://www.arcadegame.fret.com.pl",
+          "name": "Arcade Game"
+        },
+        {
+          "url": "http://www.memorygame.fret.com.pl",
+          "name": "Memory Game"
+        },
+        {
+          "url": "http://www.pixel-art-maker.fret.com.pl",
+          "name": "Pixel Art Maker"
+        }
+      ]
+    },
+    {
+      "company": "Eko-Graf",
+      "position": "Kartograf - Redaktor Map",
+      "duties": ["projektowanie layotów i okładek", "prace redakcyjne i kartograficzne", "skład i łamanie", "tworzenie materiałów reklamowych", "przygotowywanie do druku"],
+      "start-date": "10.2008",
+      "end-date": "obecnie",
+      "projects": [{
+          "url": "https://rowertour.pl/?page=artykul&id=3341",
+          "name": "Wałbrzych - Trasy Rowerowe"
+        },
+        {
+          "url": "http://www.ekograf.pl/oferta/sudety-przewodnik-autor-janusz-czerwinski",
+          "name": "Sudety – przewodnik"
+        },
+        {
+          "url": "http://www.ekograf.pl/oferta/szlacheckie-i-arystokratyczne-rezydencje-sudetow-czeskich-sudety-zachodnie-i-srodkowe-autor-romuald-m-luczynski",
+          "name": "Szlacheckie i Arystokratyczne Rezydencje Sudetów Czeskich - Sudety Zachodnie i Środkowe"
+        },
+        {
+          "url": "http://www.ekograf.pl/oferta/szlacheckie-i-arystokratyczne-rezydencje-sudetow-czeskich-sudety-wschodnie-autor-romuald-m-luczynski",
+          "name": "Szlacheckie i Arystokratyczne Rezydencje Sudetów Czeskich - Sudety Wschodnie"
+        },
+        {
+          "url": "http://www.ekograf.pl/oferta/szlacheckie-i-arystokratyczne-rezydencje-w-sudetach-polskich-sudety-zachodnie-autor-romuald-m-luczynski",
+          "name": "Szlacheckie i Arystokratyczne Rezydencje Sudetów Polskich - Sudety Zachodnie"
+        },
+        {
+          "url": "http://www.ekograf.pl/oferta/szlacheckie-i-arystokratyczne-rezydencje-w-sudetach-polskich-sudety-srodkowe-autor-romuald-m-luczynski",
+          "name": "Szlacheckie i Arystokratyczne Rezydencje Sudetów Polskich - Sudety Środkowe"
+        },
+        {
+          "url": "http://www.ekograf.pl/oferta/swiat-mapa-dwustronna-fizycznopolityczna-125-000-000-140x100-cm",
+          "name": "Mapa dwustronna: Świat - Podział Polityczny, Świat - Ukształtowanie Powierzchni, 1:25 000 000"
+        },
+        {
+          "url": "http://www.ekograf.pl/oferta/europa-drogowa-13-000-000-146-x-140-cm",
+          "name": "Europa - Mapa Drogowa, 1:3 000 000"
+        },
+        {
+          "url": "http://www.ekograf.pl/oferta/wroclaw-plan-miasta-jednostronny-nowe-wydanie-20162017",
+          "name": "Wrocław - Plan Miasta, 1:20 000"
+        }
+      ]
+    },
+    {
+      "company": "Wilmat",
+      "position": "Freelancer",
+      "duties": ["projekt graficzny", "wykonanie strony internetowej"],
+      "start-date": "10.2016",
+      "end-date": "10.2016",
+      "projects": [{
+          "url": "http://www.wilmat.com.pl",
+          "name": "Wilmat website"
+        }
+      ]
+    },
+    {
+      "company": "Emilia Fret",
+      "position": "Freelancer",
+      "duties": ["projekt graficzny", "wykonanie strony internetowej"],
+      "start-date": "06.2015",
+      "end-date": "06.2015",
+      "projects": [{
+          "url": "http://www.psychoterapia.fret.com.pl",
+          "name": "Psychoterapist website"
+        }
+      ]
+    },
+    {
+      "company": "Ewa Fret",
+      "position": "Freelancer",
+      "duties": ["projekt graficzny", "wykonanie strony internetowej"],
+      "start-date": "01.2015",
+      "end-date": "01.2015",
+      "projects": [{
+          "url": "http://www.ewa.fret.com.pl",
+          "name": "Artist website"
+        }
+      ]
+    },
+    {
+      "company": "Via Mercatorum",
+      "position": "Freelancer",
+      "duties": ["website development", "logo design", "advertising leaflet design", "press advertisement design"],
+      "start-date": "11.2012",
+      "end-date": "11.2012",
+      "projects": [{
+          "url": "http://www.warsztatyprzyrodnicze.com",
+          "name": "Seaside Nature Workshops website"
+        }
+      ]
+    },
+    {
+      "company": "SeaStar",
+      "position": "Kartograf",
+      "duties": [],
+      "start-date": "04.2007",
+      "end-date": "07.2008",
+      "projects": [{
+          "url": "http://www.seastar.pl/sklep-internetowy?page=shop.product_details&flypage=flypage.tpl&product_id=121&category_id=4",
+          "name": "Antarctic map, 1:7 000 000"
+        },
+        {
+          "url": "http://www.seastar.pl/sklep-internetowy?page=shop.product_details&flypage=flypage.tpl&product_id=126&category_id=4",
+          "name": "Two-side map: Russia - Administrative Map, Russia - Hipsometric Map, 1:5 500 000"
+        },
+        {
+          "url": "http://www.seastar.pl/sklep-internetowy?page=shop.product_details&flypage=flypage.tpl&product_id=124&category_id=4",
+          "name": "Two-side map: Germany - Administrative Map, Germany - Hipsometric Map, 1:1 600 000"
+        },
+        {
+          "url": "http://www.seastar.pl/sklep-internetowy?page=shop.product_details&flypage=flypage.tpl&product_id=127&category_id=4",
+          "name": "Two-side map: World - Political Map, World - Hipsometric Map, 1:25 000 000"
+        }
+      ]
+    },
+    {
+      "company": "Nowa Era",
+      "position": "Freelancer",
+      "duties": [],
+      "start-date": "11.2005",
+      "end-date": "12.2006",
+      "projects": [{
+        "url": "",
+        "name": "Tablice Statystyczne"
+      }]
+    },
+    {
+      "company": "Wydawnictwo Marek Rożak",
+      "position": "Kartograf",
+      "duties": [],
+      "start-date": "09.2004",
+      "end-date": "03.2005",
+      "projects": [{}]
+    }
+  ]
+}

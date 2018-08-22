@@ -1,0 +1,29 @@
+{
+  "title": "education",
+  "spec": "specialization",
+  "education": [{
+      "school": "Udacity",
+      "start-date": "11/2017",
+      "end-date": "08/2018",
+      "studies": "Google Front-End Web Developer Nanodegree Scholarship",
+      "degree": "",
+      "subject": "Front-End Technologies"
+    },
+    {
+      "school": "University of Wroclaw",
+      "start-date": "10/2002",
+      "end-date": "06/2004",
+      "studies": "master's degree in Geography $t(spec)",
+      "degree": "master's degree",
+      "subject": "Cartography"
+    },
+    {
+      "school": "University of Wroclaw",
+      "start-date": "10/1999",
+      "end-date": "06/2002",
+      "studies": "bachelor's degree in Geography",
+      "degree": "bachelor's degree",
+      "subject": "Geography"
+    }
+  ]
+}

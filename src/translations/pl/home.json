@@ -1,0 +1,37 @@
+{
+  "welcome": "dzień dobry",
+  "introduction": "Nazywam się Aleksander Fret. Jestem front-end web developerem, grafikiem i kartografem. Moje kwalifikacje koncentrują się na technologiach front-end'owych: Javascript, React, CSS, SASS and HTML. Zajmuję się również grafiką (CorelDraw, Photoshop) oraz rzadko back-end'em (PHP, MySQL). Moje zainteresowania to granie na gitarze, słuchanie muzyki, granie w gry planszowe, technologie internetowe, literatura, filmy i gry fantasy oraz wędrówki górskie. Obecnie pracuję nad aplikacją dotyczącą mojej wersji gry planszowej Talizman (Magia i Miecz)",
+  "imageAlt": "Aleksander Fret",
+  "download": "pobierz cv",
+  "tiles": [{
+      "name": "profile zawodowy",
+      "route": "profile",
+      "content": ["Front-End Web Developer","Grafik","kartograf"]
+    },
+    {
+      "name": "doświadczenie",
+      "route": "experience",
+      "content": ["praca","kursy","projekt osobisty"]
+    },
+    {
+      "name": "wykształcenie",
+      "route": "education",
+      "content": ["studia","kursy","szkolenia","nanodegrees"]
+    },
+    {
+      "name": "umiejętności",
+      "route": "skills",
+      "content": ["programowanie","grafika","osobiste","inne"]
+    },
+    {
+      "name": "portfolio",
+      "route": "portfolio",
+      "content": ["praca","kursy","projekty osobiste", "aplikacje i strony wykonane w pracy i podczas kursów"]
+    },
+    {
+      "name": "contact",
+      "route": "contact",
+      "content": ["skontaktuj się ze mną", "znajdź mnie w sieci"]
+    }
+  ]
+}

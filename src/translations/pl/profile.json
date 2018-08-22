@@ -1,0 +1,20 @@
+{
+  "title": "professional profile",
+  "professions": [{
+      "name": "web developer",
+      "adventages": [
+        "experience in developing websites with technologies: HTML, CSS, JavaScript, PHP",
+        "ability to design user interfaces (interest in UI UX, considerable experience in fhe field of graphics)",
+        "currently further development in the direction of creating web applications (React, Angular, Symfony)"
+      ]
+    },
+    {
+      "name": "cartographer and Graphic designer",
+      "adventages": [
+        "Big experience in making various maps",
+        "extensive editorial practice – designing of publications, DTP",
+        "broad qualifications in the field of graphics software"
+      ]
+    }
+  ]
+}
