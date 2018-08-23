@@ -1,0 +1,8 @@
+@mixin page-header {
+  font: {
+    size: 2.5rem;
+    variant:  small-caps;
+  }
+  color: $base-color;
+  text-transform: capitalize;
+}

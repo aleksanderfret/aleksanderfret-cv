@@ -1,0 +1,17 @@
+// === COLORS ===
+$base-color: #045ba8;
+$dark-base: darken($base-color, 10%);
+$light-base: lighten($base-color, 10%);
+$aux-base:lighten($base-color, 30%);
+$accessory-color: #07cc00;
+
+$base-text-color: lighten(#000, 20%);
+$dark-base-text: darken($base-text-color, 20%);
+$light-base-text: lighten($base-text-color, 30%);
+
+// === FONTS ===
+$text-font: "Roboto", sans-serif;
+$text-size: 20px;
+$text-line: 1;
+$text-light: 300;
+$text-bold: 500;
