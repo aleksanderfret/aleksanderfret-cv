@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
+import Layout from '../Layot/Layout';
 import classes from './CV.scss';
 
 class CV extends Component {
@@ -7,7 +8,7 @@ class CV extends Component {
     language: 'en'
   }
 
-  toggleLanguages = () => {
+  toggleLanguage = () => {
     const { i18n } = this.props;
     const lang = this.state.language === 'en' ? 'pl' : 'en';
     this.setState({language: lang});
@@ -17,10 +18,14 @@ class CV extends Component {
   render() {
     return (
       <div className={classes.CV}>
-        <button onClick={this.toggleLanguages}>{this.props.t('language')}</button>
+        <Layout
+          toggleLanguage={this.toggleLanguage}
+        >
+        </Layout>
+
       </div>
     );
   }
 }
 
-export default translate('common')(CV);
+export default translate('ui')(CV);
