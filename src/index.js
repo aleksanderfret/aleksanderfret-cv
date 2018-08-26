@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css';
 import './index.scss';
-import App from './App';
+import CV from './containers/CV/CV';
 import {I18nextProvider} from 'react-i18next';
 import i18next from 'i18next';
 
@@ -56,7 +56,7 @@ i18next.init({
 
 ReactDOM.render(
   <I18nextProvider i18n={i18next}>
-    <App />
+    <CV />
   </I18nextProvider>,
   document.getElementById('root')
 );

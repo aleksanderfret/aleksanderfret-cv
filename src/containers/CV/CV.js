@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
-import classes from './App.scss';
+import classes from './CV.scss';
 
-class App extends Component {
+class CV extends Component {
   state = {
     language: 'en'
   }
@@ -16,11 +16,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className={classes.App}>
+      <div className={classes.CV}>
         <button onClick={this.toggleLanguages}>{this.props.t('language')}</button>
       </div>
     );
   }
 }
 
-export default translate('common')(App);
+export default translate('common')(CV);
