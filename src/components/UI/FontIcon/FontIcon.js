@@ -8,7 +8,6 @@ const fontIcon = (props) => {
   if (classes[props.iconClass]) {
     iconClasses.push(props.iconClass);
   }
-  console.log(iconClasses.join(''));
   return(
     <i className={iconClasses.join(' ')}></i>
   );

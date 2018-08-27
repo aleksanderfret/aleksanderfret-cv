@@ -1,1 +1,34 @@
 @import 'partials';
+
+.SidePanel {
+  height: 100%;
+  max-width: 70%;
+  width: 300px;
+  min-width: 200px;
+  position: absolute;
+  z-index: 125;
+  top: 0;
+  left: 0;
+  color: $base-text-color;
+  background-color: $background-color;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+  @include box-shadow-lvl(1);
+}
+
+.Open {
+  transform: translateX(0);
+}
+
+.Close {
+  transform: translateX(-100%);
+}
+
+.Header {
+  background: $base-color;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

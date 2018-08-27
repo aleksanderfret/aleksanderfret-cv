@@ -9,6 +9,7 @@ const header = (props) => {
   return(
     <header className={headerClasses.join(' ')}>
       <Toolbar
+        toggleSidePanel={props.toggleSidePanel}
         toggleLanguage={props.toggleLanguage}
         displayLogo={!props.isHomePage} />
       {props.isHomePage &&

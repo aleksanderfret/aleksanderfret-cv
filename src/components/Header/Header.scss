@@ -1,10 +1,13 @@
 @import 'partials';
 
 .Header {
+  position: relative;
+  z-index: 50;
   box-sizing: content-box;
-  width: 100%;  background-color: $base-color;
+  width: 100%;
+  background-color: $base-color;
   border-bottom: 8px solid $aux-base;
-  @include box-shadow-lvl();
+  @include box-shadow-lvl(2);
 }
 
 .Usual {

@@ -3,9 +3,7 @@ import classes from './Overlay.scss';
 
 const overlay = (props) => {
   return(
-    <React.Fragment>
-
-    </React.Fragment>
+    props.isShown ? <div className={classes.Overlay} onClick={props.clicked}></div> : null
   );
 };
 

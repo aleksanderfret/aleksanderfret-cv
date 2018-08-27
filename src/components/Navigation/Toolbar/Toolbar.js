@@ -12,7 +12,7 @@ const toolBar = (props) => {
     <div className={classes.Toolbar}>
       <Button
         btnType='ToolbarButton'
-        clicked={null}
+        clicked={props.toggleSidePanel}
         title={t('menu')}
         label={t('menu')}>
         <FontIcon

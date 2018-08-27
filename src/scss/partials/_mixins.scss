@@ -45,9 +45,9 @@
 
 @mixin box-shadow-lvl($level: 1) {
   @if $level == 1 {
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.8);
   } @else {
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   }
 }
 
@@ -57,6 +57,6 @@
     background-color: $base-color;
   } @else {
     height: calc($toolbar-height + $big-logo-height);
-    background: linear-gradient(180deg, $base-color 12%, $light-base 88%);
+    background: $base-gradient;
   }
 }
