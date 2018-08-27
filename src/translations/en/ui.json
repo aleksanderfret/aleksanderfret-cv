@@ -2,7 +2,8 @@
   "title": "Aleksander Fret",
   "subtitle": "Front-End Web Developer",
   "language": "polski",
+  "language-info": "zmień język na $t(language)",
   "pages": ["home", "profile", "experience", "education", "skills", "portfolio", "contact"],
-  "menu": "menu",
+  "menu": "menu strony",
   "owner": "Aleksander Fret"
 }
