@@ -1,1 +1,17 @@
 @import 'partials';
+
+.Button {
+  cursor: pointer;
+  color: $reverse-color;
+}
+
+.ToolbarButton {
+  width: 80px;
+  height: 100%;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-out;
+  &:hover {
+    font-size: 2rem;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+  }
+}
