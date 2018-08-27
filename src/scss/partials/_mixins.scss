@@ -6,3 +6,21 @@
   color: $base-color;
   text-transform: capitalize;
 }
+
+@mixin box-shadow-lvl($level: 1) {
+  @if $level == 1 {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+  } @else {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  }
+}
+
+@mixin header($page: 'usual'){
+  @if $page == 'usual' {
+    height: $toolbar-height;
+    background-color: $base-color;
+  } @else {
+    height: calc($toolbar-height + $big-logo-height);
+    background: linear-gradient(180deg, $base-color 12%, $light-base 88%);
+  }
+}

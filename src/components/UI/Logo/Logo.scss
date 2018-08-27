@@ -1,0 +1,68 @@
+@import 'partials';
+
+.Logo {
+  color: $reverse-color;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  .LogoImage {
+    display: block;
+  }
+  .LogoText {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      line-height: auto;
+    }
+    h2 {
+      font-variant: small-caps;
+    }
+  }
+}
+
+.SmallLogo {
+  flex-direction: row;
+  justify-content: flex-start;
+  width: auto;
+  height: 50%;
+  margin: calc(((#{$toolbar-height}/2) - 8px)/2) 0;
+  .LogoImage {
+    height: 100%;
+    min-height: calc(#{$toolbar-height}/2);
+    margin: 0 10px 0 0;
+  }
+  .LogoText {
+    padding: 0;
+    justify-content: flex-start;
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+  }
+}
+
+.BigLogo {
+  flex-direction: column;
+  justify-content:center;
+  width: 100%;
+  height: $big-logo-height;
+  .LogoImage {
+    height: 25%;
+    min-height: 60px;
+    margin: 0 0 5px 0;
+  }
+  .LogoText {
+    padding: 0 0 $toolbar-height 0;
+    justify-content: center;
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+  }
+}

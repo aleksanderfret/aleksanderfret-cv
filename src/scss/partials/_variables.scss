@@ -4,6 +4,7 @@ $dark-base: darken($base-color, 10%);
 $light-base: lighten($base-color, 10%);
 $aux-base:lighten($base-color, 30%);
 $accessory-color: #07cc00;
+$reverse-color: #fff;
 
 $base-text-color: lighten(#000, 20%);
 $dark-base-text: darken($base-text-color, 20%);
@@ -15,3 +16,7 @@ $text-size: 20px;
 $text-line: 1;
 $text-light: 300;
 $text-bold: 500;
+
+// === SIZES ===
+$toolbar-height: 80px;
+$big-logo-height: 250px;

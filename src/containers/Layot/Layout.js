@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import Header from '../../components/Header/Header';
+
 import classes from './Layout.scss';
 
 class Layout extends Component {
-  render() {
+  state = {
+    activePage: 'ddd'
+  }
+
+   render() {
     return (
       <React.Fragment>
-        <Toolbar
-          toggleLanguage={this.props.toggleLanguage}/>
+        <Header
+          toggleLanguage={this.props.toggleLanguage}
+          isHomePage={this.state.activePage === 'home' ? true : false}/>
         <main className={classes.Content}>
           {this.props.children}
         </main>

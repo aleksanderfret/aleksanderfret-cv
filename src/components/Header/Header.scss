@@ -1,0 +1,15 @@
+@import 'partials';
+
+.Header {
+  width: 100%;  background-color: $base-color;
+  border-bottom: 8px solid $aux-base;
+  @include box-shadow-lvl();
+}
+
+.Usual {
+  @include header();
+}
+
+.Home {
+  @include header('home');
+}

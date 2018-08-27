@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'normalize.css';
+//import 'normalize.css';
 import './index.scss';
 import CV from './containers/CV/CV';
 import {I18nextProvider} from 'react-i18next';
