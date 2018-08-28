@@ -16,9 +16,6 @@
     h1 {
       line-height: auto;
     }
-    h2 {
-      text-transform: uppercase;
-    }
   }
 }
 
@@ -42,7 +39,7 @@
     }
     h2 {
       font-size: 0.8rem;
-      letter-spacing: 0;
+      letter-spacing: 1px;
     }
     @include tiny-screens {
       display: none;
@@ -67,8 +64,8 @@
       font-size: 2rem;
     }
     h2 {
-      font-size: 0.95rem;
-      letter-spacing: 1px;
+      font-size: 1rem;
+      letter-spacing: 2px;
     }
   }
 }
