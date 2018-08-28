@@ -3,13 +3,13 @@
   "subtitle": "Front-End Web Developer",
   "language": "english",
   "language-info": "change language to $t(language)",
+  "homePage": {
+    "route": "/",
+    "name": "stron główna"
+  },
   "pages": [{
-      "route": "home",
-      "name": "strona główna"
-    },
-    {
       "route": "profile",
-      "name": "profil zawodowy"
+      "name": "profil"
     },
     {
       "route": "experience",
