@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 //import 'normalize.css';
 import './index.scss';
 import CV from './containers/CV/CV';
+import { BrowserRouter } from 'react-router-dom';
 import {I18nextProvider} from 'react-i18next';
 import i18next from 'i18next';
 
@@ -55,8 +56,10 @@ i18next.init({
 });
 
 ReactDOM.render(
-  <I18nextProvider i18n={i18next}>
-    <CV />
-  </I18nextProvider>,
+  <BrowserRouter>
+    <I18nextProvider i18n={i18next}>
+      <CV />
+    </I18nextProvider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
