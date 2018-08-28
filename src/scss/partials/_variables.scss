@@ -8,9 +8,10 @@ $reverse-color: #fff;
 $background-color: #fff;
 $base-gradient: linear-gradient(180deg, $base-color 12%, $light-base 88%);
 
-$base-text-color: lighten(#000, 20%);
+$base-text-color: #333;
 $dark-base-text: darken($base-text-color, 20%);
 $light-base-text: lighten($base-text-color, 30%);
+$text-hover-background: lighten($base-text-color, 60%);
 
 // === FONTS ===
 $text-font: "Roboto", sans-serif;

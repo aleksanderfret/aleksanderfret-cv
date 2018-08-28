@@ -17,7 +17,7 @@ const sidePanel = (props) => {
           <Logo smallLogo />
         </header>
         <nav>
-          <NavigationItems />
+          <NavigationItems icons/>
         </nav>
       </div>
     </React.Fragment>

@@ -16,7 +16,6 @@ const toolBar = (props) => {
         title={t('menu')}
         label={t('menu')}>
         <FontIcon
-          iconClass={icons.TOOLBAR}
           iconType={icons.MENU} />
       </Button>
       {props.displayLogo &&
@@ -28,7 +27,6 @@ const toolBar = (props) => {
         title={t('language-info')}
         label={t('language-info')}>
         <FontIcon
-          iconClass={icons.TOOLBAR}
           iconType={icons.LANGUAGE} />
       </Button>
     </div>

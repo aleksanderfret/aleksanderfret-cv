@@ -1,1 +1,37 @@
 @import 'partials';
+
+.SidePanelNavlink {
+  width: 100%;
+}
+
+.SidePanelNavlink a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-decoration: none;
+  color: $light-base-text;
+  padding: 1rem;
+  transition: all 0.3s ease-out;
+  &:hover {
+    color: $dark-base-text;
+    background-color: $text-hover-background;
+    padding-left: 2rem;
+  }
+}
+.SidePanelNavlink a.active {
+  color: red;
+  background-color: $text-hover-background;
+}
+
+.SidePanelNavlink a span:first-child {
+  width: 15%;
+  @include micro-screens {
+    width: 20%
+  }
+}
+.SidePanelNavlink a span:last-child {
+  width: 85%;
+  @include tiny-screens {
+    width: 80%
+  }
+}
