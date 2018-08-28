@@ -3,7 +3,35 @@
   "subtitle": "Front-End Web Developer",
   "language": "english",
   "language-info": "change language to $t(language)",
-  "pages": ["home", "profil", "doświadczenie", "wykształcenie", "umiejętności", "portfolio", "kontakt"],
+  "pages": [{
+      "route": "home",
+      "name": "strona główna"
+    },
+    {
+      "route": "profile",
+      "name": "profil zawodowy"
+    },
+    {
+      "route": "experience",
+      "name": "doświadczenie"
+    },
+    {
+      "route": "education",
+      "name": "wykształcenie"
+    },
+    {
+      "route": "skills",
+      "name": "umiejętności"
+    },
+    {
+      "route": "portfolio",
+      "name": "portfolio"
+    },
+    {
+      "route": "contact",
+      "name": "kontakt"
+    }
+  ],
   "menu": "menu strony",
   "owner": "Aleksander Fret"
 }
