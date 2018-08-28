@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
 import SidePanel from '../../components/Navigation/SidePanel/SidePanel';
+import { withRouter } from 'react-router-dom';
 
 import classes from './Layout.scss';
 
 class Layout extends Component {
   state = {
-    activePage: 'home',
-    isSidePanelOpen: true
+    isHomePage: true,
+    isSidePanelOpen: false
   }
 
   sidePanelToggleHandler = () => {
@@ -20,13 +21,20 @@ class Layout extends Component {
     this.setState({isSidePanelOpen: false});
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.location.pathname === '/') {
+      return {isHomePage: true};
+    }
+    return {isHomePage: false};
+  }
+
   render() {
     return (
       <React.Fragment>
         <Header
           toggleLanguage={this.props.toggleLanguage}
           toggleSidePanel={this.sidePanelToggleHandler}
-          isHomePage={this.state.activePage === 'home' ? true : false}/>
+          isHomePage={this.state.isHomePage}/>
         <SidePanel
           isOpen={this.state.isSidePanelOpen}
           closeSidePanel={this.sidePanelCloseHandler}/>
@@ -38,4 +46,4 @@ class Layout extends Component {
   }
 }
 
-export default (Layout);
+export default withRouter(Layout);
