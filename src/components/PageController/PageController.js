@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Contact from '../../containers/Contact/Contact';
 import Experience from '../PageComponents/CV/Experience/Experience';
 import Education from '../PageComponents/CV/Education/Education';
@@ -7,8 +7,8 @@ import Portfolio from '../PageComponents/CV/Portfolio/Portfolio';
 import Profile from '../PageComponents/CV/Profile/Profile';
 import NotFound from '../PageComponents/NotFound/NotFound';
 
-const pageController = (props) => {
-  const pages = {
+class PageController extends Component {
+  pages = {
     experience: Experience,
     education: Education,
     skills: Skills,
@@ -18,14 +18,20 @@ const pageController = (props) => {
     notfound: NotFound
   };
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.match.params.page !== this.props.match.params.page;
+  }
 
-  const ComponentName = pages[props.match.params.page] || pages.notfound;
-  const componentToLoad = <ComponentName />;
-  return(
-    <React.Fragment>
-      {componentToLoad}
-    </React.Fragment>
-  );
-};
+  render(){
+    const ComponentName = this.pages[this.props.match.params.page] || this.pages.notfound;
+    const componentToLoad = <ComponentName />;
 
-export default pageController;
+    return(
+      <React.Fragment>
+        {componentToLoad}
+      </React.Fragment>
+    );
+  }
+}
+
+export default PageController;
