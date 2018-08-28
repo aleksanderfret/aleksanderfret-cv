@@ -3,6 +3,11 @@
 .SidePanelNavlink {
   width: 100%;
 }
+.SidePanelNavlink a.active {
+  color: $base-color;
+  font-weight: 500;
+  //background-color: lighten($text-hover-background, 10%);
+}
 
 .SidePanelNavlink a {
   width: 100%;
@@ -15,12 +20,8 @@
   &:hover {
     color: $dark-base-text;
     background-color: $text-hover-background;
-    padding-left: 2rem;
+    padding-left: 2.5rem;
   }
-}
-.SidePanelNavlink a.active {
-  color: red;
-  background-color: $text-hover-background;
 }
 
 .SidePanelNavlink a span:first-child {
