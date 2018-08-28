@@ -4,6 +4,7 @@ import { translate } from 'react-i18next';
 import Layout from '../Layot/Layout';
 import PageController from '../../components/PageController/PageController';
 import Home from '../../components/PageComponents/Home/Home';
+import NotFound from '../../components/PageComponents/NotFound/NotFound';
 import classes from './CV.scss';
 
 class CV extends Component {
@@ -25,6 +26,7 @@ class CV extends Component {
           <Switch>
             <Route path='/:page' component={PageController} />
             <Route path='/' exact component={Home} />
+            <Route component={NotFound} />
           </Switch>
         </Layout>
       </div>
