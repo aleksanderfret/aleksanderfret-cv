@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { translate } from 'react-i18next';
 import Layout from '../Layot/Layout';
 import PageController from '../../components/PageController/PageController';
-import Home from '../../components/Home/Home';
+import Home from '../../components/PageComponents/Home/Home';
 import classes from './CV.scss';
 
 class CV extends Component {

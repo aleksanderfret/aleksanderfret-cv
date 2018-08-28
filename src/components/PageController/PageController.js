@@ -1,11 +1,11 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Experience from '../CV/Experience/Experience';
-import Education from '../CV/Education/Education';
-import Skills from '../CV/Skills/SkillsCategoryList/SkillsCategoryList';
-import Portfolio from '../CV/Portfolio/Portfolio';
-import Profile from '../CV/Profile/Profile';
 import Contact from '../../containers/Contact/Contact';
+import Experience from '../PageComponents/CV/Experience/Experience';
+import Education from '../PageComponents/CV/Education/Education';
+import Skills from '../PageComponents/CV/Skills/SkillsCategoryList/SkillsCategoryList';
+import Portfolio from '../PageComponents/CV/Portfolio/Portfolio';
+import Profile from '../PageComponents/CV/Profile/Profile';
+import NotFound from '../PageComponents/NotFound/NotFound';
 
 const pageController = (props) => {
   const pages = {
@@ -15,9 +15,11 @@ const pageController = (props) => {
     portfolio: Portfolio,
     profile: Profile,
     contact: Contact,
+    notfound: NotFound
   };
 
-  const ComponentName = pages[props.match.params.page];
+
+  const ComponentName = pages[props.match.params.page] || pages.notfound;
   const componentToLoad = <ComponentName />;
   return(
     <React.Fragment>
