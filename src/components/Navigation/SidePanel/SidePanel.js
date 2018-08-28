@@ -14,10 +14,12 @@ const sidePanel = (props) => {
          clicked={props.closeSidePanel}/>
       <div className={sidePanelClasses.join(' ')}>
         <header className={classes.Header}>
-          <Logo smallLogo />
+          <Logo
+            isTextLogo
+            smallLogo />
         </header>
         <nav>
-          <NavigationItems icons/>
+          <NavigationItems sidePanel icons/>
         </nav>
       </div>
     </React.Fragment>

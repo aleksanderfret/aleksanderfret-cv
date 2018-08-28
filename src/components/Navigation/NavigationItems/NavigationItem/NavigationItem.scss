@@ -6,7 +6,6 @@
 .SidePanelNavlink a.active {
   color: $base-color;
   font-weight: 500;
-  //background-color: lighten($text-hover-background, 10%);
 }
 
 .SidePanelNavlink a {
@@ -25,14 +24,47 @@
 }
 
 .SidePanelNavlink a span:first-child {
-  width: 15%;
+  width: 20%;
   @include micro-screens {
-    width: 20%
+    width: 15%
   }
 }
 .SidePanelNavlink a span:last-child {
-  width: 85%;
+  width: 80%;
   @include tiny-screens {
-    width: 80%
+    width: 85%
   }
+}
+
+.ToolBarNavLink {
+  height: 100%;
+}
+
+.ToolBarNavLink a.active {
+  color: $dark-base;
+  font-weight: 500;
+  background-color: $aux-base;
+}
+
+.ToolBarNavLink span {
+  display: block;
+  margin: 10px 0 0 0;
+}
+
+.ToolBarNavLink a {
+ // font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 0.8rem;
+  text-decoration: none;
+  height: 100%;
+
+  transition: all 0.3s ease-out;
+  &:hover {
+  background-color: $light-base;
+  padding-bottom: 2.5rem;
+  }
+
 }

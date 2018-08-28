@@ -7,3 +7,21 @@
   justify-content: space-between;
   align-items: 'center';
 }
+
+.ToolbarNavigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: calc(100% - (#{$toolbar-height}*2));
+  nav {
+    display: none;
+  }
+  @include large-screens {
+    width: calc(100% - #{$toolbar-height});
+    justify-content: flex-start;
+    margin-left: 1rem;
+    nav {
+      display: block;
+    }
+  }
+}

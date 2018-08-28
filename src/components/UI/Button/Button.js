@@ -6,16 +6,18 @@ const button = (props) => {
   if (classes[props.btnType]) {
     buttonClasses.push(classes[props.btnType]);
   }
-  return(
+
+  const button = props.isDisplayed ? (
     <button
       disabled={props.disabled}
       onClick={props.clicked}
       className={buttonClasses.join(' ')}
       title={props.label}
-      aria-label={props.label}>
-      {props.children}
+      aria-label={props.label}>{props.children}
     </button>
-  );
+  ) : null;
+
+  return(button);
 };
 
 export default button;

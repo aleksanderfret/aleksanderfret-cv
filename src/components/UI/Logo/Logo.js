@@ -17,11 +17,13 @@ const logo = (props) => {
         className={classes.LogoImage}
         src={afretLogo}
         alt={`${props.t('title')} logo`}
-        aria-labelledby='logo-text' />
-      <div id='logo-text' className={classes.LogoText}>
-        <h1>{props.t('title')}</h1>
-        <h2>{props.t('subtitle')}</h2>
-      </div>
+        aria-label={`${props.t('title')} ${props.t('subtitle')}`} />
+      {props.isTextLogo &&
+        <div id='logo-text' className={classes.LogoText}>
+          <h1>{props.t('title')}</h1>
+          <h2>{props.t('subtitle')}</h2>
+        </div>
+      }
     </NavLink>
 
   );

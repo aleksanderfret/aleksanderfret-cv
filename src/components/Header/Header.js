@@ -9,11 +9,13 @@ const header = (props) => {
   return(
     <header className={headerClasses.join(' ')}>
       <Toolbar
+        isHomePage={props.isHomePage}
         toggleSidePanel={props.toggleSidePanel}
-        toggleLanguage={props.toggleLanguage}
-        displayLogo={!props.isHomePage} />
+        toggleLanguage={props.toggleLanguage} />
       {props.isHomePage &&
-        <Logo smallLogo={!props.isHomePage}/>
+        <Logo
+          isTextLogo
+          smallLogo={!props.isHomePage}/>
       }
     </header>
   );

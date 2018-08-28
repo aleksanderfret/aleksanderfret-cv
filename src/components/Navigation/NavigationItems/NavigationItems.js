@@ -5,12 +5,17 @@ import FontIcon from '../../UI/FontIcon/FontIcon';
 import classes from './NavigationItems.scss';
 
 const navigationItems = (props) => {
+  const navigationClasses = [];
+  if (!props.sidePanel) {
+    navigationClasses.push(classes.NavigationItems);
+  }
+
   const { t } = props;
   return(
-    <ul className={classes.Navigation}>
+    <ul className={navigationClasses.join(' ')}>
       {t('pages', {returnObjects: true}).map((page, index) => (
         <NavigationItem
-          sidepanel
+          sidepanel={props.sidePanel}
           key={index}
           link={`/${page.route}`}>
           {props.icons &&

@@ -8,7 +8,7 @@ import classes from './Layout.scss';
 class Layout extends Component {
   state = {
     isHomePage: true,
-    isSidePanelOpen: false
+    isSidePanelOpen: false,
   }
 
   sidePanelToggleHandler = () => {
