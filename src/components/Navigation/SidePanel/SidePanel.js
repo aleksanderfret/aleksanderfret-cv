@@ -14,7 +14,7 @@ const sidePanel = (props) => {
          clicked={props.closeSidePanel}/>
       <div className={sidePanelClasses.join(' ')}>
         <header className={classes.Header}>
-          <Logo smallLogo={true}/>
+          <Logo smallLogo />
         </header>
         <nav>
           <NavigationItems />

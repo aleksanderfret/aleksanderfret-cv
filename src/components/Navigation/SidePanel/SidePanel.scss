@@ -11,7 +11,7 @@
   left: 0;
   color: $base-text-color;
   background-color: $background-color;
-  transform: translateX(-100%);
+  transform: translateX(-110%);
   transition: transform 0.3s ease-out;
   @include box-shadow-lvl(1);
 }
@@ -21,7 +21,7 @@
 }
 
 .Close {
-  transform: translateX(-100%);
+  transform: translateX(-110%);
 }
 
 .Header {
@@ -31,4 +31,5 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
