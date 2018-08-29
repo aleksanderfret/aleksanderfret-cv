@@ -12,7 +12,6 @@ const toolBar = (props) => {
   return (
     <div className={classes.Toolbar}>
       <Button
-        className={classes.MenuButton}
         isDisplayed={props.isHomePage}
         btnType='MenuButton'
         clicked={props.toggleSidePanel}
@@ -33,7 +32,6 @@ const toolBar = (props) => {
         </div>
       }
       <Button
-        className={classes.LanguageButton}
         isDisplayed
         btnType='LanguageButton'
         clicked={props.toggleLanguage}

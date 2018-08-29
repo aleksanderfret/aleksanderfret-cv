@@ -50,3 +50,9 @@
 .AlwaysDisplayed {
   display: block;
 }
+
+.StandardButton {
+  background-color: $accessory-color;
+  color: $reverse-color;
+  border-radius: 5px;
+}
