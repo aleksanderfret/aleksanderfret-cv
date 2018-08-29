@@ -11,6 +11,7 @@ const logo = (props) => {
     <NavLink
       to='/'
       exact
+      onClick={props.clicked}
       className={logoClasses.join(' ')}
       aria-labelledby='logo-text'>
       <img
