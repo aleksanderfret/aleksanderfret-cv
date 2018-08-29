@@ -28,7 +28,7 @@
   box-sizing: content-box;
   display: block;
   margin: 0 auto;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   text-align: center;
   width: calc(#{$toolbar-height}/3);
   height: calc(#{$toolbar-height}/3);
@@ -39,12 +39,13 @@
   font-weight: $text-bold;
   transition: all 0.2s ease-out;
   transform: scale(1);
-  &:hover {
-    transform: scale(1.2);
+
+}
+.LanguageButton:hover span {
+  transform: scale(1.2);
     color: $base-color;
     background-color: $background-color;
     @include box-shadow-lvl(2);
-  }
 }
 
 .AlwaysDisplayed {

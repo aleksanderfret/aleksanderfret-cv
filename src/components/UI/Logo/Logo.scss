@@ -34,11 +34,11 @@
     margin: 0 0 0 10px;
     display: none;
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
     h2 {
-      font-size: 0.8rem;
-      letter-spacing: 1px;
+      font-size: 0.7rem;
+      letter-spacing: 0.05rem;
     }
     @include tiny-screens {
       display: flex;
@@ -66,11 +66,11 @@
     padding: 0 0 $toolbar-height 0;
     justify-content: center;
     h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
     h2 {
-      font-size: 1rem;
-      letter-spacing: 2px;
+      font-size: 0.9rem;
+      letter-spacing: 0.1rem;
     }
   }
 }
