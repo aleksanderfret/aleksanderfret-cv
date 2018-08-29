@@ -131,11 +131,12 @@ module.exports = {
           // smaller than specified limit in bytes as data URLs to avoid requests.
           // A missing `test` is equivalent to a match.
           {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('url-loader'),
+            test: /\.(jpe?g|png)$/i,
+            loader: 'responsive-loader',
             options: {
-              limit: 10000,
-              name: 'static/media/[name].[hash:8].[ext]',
+              sizes: [300, 400, 500, 600, 700, 800, 900, 1000, 1200],
+              quality: 95,
+              name: 'static/images/[name]-[width]-[hash:8].[ext]',
             },
           },
           // Process JS with Babel.
