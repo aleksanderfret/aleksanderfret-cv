@@ -1,37 +1,37 @@
 {
-  "welcome": "hello",
-  "introduction": "My name is Aleksander Fret. I am Web Developer, Graphic Designer and Cartographer. My qualifications focuse on front-end techologies: Javascript, React, CSS, SASS and HTML but I also deal with graphic (CorelDraw, Photoshop), and Back-end (PHP, MySQL). My passions are playing the guitar and listening to the music, playing board games, web techologies, fantasy literature, games and films and mountain hiking. I'm currently working on a web applicataion concerning my own version of Talisman board game",
+	"welcome": "Hello world :-)",
+	"introduction": "My name is Aleksander Fret and I'm Front-End Developer. Currently I'm focused on techologies: JavaScript, React, Redux, CSS, SASS and HTML. Ocasionally I use also back-end tools (PHP, MySQL). Moreover I'm Graphic Designer (Adobe, Corel) and Cartographer. When I have free time, I split it between various hobbies: web technologies, playing the guitar, listening to the music, board games (i.a. developing my own version of Talisman), mountain trips. And what brings you here? I invite you to contact and cooperation",
   "imageAlt": "Aleksander Fret",
   "download": "download cv",
   "tiles": [{
       "name": "professional profile",
       "route": "profile",
-      "content": ["Front-End Web Developer","Graphic Designer","Cartographer"]
+      "content": ["Front-End Developer","Graphic Designer","Cartographer"]
     },
     {
       "name": "experience",
       "route": "experience",
-      "content": ["work","courses","personal projects"]
+      "content": ["history of employment","full-time work","contract work"]
     },
     {
       "name": "education",
       "route": "education",
-      "content": ["studies","courses","trainings","nanodegrees"]
+      "content": ["studies","scholarships","courses","trainings"]
     },
     {
       "name": "skills",
       "route": "skills",
-      "content": ["programming","graphic","personal","other"]
+      "content": ["programming","graphics","personal"]
     },
     {
       "name": "portfolio",
       "route": "portfolio",
-      "content": ["work","courses","personal projects", "applications and websites made at work and while studying"]
+      "content": ["applications","company websites","personal websites"]
     },
     {
       "name": "contact",
       "route": "contact",
-      "content": ["contact me", "find me at social"]
+      "content": ["contact form", "social networks"]
     }
   ]
 }

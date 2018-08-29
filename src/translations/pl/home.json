@@ -1,37 +1,37 @@
 {
-  "welcome": "dzień dobry",
-  "introduction": "Nazywam się Aleksander Fret. Jestem front-end web developerem, grafikiem i kartografem. Moje kwalifikacje koncentrują się na technologiach front-end'owych: Javascript, React, CSS, SASS and HTML. Zajmuję się również grafiką (CorelDraw, Photoshop) oraz rzadko back-end'em (PHP, MySQL). Moje zainteresowania to granie na gitarze, słuchanie muzyki, granie w gry planszowe, technologie internetowe, literatura, filmy i gry fantasy oraz wędrówki górskie. Obecnie pracuję nad aplikacją dotyczącą mojej wersji gry planszowej Talizman (Magia i Miecz)",
+	"welcome": "Witaj świecie :-)",
+	"introduction": "Nazywam się Aleksander Fret i jestem front-end developerem. Obecnie koncentruję się na technologiach: JavaScript, React, Redux, CSS, SASS i HTML. Czasem używam też narzędzi back-end'owych (PHP, MySQL). Jestem również grafikiem (Adobe, Corel) i kartografem. Czas wolny dzielę między rozmaite hobby: technologie webowe, granie na gitarze, słuchanie muzyki, gry planszowe (w tym rozwijanie autorskiej wersji Magii i Miecz), górskie wędrówki. A co Ciebie tu sprowadza? Zapraszam do kontaktu i współpracy.",
   "imageAlt": "Aleksander Fret",
   "download": "pobierz cv",
   "tiles": [{
-      "name": "profile zawodowy",
+      "name": "profil zawodowy",
       "route": "profile",
-      "content": ["Front-End Web Developer","Grafik","kartograf"]
+      "content": ["front-end developer","grafik","kartograf"]
     },
     {
       "name": "doświadczenie",
       "route": "experience",
-      "content": ["praca","kursy","projekt osobisty"]
+      "content": ["historia zatrudnienia","praca pełnoetatowa","zlecenia"]
     },
     {
       "name": "wykształcenie",
       "route": "education",
-      "content": ["studia","kursy","szkolenia","nanodegrees"]
+      "content": ["studia","stypendia","kursy","szkolenia"]
     },
     {
       "name": "umiejętności",
       "route": "skills",
-      "content": ["programowanie","grafika","osobiste","inne"]
+      "content": ["programowanie","grafika","osobiste"]
     },
     {
       "name": "portfolio",
       "route": "portfolio",
-      "content": ["praca","kursy","projekty osobiste", "aplikacje i strony wykonane w pracy i podczas kursów"]
+      "content": ["aplikacje","witryny firmowe","strony osobiste"]
     },
     {
       "name": "contact",
       "route": "contact",
-      "content": ["skontaktuj się ze mną", "znajdź mnie w sieci"]
+      "content": ["formularz kontaktowy", "serwisy społecznościowe"]
     }
   ]
 }
