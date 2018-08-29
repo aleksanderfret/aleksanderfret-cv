@@ -20,7 +20,7 @@ const sidePanel = (props) => {
         </header>
         <nav>
           <NavigationItems
-            sidePanel
+            navType='sidePanel'
             icons
             clicked={props.closeSidePanel}/>
         </nav>

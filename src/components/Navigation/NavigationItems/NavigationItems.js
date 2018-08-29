@@ -6,7 +6,7 @@ import classes from './NavigationItems.scss';
 
 const navigationItems = (props) => {
   const navigationClasses = [];
-  if (!props.sidePanel) {
+  if (props.navType === 'toolbar') {
     navigationClasses.push(classes.NavigationItems);
   }
 
@@ -15,7 +15,7 @@ const navigationItems = (props) => {
     <ul className={navigationClasses.join(' ')}>
       {t('pages', {returnObjects: true}).map((page, index) => (
         <NavigationItem
-          sidepanel={props.sidePanel}
+          navType={props.navType}
           clicked={props.clicked}
           key={index}
           link={`/${page.route}`}>

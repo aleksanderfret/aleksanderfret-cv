@@ -26,7 +26,9 @@ const toolBar = (props) => {
             smallLogo
             isTextLogo />
           <nav>
-            <NavigationItems clicked={null}/>
+            <NavigationItems
+              navType='toolbar'
+              clicked={null}/>
           </nav>
         </div>
       }
@@ -36,8 +38,6 @@ const toolBar = (props) => {
         btnType='LanguageButton'
         clicked={props.toggleLanguage}
         label={t('language-info')}>
-        {/* <FontIcon
-          iconType={icons.LANGUAGE} /> */}
         <span>{t('language-code')}</span>
       </Button>
     </div>

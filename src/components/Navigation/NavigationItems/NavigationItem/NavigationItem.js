@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classes from './NavigationItem.scss';
 
 const navigationItem = (props) => {
-  const linkClasses = classes[props.sidepanel ? 'SidePanelNavlink' : 'ToolBarNavLink'];
+  const linkClasses = classes[props.navType === 'sidePanel' ? 'SidePanelNavlink' : 'ToolBarNavLink'];
   return(
     <li className={linkClasses}>
       <NavLink
