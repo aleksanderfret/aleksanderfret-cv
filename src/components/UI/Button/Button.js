@@ -6,8 +6,11 @@ const button = (props) => {
   if (classes[props.btnType]) {
     buttonClasses.push(classes[props.btnType]);
   }
+  if (props.isDisplayed) {
+    buttonClasses.push(classes.AlwaysDisplayed);
+  }
 
-  const button = props.isDisplayed ? (
+  return(
     <button
       disabled={props.disabled}
       onClick={props.clicked}
@@ -15,9 +18,7 @@ const button = (props) => {
       title={props.label}
       aria-label={props.label}>{props.children}
     </button>
-  ) : null;
-
-  return(button);
+  );
 };
 
 export default button;

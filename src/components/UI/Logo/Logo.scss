@@ -43,6 +43,12 @@
     @include tiny-screens {
       display: flex;
     }
+    @include large-screens {
+      display: none;
+    }
+    @include wide-screens {
+      display: flex;
+    }
   }
 }
 

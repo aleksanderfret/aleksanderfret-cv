@@ -3,6 +3,7 @@
   "subtitle": "Front-End Web Developer",
   "language": "english",
   "language-info": "change language to $t(language)",
+  "language-code": "GB",
   "homePage": {
     "route": "/",
     "name": "stron główna"
