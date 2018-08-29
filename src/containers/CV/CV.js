@@ -9,7 +9,7 @@ import classes from './CV.scss';
 
 class CV extends Component {
   state = {
-    language: 'en'
+    language: 'pl'
   }
 
   toggleLanguage = () => {

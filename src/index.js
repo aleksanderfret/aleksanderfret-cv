@@ -28,7 +28,7 @@ import ui_pl from "./translations/pl/ui.json";
 
 i18next.init({
     interpolation: { escapeValue: false },
-    lng: 'en',
+    lng: 'pl',
     resources: {
       en: {
         ui: ui_en,
