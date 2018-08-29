@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from './FontIcon.scss';
 
 const fontIcon = (props) => {
   const icons = {

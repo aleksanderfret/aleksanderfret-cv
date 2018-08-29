@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from './Experience.scss';
 
 const experience = (props) => {
   return(

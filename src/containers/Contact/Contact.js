@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './Contact.scss';
+// import classes from './Contact.scss';
 
 class Contact extends Component {
   render() {

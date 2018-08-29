@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from './Education.scss';
 
 const education = (props) => {
   return(
