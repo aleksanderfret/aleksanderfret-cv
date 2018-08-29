@@ -7,6 +7,7 @@ const navigationItem = (props) => {
   return(
     <li className={linkClasses}>
       <NavLink
+        onClick={props.clicked}
         to={props.link}
         exact={props.exact}
         activeClassName={classes.active}>

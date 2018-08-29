@@ -19,7 +19,10 @@ const sidePanel = (props) => {
             smallLogo />
         </header>
         <nav>
-          <NavigationItems sidePanel icons/>
+          <NavigationItems
+            sidePanel
+            icons
+            clicked={props.closeSidePanel}/>
         </nav>
       </div>
     </React.Fragment>

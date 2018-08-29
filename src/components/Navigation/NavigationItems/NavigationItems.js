@@ -16,6 +16,7 @@ const navigationItems = (props) => {
       {t('pages', {returnObjects: true}).map((page, index) => (
         <NavigationItem
           sidepanel={props.sidePanel}
+          clicked={props.clicked}
           key={index}
           link={`/${page.route}`}>
           {props.icons &&

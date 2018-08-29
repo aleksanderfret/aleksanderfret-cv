@@ -18,7 +18,9 @@ class Layout extends Component {
   }
 
   sidePanelCloseHandler = () => {
-    this.setState({isSidePanelOpen: false});
+    setTimeout(() => {
+      this.setState({isSidePanelOpen: false});
+    }, 250);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {

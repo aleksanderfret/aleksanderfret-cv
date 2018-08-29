@@ -26,7 +26,7 @@ const toolBar = (props) => {
             smallLogo
             isTextLogo />
           <nav>
-            <NavigationItems />
+            <NavigationItems clicked={null}/>
           </nav>
         </div>
       }
