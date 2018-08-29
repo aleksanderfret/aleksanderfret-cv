@@ -1,17 +1,55 @@
 @import 'partials';
 
 .Home {
-
+  width: 90%;
+  height: 100%;
+  margin: 2rem auto;
 }
 
 .Portrait {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  @include small-screens {
+    width: 50%;
+  }
+}
 
+.Dialog {
+  margin: 0 0 0 2rem;
+  filter: drop-shadow(0 0 2px #333);
 }
 
 .Welcome {
+  position: relative;
+  display: inline-block;
+  border-radius: 5px 5px 5px 0;
+  top: 0;
+  color: $reverse-color;
+  background-color: $light-base;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  margin-bottom: 16px;
 
 }
 
-.Introduction {
+.Welcome::after {
+  content: '';
+	width: 0;
+  height: 0;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+	border-left: 16px solid transparent;
+	border-right: 16px solid transparent;
+  border-top: 16px solid $light-base;
+}
 
+.Introduction {
+  color: $base-text-color;
+  font-size: 0.95rem;
+  line-height: 1.2rem;
+  margin: 5% 0 0 0;
 }
