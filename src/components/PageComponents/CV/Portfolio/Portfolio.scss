@@ -1,1 +1,9 @@
 @import 'partials';
+
+.Portfolio {
+  @include pageContainer;
+}
+
+.Portfolio h3 {
+  @include pageTitle;
+}

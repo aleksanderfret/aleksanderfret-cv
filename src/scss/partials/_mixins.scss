@@ -80,3 +80,20 @@
     background: $base-gradient;
   }
 }
+
+@mixin pageContainer {
+  width: 90%;
+  height: 100%;
+  margin: 2rem auto;
+  @include small-screens {
+    width: 95%;
+  }
+}
+
+@mixin pageTitle{
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: $base-color;
+  width: 100%;
+  text-align: left;
+}

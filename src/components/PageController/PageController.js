@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Contact from '../../containers/Contact/Contact';
 import Experience from '../PageComponents/CV/Experience/Experience';
 import Education from '../PageComponents/CV/Education/Education';
-import Skills from '../PageComponents/CV/Skills/SkillsCategoryList/SkillsCategoryList';
+import Skills from '../PageComponents/CV/Skills/Skills';
 import Portfolio from '../PageComponents/CV/Portfolio/Portfolio';
 import Profile from '../PageComponents/CV/Profile/Profile';
 import NotFound from '../PageComponents/NotFound/NotFound';

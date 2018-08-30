@@ -1,1 +1,9 @@
 @import 'partials';
+
+.Experience {
+  @include pageContainer;
+}
+
+.Experience h3 {
+  @include pageTitle;
+}

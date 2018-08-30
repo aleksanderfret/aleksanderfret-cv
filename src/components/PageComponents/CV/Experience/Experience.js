@@ -1,11 +1,14 @@
 import React from 'react';
+import { translate } from 'react-i18next';
+import classes from './Experience.scss';
 
 const experience = (props) => {
+  const { t } = props;
   return(
-    <React.Fragment>
-      <h3>Experience</h3>
-    </React.Fragment>
+    <div className={classes.Experience}>
+      <h3>{t('title')}</h3>
+    </div>
   );
 };
 
-export default experience;
+export default translate('experience')(experience);

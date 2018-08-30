@@ -1,14 +1,14 @@
 import React from 'react';
 import { translate } from 'react-i18next';
-import classes from './Profile.scss';
+import classes from './Skills.scss';
 
-const profile = (props) => {
+const skills = (props) => {
   const { t } = props;
   return(
-    <div className={classes.Profile}>
+    <div className={classes.Skills}>
       <h3>{t('title')}</h3>
     </div>
   );
 };
 
-export default translate('profile')(profile);
+export default translate('skills')(skills);

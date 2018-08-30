@@ -1,12 +1,7 @@
 @import 'partials';
 
 .Home {
-  width: 90%;
-  height: 100%;
-  margin: 2rem auto;
-  @include small-screens {
-    width: 95%;
-  }
+  @include pageContainer;
 }
 
 .Home section:first-child {

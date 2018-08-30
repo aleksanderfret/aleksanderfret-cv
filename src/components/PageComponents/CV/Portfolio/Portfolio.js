@@ -1,12 +1,14 @@
 import React from 'react';
-
+import { translate } from 'react-i18next';
+import classes from './Portfolio.scss';
 
 const portfolio = (props) => {
+  const { t } = props;
   return(
-    <React.Fragment>
-      <h3>Portfolio</h3>
-    </React.Fragment>
+    <div className={classes.Portfolio}>
+      <h3>{t('title')}</h3>
+    </div>
   );
 };
 
-export default portfolio;
+export default translate('portfolio')(portfolio);

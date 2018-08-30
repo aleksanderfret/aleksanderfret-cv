@@ -1,5 +1,9 @@
 @import 'partials';
 
 .Education {
+  @include pageContainer;
+}
 
+.Education h3 {
+  @include pageTitle;
 }
