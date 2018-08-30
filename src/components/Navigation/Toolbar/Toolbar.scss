@@ -16,7 +16,7 @@
   nav {
     display: none;
   }
-  @include large-screens {
+  @include normal-screens {
     width: calc(100% - #{$toolbar-height});
     justify-content: flex-start;
     margin-left: 1rem;

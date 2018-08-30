@@ -13,7 +13,7 @@
   background-color: $background-color;
   transform: translateX(-110%);
   transition: transform 0.3s ease-out;
-  @include box-shadow-lvl(1);
+  @include shadow(1);
 }
 
 .Open {

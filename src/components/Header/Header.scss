@@ -7,7 +7,7 @@
   width: 100%;
   background-color: $base-color;
   border-bottom: 8px solid $aux-base;
-  @include box-shadow-lvl(2);
+  @include shadow(2);
 }
 
 .Usual {

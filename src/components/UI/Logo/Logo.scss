@@ -43,7 +43,7 @@
     @include tiny-screens {
       display: flex;
     }
-    @include large-screens {
+    @include normal-screens {
       display: none;
     }
     @include wide-screens {
