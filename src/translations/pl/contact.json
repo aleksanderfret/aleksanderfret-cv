@@ -6,54 +6,49 @@
     "required": "Pola wymagane",
     "name": {
       "label": "imię i nazwisko",
-      "placeholder": "imię i nazwisko",
+      "placeholder": "$t(form.name.label)",
       "help": "Imię i nazwisko może zawierać tylko litery, cyfry, spacje, myślniki i apostrofy. Pole to musi zawierać przynajmniej 5 i maksymalnie 60 znaków.",
       "errors": {
-        "blank": "Wprowadź imię i nazwisko!",
-        "toLong": "Pole imię i nazwisko może zawierać maksymalnie 60 znaków!",
-        "toshort": "Pole imię i nazwisko musi zawierać minimum 5 znaków!",
-        "invalid": "Pole imię i nazwisko zawiera niedozwolone znaki, korzystaj wyłącznie z liter, cyfr, spacji myślników i apostrofów!"
+        "required": "Imię i nazwisko są wymagane!",
+        "pattern": "Wprowadzone dane są nieprawidłowe. $t(form.name.help)"
+
       }
     },
     "email": {
       "label": "e-mail",
-      "placeholder": "e-mail",
+      "placeholder": "$t(form.email.label)",
       "help": "Przykłady poprawnego adresu e-mail: imie@nazwisko.pl lub imie.nazwisko@firma.pl.",
       "errors": {
-        "blank": "Wprowadź adres e-mail!",
-        "invalid": "Wprowadź poprawny adres e-mail!"
+        "required": "Adres e-mail jest wymagany!",
+        "pattern": "Wprowadź poprawny adres e-mail!"
       }
     },
     "subject": {
       "label": "temat",
-      "placeholder": "temat",
+      "placeholder": "$t(form.subject.label)",
       "help": "Temat can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The subject must contain at least 5 and a maximum of 500 characters.",
       "errors": {
-        "blank": "Wprowadź temat!",
-        "toLong": "Temat może zawierać maksymalnie 500 znaków!",
-        "toshort": "Temat musi zawierać przynajmniej 5 znaków!",
-        "invalid": "Temat zawiera niedozwolone znaki, korzystaj wyłącznie z liter, cyfr oraz znaków ,.)-:(!?'.!"
+        "required": "Temat jest wymagany!",
+        "pattern": "Wprowadzony temat jest nieprawidłowy. $t(form.subject.help)"
       }
     },
     "message": {
       "label": "wiadomość",
-      "placeholder": "treść wiadomości",
+      "placeholder": "$t(form.message.label)",
       "help": "Wiadmość może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Wiadomość musi zawierać przynajmniej 5 i maksymalnie 2000 znaków.",
       "errors": {
-        "blank": "Proszę wprowadzić treść wiadomości!",
-        "toLong": "wiadomość może zawierać maksymalnie 2000 znaków!",
-        "toshort": "Wiadomość musi zawierać przynajmniej 5 znakó!",
-        "invalid": "Wiadomość zawiera niedozwolone znaki, korzystaj wyłącznie z liter, cyfr oraz znaków ,.)-:(!?'.!"
+        "required": "Wiadomości jest wymagana!",
+        "pattern": "Wprowadzona wiadomość jest nieprawidłowa. $t(form.message.help)"
       }
     },
     "captcha": {
       "errors": {
-        "blank": "Proszę zaznaczyć pole reCAPTCHA!",
-        "invalid": "Walidacja przeciwko robotom nie powiodła się. Prosimy spróbuj ponownie."
+        "required": "Proszę zaznaczyć pole reCAPTCHA!",
+        "pattern": "Walidacja przeciwko robotom nie powiodła się. Prosimy spróbuj ponownie."
       }
     },
     "rodo": {
-      "label": "Zapoznałem się z informacją o przetwarzaniu danych",
+      "label": "Zapoznałem się z <1>informacją o przetwarzaniu danych</1>",
       "messages": [
         "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danych osobowych w związku z wysłaniem zapytania przez formularz kontaktowy.",
         "Podanie tych danych jest dobrowolne, ale niezbędne do przetworzenia zapytania. Dane wpisane w formularzu kontaktowym nie będą przechowywane w żadnej bazie danych i będą przetworzone tylko w celu udzielenia odpowiedzi na przesłane zapytanie.",

@@ -6,54 +6,48 @@
     "required": "Required fields",
     "name": {
       "label": "name",
-      "placeholder": "name",
+      "placeholder": "$t(form.name.label)",
       "help": "The name can only contain letters, spaces, dashes and apostrophes. The name must contain at least 5 and a maximum of 60 characters.",
       "errors": {
-        "blank": "Enter the name!",
-        "toLong": "The name must contain a maximum of 60 characters!",
-        "toshort": "The name must include at least 5 characters!",
-        "invalid": "The name contains invalid characters, use only letters, spaces, dashes and apostrophes!"
+        "required": "The name is required!",
+        "pattern": "Entered name is invalid. $t(form.name.help)"
       }
     },
     "email": {
       "label": "e-mail",
-      "placeholder": "e-mail",
+      "placeholder": "$t(form.email.label)",
       "help": "The proper e-mail format examples: name@surname.com or name.surname@company.com.",
       "errors": {
-        "blank": "Enter the e-mail address!",
-        "invalid": "Enter the proper e-mail address!"
+        "required": "The e-mail address is required!",
+        "pattern": "Enter the proper e-mail address!"
       }
     },
     "subject": {
       "label": "subject",
-      "placeholder": "subject",
+      "placeholder": "$t(form.subject.label)",
       "help": "The subject can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The subject must contain at least 5 and a maximum of 500 characters.",
       "errors": {
-        "blank": "Enter the subject",
-        "toLong": "The subject must contain a maximum of 500 characters",
-        "toshort": "The subject must include at least 5 characters",
-        "invalid": "The subject contains invalid characters, use only letters, numbers, spaces and characters ,.)-:(!?'!"
+        "required": "The subject is required!",
+        "pattern": "Entered subject is invalid. $t(form.subject.help)"
       }
     },
     "message": {
       "label": "message",
-      "placeholder": "message",
+      "placeholder": "$t(form.message.label)",
       "help": "The message can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The message must contain at least 5 and a maximum of 2000 characters.",
       "errors": {
-        "blank": "Enter the message!",
-        "toLong": "The message must contain a maximum of 2000 characters!",
-        "toshort": "The message must include at least 5 characters!",
-        "invalid": "The message contains invalid characters, use only letters, numbers, spaces and characters ,.)-:(!?'!"
+        "required": "The message is required!!",
+        "pattern": "Entered message is invalid. $t(form.message.help)"
       }
     },
     "captcha": {
       "errors": {
-        "blank": "Please check the reCAPTCHA field!",
-        "invalid": "Validation against robots was unsuccessful. Please try again."
+        "required": "Please check the reCAPTCHA field!",
+        "pattern": "Validation against robots was unsuccessful. Please try again."
       }
     },
     "rodo": {
-      "label": "I've read the information about data processing",
+      "label": "I've read the <1>information about data processing</1>",
       "messages": [
         "I agree to the processing of personal data in accordance with the law on the protection of personal data in connection with sending a message via the contact form.",
         "Providing this data is voluntary, but necessary to process the query. The data entered in the contact form won't be save in any database and will be processed only to respond to the message.",

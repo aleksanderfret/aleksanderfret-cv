@@ -1,1 +1,9 @@
 @import 'partials';
+
+.Contact {
+  @include pageContainer;
+}
+
+.Contact h3 {
+  @include pageTitle;
+}
