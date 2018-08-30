@@ -55,7 +55,7 @@
   text-transform: capitalize;
 }
 
-@mixin shadow($level: 4) {
+@mixin shadow($level: 5) {
   @if $level == 0 {
     filter: drop-shadow(0 0 2px #333);
   } @else if $level == 1 {
@@ -64,8 +64,10 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
   } @else if $level == 3 {
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
-  } @else {
+  } @else if $level == 4 {
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.3);
+  } @else {
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
   }
 }
 

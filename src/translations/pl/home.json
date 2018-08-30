@@ -1,6 +1,9 @@
 {
 	"welcome": "Witaj świecie :-)",
-	"introduction": "Nazywam się Aleksander Fret i jestem front-end developerem. Obecnie koncentruję się na technologiach: JavaScript, React, Redux, CSS, SASS i HTML. Czasem używam też narzędzi back-end'owych (PHP, MySQL). Jestem również grafikiem (Adobe, Corel) i kartografem. Czas wolny dzielę między rozmaite hobby: technologie webowe, granie na gitarze, słuchanie muzyki, gry planszowe (w tym rozwijanie autorskiej wersji Magii i Miecz), górskie wędrówki. A co Ciebie tu sprowadza? Zapraszam do kontaktu i współpracy.",
+	"introduction": [
+    "Nazywam się Aleksander Fret i jestem front-end developerem. Obecnie koncentruję się na technologiach: JavaScript, React, Redux, CSS, SASS i HTML. Czasem używam też narzędzi back-end'owych (PHP, MySQL). Jestem również grafikiem (Adobe, Corel) i kartografem.",
+    "Czas wolny dzielę między rozmaite hobby: technologie webowe, granie na gitarze, słuchanie muzyki, gry planszowe (w tym rozwijanie autorskiej wersji Magii i Miecz), górskie wędrówki. A co Ciebie tu sprowadza? Zapraszam do kontaktu i współpracy."
+  ],
   "imageAlt": "Aleksander Fret",
   "download": "pobierz cv",
   "tiles": [{
@@ -16,7 +19,7 @@
     {
       "name": "wykształcenie",
       "route": "education",
-      "content": ["studia","stypendia","kursy","szkolenia"]
+      "content": ["studia","stypendia","kursy i szkolenia"]
     },
     {
       "name": "umiejętności",
