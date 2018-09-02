@@ -7,3 +7,10 @@
 .Experience h3 {
   @include pageTitle;
 }
+
+.Experience li {
+  margin: 0 0 1.5rem 0;
+  li:last-child {
+    margin-bottom: 0;
+  }
+}

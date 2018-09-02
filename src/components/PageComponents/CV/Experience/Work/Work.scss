@@ -1,1 +1,76 @@
 @import 'partials';
+
+.Work {
+  @include pageTile;
+  padding: 1rem;
+  font-size: 0.85rem;
+  @include slight-screens {
+    font-size: 0.9rem;
+  }
+  @include medium-screens {
+    font-size: 0.95rem;
+    line-height: 1.3rem;
+  }
+  @include normal-screens {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  p > span:first-child:after {
+    content: ' ';
+  }
+  p span:last-child time{
+    font-style: italic;
+  }
+  h5 {
+    font-weight: 500;
+    color: $low-light-base-text;
+    margin: 1.25rem 0 0.1rem 0;
+    @include slight-screens {
+      font-size: 1rem;
+    }
+    @include medium-screens{
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: $dark-base-text;
+      margin-bottom: 0.3rem;
+    }
+
+  }
+}
+
+.PositionName {
+  @include pageSubtitle;
+  font-weight: 500;
+  @include slight-screens {
+    font-size: 1.2rem;
+  }
+  @include medium-screens {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
+
+.Duties,
+.Projects {
+  li {
+    display: inline;
+  }
+  li:not(:last-child):after {
+    content: '; ';
+  }
+}
+
+.Projects {
+  a {
+    text-decoration: none;
+    color: $base-color;
+    font-style: italic;
+    display: inline-block;
+    padding: 0.6rem 0;
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
