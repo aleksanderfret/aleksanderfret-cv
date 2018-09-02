@@ -96,6 +96,13 @@
   }
 }
 
+@mixin pageTile {
+  position: relative;
+  color: $base-text-color;
+  background-color: $base-background-color;
+  @include shadow();
+}
+
 @mixin pageTitle{
   font-size: 1.5rem;
   text-transform: capitalize;
@@ -114,7 +121,8 @@
   }
 }
 
-@mixin pageTile {
-  background-color: $base-background-color;
-  @include shadow();
+@mixin pageSubtitle {
+  width: 100%;
+  color: $base-color;
+  font-size: 1rem;
 }

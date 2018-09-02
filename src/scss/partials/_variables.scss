@@ -11,7 +11,8 @@ $base-gradient: linear-gradient(180deg, $base-color 12%, $light-base 88%);
 
 $base-text-color: #333;
 $dark-base-text: darken($base-text-color, 20%);
-$light-base-text: lighten($base-text-color, 30%);
+$low-light-base-text: lighten($base-text-color, 10%);
+$middle-light-base-text: lighten($base-text-color, 30%);
 $extra-light-base-text: lighten($base-text-color, 60%);
 
 // === FONTS ===

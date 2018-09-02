@@ -12,6 +12,7 @@
   position: relative;
   width: 100%;
   margin: 0 0 1.5rem 0;
+  padding: 1rem;
   @include pageTile;
   &:last-child {
     margin: 0;
@@ -19,46 +20,41 @@
 }
 
 .Profession h4 {
-  width: 100%;
-  color: $base-color;
-  font-size: 1rem;
-  padding: 1rem 1rem 0.5rem 1rem;
-
+  @include pageSubtitle;
   @include tiny-screens {
     font-size: 1.2rem;
   }
   @include slight-screens {
     font-size: 1.3rem;
-    order: 1;
   }
   @include small-screens {
-    padding: 1rem 1rem 0.75rem 1rem;
     font-size: 1.5rem;
-  }
-  @include medium-screens {
-
   }
 }
 
-.Profession p {
-  width: 100%;
-  color: $base-text-color;
-  background-color: $base-background-color;
-  font-size: 0.85rem;
-  line-height: 1.1rem;
-  padding: 0 1rem 1rem 1rem;
-
-  @include tiny-screens {
-    font-size: 0.9rem;
-    line-height: 1.2rem;
-  }
-  @include slight-screens {
-    font-size: 1rem;
-    line-height: 1.4rem;
-  }
-  @include medium-screens {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
+.Profession {
+  p {
+    width: 100%;
+    color: $base-text-color;
+    background-color: $base-background-color;
+    font-size: 0.85rem;
+    line-height: 1.1rem;
+    padding: 0 0 1rem 0;
+    &:last-of-type {
+      padding: 0;
+    }
+    @include tiny-screens {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+    }
+    @include slight-screens {
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+    @include medium-screens {
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+    }
   }
 }
 
