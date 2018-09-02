@@ -1,10 +1,12 @@
 {
-  "title": "experience",
-  "projectsHeader": "selected projects",
+  "title": "Experience",
+  "labels": {
+    "projects": "Selected projects",
+    "duties": "Scope of work"
+  },
   "work": [{
-      "company": "Udacity",
-      "position": "student",
-      "duties": [],
+      "company": "Nanodegree Program, Udacity",
+      "position": "Student: Front-End Web Developer",
       "start-date": "11/2017",
       "end-date": "08/2018",
       "projects": [{
@@ -28,137 +30,128 @@
     {
       "company": "Eko-Graf",
       "position": "Cartographer - Map Editor",
-      "duties": ["designing of graphic layouts and covers", "editorial and cartographic tasks", "DTP", "creating of advertising materials", "preparing for printing"],
-      "start-date": "10/2008",
+      "duties": ["Designing of graphic layouts and covers", "cartographic and editorial tasks", "DTP", "creating of various advertising materials", "preparing for printing"],
+      "start-date": "10.2008",
       "end-date": "now",
       "projects": [{
           "url": "https://rowertour.pl/?page=artykul&id=3341",
-          "name": "Wałbrzych - Trasy Rowerowe"
+          "name": "Wałbrzych - bicycle routes"
         },
         {
           "url": "http://www.ekograf.pl/oferta/sudety-przewodnik-autor-janusz-czerwinski",
-          "name": "Sudety – przewodnik"
+          "name": "Sudetes – tourist guide"
+        },
+        {
+          "url": "",
+          "name": "Wrocław – tourist guide"
         },
         {
           "url": "http://www.ekograf.pl/oferta/szlacheckie-i-arystokratyczne-rezydencje-sudetow-czeskich-sudety-zachodnie-i-srodkowe-autor-romuald-m-luczynski",
-          "name": "Szlacheckie i Arystokratyczne Rezydencje Sudetów Czeskich - Sudety Zachodnie i Środkowe"
-        },
-        {
-          "url": "http://www.ekograf.pl/oferta/szlacheckie-i-arystokratyczne-rezydencje-sudetow-czeskich-sudety-wschodnie-autor-romuald-m-luczynski",
-          "name": "Szlacheckie i Arystokratyczne Rezydencje Sudetów Czeskich - Sudety Wschodnie"
-        },
-        {
-          "url": "http://www.ekograf.pl/oferta/szlacheckie-i-arystokratyczne-rezydencje-w-sudetach-polskich-sudety-zachodnie-autor-romuald-m-luczynski",
-          "name": "Szlacheckie i Arystokratyczne Rezydencje Sudetów Polskich - Sudety Zachodnie"
-        },
-        {
-          "url": "http://www.ekograf.pl/oferta/szlacheckie-i-arystokratyczne-rezydencje-w-sudetach-polskich-sudety-srodkowe-autor-romuald-m-luczynski",
-          "name": "Szlacheckie i Arystokratyczne Rezydencje Sudetów Polskich - Sudety Środkowe"
+          "name": "Noble and aristocratic residencies of the czech Sudetes - Western and Central Sudetes"
         },
         {
           "url": "http://www.ekograf.pl/oferta/swiat-mapa-dwustronna-fizycznopolityczna-125-000-000-140x100-cm",
-          "name": "Two-side map: World - Political Map, World - Hipsometric Map, 1:25 000 000"
+          "name": "Two-sided wall map: World - political map, World - hipsometric map, 1:25 000 000"
         },
         {
           "url": "http://www.ekograf.pl/oferta/europa-drogowa-13-000-000-146-x-140-cm",
-          "name": "Europe - road map, 1:3 000 000"
+          "name": "Wall map: Europe - road map, 1:3 000 000"
         },
         {
           "url": "http://www.ekograf.pl/oferta/wroclaw-plan-miasta-jednostronny-nowe-wydanie-20162017",
-          "name": "Wroclaw - city plan, 1:20 000"
+          "name": "Wrocław - city plan, 1:20 000"
         }
       ]
     },
     {
       "company": "Wilmat",
-      "position": "Freelancer",
-      "duties": ["creation of graphic design", "development"],
+      "position": "Web Developer",
+      "duties": ["Development", "creation of graphic design"],
       "start-date": "10/2016",
       "end-date": "10/2016",
       "projects": [{
           "url": "http://www.wilmat.com.pl",
-          "name": "Wilmat website"
+          "name": "www.wilmat.com.pl"
         }
       ]
     },
     {
       "company": "Emilia Fret",
-      "position": "Freelancer",
-      "duties": ["creation of graphic design", "development"],
+      "position": "Web Developer",
+      "duties": ["Development", "creation of graphic design"],
       "start-date": "06/2015",
       "end-date": "06/2015",
       "projects": [{
           "url": "http://www.psychoterapia.fret.com.pl",
-          "name": "Psychoterapist website"
+          "name": "www.psychoterapia.fret.com.pl"
         }
       ]
     },
     {
       "company": "Ewa Fret",
-      "position": "Freelancer",
-      "duties": ["creation of graphic design", "development"],
+      "position": "Web Developer",
+      "duties": ["Development", "creation of graphic design"],
       "start-date": "01/2015",
       "end-date": "01/2015",
       "projects": [{
           "url": "http://www.ewa.fret.com.pl",
-          "name": "Artist website"
+          "name": "www.ewa.fret.com.pl"
         }
       ]
     },
     {
       "company": "Via Mercatorum",
-      "position": "Freelancer",
-      "duties": ["website development", "logo design", "advertising leaflet design", "press advertisement design"],
+      "position": "Web Developer",
+      "duties": ["Development", "creation of graphic design", "logo", "advertising leaflet", "press advertisement"],
       "start-date": "11/2012",
       "end-date": "11/2012",
       "projects": [{
           "url": "http://www.warsztatyprzyrodnicze.com",
-          "name": "Seaside Nature Workshops website"
+          "name": "www.warsztatyprzyrodnicze.com"
         }
       ]
     },
     {
       "company": "SeaStar",
       "position": "Cartographer",
-      "duties": [],
+      "duties": ["Cartographic and editorial tasks"],
       "start-date": "04/2007",
       "end-date": "07/2008",
       "projects": [{
           "url": "http://www.seastar.pl/sklep-internetowy?page=shop.product_details&flypage=flypage.tpl&product_id=121&category_id=4",
-          "name": "Antarctic map, 1:7 000 000"
+          "name": "Wall map: Antarctic map, 1:7 000 000"
         },
         {
           "url": "http://www.seastar.pl/sklep-internetowy?page=shop.product_details&flypage=flypage.tpl&product_id=126&category_id=4",
-          "name": "Two-side map: Russia - Administrative Map, Russia - Hipsometric Map, 1:5 500 000"
+          "name": "Two-sided wall map: Russia - administrative map, Russia - hipsometric map, 1:5 500 000"
         },
         {
           "url": "http://www.seastar.pl/sklep-internetowy?page=shop.product_details&flypage=flypage.tpl&product_id=124&category_id=4",
-          "name": "Two-side map: Germany - Administrative Map, Germany - Hipsometric Map, 1:1 600 000"
+          "name": "Two-sided wall map: Germany - administrative map, Germany - hipsometric map, 1:1 600 000"
         },
         {
           "url": "http://www.seastar.pl/sklep-internetowy?page=shop.product_details&flypage=flypage.tpl&product_id=127&category_id=4",
-          "name": "Two-side map: World - Political Map, World - Hipsometric Map, 1:25 000 000"
+          "name": "Two-sided wall map: World - political map, World - hipsometric map, 1:25 000 000"
         }
       ]
     },
     {
       "company": "Nowa Era",
-      "position": "Freelancer",
-      "duties": [],
+      "position": "Author",
+      "duties": ["Creation of geographic statistical tables for secondary schools"],
       "start-date": "11/2005",
       "end-date": "12/2006",
       "projects": [{
         "url": "",
-        "name": "Tablice Statystyczne"
+        "name": "Statistical tables"
       }]
     },
     {
       "company": "Wydawnictwo Marek Rożak",
       "position": "Cartographer",
-      "duties": [],
+      "duties": ["Cartographic and editorial tasks", "maps for school books", "school atlases"],
       "start-date": "09/2004",
-      "end-date": "03/2005",
-      "projects": [{}]
+      "end-date": "03/2005"
     }
   ]
 }
