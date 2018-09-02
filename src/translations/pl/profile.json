@@ -2,6 +2,8 @@
 {
   "title": "profil zawodowy",
   "professions": [{
+      "key": "frontend",
+      "imageAlt": "Fragment mojego kodu",
       "name": "Front-end web developer",
       "advantages": [
         "Tworzę aplikacje i witryny internetowe z wykorzystaniem nowoczesnych technologii i narzędzi front-endowych, takich jak ES6, React, Redux, Webpack (<1>poznaj moje umiejętności</1>).",
@@ -12,6 +14,8 @@
       ]
     },
     {
+      "key": "graphic",
+      "imageAlt": "Jedna z moich ulotek",
       "name": "Grafik",
       "advantages": [
         "Posiadam bogatą praktykę redakcyjną, obejmującą m.in. projektowanie layoutów, skład publikacji, przygotowanie do druku.",
@@ -20,6 +24,8 @@
       ]
     },
     {
+      "key": "cartography",
+      "imageAlt": "Jedna z moicj map",
       "name": "Kartograf",
       "advantages": [
         "Mam duże doświadczenie w opracowywaniu różnorodnych map: turystycznych, ściennych, szkolnych, planów miast...",

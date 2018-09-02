@@ -1,6 +1,8 @@
 {
   "title": "professional profile",
   "professions": [{
+      "key": "frontend",
+      "imageAlt": "Piece of my code",
       "name": "Front-End Web Developer",
       "advantages": [
         "I create applications and web sites using modern front-end  technologies and tools, like ES6, React, Redux, Webpack (<1>get to know my skills</1>).",
@@ -11,6 +13,8 @@
       ]
     },
     {
+      "key": "graphic",
+      "imageAlt": "One of my leaflet",
       "name": "Graphic Designer",
       "advantages": [
         "I have rich editorial practice, including i.a. graphic layouts designing, DTP, preparing for printing.",
@@ -19,6 +23,8 @@
       ]
     },
     {
+      "key": "cartography",
+      "imageAlt": "One of my map",
       "name": "Cartographer",
       "advantages": [
         "I have big experience in creating various maps: tourist maps, wall maps, school maps, city plans...",
