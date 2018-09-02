@@ -22,7 +22,7 @@ const toolBar = (props) => {
       {!props.isHomePage &&
         <div className={classes.ToolbarNavigation}>
           <Logo
-            smallLogo
+            logoType='smallLogo'
             isTextLogo />
           <nav>
             <NavigationItems

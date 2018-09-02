@@ -16,7 +16,7 @@ const sidePanel = (props) => {
         <header className={classes.Header}>
           <Logo
             isTextLogo
-            smallLogo
+            logoType='shortLogo'
             clicked={props.closeSidePanel} />
         </header>
         <nav>

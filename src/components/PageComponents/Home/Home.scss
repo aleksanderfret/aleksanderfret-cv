@@ -5,10 +5,13 @@
 }
 
 .Home section:first-child {
+  background-color: $base-background-color;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
+  margin: 0 0 2rem 0;
+  @include shadow();
   @include medium-screens {
     margin: 0 0 2rem 0;
   }
@@ -21,20 +24,23 @@
 .Portrait {
   position: relative;
   width: 100%;
-  margin: 3.5rem auto 0 auto;
+  margin: 4.5rem auto 0 auto;
   z-index: 10;
   @include small-screens {
     width: 60%;
   }
   @include medium-screens {
-    margin: 3.5rem 1rem 0 0;
+    margin: 4.5rem 0 0 0;
     width: calc(40% - 1rem);
+  }
+  @include large-screens {
+    margin: 2.5rem 0 0 0;
   }
 }
 
 .Dialog {
   position: absolute;
-  top: 0;
+  top: 1rem;
   left: 2rem;
   z-index: 20;
   @include shadow(0);
@@ -47,16 +53,16 @@
   @include medium-screens {
     left: 10%;
   }
-  @include normal-screens {
-    top: 0%;
-    left: 30%;
-  }
   @include large-screens {
     top: 5%;
     left: 30%;
   }
-  @include wide-screens {
+  @include extra-large-screens {
     top: 15%;
+    left: 32%;
+  }
+  @include wide-screens {
+    top: 10%;
     left: 32%;
   }
 }
@@ -71,7 +77,6 @@
   font-size: 1.3rem;
   padding: 0.5rem;
   margin-bottom: 16px;
-
 }
 
 .Welcome::after {
@@ -94,7 +99,8 @@
   color: $base-text-color;
   font-size: 0.95rem;
   line-height: 1.2rem;
-  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  margin: 0;
   p:first-child {
     margin-bottom: 0.5rem;
   }
@@ -107,16 +113,16 @@
     width: 60%;
   }
   @include normal-screens {
-    font-size: 1.1rem;
-    line-height: 1.3rem;
-  }
-  @include large-screens {
-    font-size: 1.15rem;
+    font-size: 1rem;
     line-height: 1.5rem;
   }
+  @include large-screens {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
   @include wide-screens {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
+    font-size: 1.15rem;
+    line-height: 1.5rem;
     p:first-child {
       margin-bottom: 1.5rem;
     }

@@ -4,13 +4,13 @@
   height: 100%;
   max-width: 70%;
   width: 300px;
-  min-width: 200px;
+  min-width: 220px;
   position: absolute;
   z-index: 125;
   top: 0;
   left: 0;
   color: $base-text-color;
-  background-color: $background-color;
+  background-color: $base-background-color;
   transform: translateX(-110%);
   transition: transform 0.3s ease-out;
   @include shadow(1);

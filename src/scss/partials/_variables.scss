@@ -5,7 +5,8 @@ $light-base: lighten($base-color, 10%);
 $aux-base:lighten($base-color, 30%);
 $accessory-color: #07cc00;
 $reverse-color: #fff;
-$background-color: #fff;
+$base-background-color: #fff;
+$body-background: #f7f7f7;
 $base-gradient: linear-gradient(180deg, $base-color 12%, $light-base 88%);
 
 $base-text-color: #333;

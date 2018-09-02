@@ -17,7 +17,6 @@ const home = (props) => {
             <span className={classes.Welcome}>{t('welcome')}</span>
           </div>
         <div className={classes.Portrait}>
-
           <Image
             src={afretImg.src}
             srcSet={afretImg.srcSet}

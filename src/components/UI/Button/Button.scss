@@ -44,7 +44,7 @@
 .LanguageButton:hover span {
   transform: scale(1.2);
     color: $base-color;
-    background-color: $background-color;
+    background-color: $base-background-color;
     @include shadow(3);
 }
 

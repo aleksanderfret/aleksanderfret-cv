@@ -15,7 +15,7 @@ const header = (props) => {
       {props.isHomePage &&
         <Logo
           isTextLogo
-          smallLogo={!props.isHomePage}/>
+          logoType={!props.isHomePage ? 'smallLogo': 'bigLogo'}/>
       }
     </header>
   );

@@ -6,7 +6,14 @@ import classes from './Logo.scss';
 
 const logo = (props) => {
   const logoClasses = [classes.Logo];
-  logoClasses.push(props.smallLogo ? classes.SmallLogo : classes.BigLogo);
+  if (props.logoType === 'shortLogo') {
+    logoClasses.push(classes.ShortLogo);
+  } else if (props.logoType === 'smallLogo') {
+    logoClasses.push(classes.SmallLogo);
+  } else {
+    logoClasses.push(classes.BigLogo);
+  }
+
   return(
     <NavLink
       to='/'

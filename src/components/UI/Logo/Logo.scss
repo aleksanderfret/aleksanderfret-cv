@@ -19,6 +19,20 @@
   }
 }
 
+.ShortLogo {
+  flex-direction: row;
+  justify-content: center;
+  height: 50%;
+  margin: calc((#{$toolbar-height}/2)/2) 0;
+  .LogoImage {
+    height: calc(#{$toolbar-height}/2);
+    margin: 0;
+  }
+  .LogoText {
+    display: none;
+  }
+}
+
 .SmallLogo {
   flex-direction: row;
   justify-content: center;
@@ -29,15 +43,17 @@
     margin: 0;
   }
   .LogoText {
+    position: relative;
     align-items: stretch;
     justify-content: flex-start;
-    margin: 0 0 0 10px;
+    margin: -8px 0 0 10px;
     display: none;
     h1 {
-      font-size: 1.3rem;
+      font-size: 1.15rem;
+      line-height: 1.85rem;
     }
     h2 {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       letter-spacing: 0.05rem;
     }
     @include tiny-screens {
@@ -74,3 +90,4 @@
     }
   }
 }
+
