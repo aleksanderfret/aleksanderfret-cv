@@ -113,3 +113,8 @@
     font-size: 2.25rem;
   }
 }
+
+@mixin pageTile {
+  background-color: $base-background-color;
+  @include shadow();
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FontIcon from '../../../../UI/FontIcon/FontIcon';
-import classes from './PageTile.scss';
+import classes from './CvLink.scss';
 
 const pageTile = (props) => {
   return(
-    <div className={classes.PageTile}>
+    <div className={classes.CvLink}>
       <Link to={`/${props.route}`}>
         <div className={classes.Icon}>
           <FontIcon

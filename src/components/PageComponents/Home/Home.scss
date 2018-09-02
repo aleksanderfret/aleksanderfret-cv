@@ -5,13 +5,12 @@
 }
 
 .Home section:first-child {
-  background-color: $base-background-color;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   margin: 0 0 2rem 0;
-  @include shadow();
+  @include pageTile;
   @include medium-screens {
     margin: 0 0 2rem 0;
   }

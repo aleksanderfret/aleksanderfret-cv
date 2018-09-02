@@ -10,10 +10,9 @@
 
 .Profession {
   position: relative;
-  background-color: $base-background-color;
   width: 100%;
-  @include shadow();
   margin: 0 0 1.5rem 0;
+  @include pageTile;
   &:last-child {
     margin: 0;
   }

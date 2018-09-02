@@ -2,7 +2,7 @@ import React from 'react';
 import { translate } from 'react-i18next';
 import Image from '../../UI/Image/Image';
 import Button from '../../UI/Button/Button';
-import PageTiles from './PageTiles/PageTiles';
+import CvLinks from './CvLinks/CvLinks';
 import classes from './Home.scss';
 import afretImg from '../../../assets/images/aleksander-fret.jpg';
 import enCV from '../../../assets/cv/aleksander_fret_cv_en.pdf';
@@ -32,7 +32,7 @@ const home = (props) => {
         </div>
       </section>
       <section>
-        <PageTiles />
+        <CvLinks />
       </section>
       <section>
         <Button

@@ -1,13 +1,13 @@
 @import 'partials';
 
-.PageTiles {
+.CvLinks {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
 
-.TileWrapper {
+.CvLinkWrapper {
   width: 100%;
   margin: 0.75rem 0;
   @include small-screens {

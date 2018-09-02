@@ -1,12 +1,10 @@
 @import 'partials';
 
-.PageTile {
-  background-color: $base-background-color;
+.CvLink {
   width: 100%;
   height: 130px;
   transition: all 0.2s ease-out;
-  //border-bottom: 1px solid $extra-light-base-text;
-  @include shadow();
+  @include pageTile();
   &:hover,
   &:active {
     background-color: $light-base;
@@ -26,7 +24,7 @@
   }
 }
 
-.PageTile a {
+.CvLink a {
   text-decoration: none;
   color: $light-base-text;
   height: 100%;
@@ -71,7 +69,7 @@
   padding: 0.5rem;
 }
 
-.PageTile h3 {
+.CvLink h3 {
   color: $base-color;
   font-size: 1.5rem;
   margin: 0 0 0.3rem 0;
@@ -99,7 +97,7 @@
 
 }
 
-.PageTile ul {
+.CvLink ul {
   width: 100%;
   @include large-screens {
     font-size: 1.1rem;
