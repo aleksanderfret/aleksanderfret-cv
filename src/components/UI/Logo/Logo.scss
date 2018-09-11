@@ -56,6 +56,27 @@
       font-size: 0.6rem;
       letter-spacing: 0.05rem;
     }
+    @supports (-ms-accelerator:true){
+      h1 {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+      }
+      h2 {
+        font-size: 0.58rem;
+        letter-spacing: 0.05rem;
+      }
+    }
+    @supports (-ms-ime-align:auto) {
+      h1 {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+      }
+      h2 {
+        font-size: 0.58rem;
+        letter-spacing: 0.05rem;
+      }
+    }
+
     @include tiny-screens {
       display: flex;
     }

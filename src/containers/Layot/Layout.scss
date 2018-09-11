@@ -2,7 +2,7 @@
 
 .Content {
   width: 100%;
-  overflow: hidden;
+  position: relative;
   @include wide-screens {
     max-width: 1200px;
     margin: 0 auto;
