@@ -1,1 +1,72 @@
 @import 'partials';
+
+.TipWrapper {
+  @include shadow(-1);
+  position: absolute;
+  background-color: $base-background-color;
+  background-color: $base-color;
+  width: 100%;
+  bottom: 3.5rem;
+  max-width: 600px;
+  z-index: 100;
+  border-radius: 5px 5px 0px 5px;
+  font-size: 0.75rem;
+  @include small-screens {
+    width: 90%;
+    margin: 0 5%;
+  }
+  @include medium-screens {
+    margin: 0 calc((100% - 600px)/2);
+  }
+}
+
+.Tip {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem;
+  color: $reverse-color;
+  background-color: $dark-base-text;
+  border-radius: 5px 5px 0px 5px;
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    top: 100%;
+    right: 42%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 15px solid $dark-base-text;
+  }
+  p:not(:first-of-type) {
+    margin: 0.75rem 0 0 0;
+  }
+}
+
+// .Right {
+//   right: 0.25rem;
+// }
+
+// .Centered {
+//   // margin: 0 5%;
+//   bottom: 4rem;
+//   // @include small-screens {
+//   //   bottom: 3rem;
+//   // }
+//   @include tiny-screens {
+//     bottom: 4rem;
+//   }
+//   @include slight-screens {
+//     bottom: 3.5rem;
+//   }
+//   @include small-screens {
+//     bottom: 3rem;
+//   }
+//   .Tip {
+//     &:after {
+//       right: 42%;
+//     }
+//   }
+// }

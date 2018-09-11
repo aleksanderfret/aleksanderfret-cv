@@ -15,6 +15,8 @@ const fontIcon = (props) => {
     github: 'fab fa-github',
     twitter: 'fab fa-twitter',
     bitbucket: 'fab fa-bitbucket',
+    help: 'fas fa-question',
+    ok: 'fas fa-check'
   }
 
   const iconClasses = [];
@@ -23,7 +25,7 @@ const fontIcon = (props) => {
     iconClasses.push(icons[props.iconType]);
   }
 
-  return(
+  return (
     <i className={iconClasses.join(' ')}></i>
   );
 };

@@ -10,7 +10,7 @@ const button = (props) => {
     buttonClasses.push(classes.AlwaysDisplayed);
   }
 
-  return(
+  return (
     <button
       disabled={props.disabled}
       onClick={props.clicked}

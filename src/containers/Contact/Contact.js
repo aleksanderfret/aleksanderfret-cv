@@ -9,126 +9,110 @@ class Contact extends Component {
   state = {
     contactForm: {
       name: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'text',
-          label: this.props.t('form.name.label'),
-        },
-        value: '',
+        type: 'input',
+        subtype: 'text',
+        label: 'form.name.label',
+        help: 'form.name.help',
         rules: {
           required: true,
           pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ -']{5,60}$/,
         },
         errors: {
-          required: this.props.t('form.name.errors.required'),
-          pattern: this.props.t('form.name.errors.pattern'),
+          required: 'form.name.errors.required',
+          pattern: 'form.name.errors.pattern',
         },
+        value: '',
         valid: false,
         touched: false
       },
       email: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'email',
-          label: this.props.t('form.email.label'),
-        },
-        value: '',
+        type: 'input',
+        subtype: 'email',
+        label: 'form.email.label',
+        help: 'form.email.help',
         rules: {
           required: true,
           pattern: '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$/',
         },
         errors: {
-          required: this.props.t('form.email.errors.required'),
-          pattern: this.props.t('form.email.errors.pattern'),
+          required: 'form.email.errors.required',
+          pattern: 'form.email.errors.pattern',
         },
+        value: '',
         valid: false,
         touched: false
       },
       subject: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'text',
-          label: this.props.t('form.subject.label'),
-        },
-        value: '',
+        type: 'input',
+        subtype: 'text',
+        label: 'form.subject.label',
+        help: 'form.subject.help',
         rules: {
           required: true,
           pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ0-9,.)-:(!? ']{5,500}$/,
         },
         errors: {
-          required: this.props.t('form.subject.errors.required'),
-          pattern: this.props.t('form.subject.errors.pattern'),
+          required: 'form.subject.errors.required',
+          pattern: 'form.subject.errors.pattern',
         },
+        value: '',
         valid: false,
         touched: false
       },
       message: {
-        elementType: 'textarea',
-        elementConfig: {
-          label: this.props.t('form.message.label'),
-        },
-        value: '',
+        type: 'textarea',
+        label: 'form.message.label',
+        help: 'form.message.help',
         rules: {
           required: true,
           pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ0-9,.)-:(!? '\n]{5,2000}$/,
         },
         errors: {
-          required: this.props.t('form.message.errors.required'),
-          pattern: this.props.t('form.message.errors.pattern'),
+          required: 'form.message.errors.required',
+          pattern: 'form.message.errors.pattern',
         },
+        value: '',
         valid: false,
         touched: false
       },
       rodo: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'checkbox',
-          label: this.props.t('form.rodo.label'),
-        },
-        value: '1',
+        type: 'input',
+        subtype: 'checkbox',
+        label: 'form.rodo.label',
+        messages: 'form.rodo.messages',
         rules: {
           required: true,
         },
         errors: {
-          required: this.props.t('form.message.errors.required'),
+          required: 'form.rodo.errors.required',
         },
+        checked: false,
+        value: '1',
         valid: false,
         touched: false
       },
       emailcopy: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'checkbox',
-          label: this.props.t('form.emalicopy.label'),
+        type: 'input',
+        subtype: 'checkbox',
+        label: 'form.emailcopy.label',
+        rules: {
+          required: false
         },
-        value: '1',
-        rules: {},
         errors: {},
-        valid: true,
-        touched: false
-      },
-      robot: {
-        elementType: 'input',
-        elementConfig: {
-          type: 'checkbox',
-          label: '',
-        },
+        checked: false,
         value: '1',
-        rules: {},
-        errors: {},
         valid: true,
         touched: false
       },
       captcha: {
-        elementType: 'captcha',
-        elementConfig: {},
+        type: 'captcha',
         rules: {
           required: true,
           pattern: ''
         },
         errors: {
-          required: this.props.t('form.captcha.errors.required'),
-          pattern: this.props.t('form.captcha.errors.pattern'),
+          required: 'form.captcha.errors.required',
+          pattern: 'form.captcha.errors.pattern',
         },
         valid: true,
         touched: false
@@ -136,6 +120,7 @@ class Contact extends Component {
     },
     formIsValid: false,
     loading: false,
+    visibleTipId: null
   }
 
   createFormControls = () => {
@@ -146,31 +131,64 @@ class Contact extends Component {
         config: this.state.contactForm[key]
       });
     }
-
-    const formControls = formElementArray.map(formElement => (
-      <FormControl
-        key={formElement.id}
-        type={formElement.config.elementType}
-        config={formElement.config.elementConfig}
-        value={formElement.config.value}
-        invalid={!formElement.config.valid}
-        errors={formElement.config.errors}
-        shouldValidate={formElement.config.rules}
-        touched={formElement.config.touched}
-        changed={(event) => this.formControlChangeHandler(event, formElement.id)} />
-    ));
-
+    const formControls = formElementArray.map(formElement => {
+      return (
+        <FormControl
+          key={formElement.id}
+          name={formElement.id}
+          type={formElement.config.type}
+          subtype={formElement.config.subtype}
+          label={formElement.config.label}
+          value={formElement.config.value}
+          checked={formElement.config.checked}
+          required={formElement.config.rules.required}
+          rodo={formElement.config.messages}
+          closeTip={this.closeTipHandler}
+          openTip={(event) => { this.openTipHandler(event, formElement.id) }}
+          isTipOpen={formElement.id === this.state.visibleTipId}
+          msg={formElement.config.message}
+          help={formElement.config.help}
+          invalid={!formElement.config.valid}
+          errors={formElement.errors}
+          shouldValidate={formElement.config.rules}
+          touched={formElement.config.touched}
+          changed={(event) => { this.formControlChangeHandler(event, formElement.id) }} />
+      )
+    });
     return formControls;
   }
 
+  formControlChangeHandler = (event, id) => {
+
+    const udateContactForm = {
+      ...this.state.contactForm
+    }
+    const updatedFormElement = {
+      ...udateContactForm[id]
+    }
+
+    if (updatedFormElement.checked !== 'undefined') {
+      updatedFormElement.checked = !updatedFormElement.checked;
+    }
+    updatedFormElement.value = event.target.value;
+    udateContactForm[id] = updatedFormElement;
+
+    this.setState({
+      contactForm: udateContactForm
+    });
+  }
+
+
   createContactForm = () => {
     const form = (
-      <form onSubmit={this.contactHandler}>
+      <form
+        onSubmit={this.contactHandler}
+        noValidate>
         {this.createFormControls()}
         <Button
-          btnType='Success'
+          btnType='StandardButton'
           label={this.props.t('form.submit.aria')}
-          disables={!this.state.formIsValid}>
+          disabled={!this.state.formIsValid}>
           {this.props.t('form.submit.label')}
         </Button>
       </form>
@@ -179,8 +197,18 @@ class Contact extends Component {
     return form;
   }
 
+
   contactHandler = () => {
 
+  }
+
+  openTipHandler = (event, id) => {
+    event.preventDefault();
+    this.setState({ visibleTipId: id });
+  }
+
+  closeTipHandler = () => {
+    this.setState({ visibleTipId: null });
   }
 
   render() {
@@ -189,7 +217,10 @@ class Contact extends Component {
     return (
       <div className={classes.Contact}>
         <h3>{this.props.t('title')}</h3>
-        {form}
+        <div className={classes.Form}>
+          <h4 className={classes.Subtitle}>{this.props.t('subtitle')}</h4>
+          {form}
+        </div>
       </div>
     );
   }

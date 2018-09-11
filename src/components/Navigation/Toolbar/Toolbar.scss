@@ -1,11 +1,13 @@
 @import 'partials';
 
 .Toolbar {
+  position: relative;
   width: 100%;
   height: $toolbar-height;
   display: flex;
   justify-content: space-between;
   align-items: 'center';
+  z-index: 50;
 }
 
 .ToolbarNavigation {

@@ -4,12 +4,12 @@ import { translate, Trans } from 'react-i18next';
 import { routes } from '../../../../data/routes.js';
 import classes from './Profile.scss';
 
-class Profile extends Component  {
+class Profile extends Component {
 
 
   getRoute = (advantage) => {
     for (let key in routes) {
-      if(advantage.indexOf(`${routes[key].labels[this.props.i18n.language]}</1>`) !== -1) {
+      if (advantage.indexOf(`${routes[key].labels[this.props.i18n.language]}</1>`) !== -1) {
         return routes[key].route;
       }
     }
@@ -33,21 +33,20 @@ class Profile extends Component  {
     return (
       <div className={classes.Profile}>
         <h3>{this.props.t('title')}</h3>
-          {this.props.t('professions', {returnObjects: true}).map((profession, professionIndex) => (
-            <div
-              className={classes.Profession}
-              key={professionIndex}>
-              <h4>{profession.name}</h4>
-                {profession.advantages.map((advantage, adventageIndex) =>
-                  this.getAdvantage(
-                    advantage,
-                    adventageIndex,
-                    `professions.${professionIndex}.advantages.${adventageIndex}`,
-                  )
-                )}
-              {/* </div> */}
-            </div>
-          )
+        {this.props.t('professions', { returnObjects: true }).map((profession, professionIndex) => (
+          <div
+            className={classes.Profession}
+            key={professionIndex}>
+            <h4>{profession.name}</h4>
+            {profession.advantages.map((advantage, adventageIndex) =>
+              this.getAdvantage(
+                advantage,
+                adventageIndex,
+                `professions.${professionIndex}.advantages.${adventageIndex}`,
+              )
+            )}
+          </div>
+        )
         )}
       </div>
     );

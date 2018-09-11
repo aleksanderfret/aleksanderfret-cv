@@ -1,11 +1,12 @@
 {
   "title": "contact",
+  "subtitle": "contact form",
   "inputHelpLabel": "help for {{input}} input",
   "form": {
     "help": "The contact form fields marked with an asterisk are mandatory. The required fields are: name, email, subject, message, data processing and reCaptcha.",
     "required": "Required fields",
     "name": {
-      "label": "name",
+      "label": "Name",
       "placeholder": "$t(form.name.label)",
       "help": "The name can only contain letters, spaces, dashes and apostrophes. The name must contain at least 5 and a maximum of 60 characters.",
       "errors": {
@@ -14,7 +15,7 @@
       }
     },
     "email": {
-      "label": "e-mail",
+      "label": "E-mail",
       "placeholder": "$t(form.email.label)",
       "help": "The proper e-mail format examples: name@surname.com or name.surname@company.com.",
       "errors": {
@@ -23,7 +24,7 @@
       }
     },
     "subject": {
-      "label": "subject",
+      "label": "Subject",
       "placeholder": "$t(form.subject.label)",
       "help": "The subject can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The subject must contain at least 5 and a maximum of 500 characters.",
       "errors": {
@@ -32,7 +33,7 @@
       }
     },
     "message": {
-      "label": "message",
+      "label": "Message",
       "placeholder": "$t(form.message.label)",
       "help": "The message can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The message must contain at least 5 and a maximum of 2000 characters.",
       "errors": {
@@ -47,14 +48,19 @@
       }
     },
     "rodo": {
-      "label": "I've read the <1>information about data processing</1>",
+      "label": "I've read <1>the information about data processing</1>",
+      "errors": {
+        "required": "This field is required!"
+      },
       "messages": [
         "I agree to the processing of personal data in accordance with the law on the protection of personal data in connection with sending a message via the contact form.",
         "Providing this data is voluntary, but necessary to process the query. The data entered in the contact form won't be save in any database and will be processed only to respond to the message.",
         "The personal data administrator is Aleksander Fret."
       ]
     },
-    "emalicopy": "send me a copy of this message",
+    "emailcopy": {
+      "label": "Send me a copy"
+    },
     "submit": {
       "label": "send",
       "aria": "send the message"
