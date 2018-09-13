@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import 'normalize.css';
 import './index.scss';
-import CV from './containers/CV/CV';
+import CV from './components/CV/CV';
 import { BrowserRouter } from 'react-router-dom';
-import {I18nextProvider} from 'react-i18next';
+import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
 
 import common_en from "./translations/en/common.json";
@@ -27,31 +26,31 @@ import ui_en from "./translations/en/ui.json";
 import ui_pl from "./translations/pl/ui.json";
 
 i18next.init({
-    interpolation: { escapeValue: false },
-    lng: 'pl',
-    resources: {
-      en: {
-        ui: ui_en,
-        common: common_en,
-        contact: contact_en,
-        education: education_en,
-        experience: experience_en,
-        home: home_en,
-        portfolio: portfolio_en,
-        profile: profile_en,
-        skills: skills_en,
-      },
-      pl: {
-        ui: ui_pl,
-        common: common_pl,
-        contact: contact_pl,
-        education: education_pl,
-        experience: experience_pl,
-        home: home_pl,
-        portfolio: portfolio_pl,
-        profile: profile_pl,
-        skills: skills_pl,
-      },
+  interpolation: { escapeValue: false },
+  lng: 'pl',
+  resources: {
+    en: {
+      ui: ui_en,
+      common: common_en,
+      contact: contact_en,
+      education: education_en,
+      experience: experience_en,
+      home: home_en,
+      portfolio: portfolio_en,
+      profile: profile_en,
+      skills: skills_en,
+    },
+    pl: {
+      ui: ui_pl,
+      common: common_pl,
+      contact: contact_pl,
+      education: education_pl,
+      experience: experience_pl,
+      home: home_pl,
+      portfolio: portfolio_pl,
+      profile: profile_pl,
+      skills: skills_pl,
+    },
   },
 });
 

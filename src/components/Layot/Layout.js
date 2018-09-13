@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from '../../components/Header/Header';
-import SidePanel from '../../components/Navigation/SidePanel/SidePanel';
+import Header from '../Header/Header';
+import SidePanel from '../Navigation/SidePanel/SidePanel';
 import { withRouter } from 'react-router-dom';
 
 import classes from './Layout.scss';
@@ -13,21 +13,21 @@ class Layout extends Component {
 
   sidePanelToggleHandler = () => {
     this.setState((prevState) => {
-      return {isSidePanelOpen: !prevState.isSidePanelOpen};
+      return { isSidePanelOpen: !prevState.isSidePanelOpen };
     });
   }
 
   sidePanelCloseHandler = () => {
     setTimeout(() => {
-      this.setState({isSidePanelOpen: false});
+      this.setState({ isSidePanelOpen: false });
     }, 250);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.location.pathname === '/') {
-      return {isHomePage: true};
+      return { isHomePage: true };
     }
-    return {isHomePage: false};
+    return { isHomePage: false };
   }
 
   render() {
@@ -36,10 +36,10 @@ class Layout extends Component {
         <Header
           toggleLanguage={this.props.toggleLanguage}
           toggleSidePanel={this.sidePanelToggleHandler}
-          isHomePage={this.state.isHomePage}/>
+          isHomePage={this.state.isHomePage} />
         <SidePanel
           isOpen={this.state.isSidePanelOpen}
-          closeSidePanel={this.sidePanelCloseHandler}/>
+          closeSidePanel={this.sidePanelCloseHandler} />
         <main className={classes.Content}>
           {this.props.children}
         </main>

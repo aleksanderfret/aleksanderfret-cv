@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { translate } from 'react-i18next';
 import Layout from '../Layot/Layout';
-import PageController from '../../components/PageController/PageController';
-import Home from '../../components/PageComponents/Home/Home';
-import NotFound from '../../components/PageComponents/NotFound/NotFound';
+import PageController from '../PageController/PageController';
+import Home from '../PageComponents/Home/Home';
+import NotFound from '../PageComponents/NotFound/NotFound';
 import classes from './CV.scss';
 
 class CV extends Component {

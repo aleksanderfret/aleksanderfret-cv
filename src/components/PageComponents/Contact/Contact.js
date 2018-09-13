@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
-import Button from '../../components/UI/Button/Button';
-import FormControl from '../../components/UI/FormControl/FormControl';
-import Spinner from '../../components/UI/Spinner/Spinner';
+import Button from '../../UI/Button/Button';
+import FormControl from '../../UI/FormControl/FormControl';
+import Spinner from '../../UI/Spinner/Spinner';
 import classes from './Contact.scss';
 
 class Contact extends Component {

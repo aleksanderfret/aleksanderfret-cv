@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Contact from '../../containers/Contact/Contact';
+import Contact from '../PageComponents/Contact/Contact';
 import Experience from '../PageComponents/CV/Experience/Experience';
 import Education from '../PageComponents/CV/Education/Education';
 import Skills from '../PageComponents/CV/Skills/Skills';
@@ -22,11 +22,11 @@ class PageController extends Component {
     return nextProps.match.params.page !== this.props.match.params.page;
   }
 
-  render(){
+  render() {
     const ComponentName = this.pages[this.props.match.params.page] || this.pages.notfound;
     const componentToLoad = <ComponentName />;
 
-    return(
+    return (
       <React.Fragment>
         {componentToLoad}
       </React.Fragment>
