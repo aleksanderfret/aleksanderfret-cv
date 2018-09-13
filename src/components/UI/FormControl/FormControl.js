@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { translate, Trans } from 'react-i18next';
-import Tip from '../Tip/Tip';
+import ReCAPTCHA from 'react-google-recaptcha';
 import capitalize from 'lodash/capitalize';
+import Tip from '../Tip/Tip';
 import Button from '../Button/Button';
 import FontIcon from '../FontIcon/FontIcon';
 
@@ -154,9 +155,21 @@ class FormControl extends Component {
 
   createCaptchaControl = () => {
     return (
-      <div>captcha</div>
+      <div
+        className={this.getControlClasses()}>
+        <ReCAPTCHA
+          //onChange={this.captchaHandler}
+          onChange={() => { this.props.changed({ target: { value: 1 } }, this.props.name) }}
+          sitekey='6Le3aNoSAAAAAMzqxmNnD6CnzKgbhenePFEdDZ8I'
+          hl={this.props.i18n.language} />
+      </div>
     );
   }
+
+  // captchaHandler = (value) => {
+  //   console.log('captcha', value);
+  //   //this.props.captchaHandler(value);
+  // }
 
   controls = {
     input: this.createInputControl,
@@ -190,6 +203,7 @@ class FormControl extends Component {
     event.preventDefault();
     this.checkboxClickHandler(event, id);
   }
+
 
   render() {
     let validationError = null;

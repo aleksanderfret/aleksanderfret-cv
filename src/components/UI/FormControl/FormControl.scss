@@ -118,6 +118,10 @@ span + .Label.Required:before {
   width: calc(100% - 2.5rem);
 }
 
+.Captcha {
+  margin: 0 auto;
+}
+
 .Help {
   width: calc(100% - 1.5rem);
   min-width: calc(100% - 40px);

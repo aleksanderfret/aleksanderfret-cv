@@ -87,7 +87,7 @@ class Contact extends Component {
           required: 'form.rodo.errors.required',
         },
         checked: false,
-        value: '1',
+        value: 1,
         valid: false,
         touched: false
       },
@@ -100,25 +100,26 @@ class Contact extends Component {
         },
         errors: {},
         checked: false,
-        value: '1',
-        valid: true,
+        value: 0,
+        valid: false,
         touched: false
       },
       captcha: {
         type: 'captcha',
         rules: {
-          required: true,
+          required: false,
           pattern: ''
         },
         errors: {
           required: 'form.captcha.errors.required',
           pattern: 'form.captcha.errors.pattern',
         },
-        valid: true,
+        value: 0,
+        valid: false,
         touched: false
       }
     },
-    formIsValid: false,
+    formIsValid: true,
     loading: false,
     visibleTipId: null
   }
@@ -159,7 +160,7 @@ class Contact extends Component {
   }
 
   formControlChangeHandler = (event, id) => {
-
+    console.log(event, id);
     const udateContactForm = {
       ...this.state.contactForm
     }
