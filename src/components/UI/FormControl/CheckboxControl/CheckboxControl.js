@@ -13,6 +13,7 @@ class CheckboxControl extends Component {
 
   checkboxClickHandler = () => {
     const updatedCheckbox = { ...this.state };
+
     updatedCheckbox.isValid = !updatedCheckbox.isValid;
     updatedCheckbox.checked = !updatedCheckbox.checked;
     if (!updatedCheckbox.touched) {

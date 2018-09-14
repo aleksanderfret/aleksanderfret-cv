@@ -3,12 +3,13 @@ $base-color: #045ba8;
 $dark-base: darken($base-color, 10%);
 $light-base: lighten($base-color, 10%);
 $aux-base:lighten($base-color, 30%);
-$accessory-color: #07cc00;
+$accessory-color: #06b100;
 $reverse-color: #fff;
 $base-background-color: #fff;
 $body-background: #f7f7f7;
 $base-gradient: linear-gradient(180deg, $base-color 12%, $light-base 88%);
 
+$error-text-color: #ff0000;
 $base-text-color: #333;
 $dark-base-text: darken($base-text-color, 20%);
 $low-light-base-text: lighten($base-text-color, 10%);

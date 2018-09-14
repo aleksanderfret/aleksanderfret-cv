@@ -3,3 +3,8 @@
 .Textarea {
   @include mainContactFormControls;
 }
+
+.Invalid {
+  color:red;
+  border: 1px solid red;
+}

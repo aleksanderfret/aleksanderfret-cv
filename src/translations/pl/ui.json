@@ -6,9 +6,10 @@
   "language-code": "EN",
   "homePage": {
     "route": "/",
-    "name": "stron główna"
+    "name": "strona główna"
   },
-  "pages": [{
+  "pages": [
+    {
       "route": "profile",
       "name": "profil"
     },

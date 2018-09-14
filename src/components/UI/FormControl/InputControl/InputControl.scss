@@ -1,6 +1,10 @@
 @import 'partials';
 
-.Text,
-.Email {
+.Input {
   @include mainContactFormControls;
+}
+
+.Invalid {
+  color:red;
+  border: 1px solid red;
 }

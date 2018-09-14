@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
-import Button from '../Button/Button';
-import FontIcon from '../FontIcon/FontIcon';
 import Tip from '../Tip/Tip';
 import CheckboxControl from './CheckboxControl/CheckboxControl';
 import InputControl from './InputControl/InputControl';
@@ -12,10 +10,6 @@ import classes from './FormControl.scss';
 
 
 class FormControl extends Component {
-  state = {
-    error: ''
-  }
-
   controls = {
     captcha: CaptchaControl,
     checkbox: CheckboxControl,
@@ -33,14 +27,7 @@ class FormControl extends Component {
     } else {
       ControlComponent = this.controls[this.props.config.type];
     }
-    return <ControlComponent {...this.props} changed={this.formControlChangeHandler} />;
-  }
-
-  formControlChangeHandler = (params) => {
-    this.props.changed(params, this.props.name);
-    if (params.error !== this.state.error) {
-      this.setState({ error: params.error });
-    }
+    return <ControlComponent {...this.props} />;
   }
 
   getTipContent = () => {
@@ -63,24 +50,10 @@ class FormControl extends Component {
     return (
       <div className={classes.FormControl}>
         {this.getFormControl()}
-        {this.props.config.help &&
-          <Button
-            btnType='controlHelpButton'
-            label='pomoc'
-            clicked={(event) => { this.props.openTip(event) }}>
-            <FontIcon iconType='help' />
-          </Button>
-        }
         {this.props.isTipOpen &&
           <Tip
             closeTip={this.props.closeTip}>
             {this.getTipContent()}</Tip>
-        }
-        {this.state.error &&
-          <div
-            className={classes.ErrorMessage}>
-            {this.props.t(this.state.error)}
-          </div>
         }
       </div>
     );
