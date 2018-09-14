@@ -1,0 +1,28 @@
+@import 'partials';
+
+.Label {
+  font-size: 0.85rem;
+  &:first-child {
+    padding-bottom: 0.25rem;
+  }
+  @include tiny-screens {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+  @include small-screens {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+}
+
+.Label.Required:first-child:after,
+span + .Label.Required:before {
+  font-size: 0.6rem;
+  vertical-align: super;
+}
+.Label.Required:first-child:after,{
+  content: ' *';
+}
+span + .Label.Required:before {
+  content: '* ';
+}

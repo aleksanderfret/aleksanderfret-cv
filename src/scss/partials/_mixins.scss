@@ -137,3 +137,47 @@
   color: $base-color;
   font-size: 1rem;
 }
+
+@mixin mainContactFormControls {
+  display: block;
+  border: 1px solid $base-background-color;
+  border-bottom: 1px solid $extra-light-base-text;
+  width: calc(100% - 1.5rem);
+  min-width: calc(100% - 40px);
+  max-width: calc(100% - 40px);
+  height: 2.5rem;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  &:focus,
+  &:active,
+  &:hover {
+    border: 1px solid $extra-light-base-text;
+    border-right: none;
+  }
+  &:hover + button {
+    border: 1px solid $extra-light-base-text;
+    border-left: none;
+  }
+  &:focus,
+  &:active {
+    background-color: $body-background;
+  }
+  &:focus + button,
+  &:active + button {
+    background-color: $body-background;
+    border: 1px solid $extra-light-base-text;
+    border-left: none;
+  }
+  &:focus + button:hover,
+  &:active + button:hover {
+    background-color: $body-background;
+    border: 1px solid $extra-light-base-text;
+    border-left: none;
+  }
+  @include tiny-screens {
+    font-size: 0.9rem;
+  }
+  @include slight-screens {
+    font-size: 1rem;
+  }
+}

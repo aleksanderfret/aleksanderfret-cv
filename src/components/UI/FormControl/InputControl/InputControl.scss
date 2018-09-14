@@ -1,0 +1,6 @@
+@import 'partials';
+
+.Text,
+.Email {
+  @include mainContactFormControls;
+}

@@ -22,8 +22,8 @@ class Contact extends Component {
           pattern: 'form.name.errors.pattern',
         },
         value: '',
-        valid: false,
-        touched: false
+        isValid: false,
+        isTouched: false
       },
       email: {
         type: 'input',
@@ -39,8 +39,8 @@ class Contact extends Component {
           pattern: 'form.email.errors.pattern',
         },
         value: '',
-        valid: false,
-        touched: false
+        isValid: false,
+        isTouched: false
       },
       subject: {
         type: 'input',
@@ -56,8 +56,8 @@ class Contact extends Component {
           pattern: 'form.subject.errors.pattern',
         },
         value: '',
-        valid: false,
-        touched: false
+        isValid: false,
+        isTouched: false
       },
       message: {
         type: 'textarea',
@@ -72,8 +72,8 @@ class Contact extends Component {
           pattern: 'form.message.errors.pattern',
         },
         value: '',
-        valid: false,
-        touched: false
+        isValid: false,
+        isTouched: false
       },
       rodo: {
         type: 'input',
@@ -88,8 +88,8 @@ class Contact extends Component {
         },
         checked: false,
         value: 1,
-        valid: false,
-        touched: false
+        isValid: false,
+        isTouched: false
       },
       emailcopy: {
         type: 'input',
@@ -100,9 +100,9 @@ class Contact extends Component {
         },
         errors: {},
         checked: false,
-        value: 0,
-        valid: false,
-        touched: false
+        value: 1,
+        isValid: false,
+        isTouched: false
       },
       captcha: {
         type: 'captcha',
@@ -115,8 +115,8 @@ class Contact extends Component {
           pattern: 'form.captcha.errors.pattern',
         },
         value: 0,
-        valid: false,
-        touched: false
+        isValid: false,
+        isTouched: false
       }
     },
     formIsValid: true,
@@ -137,45 +137,32 @@ class Contact extends Component {
         <FormControl
           key={formElement.id}
           name={formElement.id}
-          type={formElement.config.type}
-          subtype={formElement.config.subtype}
-          label={formElement.config.label}
-          value={formElement.config.value}
-          checked={formElement.config.checked}
-          required={formElement.config.rules.required}
-          rodo={formElement.config.messages}
+          config={formElement.config}
           closeTip={this.closeTipHandler}
           openTip={(event) => { this.openTipHandler(event, formElement.id) }}
           isTipOpen={formElement.id === this.state.visibleTipId}
-          msg={formElement.config.message}
-          help={formElement.config.help}
-          invalid={!formElement.config.valid}
-          errors={formElement.errors}
-          shouldValidate={formElement.config.rules}
-          touched={formElement.config.touched}
-          changed={(event) => { this.formControlChangeHandler(event, formElement.id) }} />
+          changed={this.formControlChangeHandler} />
       )
     });
     return formControls;
   }
 
-  formControlChangeHandler = (event, id) => {
-    console.log(event, id);
-    const udateContactForm = {
+  formControlChangeHandler = (params, id) => {
+    const updatedContactForm = {
       ...this.state.contactForm
     }
     const updatedFormElement = {
-      ...udateContactForm[id]
+      ...updatedContactForm[id]
     }
 
     if (updatedFormElement.checked !== 'undefined') {
-      updatedFormElement.checked = !updatedFormElement.checked;
+      updatedFormElement.checked = params.checked;
     }
-    updatedFormElement.value = event.target.value;
-    udateContactForm[id] = updatedFormElement;
-
+    updatedFormElement.value = params.value;
+    updatedFormElement.isValid = params.isValid;
+    updatedContactForm[id] = updatedFormElement;
     this.setState({
-      contactForm: udateContactForm
+      contactForm: updatedContactForm
     });
   }
 
