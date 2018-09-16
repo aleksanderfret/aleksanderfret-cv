@@ -12,7 +12,17 @@ const withValidation = (WrappedComponent) => {
     }
 
     checkValidity = (value, rules) => {
-      return 'errorMessage';
+      let blank, inValid;
+      if (!rules) {
+        return;
+      }
+      if (rules.required) {
+        blank = (value.trim() === '') ? this.props.config.errors.required : null;
+      }
+      if (rules.pattern) {
+        inValid = (!rules.pattern.test(value)) ? this.props.config.errors.pattern : null;
+      }
+      return inValid || blank;
     }
 
     controlChangeHandler = (value) => {

@@ -32,7 +32,7 @@ class Contact extends Component {
         help: 'form.email.help',
         rules: {
           required: true,
-          pattern: '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$/',
+          pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$/,
         },
         errors: {
           required: 'form.email.errors.required',
