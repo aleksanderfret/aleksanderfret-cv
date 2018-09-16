@@ -15,7 +15,7 @@ class Contact extends Component {
         help: 'form.name.help',
         rules: {
           required: true,
-          pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ -']{5,60}$/,
+          pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ -']{3,60}$/,
         },
         errors: {
           required: 'form.name.errors.required',
