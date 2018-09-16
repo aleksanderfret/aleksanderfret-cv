@@ -17,7 +17,7 @@ class TextareaControl extends Component {
           id={this.props.name}
           value={this.props.value}
           name={this.props.name}
-          onChange={(event) => { this.props.changedHandler(event.target.value) }}
+          onChange={(event) => { this.props.changeHandler(event.target.value) }}
           onBlur={(event) => { this.props.blurHandler(event.target.value) }}>
         </textarea>
         {this.props.config.help &&

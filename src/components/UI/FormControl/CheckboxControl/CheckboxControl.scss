@@ -26,3 +26,12 @@
 .Checkbox + label {
   width: calc(100% - 2.5rem);
 }
+
+.Invalid {
+  border: 1px solid $error-color;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $light-error-color;
+  }
+}

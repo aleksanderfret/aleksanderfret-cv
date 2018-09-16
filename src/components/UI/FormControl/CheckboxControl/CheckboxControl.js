@@ -1,32 +1,18 @@
 import React, { Component } from 'react';
+import withValidation from '../withValidation/withValidation';
 import FontIcon from '../../../UI/FontIcon/FontIcon';
 import Label from '../ControlLabel/ControlLabel';
 import classes from './CheckboxControl.scss';
 
 class CheckboxControl extends Component {
   state = {
-    value: '1',
-    isValid: false,
-    touched: false,
     checked: false,
   }
 
   checkboxClickHandler = () => {
-    const updatedCheckbox = { ...this.state };
-
-    updatedCheckbox.isValid = !updatedCheckbox.isValid;
-    updatedCheckbox.checked = !updatedCheckbox.checked;
-    if (!updatedCheckbox.touched) {
-      updatedCheckbox.touched = !updatedCheckbox.touched;
-    }
-
-    this.setState({ ...updatedCheckbox });
-    this.props.changed({
-      value: updatedCheckbox.value,
-      isValid: updatedCheckbox.isValid,
-      checked: updatedCheckbox.checked,
-    },
-      this.props.name);
+    const checked = !this.state.checked;
+    this.setState((prevState) => ({ checked: !prevState.checked }));
+    this.props.changeHandler(checked);
   }
 
   labelClickedHandler = (event) => {
@@ -35,13 +21,11 @@ class CheckboxControl extends Component {
   }
 
   render() {
-    const checkboxClasses = [classes.Checkbox];
-    if (this.props.config.required) {
-      checkboxClasses.push(classes.Required);
-    }
-    if (this.props.config.rules && this.state.invalid && this.state.touched) {
-      checkboxClasses.push(classes.Invalid);
-    }
+    const validationClasses = this.props.getValidationClasses().map(validationClass => (
+      classes[validationClass] || ''
+    ));
+    const checkboxClasses = [classes.Checkbox, ...validationClasses];
+
     return (
       <React.Fragment>
         <span
@@ -52,9 +36,9 @@ class CheckboxControl extends Component {
           checked={this.state.checked}
           aria-checked={this.state.checked}
           tabIndex="0"
-          value={this.state.value}
+          value={this.props.value}
           aria-labelledby={`${this.props.name}`}
-          onClick={(event) => { this.checkboxClickHandler(event, this.props.name) }}>
+          onClick={this.checkboxClickHandler}>
           {this.state.checked && <FontIcon iconType='ok' />}
         </span>
         {this.props.config.label &&
@@ -71,4 +55,4 @@ class CheckboxControl extends Component {
   }
 }
 
-export default CheckboxControl;
+export default withValidation(CheckboxControl);

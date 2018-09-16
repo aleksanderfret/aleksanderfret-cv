@@ -11,27 +11,42 @@ const withValidation = (WrappedComponent) => {
       touched: false,
     }
 
+    componentDidMount() {
+      if (this.props.config.value !== '') {
+        this.setState({ value: this.props.config.value });
+      }
+    }
+
     checkValidity = (value, rules) => {
       let blank, inValid;
       if (!rules) {
         return;
       }
       if (rules.required) {
-        blank = (value.trim() === '') ? this.props.config.errors.required : null;
+        blank = ((typeof value === 'boolean' && !value) ||
+          (typeof value !== 'boolean' && value.trim() === '')) ?
+          this.props.config.errors.required :
+          null;
       }
       if (rules.pattern) {
-        inValid = (!rules.pattern.test(value)) ? this.props.config.errors.pattern : null;
+        inValid = (!rules.pattern.test(value)) ?
+          this.props.config.errors.pattern :
+          null;
       }
       return inValid || blank;
     }
 
     controlChangeHandler = (value) => {
-      const updatedControl = { ...this.state };
-      updatedControl.value = value;
-      if (updatedControl.error) {
-        updatedControl.error = this.checkValidity(value, this.props.config.rules);
+      if (typeof value === 'boolean') {
+        this.controlOnBlurHandler(value);
+      } else {
+        const updatedControl = { ...this.state };
+        if (updatedControl.error) {
+          updatedControl.error = this.checkValidity(value, this.props.config.rules);
+        }
+        updatedControl.value = value;
+        this.setState({ ...updatedControl });
       }
-      this.setState({ ...updatedControl });
     }
 
     controlOnBlurHandler = (value) => {
@@ -41,7 +56,7 @@ const withValidation = (WrappedComponent) => {
 
       this.setState({ ...updatedControl });
       this.props.changed({
-        value: value,
+        value: (typeof value === 'boolean') ? this.props.config.value : value,
         isValid: !!updatedControl.error,
       },
         this.props.name
@@ -63,6 +78,7 @@ const withValidation = (WrappedComponent) => {
       return (
         <React.Fragment>
           {this.props.config.label &&
+            this.props.config.subtype !== 'checkbox' &&
             <Label
               label={this.props.config.label}
               required={this.props.config.rules.required}
@@ -73,7 +89,7 @@ const withValidation = (WrappedComponent) => {
             {...this.props}
             value={this.state.value}
             blurHandler={this.controlOnBlurHandler}
-            changedHandler={this.controlChangeHandler}
+            changeHandler={this.controlChangeHandler}
             getValidationClasses={this.getValidationClasses}
           />
           {this.state.error &&
