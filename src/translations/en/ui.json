@@ -8,7 +8,8 @@
     "route": "/",
     "name": "home site"
   },
-  "pages": [{
+  "pages": [
+    {
       "route": "profile",
       "name": "profile"
     },
@@ -34,5 +35,9 @@
     }
   ],
   "menu": "site menu",
-  "owner": "Aleksander Fret"
+  "owner": "Aleksander Fret",
+  "labels": {
+    "controlHelpButton": "help for the {{control}} field",
+    "downloadCV": "download CV"
+  }
 }

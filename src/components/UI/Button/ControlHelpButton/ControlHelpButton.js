@@ -7,11 +7,11 @@ const controlHelpButton = (props) => {
   return (
     <Button
       btnType='controlHelpButton'
-      label={props.t('form.helpButton')}
+      label={props.t('labels.controlHelpButton', { control: props.label })}
       clicked={props.clicked}
     ><FontIcon iconType='help' />
     </Button>
   );
 };
 
-export default translate('contact')(controlHelpButton);
+export default translate('ui')(controlHelpButton);

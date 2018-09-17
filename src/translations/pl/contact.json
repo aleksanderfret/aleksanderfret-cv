@@ -1,7 +1,6 @@
 {
   "title": "kontakt",
   "subtitle": "formularz kontaktowy",
-  "inputHelpLabel": "pomoc dla pola {{input}}",
   "form": {
     "help": "Pola formularza kontaktowego oznaczone gwiazdką są obowiązkowe. Wymagane pola to: imię, email, temat, wiadomość, przetwarzanie danych i reCaptcha.",
     "required": "Pola wymagane",

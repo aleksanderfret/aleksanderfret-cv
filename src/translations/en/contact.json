@@ -1,7 +1,6 @@
 {
   "title": "contact",
   "subtitle": "contact form",
-  "inputHelpLabel": "help for {{input}} input",
   "form": {
     "help": "The contact form fields marked with an asterisk are mandatory. The required fields are: name, email, subject, message, data processing and reCaptcha.",
     "required": "Required fields",

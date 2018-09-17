@@ -21,7 +21,9 @@ class TextareaControl extends Component {
           onBlur={(event) => { this.props.blurHandler(event.target.value) }}>
         </textarea>
         {this.props.config.help &&
-          <ControlHelpButton clicked={(event) => { this.props.openTip(event) }} />
+          <ControlHelpButton
+            label={this.props.t(this.props.config.label)}
+            clicked={(event) => { this.props.openTip(event) }} />
         }
       </React.Fragment>
     );

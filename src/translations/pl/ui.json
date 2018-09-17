@@ -35,5 +35,9 @@
     }
   ],
   "menu": "menu strony",
-  "owner": "Aleksander Fret"
+  "owner": "Aleksander Fret",
+  "labels": {
+    "controlHelpButton": "pomoc dla pola {{control}}",
+    "downloadCV": "pobierz CV"
+  }
 }

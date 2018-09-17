@@ -8,9 +8,9 @@ class CaptchaControl extends Component {
       <div
         className={classes.Captcha}>
         <ReCAPTCHA
-          onChange={() => {
+          onChange={(value) => {
             this.props.changed({
-              value: 1,
+              value: value,
               isValid: true
             },
               this.props.name
