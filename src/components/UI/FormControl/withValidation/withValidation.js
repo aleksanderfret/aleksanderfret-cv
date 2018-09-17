@@ -4,14 +4,7 @@ const withValidation = (WrappedComponent) => {
   const Control = class extends Component {
     state = {
       error: null,
-      value: '',
       touched: false,
-    }
-
-    componentDidMount() {
-      if (this.props.config.value !== '') {
-        this.setState({ value: this.props.config.value });
-      }
     }
 
     checkValidity = (value, rules) => {
@@ -33,27 +26,22 @@ const withValidation = (WrappedComponent) => {
       if (typeof value === 'boolean') {
         this.controlOnBlurHandler(value);
       } else {
-        const updatedControl = { ...this.state };
-        if (updatedControl.error) {
-          updatedControl.error = this.checkValidity(value, this.props.config.rules);
+        if (this.state.error) {
+          const error = this.checkValidity(value, this.props.config.rules);
+          this.setState(() => ({ error }));
         }
-        updatedControl.value = value;
-        this.setState({ ...updatedControl });
       }
     }
 
     controlOnBlurHandler = (value) => {
-      const updatedControl = { ...this.state };
-      updatedControl.touched = true;
-      updatedControl.error = this.checkValidity(value, this.props.config.rules);
+      const touched = true;
+      const error = this.checkValidity(value, this.props.config.rules);
 
-      this.setState({ ...updatedControl });
+      this.setState(() => ({ touched, error }));
       this.props.changed({
-        value: (typeof value === 'boolean') ? this.props.config.value : value,
-        isValid: !!updatedControl.error,
-      },
-        this.props.name
-      );
+        value,
+        isValid: !error,
+      });
     }
 
     getValidationClasses = () => {
@@ -71,7 +59,6 @@ const withValidation = (WrappedComponent) => {
       return (
         <WrappedComponent
           {...this.props}
-          value={this.state.value}
           blurHandler={this.controlOnBlurHandler}
           changeHandler={this.controlChangeHandler}
           getValidationClasses={this.getValidationClasses}

@@ -8,6 +8,15 @@ import classes from './InputControl.scss';
 
 
 class InputControl extends Component {
+  state = {
+    value: '',
+  }
+
+  onChangeHandler = (event) => {
+    const value = event.target.value;
+    this.setState(() => ({ value }));
+    this.props.changeHandler(value);
+  }
 
   render() {
     const validationClasses = this.props.getValidationClasses().map(validationClass => (
@@ -27,9 +36,9 @@ class InputControl extends Component {
           className={inputClasses.join(' ')}
           type={this.props.config.subtype}
           id={this.props.name}
-          value={this.props.value}
+          value={this.state.value}
           name={this.props.name}
-          onChange={(event) => { this.props.changeHandler(event.target.value) }}
+          onChange={this.onChangeHandler}
           onBlur={(event) => { this.props.blurHandler(event.target.value) }} />
         {this.props.config.info &&
           <ControlHelpButton

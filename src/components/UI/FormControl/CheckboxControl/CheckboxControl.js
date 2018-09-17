@@ -13,7 +13,7 @@ class CheckboxControl extends Component {
 
   checkboxClickHandler = () => {
     const checked = !this.state.checked;
-    this.setState((prevState) => ({ checked: !prevState.checked }));
+    this.setState(() => ({ checked }));
     this.props.changeHandler(checked);
   }
 

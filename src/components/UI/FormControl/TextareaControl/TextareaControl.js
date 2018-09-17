@@ -7,6 +7,16 @@ import ControlHelpButton from '../../Button/ControlHelpButton/ControlHelpButton'
 import classes from './TextareaControl.scss';
 
 class TextareaControl extends Component {
+  state = {
+    value: ''
+  }
+
+  onChangeHandler = (event) => {
+    const value = event.target.value;
+    this.setState(() => ({ value }));
+    this.props.changeHandler(value);
+  }
+
   render() {
     const validationClasses = this.props.getValidationClasses().map(validationClass => (
       classes[validationClass] || ''
@@ -25,7 +35,7 @@ class TextareaControl extends Component {
           id={this.props.name}
           value={this.props.value}
           name={this.props.name}
-          onChange={(event) => { this.props.changeHandler(event.target.value) }}
+          onChange={this.onChangeHandler}
           onBlur={(event) => { this.props.blurHandler(event.target.value) }}>
         </textarea>
         {this.props.config.info &&

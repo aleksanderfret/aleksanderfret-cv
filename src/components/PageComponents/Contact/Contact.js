@@ -22,8 +22,7 @@ class Contact extends Component {
           pattern: 'form.name.errors.pattern',
         },
         value: '',
-        isValid: false,
-        isTouched: false
+        isValid: false
       },
       email: {
         type: 'input',
@@ -40,7 +39,6 @@ class Contact extends Component {
         },
         value: '',
         isValid: false,
-        isTouched: false
       },
       subject: {
         type: 'input',
@@ -57,7 +55,6 @@ class Contact extends Component {
         },
         value: '',
         isValid: false,
-        isTouched: false
       },
       message: {
         type: 'textarea',
@@ -73,7 +70,6 @@ class Contact extends Component {
         },
         value: '',
         isValid: false,
-        isTouched: false
       },
       rodo: {
         type: 'input',
@@ -89,7 +85,6 @@ class Contact extends Component {
         checked: false,
         value: 1,
         isValid: false,
-        isTouched: false
       },
       emailcopy: {
         type: 'input',
@@ -102,7 +97,6 @@ class Contact extends Component {
         checked: false,
         value: 1,
         isValid: false,
-        isTouched: false
       },
       captcha: {
         type: 'captcha',
@@ -116,7 +110,6 @@ class Contact extends Component {
         },
         value: 0,
         isValid: false,
-        isTouched: false
       }
     },
     formIsValid: true,
@@ -141,7 +134,7 @@ class Contact extends Component {
           closeTip={this.closeTipHandler}
           openTip={(event) => { this.openTipHandler(event, formElement.id) }}
           isTipOpen={formElement.id === this.state.visibleTipId}
-          changed={this.formControlChangeHandler} />
+          changed={(params) => { this.formControlChangeHandler(params, formElement.id) }} />
       )
     });
     return formControls;
@@ -155,10 +148,11 @@ class Contact extends Component {
       ...updatedContactForm[id]
     }
 
-    if (updatedFormElement.checked !== 'undefined') {
-      updatedFormElement.checked = params.checked;
+    if (updatedFormElement.subtype !== 'checkbox') {
+      updatedFormElement.value = params.value;
+    } else {
+      updatedFormElement.checked = params.value;
     }
-    updatedFormElement.value = params.value;
     updatedFormElement.isValid = params.isValid;
     updatedContactForm[id] = updatedFormElement;
     this.setState({
