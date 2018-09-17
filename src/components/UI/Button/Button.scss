@@ -15,7 +15,8 @@
   font-size: 1.5rem;
   display: block;
   transition: all 0.2s ease-out;
-  &:hover {
+  &:hover,
+  &:focus {
     font-size: 2rem;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
   }
@@ -41,7 +42,8 @@
   transform: scale(1);
 
 }
-.LanguageButton:hover span {
+.LanguageButton:hover span,
+.LanguageButton:focus span {
   transform: scale(1.2);
     color: $base-color;
     background-color: $base-background-color;
@@ -53,6 +55,8 @@
 }
 
 .StandardButton {
+  display: block;
+  margin: 0 auto;
   background-color: $accessory-color;
   color: $reverse-color;
   border-radius: 5px;
