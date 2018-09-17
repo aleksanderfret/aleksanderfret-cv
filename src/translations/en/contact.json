@@ -12,7 +12,7 @@
       ],
       "errors": {
         "required": "The name is required!",
-        "pattern": "Entered name is invalid. $t(form.name.info)"
+        "pattern": "Entered name is invalid. $t(form.name.info.0)"
       }
     },
     "email": {
@@ -23,7 +23,7 @@
       ],
       "errors": {
         "required": "The e-mail address is required!",
-        "pattern": "Enter the proper e-mail address!"
+        "pattern": "Enter the proper e-mail address. $t(form.email.info.0)"
       }
     },
     "subject": {
@@ -34,7 +34,7 @@
       ],
       "errors": {
         "required": "The subject is required!",
-        "pattern": "Entered subject is invalid. $t(form.subject.info)"
+        "pattern": "Entered subject is invalid. $t(form.subject.info.0)"
       }
     },
     "message": {
@@ -45,7 +45,7 @@
       ],
       "errors": {
         "required": "The message is required!!",
-        "pattern": "Entered message is invalid. $t(form.message.info)"
+        "pattern": "Entered message is invalid. $t(form.message.info.0)"
       }
     },
     "captcha": {

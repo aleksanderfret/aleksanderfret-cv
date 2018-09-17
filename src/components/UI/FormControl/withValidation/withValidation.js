@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { translate } from 'react-i18next';
-//import Label from '../ControlLabel/ControlLabel';
-import classes from './withValidation.scss';
 
 const withValidation = (WrappedComponent) => {
   const Control = class extends Component {
@@ -18,22 +15,18 @@ const withValidation = (WrappedComponent) => {
     }
 
     checkValidity = (value, rules) => {
-      let blank, inValid;
       if (!rules) {
         return;
       }
-      if (rules.required) {
-        blank = ((typeof value === 'boolean' && !value) ||
-          (typeof value !== 'boolean' && value.trim() === '')) ?
-          this.props.config.errors.required :
-          null;
+      if (rules.required &&
+        ((typeof value === 'boolean' && !value) ||
+          (typeof value !== 'boolean' && value.trim() === ''))) {
+        return this.props.config.errors.required;
       }
-      if (rules.pattern) {
-        inValid = (!rules.pattern.test(value)) ?
-          this.props.config.errors.pattern :
-          null;
+      if (rules.pattern && !rules.pattern.test(value)) {
+        return this.props.config.errors.pattern;
       }
-      return inValid || blank;
+      return null;
     }
 
     controlChangeHandler = (value) => {
@@ -76,25 +69,18 @@ const withValidation = (WrappedComponent) => {
 
     render() {
       return (
-        <React.Fragment>
-          <WrappedComponent
-            {...this.props}
-            value={this.state.value}
-            blurHandler={this.controlOnBlurHandler}
-            changeHandler={this.controlChangeHandler}
-            getValidationClasses={this.getValidationClasses}
-          />
-          {this.state.error &&
-            <div
-              className={classes.ErrorMessage}>
-              {this.props.t(this.state.error)}
-            </div>
-          }
-        </React.Fragment>
+        <WrappedComponent
+          {...this.props}
+          value={this.state.value}
+          blurHandler={this.controlOnBlurHandler}
+          changeHandler={this.controlChangeHandler}
+          getValidationClasses={this.getValidationClasses}
+          error={this.state.error}
+        />
       );
     }
   }
-  return translate('contact')(Control);
+  return Control;
 }
 
 export default withValidation;

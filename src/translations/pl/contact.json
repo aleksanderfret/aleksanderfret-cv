@@ -12,7 +12,7 @@
       ],
       "errors": {
         "required": "Imię i nazwisko są wymagane!",
-        "pattern": "Wprowadzone dane są nieprawidłowe. $t(form.name.info)"
+        "pattern": "Wprowadzone dane są nieprawidłowe. $t(form.name.info.0)"
       }
     },
     "email": {
@@ -23,7 +23,7 @@
       ],
       "errors": {
         "required": "Adres e-mail jest wymagany!",
-        "pattern": "Wprowadź poprawny adres e-mail. $t(form.message.info)"
+        "pattern": "Wprowadź poprawny adres e-mail. $t(form.email.info.0)"
       }
     },
     "subject": {
@@ -34,7 +34,7 @@
       ],
       "errors": {
         "required": "Temat jest wymagany!",
-        "pattern": "Wprowadzony temat jest nieprawidłowy. $t(form.subject.info)"
+        "pattern": "Wprowadzony temat jest nieprawidłowy. $t(form.subject.info.0)"
       }
     },
     "message": {
@@ -45,7 +45,7 @@
       ],
       "errors": {
         "required": "Wiadomości jest wymagana!",
-        "pattern": "Wprowadzona wiadomość jest nieprawidłowa. $t(form.message.info)"
+        "pattern": "Wprowadzona wiadomość jest nieprawidłowa. $t(form.message.info.0)"
       }
     },
     "captcha": {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { translate } from 'react-i18next';
 import withValidation from '../withValidation/withValidation';
+import Error from '../../Error/Error';
 import FontIcon from '../../../UI/FontIcon/FontIcon';
 import Label from '../ControlLabel/ControlLabel';
 import classes from './CheckboxControl.scss';
@@ -50,9 +52,12 @@ class CheckboxControl extends Component {
             openTip={this.props.openTip}
           />
         }
+        {this.props.error &&
+          <Error message={this.props.t(this.props.error)} />
+        }
       </React.Fragment>
     );
   }
 }
 
-export default withValidation(CheckboxControl);
+export default withValidation(translate('contact')(CheckboxControl));

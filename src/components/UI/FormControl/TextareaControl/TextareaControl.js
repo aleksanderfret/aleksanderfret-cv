@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Label from '../ControlLabel/ControlLabel';
+import { translate } from 'react-i18next';
 import withValidation from '../withValidation/withValidation';
+import Label from '../ControlLabel/ControlLabel';
+import Error from '../../Error/Error';
 import ControlHelpButton from '../../Button/ControlHelpButton/ControlHelpButton';
 import classes from './TextareaControl.scss';
 
@@ -10,7 +12,6 @@ class TextareaControl extends Component {
       classes[validationClass] || ''
     ));
     const textareaClasses = [classes.Textarea, ...validationClasses];
-
     return (
       <React.Fragment>
         {this.props.config.label &&
@@ -32,9 +33,12 @@ class TextareaControl extends Component {
             label={this.props.t(this.props.config.label)}
             clicked={(event) => { this.props.openTip(event) }} />
         }
+        {this.props.error &&
+          <Error message={this.props.t(this.props.error)} />
+        }
       </React.Fragment>
     );
   }
 }
 
-export default withValidation(TextareaControl);
+export default withValidation(translate('contact')(TextareaControl));
