@@ -7,16 +7,20 @@
     "name": {
       "label": "Name",
       "placeholder": "$t(form.name.label)",
-      "help": "The name can only contain letters, spaces, dashes and apostrophes. The name must contain at least 5 and a maximum of 60 characters.",
+      "info": [
+        "The name can only contain letters, spaces, dashes and apostrophes. The name must contain at least 5 and a maximum of 60 characters."
+      ],
       "errors": {
         "required": "The name is required!",
-        "pattern": "Entered name is invalid. $t(form.name.help)"
+        "pattern": "Entered name is invalid. $t(form.name.info)"
       }
     },
     "email": {
       "label": "E-mail",
       "placeholder": "$t(form.email.label)",
-      "help": "The proper e-mail format examples: name@surname.com or name.surname@company.com.",
+      "info": [
+        "The proper e-mail format examples: name@surname.com or name.surname@company.com."
+      ],
       "errors": {
         "required": "The e-mail address is required!",
         "pattern": "Enter the proper e-mail address!"
@@ -25,19 +29,23 @@
     "subject": {
       "label": "Subject",
       "placeholder": "$t(form.subject.label)",
-      "help": "The subject can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The subject must contain at least 5 and a maximum of 500 characters.",
+      "info": [
+        "The subject can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The subject must contain at least 5 and a maximum of 500 characters."
+      ],
       "errors": {
         "required": "The subject is required!",
-        "pattern": "Entered subject is invalid. $t(form.subject.help)"
+        "pattern": "Entered subject is invalid. $t(form.subject.info)"
       }
     },
     "message": {
       "label": "Message",
       "placeholder": "$t(form.message.label)",
-      "help": "The message can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The message must contain at least 5 and a maximum of 2000 characters.",
+      "info": [
+        "The message can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The message must contain at least 5 and a maximum of 2000 characters."
+      ],
       "errors": {
         "required": "The message is required!!",
-        "pattern": "Entered message is invalid. $t(form.message.help)"
+        "pattern": "Entered message is invalid. $t(form.message.info)"
       }
     },
     "captcha": {
@@ -51,7 +59,7 @@
       "errors": {
         "required": "This field is required!"
       },
-      "messages": [
+      "info": [
         "I agree to the processing of personal data in accordance with the law on the protection of personal data in connection with sending a message via the contact form.",
         "Providing this data is voluntary, but necessary to process the query. The data entered in the contact form won't be save in any database and will be processed only to respond to the message.",
         "The personal data administrator is Aleksander Fret."

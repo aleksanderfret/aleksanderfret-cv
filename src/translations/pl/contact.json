@@ -7,37 +7,45 @@
     "name": {
       "label": "Imię i nazwisko",
       "placeholder": "$t(form.name.label)",
-      "help": "Imię i nazwisko może zawierać tylko litery, cyfry, spacje, myślniki i apostrofy. Pole to musi zawierać przynajmniej 5 i maksymalnie 60 znaków.",
+      "info": [
+        "Imię i nazwisko może zawierać tylko litery, cyfry, spacje, myślniki i apostrofy. Pole to musi zawierać przynajmniej 5 i maksymalnie 60 znaków."
+      ],
       "errors": {
         "required": "Imię i nazwisko są wymagane!",
-        "pattern": "Wprowadzone dane są nieprawidłowe. $t(form.name.help)"
+        "pattern": "Wprowadzone dane są nieprawidłowe. $t(form.name.info)"
       }
     },
     "email": {
       "label": "E-mail",
       "placeholder": "$t(form.email.label)",
-      "help": "Przykłady poprawnego adresu e-mail: imie@nazwisko.pl lub imie.nazwisko@firma.pl.",
+      "info": [
+        "Przykłady poprawnego adresu e-mail: imie@nazwisko.pl lub imie.nazwisko@firma.pl."
+      ],
       "errors": {
         "required": "Adres e-mail jest wymagany!",
-        "pattern": "Wprowadź poprawny adres e-mail!"
+        "pattern": "Wprowadź poprawny adres e-mail. $t(form.message.info)"
       }
     },
     "subject": {
       "label": "Temat",
       "placeholder": "$t(form.subject.label)",
-      "help": "Temat może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Temat musi zawierać przynajmniej 5 i maksymalnie 500 znaków.",
+      "info": [
+        "Temat może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Temat musi zawierać przynajmniej 5 i maksymalnie 500 znaków."
+      ],
       "errors": {
         "required": "Temat jest wymagany!",
-        "pattern": "Wprowadzony temat jest nieprawidłowy. $t(form.subject.help)"
+        "pattern": "Wprowadzony temat jest nieprawidłowy. $t(form.subject.info)"
       }
     },
     "message": {
       "label": "Wiadomość",
       "placeholder": "$t(form.message.label)",
-      "help": "Wiadmość może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Wiadomość musi zawierać przynajmniej 5 i maksymalnie 2000 znaków.",
+      "info": [
+        "Wiadmość może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Wiadomość musi zawierać przynajmniej 5 i maksymalnie 2000 znaków."
+      ],
       "errors": {
         "required": "Wiadomości jest wymagana!",
-        "pattern": "Wprowadzona wiadomość jest nieprawidłowa. $t(form.message.help)"
+        "pattern": "Wprowadzona wiadomość jest nieprawidłowa. $t(form.message.info)"
       }
     },
     "captcha": {
@@ -51,7 +59,7 @@
       "errors": {
         "required": "To pole jest wymagane!"
       },
-      "messages": [
+      "info": [
         "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danych osobowych w związku z wysłaniem zapytania przez formularz kontaktowy.",
         "Podanie tych danych jest dobrowolne, ale niezbędne do przetworzenia zapytania. Dane wpisane w formularzu kontaktowym nie będą przechowywane w żadnej bazie danych i będą przetworzone tylko w celu udzielenia odpowiedzi na przesłane zapytanie.",
         "Administratorem danych osobowych jest Aleksander Fret."

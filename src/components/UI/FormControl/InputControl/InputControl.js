@@ -22,7 +22,7 @@ class InputControl extends Component {
           name={this.props.name}
           onChange={(event) => { this.props.changeHandler(event.target.value) }}
           onBlur={(event) => { this.props.blurHandler(event.target.value) }} />
-        {this.props.config.help &&
+        {this.props.config.info &&
           <ControlHelpButton
             label={this.props.t(this.props.config.label)}
             clicked={(event) => { this.props.openTip(event) }} />

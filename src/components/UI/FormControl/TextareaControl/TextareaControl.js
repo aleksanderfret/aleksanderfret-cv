@@ -20,7 +20,7 @@ class TextareaControl extends Component {
           onChange={(event) => { this.props.changeHandler(event.target.value) }}
           onBlur={(event) => { this.props.blurHandler(event.target.value) }}>
         </textarea>
-        {this.props.config.help &&
+        {this.props.config.info &&
           <ControlHelpButton
             label={this.props.t(this.props.config.label)}
             clicked={(event) => { this.props.openTip(event) }} />

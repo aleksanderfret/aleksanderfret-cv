@@ -30,22 +30,6 @@ class FormControl extends Component {
     return <ControlComponent {...this.props} />;
   }
 
-  getTipContent = () => {
-    let tipMessage = null;
-    if (this.props.config.help) {
-      tipMessage = <p>{this.props.t(this.props.config.help)}</p>
-    }
-    if (this.props.config.messages) {
-      tipMessage = this.props.t(
-        this.props.config.messages,
-        { returnObjects: true }
-      ).map((message, index) => (
-        <p key={index}>{message}</p>
-      ));
-    }
-    return tipMessage;
-  }
-
   render() {
     return (
       <div className={classes.FormControl}>
@@ -53,7 +37,13 @@ class FormControl extends Component {
         {this.props.isTipOpen &&
           <Tip
             closeTip={this.props.closeTip}>
-            {this.getTipContent()}</Tip>
+            {this.props.t(
+              this.props.config.info,
+              { returnObjects: true }
+            ).map((message, index) => (
+              <p key={index}>{message}</p>
+            ))}
+          </Tip>
         }
       </div>
     );

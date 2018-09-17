@@ -12,7 +12,7 @@ class Contact extends Component {
         type: 'input',
         subtype: 'text',
         label: 'form.name.label',
-        help: 'form.name.help',
+        info: 'form.name.info',
         rules: {
           required: true,
           pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ -']{3,60}$/,
@@ -29,7 +29,7 @@ class Contact extends Component {
         type: 'input',
         subtype: 'email',
         label: 'form.email.label',
-        help: 'form.email.help',
+        info: 'form.email.info',
         rules: {
           required: true,
           pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$/,
@@ -46,7 +46,7 @@ class Contact extends Component {
         type: 'input',
         subtype: 'text',
         label: 'form.subject.label',
-        help: 'form.subject.help',
+        info: 'form.subject.info',
         rules: {
           required: true,
           pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ0-9,.)-:(!? ']{5,500}$/,
@@ -62,7 +62,7 @@ class Contact extends Component {
       message: {
         type: 'textarea',
         label: 'form.message.label',
-        help: 'form.message.help',
+        info: 'form.message.info',
         rules: {
           required: true,
           pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ0-9,.)-:(!? '\n]{5,2000}$/,
@@ -79,7 +79,7 @@ class Contact extends Component {
         type: 'input',
         subtype: 'checkbox',
         label: 'form.rodo.label',
-        messages: 'form.rodo.messages',
+        info: 'form.rodo.info',
         rules: {
           required: true,
         },
