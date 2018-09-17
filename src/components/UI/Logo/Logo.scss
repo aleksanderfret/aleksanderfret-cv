@@ -17,6 +17,9 @@
       line-height: auto;
     }
   }
+  &:focus {
+    @include shadow(0);
+  }
 }
 
 .ShortLogo {
