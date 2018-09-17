@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Label from '../ControlLabel/ControlLabel';
 import withValidation from '../withValidation/withValidation';
 import ControlHelpButton from '../../Button/ControlHelpButton/ControlHelpButton';
 import classes from './InputControl.scss';
@@ -14,6 +15,12 @@ class InputControl extends Component {
 
     return (
       <React.Fragment>
+        {this.props.config.label &&
+          <Label
+            label={this.props.config.label}
+            required={this.props.config.rules.required}
+            controlId={this.props.name} />
+        }
         <input
           className={inputClasses.join(' ')}
           type={this.props.config.subtype}

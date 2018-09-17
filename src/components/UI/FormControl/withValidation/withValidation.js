@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
-import Label from '../ControlLabel/ControlLabel';
+//import Label from '../ControlLabel/ControlLabel';
 import classes from './withValidation.scss';
 
 const withValidation = (WrappedComponent) => {
@@ -77,14 +77,6 @@ const withValidation = (WrappedComponent) => {
     render() {
       return (
         <React.Fragment>
-          {this.props.config.label &&
-            this.props.config.subtype !== 'checkbox' &&
-            <Label
-              label={this.props.config.label}
-              required={this.props.config.rules.required}
-              controlId={this.props.name}
-            />
-          }
           <WrappedComponent
             {...this.props}
             value={this.state.value}
@@ -94,8 +86,7 @@ const withValidation = (WrappedComponent) => {
           />
           {this.state.error &&
             <div
-              className={classes.ErrorMessage}
-            >
+              className={classes.ErrorMessage}>
               {this.props.t(this.state.error)}
             </div>
           }

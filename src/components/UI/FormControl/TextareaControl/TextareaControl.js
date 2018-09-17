@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Label from '../ControlLabel/ControlLabel';
 import withValidation from '../withValidation/withValidation';
 import ControlHelpButton from '../../Button/ControlHelpButton/ControlHelpButton';
 import classes from './TextareaControl.scss';
@@ -12,6 +13,12 @@ class TextareaControl extends Component {
 
     return (
       <React.Fragment>
+        {this.props.config.label &&
+          <Label
+            label={this.props.config.label}
+            required={this.props.config.rules.required}
+            controlId={this.props.name} />
+        }
         <textarea
           className={textareaClasses.join(' ')}
           id={this.props.name}
