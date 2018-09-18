@@ -96,7 +96,7 @@ class Contact extends Component {
         errors: {},
         checked: false,
         value: 1,
-        isValid: false,
+        isValid: true,
       },
       captcha: {
         type: 'captcha',
@@ -112,7 +112,7 @@ class Contact extends Component {
         isValid: false,
       }
     },
-    formIsValid: true,
+    formIsValid: false,
     loading: false,
     visibleTipId: null
   }
@@ -155,11 +155,23 @@ class Contact extends Component {
     }
     updatedFormElement.isValid = params.isValid;
     updatedContactForm[id] = updatedFormElement;
-    this.setState({
-      contactForm: updatedContactForm
-    });
+
+    const formIsValid = this.checkIsFormValid(params.isValid, id);
+    this.setState(() => ({
+      contactForm: updatedContactForm,
+      formIsValid
+    }));
   }
 
+  checkIsFormValid = (isValid, id) => {
+    let formIsValid = true;
+    for (let key in this.state.contactForm) {
+      const isControlValid = (key === id) ? isValid : this.state.contactForm[key].isValid;
+      formIsValid = isControlValid && formIsValid;
+      if (!formIsValid) return;
+    }
+    return formIsValid;
+  }
 
   createContactForm = () => {
     const form = (
@@ -178,7 +190,6 @@ class Contact extends Component {
 
     return form;
   }
-
 
   contactHandler = () => {
 
