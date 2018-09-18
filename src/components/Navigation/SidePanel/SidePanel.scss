@@ -24,6 +24,14 @@
   transform: translateX(-110%);
 }
 
+.SidePanel.Open * {
+  visibility: visible;
+}
+
+.SidePanel.Close * {
+  visibility: hidden;
+}
+
 .Header {
   background: $base-color;
   height: 80px;

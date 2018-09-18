@@ -5,7 +5,14 @@ import { routes } from '../../../../data/routes.js';
 import classes from './Profile.scss';
 
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.header = React.createRef();
+  }
 
+  componentDidMount() {
+    this.header.current.focus();
+  }
 
   getRoute = (advantage) => {
     for (let key in routes) {
@@ -32,7 +39,9 @@ class Profile extends Component {
   render() {
     return (
       <div className={classes.Profile}>
-        <h3>{this.props.t('title')}</h3>
+        <h3
+          ref={this.header}
+          tabIndex={-1}>{this.props.t('title')}</h3>
         {this.props.t('professions', { returnObjects: true }).map((profession, professionIndex) => (
           <div
             className={classes.Profession}

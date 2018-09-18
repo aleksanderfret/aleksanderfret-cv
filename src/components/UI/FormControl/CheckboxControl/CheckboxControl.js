@@ -11,6 +11,12 @@ class CheckboxControl extends Component {
     checked: false,
   }
 
+  onPressOK = (event) => {
+    if (event.keyCode === 13 || event.keyCode === 32) {
+      this.props.checkboxClickHandler();
+    }
+  }
+
   checkboxClickHandler = () => {
     const checked = !this.state.checked;
     this.setState(() => ({ checked }));
@@ -40,7 +46,9 @@ class CheckboxControl extends Component {
           tabIndex="0"
           value={this.props.value}
           aria-labelledby={`${this.props.name}`}
-          onClick={this.checkboxClickHandler}>
+          onClick={this.checkboxClickHandler}
+          onFocus={() => { document.addEventListener('keydown', this.onPressOK) }}
+          onBlur={() => { document.removeEventListener('keydown', this.onPressOK) }}>
           {this.state.checked && <FontIcon iconType='ok' />}
         </span>
         {this.props.config.label &&

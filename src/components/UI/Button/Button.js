@@ -2,19 +2,6 @@ import React, { Component } from 'react';
 import classes from './Button.scss';
 
 class Button extends Component {
-  state = {
-    isFocused: false
-  }
-
-  toogleButtonFocus = () => {
-    const isFocused = !this.state.isFocused;
-    this.setState({ isFocused });
-    if (isFocused) {
-      document.addEventListener('keydown', this.onPressOK);
-    } else {
-      document.removeEventListener('keydown', this.onPressOK);
-    }
-  }
 
   onPressOK = (event) => {
     if (event.keyCode === 13 || event.keyCode === 32) {
@@ -37,8 +24,8 @@ class Button extends Component {
         className={buttonClasses.join(' ')}
         title={this.props.label}
         aria-label={this.props.label}
-        onFocus={this.toogleButtonFocus}
-        onBlur={this.toogleButtonFocus}>{this.props.children}
+        onFocus={() => { document.addEventListener('keydown', this.onPressOK) }}
+        onBlur={() => { document.removeEventListener('keydown', this.onPressOK) }}>{this.props.children}
       </button>
     );
   }

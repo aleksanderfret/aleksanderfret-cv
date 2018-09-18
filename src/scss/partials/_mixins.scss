@@ -121,6 +121,8 @@
   width: 100%;
   text-align: left;
   margin: 0 0 1.5rem 0;
+  &:focus {
+  }
   @include tiny-screens {
     font-size: 1.75rem;
   }

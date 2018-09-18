@@ -62,7 +62,8 @@
   color: $base-color;
   font-style: italic;
   text-decoration: none;
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: underline;
   }
 }

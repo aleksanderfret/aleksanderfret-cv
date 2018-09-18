@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 import classes from './Education.scss';
 
-const education = (props) => {
-  const { t } = props;
-  return(
-    <div className={classes.Education}>
-      <h3>{t('title')}</h3>
-    </div>
-  );
-};
+class Education extends Component {
+  constructor(props) {
+    super(props);
+    this.header = React.createRef();
+  }
 
-export default translate('education')(education);
+  componentDidMount() {
+    this.header.current.focus();
+  }
+
+  render() {
+    return (
+      <div className={classes.Education}>
+        <h3
+          ref={this.header}
+          tabIndex={-1}>{this.props.t('title')}</h3>
+      </div>
+    );
+  }
+
+}
+
+export default translate('education')(Education);

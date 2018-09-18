@@ -1,25 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 import classes from './Experience.scss';
 import Work from './Work/Work';
 
-const experience = (props) => {
-  const { t } = props;
-  return(
-    <div className={classes.Experience}>
-      <h3>{t('title')}</h3>
-      <ul>
-      {t('works', {returnObjects: true}).map((work, index) => (
-        <li key={index}>
-          <Work
-            {...work}
-            labels={t('labels', {returnObjects: true})}
-             />
-        </li>
-      ))}
-      </ul>
-    </div>
-  );
-};
+class Experience extends Component {
+  constructor(props) {
+    super(props);
+    this.header = React.createRef();
+  }
 
-export default translate('experience')(experience);
+  componentDidMount() {
+    this.header.current.focus();
+  }
+
+  render() {
+    return (
+      <div className={classes.Experience}>
+        <h3
+          ref={this.header}
+          tabIndex={-1}>{this.props.t('title')}</h3>
+        <ul>
+          {this.props.t('works', { returnObjects: true }).map((work, index) => (
+            <li key={index}>
+              <Work
+                {...work}
+                labels={this.props.t('labels', { returnObjects: true })}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default translate('experience')(Experience);
