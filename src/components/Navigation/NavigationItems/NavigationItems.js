@@ -11,18 +11,19 @@ const navigationItems = (props) => {
   }
 
   const { t } = props;
-  return(
+  return (
     <ul className={navigationClasses.join(' ')}>
-      {t('pages', {returnObjects: true}).map((page, index) => (
+      {t('pages', { returnObjects: true }).map((page, index) => (
         <NavigationItem
           navType={props.navType}
           clicked={props.clicked}
           key={index}
+          position={index}
           link={`/${page.route}`}>
           {props.icons &&
             <span className={classes.MenuIcon}>
               <FontIcon
-                iconType={page.route}/>
+                iconType={page.route} />
             </span>
           }
           <span>{page.name}</span>

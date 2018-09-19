@@ -11,25 +11,33 @@
   left: 0;
   color: $base-text-color;
   background-color: $base-background-color;
-  transform: translateX(-110%);
-  transition: transform 0.3s ease-out;
   @include shadow(1);
 }
 
 .Open {
-  transform: translateX(0);
+  animation: showSidePanel 0.3s ease-out forwards;
 }
 
 .Close {
-  transform: translateX(-110%);
+  animation: hideSidePanel 0.3s ease-out forwards;
 }
 
-.SidePanel.Open * {
-  visibility: visible;
+@keyframes showSidePanel {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.SidePanel.Close * {
-  visibility: hidden;
+@keyframes hideSidePanel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-110%);
+  }
 }
 
 .Header {
