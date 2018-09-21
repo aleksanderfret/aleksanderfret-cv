@@ -1,97 +1,193 @@
 {
-  "title": "portfolio",
-  "visitLink": "visit",
-  "visitLabel": "visit {{name}} website",
-  "codeLink": "code",
-  "codeLabel": "code of {{name}} website",
-  "iamgeAlt": "{{name}} website preview",
-  "works": [{
-      "name": "Aleksander Fret",
-      "type": "application",
-      "description": "Final project of Front-End Web Developer Nanodegree (Udacity, Google). Focused mainly on React and using API's, but engages many other skills like: Redux, ES6, service workers, accessibility, RWD.",
-      "technologies": ["React", "Redux", "ES6", "accessibility", "RWD", "CSS", "HTML"],
-      "image": "aleksanderfret",
-      "imageAlt": "Aleksander Fret application preview",
+  "title": "Portfolio",
+  "labels": {
+    "visit": "visit",
+    "visitAria": "visit {{name}} website",
+    "code": "code",
+    "codeAria": "code of {{name}} website",
+    "imageAlt": "{{name}} website preview",
+    "technologies": "Technologies",
+    "description": "Description"
+  },
+  "works": [
+    {
+      "id": "aleksanderFret",
+      "name": "Aleksander Fret – CV",
+      "type": "Personal website",
+      "description": "My CV online – you're just watching it :-)",
+      "technologies": [
+        "JS ES6",
+        "React",
+        "SASS",
+        "HTML",
+        "RWD"
+      ],
+      "imageAlt": "Aleksander Fret website preview",
       "projectURL": "http://www.aleksander.fret.com.pl",
       "codeURL": "https://github.com/alemikolo/aleksanderfret",
-      "date": "08/2018"
+      "startDate": "08/2018",
+      "endDate": "09/2018"
     },
     {
+      "id": "amusementParks",
       "name": "Amusement Parks",
-      "type": "application",
-      "description": "Final project of Front-End Web Developer Nanodegree (Udacity, Google). Focused mainly on React and using API's, but engages many other skills like: Redux, ES6, service workers, accessibility, RWD.",
-      "technologies": ["React", "Redux", "ES6", "service workers", "accessibility", "RWD", "CSS", "HTML"],
-      "image": "amusementparks",
+      "type": "Application",
+      "description": "Final project of Front-End Web Developer Nanodegree Program (Udacity, Google). Focused mainly on React and using APIs, but engages many other skills. This is the map presenting european amusement parks, with the possibility to filter them and to display detailed information about them.",
+      "technologies": [
+        "JS ES6",
+        "React",
+        "Redux",
+        "service workers",
+        "accessibility",
+        "RWD",
+        "CSS",
+        "HTML"
+      ],
       "imageAlt": "Amusement Parks application preview",
       "projectURL": "http://www.amusementparks.fret.com.pl",
       "codeURL": "https://github.com/alemikolo/neighborhoodmap",
-      "date": "08/2018"
+      "startDate": "08/2018",
+      "endDate": "08/2018"
     },
     {
+      "id": "myReads",
+      "name": "MyReads",
+      "type": "Application",
+      "description": "Application for browsing a set of books, allowing for its filtering and adding books to the one of three shelves (categories). The project was created during Front-End Developer Nanodegree Program (Udacity, Google) in order to strengthen skills of using React library as well as using API.",
+      "technologies": [
+        "JS ES6",
+        "React",
+        "CSS",
+        "HTML"
+      ],
+      "imageAlt": "MyReads application preview",
+      "projectURL": "",
+      "codeURL": "https://github.com/alemikolo/myreads",
+      "startDate": "07/2018",
+      "endDate": "07/2018"
+    },
+    {
+      "id": "restaurantReviews",
+      "name": "Restaurant Reviews",
+      "type": "Application",
+      "description": "Application for browsing information about restaurants. Improving of its original version was one of the tasks during Front-End Developer Nanodegree Program (Udacity, Google). The program has been enriched with: service worker, accessibility, RWD.",
+      "technologies": [
+        "JavaScript",
+        "service workers",
+        "accessibility",
+        "RWD",
+        "CSS",
+        "HTML"
+      ],
+      "imageAlt": "Restaurant Reviews application preview",
+      "projectURL": "",
+      "codeURL": "https://github.com/alemikolo/mws-restaurant-stage-1",
+      "startDate": "06/2018",
+      "endDate": "06/2018"
+    },
+    {
+      "id": "arcadeGame",
       "name": "Arcade Game",
-      "type": "application",
-      "description": "This arcade game is focused on OOP with ES6 (especially encapsulation and inheritance). It was created in the scope of Front-End Web Developer Nanodegree (Udacity, Google).",
-      "technologies": ["ES6", "CSS", "HTML"],
-      "image": "arcadegame",
+      "type": "Application",
+      "description": "This arcade game is focused on OOP with JS ES6 (especially encapsulation and inheritance). It was created in the scope of Front-End Web Developer Nanodegree Program (Udacity, Google).",
+      "technologies": [
+        "JS ES6",
+        "CSS",
+        "HTML"
+      ],
       "imageAlt": "Arcade Game application preview",
       "projectURL": "http://www.arcadegame.fret.com.pl",
       "codeURL": "https://github.com/alemikolo/arcadegame",
-      "date": "04/2018"
+      "startDate": "04/2018",
+      "endDate": "04/2018"
     },
     {
+      "id": "memoryGame",
       "name": "Memory Game",
-      "type": "application",
-      "description": "Memory game created in the scope of Front-End Web Developer Nanodegree (Udacity, Google). It is enhanced with confguration options (difficulty level, appearance).",
-      "technologies": ["JavaScript", "CSS", "HTML"],
-      "image": "memorygame",
+      "type": "Application",
+      "description": "Classic memory game created in the scope of Front-End Web Developer Nanodegree Program (Udacity, Google). Besides the main functionality, application offers confguration options (difficulty level, appearance).",
+      "technologies": [
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
       "imageAlt": "Memory Game application preview",
       "projectURL": "http://www.memorygame.fret.com.pl",
       "codeURL": "https://github.com/alemikolo/memorygame",
-      "date": "03/2018"
+      "startDate": "03/2018",
+      "endDate": "03/2018"
     },
     {
+      "id": "pixelArtMaker",
       "name": "Pixel Art Maker",
-      "type": "application",
-      "description": "This graphic application was created in the scope of Front-End Web Developer Nanodegree (Udacity, Google). It provides various functionalities to draw on grid-based canvas.",
-      "technologies": ["JavaScript", "jQuery", "CSS", "HTML"],
-      "image": "pixelartmaker",
+      "type": "Application",
+      "description": "This graphic application was created in the scope of Front-End Web Developer Nanodegree Program (Udacity, Google). It provides various tools to draw on grid-based canvas.",
+      "technologies": [
+        "JavaScript",
+        "jQuery",
+        "CSS",
+        "HTML"
+      ],
       "imageAlt": "Pixel Art Maker application preview",
       "projectURL": "http://www.pixel-art-maker.fret.com.pl",
       "codeURL": "https://github.com/alemikolo/pixel-art-maker",
-      "date": "01/2018"
+      "startDate": "01/2018",
+      "endDate": "01/2018"
     },
     {
-      "name": "Wilmat website",
-      "type": "website",
-      "description": "The website for the Wilmat company, which represents the sector of the low voltage installations.",
-      "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML", "Bootstrap"],
-      "image": "wilmat",
-      "imageAlt": "Wilmat website preview",
+      "id": "wilmat",
+      "name": "Wilmat company website",
+      "type": "Company website",
+      "description": "The website for Wilmat company (sector of the low voltage installations).",
+      "technologies": [
+        "JavaScript",
+        "jQuery",
+        "PHP",
+        "CSS",
+        "HTML",
+        "Bootstrap"
+      ],
+      "imageAlt": "Wilmat company website preview",
       "projectURL": "http://www.wilmat.com.pl",
-      "codeURL": "https://bitbucket.org/alemikolo/wilmat.com.pl/src/master/",
-      "date": "10/2016"
+      "codeURL": "https://bitbucket.org/alemikolo/wilmat.com.pl/src/",
+      "startDate": "10/2016",
+      "endDate": "10/2016"
     },
     {
-      "name": "Artist website",
-      "type": "website",
-      "description": "The website made for Ewa Fret, the artist, in order to promote her works, mainly ilustrations and handicrafts.",
-      "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML"],
-      "image": "artist",
-      "imageAlt": "Artist website preview",
-      "projectURL": "http://www.ewa.fret.com.pl",
-      "codeURL": "https://bitbucket.org/alemikolo/ewa.fret.com.pl/src",
-      "date": "01/2015"
-    },
-    {
-      "name": "Psychoterapist website",
-      "type": "website",
-      "description": "The website created for Emilia Fret, the psychotherapist specializing especially in addiction therapy.",
-      "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML"],
-      "image": "psychoterapist",
-      "imageAlt": "Psychoterapist website preview",
+      "id": "psychotherapist",
+      "name": "Psychotherapist website",
+      "type": "Personal website",
+      "description": "The website of Emilia Fret, the psychotherapist.",
+      "technologies": [
+        "JavaScript",
+        "jQuery",
+        "PHP",
+        "CSS",
+        "HTML"
+      ],
+      "imageAlt": "Emilia Fret website preview",
       "projectURL": "http://www.psychoterapia.fret.com.pl",
       "codeURL": "https://bitbucket.org/alemikolo/psychoterapia.fret.com.pl/src",
-      "date": "06/2015"
+      "startDate": "06/2015",
+      "endDate": "06/2015"
+    },
+    {
+      "id": "artist",
+      "name": "Artist website",
+      "type": "Personal website",
+      "description": "The website of Ewa Fret, the artist (ilustrations, handicrafts).",
+      "technologies": [
+        "JavaScript",
+        "jQuery",
+        "PHP",
+        "CSS",
+        "HTML"
+      ],
+      "imageAlt": "Ewa Fret website preview",
+      "projectURL": "http://www.ewa.fret.com.pl",
+      "codeURL": "https://bitbucket.org/alemikolo/ewa.fret.com.pl/src",
+      "startDate": "01/2015",
+      "endDate": "01/2015"
     }
   ]
 }

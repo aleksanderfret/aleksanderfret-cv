@@ -1,1 +1,33 @@
 @import 'partials';
+
+.Project {
+  @include pageTile;
+}
+
+.ProjectName {
+  @include pageSubtitle;
+  text-align: center;
+  text-decoration: none;
+  color: $reverse-color;
+  background-color: $base-color;
+  padding: 0.25rem;
+  @include tiny-screens {
+    font-size: 1.1rem;
+  }
+  @include slight-screens {
+    padding: 0.35rem;
+  }
+  @include small-screens {
+    font-size: 1rem;
+    padding: 0.25rem;
+  }
+  @include medium-screens {
+    font-size: 1.1rem;
+    padding: 0.35rem;
+  }
+  @include large-screens {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+}
+

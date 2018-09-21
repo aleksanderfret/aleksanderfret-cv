@@ -127,7 +127,7 @@ class Contact extends Component {
 
   createFormControls = () => {
     const formElementArray = [];
-    for (let key in this.state.contactForm) {
+    for (const key in this.state.contactForm) {
       formElementArray.push({
         id: key,
         config: this.state.contactForm[key]

@@ -134,10 +134,47 @@
   }
 }
 
+@mixin cvItem {
+  font-size: 0.85rem;
+  @include slight-screens {
+    font-size: 0.9rem;
+  }
+  @include medium-screens {
+    font-size: 0.95rem;
+    line-height: 1.3rem;
+  }
+  @include normal-screens {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  p > span:first-child:after {
+    content: ' ';
+  }
+  p span:last-child time{
+    font-style: italic;
+  }
+}
+
 @mixin pageSubtitle {
   width: 100%;
   color: $base-color;
   font-size: 1rem;
+}
+
+@mixin categoryTitle {
+  font-weight: 500;
+  color: $low-light-base-text;
+  margin: 1.25rem 0 0.1rem 0;
+  @include slight-screens {
+    font-size: 1rem;
+  }
+  @include medium-screens{
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: $dark-base-text;
+    margin-bottom: 0.3rem;
+  }
 }
 
 @mixin mainContactFormControls {

@@ -1,0 +1,24 @@
+@import 'partials';
+
+.Details {
+  @include pageContainer;
+}
+
+.Details h3 {
+  @include pageTitle;
+}
+
+.Project {
+  @include pageTile;
+}
+
+
+.Technologies {
+  display: block;
+  li {
+    display: inline;
+    &:not(:last-child):after {
+      content: '; ';
+    }
+  }
+}
