@@ -2,9 +2,12 @@
 
 .Details {
   @include pageContainer;
+  h5 {
+    @include categoryTitle;
+  }
 }
 
-.Details h3 {
+.Details h4 {
   @include pageTitle;
 }
 
@@ -12,6 +15,9 @@
   @include pageTile;
 }
 
+.Description {
+  padding: 0 1rem 1rem 1rem;
+}
 
 .Technologies {
   display: block;
@@ -20,5 +26,29 @@
     &:not(:last-child):after {
       content: '; ';
     }
+  }
+}
+.Links {
+  padding: 2rem 0 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Links a {
+  display: block;
+  background-color: $accessory-color;
+  color: $reverse-color;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  @include shadow(3);
+  transition: all 0.2s ease-in-out;
+  &:first-child {
+    margin-right: 1rem;
+  }
+  &:hover {
+    @include shadow(2);
+    background-color: $light-base;
   }
 }

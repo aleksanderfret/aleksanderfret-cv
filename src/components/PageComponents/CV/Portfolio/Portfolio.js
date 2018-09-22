@@ -24,7 +24,10 @@ class Portfolio extends Component {
             <li
               key={index}>
               <Project
-                {...work}
+                id={work.id}
+                name={work.name}
+                imageAlt={work.imageAlt}
+                technologies={work.technologies}
                 labels={this.props.t('labels', { returnObjects: true })}
               />
             </li>
