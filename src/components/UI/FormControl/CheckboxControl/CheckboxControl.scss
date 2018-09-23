@@ -8,8 +8,9 @@
   border: 1px solid $extra-light-base-text;
   margin-right: 0.5rem;
   &:hover,
-  &:focus,
-  &:active {
+  &:active,
+  &:focus {
+    outline: 0;
     background-color: $body-background;
   }
 }

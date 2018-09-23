@@ -16,8 +16,7 @@
   color: $middle-light-base-text;
   padding: 1rem;
   transition: all 0.3s ease-out;
-  &:hover,
-  &:focus {
+  &:hover {
     color: $dark-base-text;
     background-color: $extra-light-base-text;
     padding-left: 2.5rem;
@@ -61,8 +60,7 @@
   text-decoration: none;
   height: 100%;
   transition: all 0.3s ease-out;
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $light-base;
     padding-bottom: 2.5rem;
   }
