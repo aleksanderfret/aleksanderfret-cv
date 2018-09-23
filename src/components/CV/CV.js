@@ -16,7 +16,7 @@ class CV extends Component {
   toggleLanguage = () => {
     const { i18n } = this.props;
     const lang = this.state.language === 'en' ? 'pl' : 'en';
-    this.setState({ language: lang });
+    this.setState(() => ({ language: lang }));
     i18n.changeLanguage(lang);
     window.recaptchaOptions.lang = lang;
   }
