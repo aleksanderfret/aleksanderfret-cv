@@ -15,8 +15,7 @@
   font-size: 1.5rem;
   display: block;
   transition: all 0.2s ease-out;
-  &:hover,
-  &:focus {
+  &:hover {
     font-size: 2rem;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
   }
@@ -42,8 +41,7 @@
   transform: scale(1);
 
 }
-.LanguageButton:hover span,
-.LanguageButton:focus span {
+.LanguageButton:hover span {
   transform: scale(1.2);
     color: $base-color;
     background-color: $base-background-color;
@@ -87,7 +85,10 @@
   transition-timing-function: ease-in-out;
   &:hover,
   &:focus {
+    outline: 0;
     color: $low-light-base-text;
+    border: 1px solid $extra-light-base-text;
+    border-left: none;
     font-size: 0.85rem;
     text-shadow: 0px 0px 3px rgba(50, 50, 50, 0.5);
   }
@@ -98,9 +99,11 @@
   font-style: italic;
   display: inline;
   text-align: inherit;
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: underline;
+  }
+  &:focus {
+    outline: 1px solid $extra-light-base-text;
   }
 }
 
@@ -114,8 +117,7 @@
   background-color: $dark-base-text;
   right: -10px;
   top: -10px;
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $reverse-color;
     color: $dark-base-text;
   }

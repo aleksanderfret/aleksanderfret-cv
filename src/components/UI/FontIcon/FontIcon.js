@@ -16,7 +16,10 @@ const fontIcon = (props) => {
     twitter: 'fab fa-twitter',
     bitbucket: 'fab fa-bitbucket',
     help: 'fas fa-question',
-    ok: 'fas fa-check'
+    ok: 'fas fa-check',
+    next: 'fas fa-chevron-right',
+    prev: 'fas fa-chevron-left',
+    all: 'fas fa-th',
   }
 
   const iconClasses = [];

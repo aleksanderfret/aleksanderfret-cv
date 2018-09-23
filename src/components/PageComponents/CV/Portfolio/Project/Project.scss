@@ -1,1 +1,99 @@
 @import 'partials';
+
+.Project {
+  @include pageTile;
+  overflow: hidden;
+  &:hover {
+    @include shadow(3);
+    .Preview {
+      transform: scale(1.2);
+    }
+    .Overlay {
+      opacity: 0.8;
+    }
+    .Content {
+      transform: scale(1);
+    }
+  }
+}
+.Preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in;
+  transform: scale(1);
+}
+
+.Info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.Overlay {
+  width: 100%;
+  height: 100%;
+  background-color: $base-color;
+  transition: opacity 0.3s ease-in;
+  opacity: 0;
+}
+
+.Content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transition: transform 0.3s ease-in;
+  transform: scale(0);
+}
+
+.Technologies {
+  color: $reverse-color;
+  padding: 0.5rem;
+  text-align: center;
+  li {
+    font-size: 0.9rem;
+    display: inline;
+    &:not(:last-child):after {
+      content: ', ';
+    }
+  }
+}
+
+.ProjectName {
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: $reverse-color;
+  padding: 0.5rem;
+  border: 1px solid $reverse-color;
+  filter: drop-shadow(0 0 4px $dark-base);
+  @include tiny-screens {
+    font-size: 1.1rem;
+  }
+  @include slight-screens {
+    padding: 0.35rem;
+  }
+  @include small-screens {
+    font-size: 1rem;
+    padding: 0.25rem;
+  }
+  @include medium-screens {
+    font-size: 1.1rem;
+    padding: 0.35rem;
+  }
+  @include large-screens {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+}
+
+
+
+
+

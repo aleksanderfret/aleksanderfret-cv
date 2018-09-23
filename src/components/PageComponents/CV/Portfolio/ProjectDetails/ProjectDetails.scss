@@ -1,0 +1,90 @@
+@import 'partials';
+
+.Details {
+  @include pageContainer;
+  h4 {
+    @include pageTitle;
+  }
+  h5 {
+    @include categoryTitle;
+  }
+}
+
+.Project {
+  @include pageTile;
+}
+
+.Description {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.Technologies {
+  display: block;
+  li {
+    display: inline;
+    &:not(:last-child):after {
+      content: '; ';
+    }
+  }
+}
+.Links {
+  padding: 2rem 0 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Links a {
+  display: block;
+  background-color: $accessory-color;
+  color: $reverse-color;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  @include shadow(3);
+  transition: background-color 0.3s linear;
+  &:first-child {
+    margin-right: 1rem;
+  }
+  &:hover {
+    @include shadow(2);
+    background-color: $light-base;
+  }
+}
+
+.ProjectsNav {
+  position: relative;
+  @media screen and (min-width: 700px) {
+    position: absolute;
+    top: 5px;
+    right: 0;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 1rem;
+  }
+  a {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    color: $extra-light-base-text;
+    background-color: darken($body-background, 5%);
+    margin-left: 0.5rem;
+    transition: all 0.3 ease-in;
+    @include shadow();
+    &:first-child {
+      margin-left: 0;
+    }
+    &:hover {
+      background-color: darken($body-background, 7.5%);
+      color: $middle-light-base-text;
+    }
+  }
+}
