@@ -1,3 +1,4 @@
+import kebabCase from 'lodash/kebabCase';
 import aleksanderFret from '../../../../../assets/images/portfolio/aleksander-fret-cv.jpg';
 import aleksanderFretDetails from '../../../../../assets/images/details/aleksander-fret-cv.jpg';
 import amusementParks from '../../../../../assets/images/portfolio/amusement-parks.jpg';
@@ -65,6 +66,11 @@ const images = {
     [TARGET.PORTFOLIO]: artist,
     [TARGET.DETAILS]: artistDetails,
   },
+}
+
+export const getSlug = (index) => {
+  const keys = Object.keys(images);
+  return kebabCase(keys[index]);
 }
 
 

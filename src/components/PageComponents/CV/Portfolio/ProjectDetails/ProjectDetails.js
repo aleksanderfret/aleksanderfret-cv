@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { translate } from 'react-i18next';
 import camelCase from 'lodash/camelCase';
 import findIndex from 'lodash/findIndex';
 import { dateToAttr } from '../../../../../utils/utils';
-import { getImage, TARGET } from '../ProjectImages/ProjectImages';
+import { getImage, getSlug, TARGET } from '../ProjectImages/ProjectImages';
+import FontIcon from '../../../../UI/FontIcon/FontIcon';
+import * as icons from '../../../../UI/FontIcon/FontIconTypes/FontIconsTypes';
 import Image from '../../../../UI/Image/Image';
 import classes from './ProjectDetails.scss';
 
@@ -11,27 +14,63 @@ class ProjectDetails extends Component {
   constructor(props) {
     super(props);
     const projectsData = this.props.i18n.store.data.en.portfolio.works;
-    this.id = camelCase(this.props.match.params.project);
-    this.index = findIndex(projectsData, project => project.id === this.id) || 0;
-    this.projectData = projectsData[this.index];
+    const id = camelCase(this.props.match.params.project);
+    const index = findIndex(projectsData, project => project.id === id) || 0;
+    this.state = {
+      id,
+      index,
+      projectData: projectsData[index],
+      routes: ProjectDetails.getRoutes(projectsData, index)
+    }
     this.header = React.createRef();
   }
 
   getData = () => {
     const data = {};
-    for (const key in this.projectData) {
-      data[key] = this.props.t(`works.${this.index}.${key}`, { returnObjects: true });
+    for (const key in this.state.projectData) {
+      data[key] = this.props.t(`works.${this.state.index}.${key}`, { returnObjects: true });
     }
     return data;
+  }
+
+  static getRoutes = (projectsData, index) => {
+    const length = projectsData.length;
+    let prevIndex = index - 1;
+    let nextIndex = index + 1
+    if (index === 0) {
+      prevIndex = length - 1;
+    }
+    if (index === length - 1) {
+      nextIndex = 0;
+    }
+    const routes = {};
+    routes.prev = `/portfolio/${getSlug(prevIndex)}`;
+    routes.next = `/portfolio/${getSlug(nextIndex)}`;
+    return routes;
   }
 
   componentDidMount() {
     this.header.current.focus();
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const nextId = camelCase(nextProps.match.params.project);
+    if (nextId !== prevState.id) {
+      const projectsData = nextProps.i18n.store.data.en.portfolio.works;
+      const index = findIndex(projectsData, project => project.id === nextId) || 0;
+      return {
+        id: nextId,
+        index,
+        projectData: projectsData[index],
+        routes: ProjectDetails.getRoutes(projectsData, index)
+      };
+    }
+    return prevState;
+  }
+
   render() {
     const data = this.getData();
-    const image = getImage(this.id, TARGET.DETAILS);
+    const image = getImage(this.state.id, TARGET.DETAILS);
     const projectDate = (<span>
       <time dateTime={dateToAttr(data.startDate)}>{data.startDate}</time>
       {data.endDate !== data.startDate &&
@@ -43,6 +82,14 @@ class ProjectDetails extends Component {
         <h4
           ref={this.header}
           tabIndex={-1}>{data.name}</h4>
+        <div className={classes.ProjectsNav}>
+          <nav>
+            <Link to={this.state.routes.prev}><FontIcon iconType={icons.PREV} /></Link>
+            <Link to='/portfolio'><FontIcon iconType={icons.ALL} /></Link>
+            <Link to={this.state.routes.next}><FontIcon iconType={icons.NEXT} /></Link>
+          </nav>
+        </div>
+
         <div className={classes.Project}>
           <Image
             src={image.src}
@@ -61,7 +108,7 @@ class ProjectDetails extends Component {
             </ul>
             <h5>{this.props.t('labels.description')}</h5>
             <p>{data.description}</p>
-            <div class={classes.Links}>
+            <div className={classes.Links}>
               {data.projectURL &&
                 <a
                   href={data.projectURL}

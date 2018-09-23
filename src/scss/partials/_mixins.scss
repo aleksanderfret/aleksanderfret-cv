@@ -115,19 +115,21 @@
 }
 
 @mixin pageTitle{
-  font-size: 1.5rem;
+  position: relative;
+  font-size: 1.2rem;
   text-transform: capitalize;
   color: $base-color;
   width: 100%;
   text-align: left;
   margin: 0 0 1.5rem 0;
   &:focus {
+    outline: 0;
   }
   @include tiny-screens {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   @include slight-screens {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   @include small-screens {
     font-size: 2.25rem;
@@ -225,6 +227,7 @@
   &:focus,
   &:active,
   &:hover {
+    outline: 0;
     border: 1px solid $extra-light-base-text;
     border-right: none;
   }
