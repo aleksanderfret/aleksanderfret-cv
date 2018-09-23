@@ -221,7 +221,6 @@ class Contact extends Component {
           ref={this.header}
           tabIndex={-1}>{this.props.t('title')}</h3>
         <div className={classes.Form}>
-          <h4 className={classes.Subtitle}>{this.props.t('subtitle')}</h4>
           {form}
         </div>
       </div>

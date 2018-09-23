@@ -5,6 +5,7 @@ import Error from '../../Error/Error';
 import FontIcon from '../../../UI/FontIcon/FontIcon';
 import Label from '../ControlLabel/ControlLabel';
 import classes from './CheckboxControl.scss';
+import * as icons from '../../FontIcon/FontIconTypes/FontIconsTypes';
 
 class CheckboxControl extends Component {
   state = {
@@ -13,7 +14,7 @@ class CheckboxControl extends Component {
 
   onPressOK = (event) => {
     if (event.keyCode === 13 || event.keyCode === 32) {
-      this.props.checkboxClickHandler();
+      this.checkboxClickHandler();
     }
   }
 
@@ -49,7 +50,7 @@ class CheckboxControl extends Component {
           onClick={this.checkboxClickHandler}
           onFocus={() => { document.addEventListener('keydown', this.onPressOK) }}
           onBlur={() => { document.removeEventListener('keydown', this.onPressOK) }}>
-          {this.state.checked && <FontIcon iconType='ok' />}
+          {this.state.checked && <FontIcon iconType={icons.OK} />}
         </span>
         {this.props.config.label &&
           <Label
