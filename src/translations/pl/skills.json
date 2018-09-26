@@ -1,21 +1,109 @@
 {
   "title": "umiejętności",
-  "skills": [{
+  "skills": [
+    {
       "type": "programowanie",
-      "skills": ["HTML5", "CSS3", "SASS", "RWD", "JavaScript", "ES6", "Jquery", "React", "Redux", "PHP", "Symfony", "MySQL", "Twig", "Gulp", "Git"]
+      "skills": [
+        {
+          "name": "JavaScript"
+        },
+        {
+          "name": "ES6"
+        },
+        {
+          "name": "React"
+        },
+        {
+          "name": "Redux"
+        },
+        {
+          "name": "JQuery"
+        },
+        {
+          "name": "HTML5"
+        },
+        {
+          "name": "CSS3"
+        },
+        {
+          "name": "SASS"
+        },
+        {
+          "name": "RWD"
+        },
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Symfony"
+        },
+        {
+          "name": "MySQL"
+        },
+        {
+          "name": "Twig"
+        },
+        {
+          "name": "Webpack"
+        },
+        {
+          "name": "Gulp"
+        },
+        {
+          "name": "Git"
+        }
+      ]
     },
     {
       "type": "grafika",
-      "skills": ["CorelDRAW", "Photoshop", "Illustrator", "InDesign", "Photo-Paint"]
+      "skills": [
+        {
+          "name": "CorelDRAW"
+        },
+        {
+          "name": "Adobe Photoshop"
+        },
+        {
+          "name": "Adobe Illustrator"
+        },
+        {
+          "name": "Adobe InDesign"
+        },
+        {
+          "name": "Corel Photo-Paint"
+        }
+      ]
     },
     {
       "type": "inne",
-      "skills": ["język angielski (b1)", "Global Mapper"]
-    }
-  ],
-  "traits": [{
-      "type": "cechy",
-      "traits": ["kreatywność", "dbałość o szczegóły,", "rzetelność", "odpowiedzialność", "zaangażowanie"]
+      "skills": [
+        {
+          "name": "język angielski (B1)"
+        },
+        {
+          "name": "Global Mapper"
+        }
+      ]
+    },
+    {
+      "type": "osobiste",
+      "skills": [
+        {
+          "name": "kreatywność"
+        },
+        {
+          "name": "dbałość o szczegóły"
+        },
+        {
+          "name": "rzetelność"
+        },
+        {
+          "name": "odpowiedzialność"
+        },
+        {
+          "name": "zaangażowanie"
+        }
+      ]
     }
   ]
 }

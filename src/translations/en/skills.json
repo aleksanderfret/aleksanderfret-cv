@@ -1,21 +1,109 @@
 {
   "title": "skills",
-  "skills": [{
+  "skills": [
+    {
       "type": "programming",
-      "skills": ["HTML5", "CSS3", "SASS", "RWD", "JavaScript", "ES6", "Jquery", "React", "Redux", "PHP", "Symfony", "MySQL", "Twig", "Gulp", "Git"]
+      "skills": [
+        {
+          "name": "JavaScript"
+        },
+        {
+          "name": "ES6"
+        },
+        {
+          "name": "React"
+        },
+        {
+          "name": "Redux"
+        },
+        {
+          "name": "JQuery"
+        },
+        {
+          "name": "HTML5"
+        },
+        {
+          "name": "CSS3"
+        },
+        {
+          "name": "SASS"
+        },
+        {
+          "name": "RWD"
+        },
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Symfony"
+        },
+        {
+          "name": "MySQL"
+        },
+        {
+          "name": "Twig"
+        },
+        {
+          "name": "Webpack"
+        },
+        {
+          "name": "Gulp"
+        },
+        {
+          "name": "Git"
+        }
+      ]
     },
     {
-      "type": "graphic",
-      "skills": ["CorelDRAW", "Photoshop", "Illustrator", "InDesign", "Photo-Paint"]
+      "type": "graphics",
+      "skills": [
+        {
+          "name": "CorelDRAW"
+        },
+        {
+          "name": "Adobe Photoshop"
+        },
+        {
+          "name": "Adobe Illustrator"
+        },
+        {
+          "name": "Adobe InDesign"
+        },
+        {
+          "name": "Corel Photo-Paint"
+        }
+      ]
     },
     {
-      "type": "other",
-      "skills": ["english language (b1)", "Global Mapper"]
-    }
-  ],
-  "traits": [{
-      "type": "traits",
-      "traits": ["creative", "with attention to detail", "reliable", "responsible", "strongly involved"]
+      "type": "others",
+      "skills": [
+        {
+          "name": "English (B1)"
+        },
+        {
+          "name": "Global Mapper"
+        }
+      ]
+    },
+    {
+      "type": "personal",
+      "skills": [
+        {
+          "name": "creative"
+        },
+        {
+          "name": "with attention to details"
+        },
+        {
+          "name": "reliable"
+        },
+        {
+          "name": "responsible"
+        },
+        {
+          "name": "strongly involved"
+        }
+      ]
     }
   ]
 }

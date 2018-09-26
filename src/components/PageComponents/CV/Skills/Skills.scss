@@ -7,3 +7,10 @@
 .Skills h3 {
   @include pageTitle;
 }
+
+.SkillsItems {
+  margin: 0 0 1.5rem 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

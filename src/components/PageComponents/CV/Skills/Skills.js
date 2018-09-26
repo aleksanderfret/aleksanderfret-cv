@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
+import SkillsCategory from './SkillsCategory/SkillsCategory';
 import classes from './Skills.scss';
 
 class Skills extends Component {
@@ -18,6 +19,14 @@ class Skills extends Component {
         <h3
           ref={this.header}
           tabIndex={-1}>{this.props.t('title')}</h3>
+        <ul>
+          {this.props.t('skills', { returnObjects: true }).map((skills) => (
+            <li className={classes.SkillsItems}
+              key={skills.type}>
+              <SkillsCategory {...skills} />
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
