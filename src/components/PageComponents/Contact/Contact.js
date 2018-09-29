@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
+import axios from 'axios';
+import { contactFormConfig } from '../../../data/controls';
 import Button from '../../UI/Button/Button';
 import FormControl from '../../UI/FormControl/FormControl';
 import Spinner from '../../UI/Spinner/Spinner';
@@ -10,113 +12,44 @@ class Contact extends Component {
     super(props);
     this.header = React.createRef();
     this.state = {
-      contactForm: {
+      contactFromData: {
         name: {
-          type: 'input',
-          subtype: 'text',
-          label: 'form.name.label',
-          info: 'form.name.info',
-          rules: {
-            required: true,
-            pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ -']{3,60}$/,
-          },
-          errors: {
-            required: 'form.name.errors.required',
-            pattern: 'form.name.errors.pattern',
-          },
+          error: '',
           value: '',
           isValid: false
         },
         email: {
-          type: 'input',
-          subtype: 'email',
-          label: 'form.email.label',
-          info: 'form.email.info',
-          rules: {
-            required: true,
-            pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$/,
-          },
-          errors: {
-            required: 'form.email.errors.required',
-            pattern: 'form.email.errors.pattern',
-          },
+          error: '',
           value: '',
           isValid: false,
         },
         subject: {
-          type: 'input',
-          subtype: 'text',
-          label: 'form.subject.label',
-          info: 'form.subject.info',
-          rules: {
-            required: true,
-            pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ0-9,.)-:(!? ']{5,500}$/,
-          },
-          errors: {
-            required: 'form.subject.errors.required',
-            pattern: 'form.subject.errors.pattern',
-          },
+          error: '',
           value: '',
           isValid: false,
         },
         message: {
-          type: 'textarea',
-          label: 'form.message.label',
-          info: 'form.message.info',
-          rules: {
-            required: true,
-            pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ0-9,.)-:(!? '\n]{5,2000}$/,
-          },
-          errors: {
-            required: 'form.message.errors.required',
-            pattern: 'form.message.errors.pattern',
-          },
+          error: '',
           value: '',
           isValid: false,
         },
         rodo: {
-          type: 'input',
-          subtype: 'checkbox',
-          label: 'form.rodo.label',
-          info: 'form.rodo.info',
-          rules: {
-            required: true,
-          },
-          errors: {
-            required: 'form.rodo.errors.required',
-          },
-          checked: false,
-          value: 1,
+          error: '',
+          value: false,
           isValid: false,
         },
         emailcopy: {
-          type: 'input',
-          subtype: 'checkbox',
-          label: 'form.emailcopy.label',
-          rules: {
-            required: false
-          },
-          errors: {},
-          checked: false,
-          value: 1,
+          value: false,
           isValid: true,
         },
         captcha: {
-          type: 'captcha',
-          rules: {
-            required: false,
-            pattern: ''
-          },
-          errors: {
-            required: 'form.captcha.errors.required',
-            pattern: 'form.captcha.errors.pattern',
-          },
-          value: 0,
+          error: '',
+          value: '',
           isValid: false,
         }
       },
-      formIsValid: false,
-      loading: false,
+      formIsValid: true,
+      sending: false,
       visibleTipId: null
     }
   }
@@ -127,10 +60,10 @@ class Contact extends Component {
 
   createFormControls = () => {
     const formElementArray = [];
-    for (const key in this.state.contactForm) {
+    for (const key in contactFormConfig) {
       formElementArray.push({
         id: key,
-        config: this.state.contactForm[key]
+        config: contactFormConfig[key]
       });
     }
     const formControls = formElementArray.map(formElement => {
@@ -150,33 +83,31 @@ class Contact extends Component {
 
   formControlChangeHandler = (params, id) => {
     const updatedContactForm = {
-      ...this.state.contactForm
+      ...this.state.contactFormData
     }
     const updatedFormElement = {
       ...updatedContactForm[id]
     }
 
-    if (updatedFormElement.subtype !== 'checkbox') {
-      updatedFormElement.value = params.value;
-    } else {
-      updatedFormElement.checked = params.value;
-    }
+    updatedFormElement.value = params.value;
     updatedFormElement.isValid = params.isValid;
     updatedContactForm[id] = updatedFormElement;
 
     const formIsValid = this.checkIsFormValid(params.isValid, id);
     this.setState(() => ({
-      contactForm: updatedContactForm,
+      contactFormData: updatedContactForm,
       formIsValid
     }));
   }
 
   checkIsFormValid = (isValid, id) => {
     let formIsValid = true;
-    for (let key in this.state.contactForm) {
-      const isControlValid = (key === id) ? isValid : this.state.contactForm[key].isValid;
+    for (let key in this.state.contactFormData) {
+      const isControlValid = (key === id) ? isValid : this.state.contactFormData[key].isValid;
       formIsValid = isControlValid && formIsValid;
-      if (!formIsValid) return;
+      if (!formIsValid) {
+        return formIsValid;
+      }
     }
     return formIsValid;
   }
@@ -199,8 +130,26 @@ class Contact extends Component {
     return form;
   }
 
-  contactHandler = () => {
+  contactHandler = (event) => {
+    event.preventDefault();
+    this.setState({ sending: true });
+    const contact = { name: false };
+    axios.post('http://localhost/aleksanderfret/api/public/index.php', contact)
+      .then(response => {
+        console.log(response);
+        if (response.status === 200) {
+          console.log('uuuuu jeeee');
+        }
 
+        this.setState(() => ({ sending: false }));
+        this.props.history.push('/');
+      })
+      .catch(error => {
+        if (error.response.status === 406) {
+          console.log(error.response.data);
+        }
+        this.setState(() => ({ sending: false }));
+      })
   }
 
   openTipHandler = (event, id) => {
@@ -213,7 +162,7 @@ class Contact extends Component {
   }
 
   render() {
-    const form = this.state.loading ? <Spinner /> : this.createContactForm();
+    const form = this.state.sending ? <Spinner /> : this.createContactForm();
 
     return (
       <div className={classes.Contact}>
