@@ -7,6 +7,18 @@ const withValidation = (WrappedComponent) => {
       touched: false,
     }
 
+    componentDidUpdate(prevProps) {
+      if (this.props.externalError && prevProps.externalError !== this.props.externalError) {
+        this.setState(() => ({
+          error: this.props.config.errors[this.props.externalError] || 'unknown error',
+          touched: true
+        }));
+        this.props.changed({
+          isValid: !this.props.externalError,
+        });
+      }
+    }
+
     checkValidity = (value, rules) => {
       if (!rules) {
         return;

@@ -2,8 +2,12 @@ import React from 'react';
 import classes from './Overlay.scss';
 
 const overlay = (props) => {
-  return(
-    props.isShown ? <div className={classes.Overlay} onClick={props.clicked}></div> : null
+  const overlayClasses = [classes.Overlay];
+  if (classes[props.type]) {
+    overlayClasses.push(classes[props.type]);
+  }
+  return (
+    props.isShown ? <div className={overlayClasses.join(' ')} onClick={props.clicked}></div> : null
   );
 };
 

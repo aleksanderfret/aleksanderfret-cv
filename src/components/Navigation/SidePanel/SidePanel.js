@@ -26,6 +26,7 @@ class SidePanel extends Component {
     return (
       <React.Fragment>
         <Overlay
+          type={'dark'}
           isShown={this.props.isOpen}
           clicked={this.props.closeSidePanel} />
         <CSSTransition

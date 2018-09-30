@@ -80,7 +80,7 @@ export const contactFormConfig = {
   captcha: {
     type: 'captcha',
     rules: {
-      required: false,
+      required: true,
       pattern: ''
     },
     errors: {

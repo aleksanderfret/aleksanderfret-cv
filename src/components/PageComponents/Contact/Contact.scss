@@ -14,6 +14,7 @@
   width: 100%;
   padding: 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   min-height: 500px;
 }
@@ -23,6 +24,9 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  @include large-screens {
+    margin-top: 2rem;
+  }
 }
 
 .Subtitle {
@@ -36,4 +40,12 @@
   @include small-screens {
     font-size: 1.5rem;
   }
+}
+
+.ErrorMessage {
+  width: 100%;
+  text-align: center;
+  line-height: 1.2rem;
+  color: $error-color;
+  margin-bottom: 1.5rem;
 }

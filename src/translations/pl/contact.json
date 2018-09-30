@@ -4,6 +4,9 @@
   "form": {
     "help": "Pola formularza kontaktowego oznaczone gwiazdką są obowiązkowe. Wymagane pola to: imię, email, temat, wiadomość, przetwarzanie danych i reCaptcha.",
     "required": "Pola wymagane",
+    "error400": "Ups, serwer arbitralnie uznał dane za niepoprawne i odmówił wysłania wiadomości. Prosz spróbować ponownie.",
+    "error500": "Ups, coś się serwerowi potetentegowało i nie udało mu się wysłać wiadomości... Proszę spróbować ponownie.",
+    "errorUnknown": "Ups, z bliżej niezidentyfikowanych przyczyn wysłanie wiadomości nie powiodło się. Proszę spróbować ponownie.",
     "name": {
       "label": "Imię i nazwisko",
       "placeholder": "$t(form.name.label)",

@@ -12,29 +12,29 @@ class Contact extends Component {
     super(props);
     this.header = React.createRef();
     this.state = {
-      contactFromData: {
+      contactFormData: {
         name: {
-          error: '',
+          backendError: '',
           value: '',
-          isValid: false
+          isValid: true
         },
         email: {
-          error: '',
+          backendError: '',
           value: '',
           isValid: false,
         },
         subject: {
-          error: '',
+          backendError: '',
           value: '',
           isValid: false,
         },
         message: {
-          error: '',
+          backendError: '',
           value: '',
           isValid: false,
         },
         rodo: {
-          error: '',
+          backendError: '',
           value: false,
           isValid: false,
         },
@@ -43,14 +43,15 @@ class Contact extends Component {
           isValid: true,
         },
         captcha: {
-          error: '',
+          backendError: '',
           value: '',
           isValid: false,
         }
       },
       formIsValid: true,
       sending: false,
-      visibleTipId: null
+      visibleTipId: null,
+      errorMessage: '',
     }
   }
 
@@ -69,6 +70,7 @@ class Contact extends Component {
     const formControls = formElementArray.map(formElement => {
       return (
         <FormControl
+          externalError={this.state.contactFormData[formElement.id].backendError}
           key={formElement.id}
           name={formElement.id}
           config={formElement.config}
@@ -88,11 +90,12 @@ class Contact extends Component {
     const updatedFormElement = {
       ...updatedContactForm[id]
     }
+    if (params.value !== undefined) {
+      updatedFormElement.value = params.value;
+    }
 
-    updatedFormElement.value = params.value;
     updatedFormElement.isValid = params.isValid;
     updatedContactForm[id] = updatedFormElement;
-
     const formIsValid = this.checkIsFormValid(params.isValid, id);
     this.setState(() => ({
       contactFormData: updatedContactForm,
@@ -121,6 +124,7 @@ class Contact extends Component {
         <Button
           btnType='StandardButton'
           label={this.props.t('form.submit.aria')}
+          // disabled={false}>
           disabled={!this.state.formIsValid}>
           {this.props.t('form.submit.label')}
         </Button>
@@ -133,22 +137,50 @@ class Contact extends Component {
   contactHandler = (event) => {
     event.preventDefault();
     this.setState({ sending: true });
-    const contact = { name: false };
-    axios.post('http://localhost/aleksanderfret/api/public/index.php', contact)
+    axios.post('http://localhost/aleksanderfret/api/public/index.php', this.state.contactFormData)
       .then(response => {
-        console.log(response);
         if (response.status === 200) {
-          console.log('uuuuu jeeee');
+          this.setState(() => ({ sending: false }));
         }
-
-        this.setState(() => ({ sending: false }));
-        this.props.history.push('/');
       })
       .catch(error => {
-        if (error.response.status === 406) {
-          console.log(error.response.data);
+        const status = error.response.status;
+        let errorMessage = '';
+        switch (status) {
+          case 406:
+            if (error.response.data) {
+              const errors = { ...error.response.data };
+              const updatedContactForm = {
+                ...this.state.contactFormData
+              }
+              for (const key in updatedContactForm) {
+                updatedContactForm[key].backendError = errors[key];
+                if (errors[key]) {
+                  updatedContactForm[key].isValid = false;
+                }
+              }
+              console.log(updatedContactForm);
+              this.setState(() => ({
+                contactFormData: updatedContactForm,
+                formIsValid: false
+              }));
+            }
+            break;
+          case 400:
+            errorMessage = this.props.t('form.error400');
+            break;
+          case 500:
+            errorMessage = this.props.t('form.error500');
+            break;
+          default:
+            errorMessage = this.props.t('form.errorUnknown');
         }
-        this.setState(() => ({ sending: false }));
+        this.setState(() => ({ errorMessage }));
+      })
+      .then(() => {
+        this.setState(() => ({
+          sending: false,
+        }));
       })
   }
 
@@ -162,7 +194,7 @@ class Contact extends Component {
   }
 
   render() {
-    const form = this.state.sending ? <Spinner /> : this.createContactForm();
+    const form = this.createContactForm();
 
     return (
       <div className={classes.Contact}>
@@ -170,8 +202,14 @@ class Contact extends Component {
           ref={this.header}
           tabIndex={-1}>{this.props.t('title')}</h3>
         <div className={classes.Form}>
+          {this.state.errorMessage &&
+            <h4 className={classes.ErrorMessage}>{this.state.errorMessage}</h4>
+          }
           {form}
         </div>
+        {this.state.sending &&
+          <Spinner />
+        }
       </div>
     );
   }

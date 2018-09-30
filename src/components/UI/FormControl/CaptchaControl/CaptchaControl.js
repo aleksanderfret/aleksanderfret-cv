@@ -8,7 +8,7 @@ import classes from './CaptchaControl.scss';
 class CaptchaControl extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div className={classes.CaptchaWrapper}>
         <div className={classes.Captcha}>
           <ReCAPTCHA
             onChange={(value) => {
@@ -25,7 +25,7 @@ class CaptchaControl extends Component {
         {this.props.error &&
           <Error message={this.props.t(this.props.error)} />
         }
-      </React.Fragment>
+      </div>
     );
   }
 }
