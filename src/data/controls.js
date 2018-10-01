@@ -81,7 +81,7 @@ export const contactFormConfig = {
     type: 'captcha',
     rules: {
       required: true,
-      pattern: ''
+      pattern: /^.+$/,
     },
     errors: {
       required: 'form.captcha.errors.required',

@@ -35,7 +35,7 @@ const withValidation = (WrappedComponent) => {
     }
 
     controlChangeHandler = (value) => {
-      if (typeof value === 'boolean') {
+      if (typeof value === 'boolean' || this.props.config.type === 'captcha') {
         this.controlOnBlurHandler(value);
       } else {
         if (this.state.error) {
