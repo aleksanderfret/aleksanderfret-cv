@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { translate } from 'react-i18next';
 import axios from 'axios';
 import { contactFormConfig } from '../../../data/controls';
@@ -124,7 +125,6 @@ class Contact extends Component {
         <Button
           btnType='StandardButton'
           label={this.props.t('form.submit.aria')}
-          // disabled={false}>
           disabled={!this.state.formIsValid}>
           {this.props.t('form.submit.label')}
         </Button>
@@ -137,11 +137,13 @@ class Contact extends Component {
   contactHandler = (event) => {
     event.preventDefault();
     this.setState({ sending: true });
-    axios.post('http://localhost/aleksanderfret/api/public/index.php', this.state.contactFormData)
+    axios.post('api/Public/index.php', this.state.contactFormData)
+      //axios.post('http://localhost/aleksanderfret/api/', this.state.contactFormData)
       .then(response => {
         if (response.status === 200) {
           this.setState(() => ({ sending: false }));
         }
+        this.props.history.push(`${this.props.match.url}/success`);
       })
       .catch(error => {
         const status = error.response.status;
@@ -215,4 +217,4 @@ class Contact extends Component {
   }
 }
 
-export default translate('contact')(Contact);
+export default withRouter(translate('contact')(Contact));

@@ -1,0 +1,35 @@
+@import 'partials';
+
+.ContactSuccess {
+  @include pageContainer;
+}
+
+.ContactSuccess h3 {
+  @include pageTitle;
+}
+
+.SuccessMessage {
+  @include pageTile;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20vh 2rem;
+  text-align: center;
+}
+
+.SuccessMessage p {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  &:first-child {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  &:last-child {
+    font-size:  1rem;
+    font-weight: 300;
+  }
+}
+

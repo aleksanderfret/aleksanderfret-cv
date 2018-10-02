@@ -2,16 +2,24 @@
   "title": "contact",
   "subtitle": "contact form",
   "form": {
-    "help": "The contact form fields marked with an asterisk are mandatory. The required fields are: name, email, subject, message, data processing and reCaptcha.",
-    "required": "Required fields",
+    "help": "The contact form fields marked with the asterisk are mandatory (name and last name, e-mail, subject, message, data processing, reCAPTCHA.",
+    "required": "Required field",
+    "error400": "Oops, server has adjudicated, that data is incorrect and has refused to send the message. Please, try once more.",
+    "error500": "Oops, despite the best will server could not send the message. Please, try once more.",
+    "errorUnknown": "Oops, for the reasons not clearly specified sending the message has failed. Please, try once more.",
+    "success": [
+      "Surprisingly, all succeeded ;-)",
+      "Thank you very much for sending the message!",
+      "Customer service will answer as soon as possible ;-)"
+    ],
     "name": {
-      "label": "Name",
+      "label": "Name and last name",
       "placeholder": "$t(form.name.label)",
       "info": [
-        "The name can only contain letters, spaces, dashes and apostrophes. The name must contain at least 5 and a maximum of 60 characters."
+        "The name field can only contain letters, spaces, dashes and apostrophes. Expected number of characters: from 5 to 60."
       ],
       "errors": {
-        "required": "The name is required!",
+        "required": "The name and last name are required.",
         "pattern": "Entered name is invalid. $t(form.name.info.0)"
       }
     },
@@ -19,21 +27,21 @@
       "label": "E-mail",
       "placeholder": "$t(form.email.label)",
       "info": [
-        "The proper e-mail format examples: name@surname.com or name.surname@company.com."
+        "The format of e-mail is name@domain, for example  name-of-my-mailbox@mailboxdomain.com."
       ],
       "errors": {
-        "required": "The e-mail address is required!",
-        "pattern": "Enter the proper e-mail address. $t(form.email.info.0)"
+        "required": "The e-mail address is required.",
+        "pattern": "Entered e-mail address is invalid. $t(form.email.info.0)"
       }
     },
     "subject": {
       "label": "Subject",
       "placeholder": "$t(form.subject.label)",
       "info": [
-        "The subject can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The subject must contain at least 5 and a maximum of 500 characters."
+        "The subject field can only contain letters, numbers, spaces, and characters ,.)-:(!?'. Expected number of characters: from 5 to 500."
       ],
       "errors": {
-        "required": "The subject is required!",
+        "required": "The subject is required.",
         "pattern": "Entered subject is invalid. $t(form.subject.info.0)"
       }
     },
@@ -41,39 +49,37 @@
       "label": "Message",
       "placeholder": "$t(form.message.label)",
       "info": [
-        "The message can only contain letters, numbers, spaces, and characters ,.)-:(!?'. The message must contain at least 5 and a maximum of 2000 characters."
+        "The message field can only contain letters, numbers, spaces, and characters ,.)-:(!?'. Expected number of characters: from 5 to 2000."
       ],
       "errors": {
-        "required": "The message is required!!",
+        "required": "The message is required.",
         "pattern": "Entered message is invalid. $t(form.message.info.0)"
       }
     },
     "captcha": {
       "errors": {
-        "required": "Please check the reCAPTCHA field!",
+        "required": "Please check the reCAPTCHA field.",
         "pattern": "Validation against robots was unsuccessful. Please try again."
       }
     },
     "rodo": {
-      "label": "I've read <1>the information about data processing</1>",
+      "label": "I've read <1>the information about data processing</1> and I accept it.",
       "errors": {
-        "required": "This field is required!"
+        "required": "Consent to data processing is essential so that I can respond to your message."
       },
       "info": [
-        "I agree to the processing of personal data in accordance with the law on the protection of personal data in connection with sending a message via the contact form.",
-        "Providing this data is voluntary, but necessary to process the query. The data entered in the contact form won't be save in any database and will be processed only to respond to the message.",
+        "I agree to the processing of personal data in accordance with the law on the protection of personal data regarding sending a message via the contact form.",
+        "Providing this data is voluntary, but necessary to process the request. The data entered in the contact form won't be save in any database and will be processed only to respond to the message.",
         "The personal data administrator is Aleksander Fret."
       ]
     },
     "emailcopy": {
-      "label": "Send me a copy"
+      "label": "Send me a copy of the message."
     },
     "submit": {
-      "label": "send",
-      "aria": "send the message"
-    },
-    "success": "Thank you for sending me a message.",
-    "failed": "The message couldn't be sent. Please try again."
+      "label": "Send",
+      "aria": "Send the message"
+    }
   },
   "social": {
     "linkedin": {

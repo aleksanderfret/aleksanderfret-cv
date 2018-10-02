@@ -2,19 +2,24 @@
   "title": "kontakt",
   "subtitle": "formularz kontaktowy",
   "form": {
-    "help": "Pola formularza kontaktowego oznaczone gwiazdką są obowiązkowe. Wymagane pola to: imię, email, temat, wiadomość, przetwarzanie danych i reCaptcha.",
-    "required": "Pola wymagane",
-    "error400": "Ups, serwer arbitralnie uznał dane za niepoprawne i odmówił wysłania wiadomości. Prosz spróbować ponownie.",
-    "error500": "Ups, coś się serwerowi potetentegowało i nie udało mu się wysłać wiadomości... Proszę spróbować ponownie.",
-    "errorUnknown": "Ups, z bliżej niezidentyfikowanych przyczyn wysłanie wiadomości nie powiodło się. Proszę spróbować ponownie.",
+    "help": "Pola oznaczone gwiazdką są wymagane (imię i nazwisko, e-mail, temat, wiadomość, przetwarzanie danych, reCAPTCHA)",
+    "required": "Pole wymagane",
+    "error400": "Ups, serwer orzekł, że dane są niepoprawne i odmówił wysłania wiadomości. Proszę spróbuj ponownie.",
+    "error500": "Ups, mimo najszczerszych chęci serwerowi nie udało się wysłać wiadomości. Proszę spróbuj ponownie.",
+    "errorUnknown": "Ups, z przyczyn bliżej nieokreślonych  wysłanie wiadomości nie powiodło się. Proszę spróbuj ponownie.",
+    "success": [
+      "Zaskakujące, ale wszystko się udało ;-)",
+      "Dziękuję za wysłanie wiadomości!",
+      "Dział obsługi klienta odpowie w możliwie najkrótszym terminie ;-)"
+    ],
     "name": {
       "label": "Imię i nazwisko",
       "placeholder": "$t(form.name.label)",
       "info": [
-        "Imię i nazwisko może zawierać tylko litery, cyfry, spacje, myślniki i apostrofy. Pole to musi zawierać przynajmniej 5 i maksymalnie 60 znaków."
+        "Pole imię i nazwisko może zawierać tylko litery, cyfry, spacje, myślniki i apostrofy. Oczekiwana liczba znaków: od 5 do 60."
       ],
       "errors": {
-        "required": "Imię i nazwisko są wymagane!",
+        "required": "Imię i nazwisko są wymagane.",
         "pattern": "Wprowadzone dane są nieprawidłowe. $t(form.name.info.0)"
       }
     },
@@ -22,21 +27,21 @@
       "label": "E-mail",
       "placeholder": "$t(form.email.label)",
       "info": [
-        "Przykłady poprawnego adresu e-mail: imie@nazwisko.pl lub imie.nazwisko@firma.pl."
+        "Format adresu e-mail to nazwa@domena, przykładowo nazwa-mojego-konta-pocztowego@domenapoczty.pl"
       ],
       "errors": {
-        "required": "Adres e-mail jest wymagany!",
-        "pattern": "Wprowadź poprawny adres e-mail. $t(form.email.info.0)"
+        "required": "Adres e-mail jest wymagany.",
+        "pattern": "Wprowadzony adres e-mail jest nieprawidłowy. $t(form.email.info.0)"
       }
     },
     "subject": {
       "label": "Temat",
       "placeholder": "$t(form.subject.label)",
       "info": [
-        "Temat może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Temat musi zawierać przynajmniej 5 i maksymalnie 500 znaków."
+        "Pole temat może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Oczekiwana liczba znaków: od 5 do 500."
       ],
       "errors": {
-        "required": "Temat jest wymagany!",
+        "required": "Temat jest wymagany.",
         "pattern": "Wprowadzony temat jest nieprawidłowy. $t(form.subject.info.0)"
       }
     },
@@ -44,23 +49,23 @@
       "label": "Wiadomość",
       "placeholder": "$t(form.message.label)",
       "info": [
-        "Wiadmość może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Wiadomość musi zawierać przynajmniej 5 i maksymalnie 2000 znaków."
+        "Pole wadmość może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Oczekiwana liczba znaków: od 5 do 2000."
       ],
       "errors": {
-        "required": "Wiadomości jest wymagana!",
+        "required": "Wiadomość jest wymagana.",
         "pattern": "Wprowadzona wiadomość jest nieprawidłowa. $t(form.message.info.0)"
       }
     },
     "captcha": {
       "errors": {
-        "required": "Proszę zaznaczyć pole reCAPTCHA!",
-        "pattern": "Walidacja przeciwko robotom nie powiodła się. Prosimy spróbuj ponownie."
+        "required": "Proszę zaznaczyć pole reCAPTCHA.",
+        "pattern": "Walidacja przeciwko robotom nie powiodła się. Proszę spróbuj ponownie."
       }
     },
     "rodo": {
-      "label": "Zapoznałem się z <1>informacją o przetwarzaniu danych</1>",
+      "label": "Zapoznałem się z <1>informacją o przetwarzaniu danych</1> i ją akceptuję.",
       "errors": {
-        "required": "To pole jest wymagane!"
+        "required": "Zgoda na przetwarzanie danych jest niezbędna, bym mógł odpowiedzieć na wiadomość."
       },
       "info": [
         "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danych osobowych w związku z wysłaniem zapytania przez formularz kontaktowy.",
@@ -69,14 +74,12 @@
       ]
     },
     "emailcopy": {
-      "label": "Wyślij mi kopię"
+      "label": "Wyślij mi kopię wiadomości."
     },
     "submit": {
-      "label": "wyśli",
-      "aria": "wyślij wiadomość"
-    },
-    "success": "Dziękuję za wysłanie wiadomości.",
-    "failed": "Nie udalo się wysłać wiadomości. Proszę spróbować ponownie."
+      "label": "Wyśli",
+      "aria": "Wyślij wiadomość"
+    }
   },
   "social": {
     "linkedin": {

@@ -4,6 +4,7 @@ import { translate } from 'react-i18next';
 import Layout from '../Layot/Layout';
 import PageController from '../PageController/PageController';
 import ProjectDetails from '../PageComponents/CV/Portfolio/ProjectDetails/ProjectDetails';
+import ContactSuccess from '../PageComponents/Contact/ContactSuccess/ContactSuccess';
 import Home from '../PageComponents/Home/Home';
 import NotFound from '../PageComponents/NotFound/NotFound';
 import classes from './CV.scss';
@@ -34,6 +35,7 @@ class CV extends Component {
       <div className={classes.CV}>
         <Layout toggleLanguage={this.toggleLanguage}>
           <Switch>
+            <Route path='/contact/success' component={ContactSuccess} />
             <Route path='/portfolio/:project' component={ProjectDetails} />
             <Route path='/:page' component={PageController} />
             <Route path='/' exact component={Home} />
