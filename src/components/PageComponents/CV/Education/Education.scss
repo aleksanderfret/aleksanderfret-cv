@@ -7,3 +7,10 @@
 .Education h3 {
   @include pageTitle;
 }
+
+.Education li {
+  margin: 0 0 1.5rem 0;
+  li:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,29 +1,56 @@
 {
-  "title": "wykształcenie",
-  "spec": "specjalizacja",
-  "education": [{
+  "title": "edukacja",
+  "labels": {
+    "degree": "tytuł"
+  },
+  "education": [
+    {
+      "school": "Udemy",
+      "type": "kurs",
+      "startDate": "09.2018",
+      "endDate": "obecnie",
+      "name": "React 16 – the complete guide",
+      "degree": ""
+    },
+    {
       "school": "Udacity",
-      "start-date": "11.2017",
-      "end-date": "08.2018",
-      "studies": "Google Front-End Web Developer Nanodegree Scholarship",
-      "degree": "",
-      "subject": "Technologie Front-Endowe"
+      "type": "program szkoleniowy",
+      "startDate": "11.2017",
+      "endDate": "08.2018",
+      "name": "Front-End Developer Nanodegree Program (stypendium od Google)",
+      "degree": ""
+    },
+    {
+      "school": "Udemy",
+      "type": "kurs",
+      "startDate": "09.2017",
+      "endDate": "09.2017",
+      "name": "The Complete Sass & SCSS Course: From Beginner to Advanced",
+      "degree": ""
+    },
+    {
+      "school": "Quali",
+      "type": "kurs",
+      "startDate": "03.2008",
+      "endDate": "04.2008",
+      "name": "PHP, MySQL, JavaScript",
+      "degree": ""
     },
     {
       "school": "Uniwersytet Wrocławski",
-      "start-date": "10.2002",
-      "end-date": "06.2004",
-      "studies": "uzupełniające studia magisterskie, kierunek Geografia, $t(spec)",
-      "degree": "magister",
-      "subject": "Kartografia"
+      "type": "studia magisterskie",
+      "startDate": "10.2002",
+      "endDate": "06.2004",
+      "name": "Geografia, specjalizacja Kartografia",
+      "degree": "magister"
     },
     {
       "school": "Uniwersytet Wrocławski",
-      "start-date": "10.1999",
-      "end-date": "06.2002",
-      "studies": "studia licencjackie, kierunek Geografia",
-      "degree": "licencjat",
-      "subject": "Geografia"
+      "type": "studia licencjackie",
+      "startDate": "10.1999",
+      "endDate": "06.2002",
+      "name": "Geografia",
+      "degree": "licencjat"
     }
   ]
 }
