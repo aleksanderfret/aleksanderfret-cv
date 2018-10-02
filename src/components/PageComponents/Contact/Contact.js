@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { translate } from 'react-i18next';
 import axios from 'axios';
 import { contactFormConfig } from '../../../data/controls';
+import Social from '../../Social/Social';
 import Button from '../../UI/Button/Button';
 import FormControl from '../../UI/FormControl/FormControl';
 import Spinner from '../../UI/Spinner/Spinner';
@@ -204,6 +205,10 @@ class Contact extends Component {
           ref={this.header}
           tabIndex={-1}>{this.props.t('title')}</h3>
         <div className={classes.Form}>
+          <div className={classes.SocialWrapper}>
+            <Social theme='base' />
+          </div>
+          <hr />
           {this.state.errorMessage &&
             <h4 className={classes.ErrorMessage}>{this.state.errorMessage}</h4>
           }

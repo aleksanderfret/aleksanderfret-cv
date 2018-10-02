@@ -4,15 +4,29 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  @include micro-screens {
+    li:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+  }
   a {
-    color: $reverse-color;
     display: block;
-    font-size: 1rem;
-    padding: 0.5rem;
     transform: scale(1);
     transition: transform 0.2s ease-in;
   &:hover {
     transform: scale(1.3);
   }
   }
+}
+
+.light {
+  color: $reverse-color;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.base {
+  color: $base-color;
+  font-size: 1.2rem;
+  padding: 0.5rem;
 }

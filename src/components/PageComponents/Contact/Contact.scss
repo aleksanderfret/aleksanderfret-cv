@@ -19,14 +19,25 @@
   min-height: 500px;
 }
 
+.SocialWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  border-bottom: 1px solid $base-color;
+  padding-bottom: 1rem;
+}
+
+
+
 .Form form {
   position: relative;
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
-  @include large-screens {
-    margin-top: 2rem;
-  }
+  margin: 2rem auto 0 auto;
+
 }
 
 .Subtitle {

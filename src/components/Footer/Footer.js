@@ -13,7 +13,7 @@ const footer = (props) => {
 
   return (
     <div className={classes.Footer}>
-      <Social />
+      <Social theme='light' />
       <p>&copy; {date} Aleksander Fret</p>
     </div>
   );
