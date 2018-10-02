@@ -49,7 +49,7 @@ class Contact extends Component {
           isValid: false,
         }
       },
-      formIsValid: true,
+      formIsValid: false,
       sending: false,
       visibleTipId: null,
       errorMessage: '',
