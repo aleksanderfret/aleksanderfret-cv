@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import SidePanel from '../Navigation/SidePanel/SidePanel';
 import { withRouter } from 'react-router-dom';
 
@@ -43,6 +44,7 @@ class Layout extends Component {
         <main className={classes.Content}>
           {this.props.children}
         </main>
+        <Footer></Footer>
       </React.Fragment>
     );
   }

@@ -81,22 +81,26 @@
       "aria": "Send the message"
     }
   },
-  "social": {
-    "linkedin": {
+  "social": [
+    {
+      "name": "linkedin",
       "url": "https://www.linkedin.com/in/aleksander-fret/",
       "label": "my LinkedIn profile"
     },
-    "github": {
-      "url": "my GitHub account",
-      "label": "https://github.com/alemikolo"
+    {
+      "name": "github",
+      "url": "https://github.com/alemikolo",
+      "label": "my GitHub account"
     },
-    "bitbucket": {
+    {
+      "name": "bitbucket",
       "url": "https://bitbucket.org/alemikolo/",
       "label": "my Bitbucket account"
     },
-    "twitter": {
-      "url": "https://twitter.com/AleksanderFret",
+    {
+      "name": "twitter",
+      "url": "https://twitter.com/AleksanderFret?lang=pl",
       "label": "my Twitter account"
     }
-  }
+  ]
 }
