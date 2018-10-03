@@ -14,7 +14,7 @@ class CaptchaControl extends Component {
             onChange={(value) => {
               this.props.changeHandler(value);
             }}
-            sitekey='6Le3aNoSAAAAAMzqxmNnD6CnzKgbhenePFEdDZ8I'
+            sitekey='6LcGYnMUAAAAAL8z065UHySmDPqg0DbC-3q2fb_w'
             hl={this.props.i18n.language} />
         </div>
         {this.props.error &&
