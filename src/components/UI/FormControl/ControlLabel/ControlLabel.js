@@ -13,7 +13,10 @@ const controlLabel = (props) => {
   if (labelText.indexOf('</1>') !== -1) {
     labelText = (
       <Trans i18nKey={props.label}>
-        Tresc <Button btnType='linkButton' clicked={(event) => { props.openTip(event, props.controlId) }}>link</Button>
+        Tresc <Button btnType='linkButton' clicked={(event) => {
+          event.stopPropagation();
+          props.openTip(event, props.controlId);
+        }}>link</Button>
       </Trans>
     );
   }

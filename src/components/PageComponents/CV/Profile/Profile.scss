@@ -21,6 +21,7 @@
 
 .Profession h4 {
   @include pageSubtitle;
+  margin-bottom: 1.25rem;
   @include tiny-screens {
     font-size: 1.2rem;
   }

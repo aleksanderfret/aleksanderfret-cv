@@ -139,7 +139,6 @@ class Contact extends Component {
     event.preventDefault();
     this.setState({ sending: true });
     axios.post('api/Public/index.php', this.state.contactFormData)
-      //axios.post('http://localhost/aleksanderfret/api/', this.state.contactFormData)
       .then(response => {
         if (response.status === 200) {
           this.setState(() => ({ sending: false }));
