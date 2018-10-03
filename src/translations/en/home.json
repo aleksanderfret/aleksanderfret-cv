@@ -1,40 +1,64 @@
 {
-	"welcome": "Hello world :-)",
-	"introduction": [
+  "welcome": "Hello world :-)",
+  "introduction": [
     "My name is Aleksander Fret and I'm Front-End Developer. Currently I'm focused on techologies: JavaScript, React, Redux, CSS, SASS and HTML. Ocasionally I use also back-end tools (PHP, MySQL). Moreover I'm Graphic Designer (Adobe, Corel) and Cartographer.",
-    "When I have free time, I split it between various hobbies: web technologies, playing the guitar, listening to the music, board games (i.a. developing my own version of Talisman), mountain trips. And what brings you here? I invite you to contact and cooperation"
+    "When I have free time, I split it between various hobbies: web technologies, playing the guitar, listening to the music, board games (i.a. developing my own version of Talisman), mountain trips. And what brings you here? I invite you to contact and cooperation."
   ],
   "imageAlt": "Aleksander Fret",
   "download": "download cv",
-  "tiles": [{
+  "tiles": [
+    {
       "name": "professional profile",
       "route": "profile",
-      "content": ["Front-End Developer","Graphic Designer","Cartographer"]
+      "content": [
+        "Front-End Developer",
+        "Graphic Designer",
+        "Cartographer"
+      ]
     },
     {
       "name": "experience",
       "route": "experience",
-      "content": ["history of employment","full-time work","contract work"]
+      "content": [
+        "history of employment",
+        "full-time work",
+        "contract work"
+      ]
     },
     {
       "name": "education",
       "route": "education",
-      "content": ["studies","scholarships","courses & trainings"]
+      "content": [
+        "studies",
+        "scholarships",
+        "courses & trainings"
+      ]
     },
     {
       "name": "skills",
       "route": "skills",
-      "content": ["programming","graphics","personal"]
+      "content": [
+        "programming",
+        "graphics",
+        "personal"
+      ]
     },
     {
       "name": "portfolio",
       "route": "portfolio",
-      "content": ["applications","company websites","personal websites"]
+      "content": [
+        "applications",
+        "company websites",
+        "personal websites"
+      ]
     },
     {
       "name": "contact",
       "route": "contact",
-      "content": ["contact form", "social networks"]
+      "content": [
+        "contact form",
+        "social networks"
+      ]
     }
   ]
 }
