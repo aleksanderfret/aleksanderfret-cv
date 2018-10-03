@@ -161,7 +161,6 @@ class Contact extends Component {
                   updatedContactForm[key].isValid = false;
                 }
               }
-              console.log(updatedContactForm);
               this.setState(() => ({
                 contactFormData: updatedContactForm,
                 formIsValid: false
@@ -169,13 +168,13 @@ class Contact extends Component {
             }
             break;
           case 400:
-            errorMessage = this.props.t('form.error400');
+            errorMessage = 'form.error400';
             break;
           case 500:
-            errorMessage = this.props.t('form.error500');
+            errorMessage = 'form.error500';
             break;
           default:
-            errorMessage = this.props.t('form.errorUnknown');
+            errorMessage = 'form.errorUnknown';
         }
         this.setState(() => ({ errorMessage }));
       })
@@ -209,7 +208,7 @@ class Contact extends Component {
           </div>
           <hr />
           {this.state.errorMessage &&
-            <h4 className={classes.ErrorMessage}>{this.state.errorMessage}</h4>
+            <h4 className={classes.ErrorMessage}>{this.props.t(this.state.errorMessage)}</h4>
           }
           {form}
         </div>

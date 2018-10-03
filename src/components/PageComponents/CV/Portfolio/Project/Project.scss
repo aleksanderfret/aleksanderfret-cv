@@ -6,7 +6,7 @@
   &:hover {
     @include shadow(3);
     .Preview {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
     .Overlay {
       opacity: 0.8;
