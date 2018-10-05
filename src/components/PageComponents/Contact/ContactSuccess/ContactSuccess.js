@@ -7,6 +7,11 @@ class ContactSuccess extends Component {
     super(props);
     this.header = React.createRef();
   }
+
+  componentDidMount() {
+    this.header.current.focus();
+  }
+
   render() {
     return (
       <div className={classes.ContactSuccess}>

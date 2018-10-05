@@ -36,6 +36,7 @@
   ],
   "menu": "site menu",
   "owner": "Aleksander Fret",
+  "notFound": "Oops, I searched literally everywhere, but I did not find the requested page...",
   "labels": {
     "controlHelpButton": "help for the {{control}} field",
     "downloadCV": "download CV"

@@ -1,1 +1,15 @@
 @import 'partials';
+
+.NotFound {
+  @include pageContainer;
+}
+
+.NotFoundMessage {
+  @include pageTile;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25vh 2rem;
+  text-align: center;
+}

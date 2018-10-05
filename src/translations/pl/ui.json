@@ -36,6 +36,7 @@
   ],
   "menu": "menu strony",
   "owner": "Aleksander Fret",
+  "notFound": "Ups, szukałem dosłownie wszędzie, ale żądanej stony nie znalazłem...",
   "labels": {
     "controlHelpButton": "pomoc dla pola {{control}}",
     "downloadCV": "pobierz CV"

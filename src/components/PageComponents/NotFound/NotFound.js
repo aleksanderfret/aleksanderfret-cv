@@ -1,10 +1,15 @@
 import React from 'react';
-//import classes from './NotFound.scss';
+import { translate } from 'react-i18next';
+import classes from './NotFound.scss';
 
 const notFound = (props) => {
-  return(
-    <h3>404 page not found</h3>
+  return (
+    <div className={classes.NotFound}>
+      <p className={classes.NotFoundMessage}>
+        {props.t('notFound')}
+      </p>
+    </div>
   );
 };
 
-export default notFound;
+export default translate('ui')(notFound);
