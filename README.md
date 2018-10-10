@@ -18,10 +18,8 @@ Project was created with [create-react-app](https://github.com/facebook/create-r
 * [lodash](https://lodash.com/)
 
 ### Piece of Back-end ;-)
-For handling contact form I used:
-* [PHPMailer](https://github.com/PHPMailer/PHPMailer)
-* [Respect\Validation](https://github.com/Respect/Validation)
-* [reCAPTCHA PHP client library](https://github.com/google/recaptcha)
+Back-end part repo: [aleksanderfret-api](https://github.com/alemikolo/aleksanderfret-api)
+
 
 
 
