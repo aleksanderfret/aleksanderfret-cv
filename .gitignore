@@ -8,7 +8,7 @@
 
 # production
 /build
-/api
+public/api
 # misc
 .DS_Store
 .env.local

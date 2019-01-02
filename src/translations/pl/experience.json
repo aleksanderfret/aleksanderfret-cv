@@ -7,6 +7,15 @@
   },
   "works": [
     {
+      "company": "Sandstream Development Sp. z o.o",
+      "position": "Front-end developer",
+      "duties": [
+        "Front-end development"
+      ],
+      "startDate": "01.2019",
+      "endDate": "obecnie"
+    },
+    {
       "company": "Nanodegree Program, Udacity",
       "position": "Front-end web developer (student)",
       "startDate": "11.2017",
@@ -41,7 +50,7 @@
         "przygotowywanie do druku"
       ],
       "startDate": "10.2008",
-      "endDate": "obecnie",
+      "endDate": "01.2019",
       "projects": [
         {
           "url": "",
