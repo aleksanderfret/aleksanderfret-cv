@@ -54,7 +54,7 @@
     }
     h2 {
       font-size: 0.6rem;
-      letter-spacing: 0.05rem;
+      letter-spacing: 0.11rem;
     }
     @supports (-ms-accelerator:true){
       h1 {
@@ -63,7 +63,7 @@
       }
       h2 {
         font-size: 0.58rem;
-        letter-spacing: 0.05rem;
+        letter-spacing: 0.11rem;
       }
     }
     @supports (-ms-ime-align:auto) {
@@ -73,7 +73,7 @@
       }
       h2 {
         font-size: 0.58rem;
-        letter-spacing: 0.05rem;
+        letter-spacing: 0.11rem;
       }
     }
 
@@ -107,7 +107,7 @@
     }
     h2 {
       font-size: 0.9rem;
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.2rem;
     }
   }
 }

@@ -20,6 +20,21 @@
           "name": "Redux"
         },
         {
+          "name": "Node.js"
+        },
+        {
+          "name": "Express.js"
+        },
+        {
+          "name": "MongoDB"
+        },
+        {
+          "name": "Mongoose"
+        },
+        {
+          "name": "Webpack"
+        },
+        {
           "name": "JQuery"
         },
         {
@@ -48,9 +63,6 @@
         },
         {
           "name": "Twig"
-        },
-        {
-          "name": "Webpack"
         },
         {
           "name": "Gulp"

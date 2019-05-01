@@ -1,7 +1,7 @@
 {
   "welcome": "Hello world :-)",
   "introduction": [
-    "My name is Aleksander Fret and I'm Front-End Developer. Currently I'm focused on techologies: JavaScript, React, Redux, CSS, SASS and HTML. Ocasionally I use also back-end tools (PHP, MySQL). Moreover I'm Graphic Designer (Adobe, Corel) and Cartographer.",
+    "My name is Aleksander Fret and I'm Software Developer. Currently I'm focused on technologies: JavaScript, React, Redux, Node.js, Express.js, MongoDB, CSS, SASS, HTML. I also have some experience with PHP and MySQL. Moreover I'm Graphic Designer (Adobe, Corel).",
     "When I have free time, I split it between various hobbies: web technologies, playing the guitar, listening to the music, board games (i.a. developing my own version of Talisman), mountain trips. And what brings you here? I invite you to contact and cooperation."
   ],
   "imageAlt": "Aleksander Fret",
@@ -11,7 +11,7 @@
       "name": "professional profile",
       "route": "profile",
       "content": [
-        "Front-End Developer",
+        "JavaScript Developer",
         "Graphic Designer",
         "Cartographer"
       ]

@@ -8,9 +8,9 @@
   "works": [
     {
       "company": "Sandstream Development Sp. z o.o",
-      "position": "Junior Front-end developer",
+      "position": "Software developer",
       "duties": [
-        "Front-end development"
+        "Tworzenie aplikacji webowych z wykorzystaniem przede wszystkim JavaScript – zarówno po stronie front-end jak i back-end."
       ],
       "startDate": "01.2019",
       "endDate": "obecnie"
@@ -109,7 +109,7 @@
       "endDate": "06.2015",
       "projects": [
         {
-          "url": "http://www.psychoterapia.fret.com.pl",
+          "url": "",
           "name": "www.psychoterapia.fret.com.pl"
         }
       ]

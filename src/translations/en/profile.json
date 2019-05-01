@@ -3,13 +3,13 @@
   "professions": [{
       "key": "frontend",
       "imageAlt": "Piece of my code",
-      "name": "Front-End Web Developer",
+      "name": "JavaScript Developer",
       "advantages": [
-        "I create applications and web sites using modern front-end technologies and tools, like JS ES6, React, Redux, Webpack (<1>get to know my skills</1>).",
-        "The projects, that I've created so far, are: companies and personal web sites as well as applications focused on polishing programming skills (<1>see my portfolio</1>).",
-        "I have some experience with back-end technologies - sometimes I use PHP and MySQL.",
+        "I create web applications using modern technologies and tools, like JS ES6, React, Redux, Webpack, Node.js, Express.js, MongoDB, Mongoose (<1>get to know my skills</1>).",
+        "I have some experience with PHP and MySQL.",
         "I have the ability to design user interfaces. What helps me with it, is rich experience in the field of graphics. I pay big attention to the UX issues.",
-        "I'm constantly developing my skills - lately I've finished comprehensive scholarship program sponsored by Google: Udacity Front-End Web Developer Nanodegree Program (<1>check my education</1>)."
+        "I'm constantly developing my skills (<1>check my education</1>).",
+        "I invite you to take a look at my <1>portfolio</1>."
       ]
     },
     {
@@ -24,7 +24,7 @@
     },
     {
       "key": "cartography",
-      "imageAlt": "One of my map",
+      "imageAlt": "One of my maps",
       "name": "Cartographer",
       "advantages": [
         "I have big experience in creating various maps: tourist maps, wall maps, school maps, city plans...",

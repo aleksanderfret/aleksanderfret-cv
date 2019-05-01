@@ -2,7 +2,7 @@
 This is my a personal website/online CV.
 
 ## Version
-1.0.1. - 2019.01.02
+1.0.2. - 2019.05.01
 
 ## Technologies
 JS ES6, React, SASS, HTML, RWD, PHP
