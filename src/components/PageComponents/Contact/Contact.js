@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import { translate } from 'react-i18next';
-import axios from 'axios';
-import { contactFormConfig } from '../../../data/controls';
-import Social from '../../Social/Social';
-import Button from '../../UI/Button/Button';
-import FormControl from '../../UI/FormControl/FormControl';
-import Spinner from '../../UI/Spinner/Spinner';
-import classes from './Contact.scss';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { translate } from "react-i18next";
+import axios from "axios";
+import { contactFormConfig } from "../../../data/controls";
+import Social from "../../Social/Social";
+import Button from "../../UI/Button/Button";
+import FormControl from "../../UI/FormControl/FormControl";
+import Spinner from "../../UI/Spinner/Spinner";
+import classes from "./Contact.scss";
 
 class Contact extends Component {
   constructor(props) {
@@ -16,45 +16,45 @@ class Contact extends Component {
     this.state = {
       contactFormData: {
         name: {
-          backendError: '',
-          value: '',
+          backendError: "",
+          value: "",
           isValid: true
         },
         email: {
-          backendError: '',
-          value: '',
-          isValid: false,
+          backendError: "",
+          value: "",
+          isValid: false
         },
         subject: {
-          backendError: '',
-          value: '',
-          isValid: false,
+          backendError: "",
+          value: "",
+          isValid: false
         },
         message: {
-          backendError: '',
-          value: '',
-          isValid: false,
+          backendError: "",
+          value: "",
+          isValid: false
         },
         rodo: {
-          backendError: '',
+          backendError: "",
           value: false,
-          isValid: false,
+          isValid: false
         },
         emailcopy: {
           value: false,
-          isValid: true,
-        },
-        captcha: {
-          backendError: '',
-          value: '',
-          isValid: false,
+          isValid: true
         }
+        // captcha: {
+        //   backendError: '',
+        //   value: '',
+        //   isValid: false,
+        // }
       },
       formIsValid: false,
       sending: false,
       visibleTipId: null,
-      errorMessage: '',
-    }
+      errorMessage: ""
+    };
   }
 
   componentDidMount() {
@@ -72,26 +72,33 @@ class Contact extends Component {
     const formControls = formElementArray.map(formElement => {
       return (
         <FormControl
-          externalError={this.state.contactFormData[formElement.id].backendError}
+          externalError={
+            this.state.contactFormData[formElement.id].backendError
+          }
           key={formElement.id}
           name={formElement.id}
           config={formElement.config}
           closeTip={this.closeTipHandler}
-          openTip={(event) => { this.openTipHandler(event, formElement.id) }}
+          openTip={event => {
+            this.openTipHandler(event, formElement.id);
+          }}
           isTipOpen={formElement.id === this.state.visibleTipId}
-          changed={(params) => { this.formControlChangeHandler(params, formElement.id) }} />
-      )
+          changed={params => {
+            this.formControlChangeHandler(params, formElement.id);
+          }}
+        />
+      );
     });
     return formControls;
-  }
+  };
 
   formControlChangeHandler = (params, id) => {
     const updatedContactForm = {
       ...this.state.contactFormData
-    }
+    };
     const updatedFormElement = {
       ...updatedContactForm[id]
-    }
+    };
     if (params.value !== undefined) {
       updatedFormElement.value = params.value;
     }
@@ -103,42 +110,43 @@ class Contact extends Component {
       contactFormData: updatedContactForm,
       formIsValid
     }));
-  }
+  };
 
   checkIsFormValid = (isValid, id) => {
     let formIsValid = true;
     for (let key in this.state.contactFormData) {
-      const isControlValid = (key === id) ? isValid : this.state.contactFormData[key].isValid;
+      const isControlValid =
+        key === id ? isValid : this.state.contactFormData[key].isValid;
       formIsValid = isControlValid && formIsValid;
       if (!formIsValid) {
         return formIsValid;
       }
     }
     return formIsValid;
-  }
+  };
 
   createContactForm = () => {
     const form = (
-      <form
-        onSubmit={this.contactHandler}
-        noValidate>
+      <form onSubmit={this.contactHandler} noValidate>
         {this.createFormControls()}
         <Button
-          btnType='StandardButton'
-          label={this.props.t('form.submit.aria')}
-          disabled={!this.state.formIsValid}>
-          {this.props.t('form.submit.label')}
+          btnType="StandardButton"
+          label={this.props.t("form.submit.aria")}
+          disabled={!this.state.formIsValid}
+        >
+          {this.props.t("form.submit.label")}
         </Button>
       </form>
     );
 
     return form;
-  }
+  };
 
-  contactHandler = (event) => {
+  contactHandler = event => {
     event.preventDefault();
     this.setState({ sending: true });
-    axios.post('api/Public/index.php', this.state.contactFormData)
+    axios
+      .post("api/Public/index.php", this.state.contactFormData)
       .then(response => {
         if (response.status === 200) {
           this.setState(() => ({ sending: false }));
@@ -147,14 +155,14 @@ class Contact extends Component {
       })
       .catch(error => {
         const status = error.response.status;
-        let errorMessage = '';
+        let errorMessage = "";
         switch (status) {
           case 406:
             if (error.response.data) {
               const errors = { ...error.response.data };
               const updatedContactForm = {
                 ...this.state.contactFormData
-              }
+              };
               for (const key in updatedContactForm) {
                 updatedContactForm[key].backendError = errors[key];
                 if (errors[key]) {
@@ -168,56 +176,56 @@ class Contact extends Component {
             }
             break;
           case 400:
-            errorMessage = 'form.error400';
+            errorMessage = "form.error400";
             break;
           case 500:
-            errorMessage = 'form.error500';
+            errorMessage = "form.error500";
             break;
           default:
-            errorMessage = 'form.errorUnknown';
+            errorMessage = "form.errorUnknown";
         }
         this.setState(() => ({ errorMessage }));
       })
       .then(() => {
         this.setState(() => ({
-          sending: false,
+          sending: false
         }));
-      })
-  }
+      });
+  };
 
   openTipHandler = (event, id) => {
     event.preventDefault();
     this.setState({ visibleTipId: id });
-  }
+  };
 
   closeTipHandler = () => {
     this.setState({ visibleTipId: null });
-  }
+  };
 
   render() {
     const form = this.createContactForm();
 
     return (
       <div className={classes.Contact}>
-        <h3
-          ref={this.header}
-          tabIndex={-1}>{this.props.t('title')}</h3>
+        <h3 ref={this.header} tabIndex={-1}>
+          {this.props.t("title")}
+        </h3>
         <div className={classes.Form}>
           <div className={classes.SocialWrapper}>
-            <Social theme='base' />
+            <Social theme="base" />
           </div>
           <hr />
-          {this.state.errorMessage &&
-            <h4 className={classes.ErrorMessage}>{this.props.t(this.state.errorMessage)}</h4>
-          }
+          {this.state.errorMessage && (
+            <h4 className={classes.ErrorMessage}>
+              {this.props.t(this.state.errorMessage)}
+            </h4>
+          )}
           {form}
         </div>
-        {this.state.sending &&
-          <Spinner />
-        }
+        {this.state.sending && <Spinner />}
       </div>
     );
   }
 }
 
-export default withRouter(translate('contact')(Contact));
+export default withRouter(translate("contact")(Contact));
