@@ -16,7 +16,6 @@
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
-    "eslint": "4.10.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
@@ -30,7 +29,7 @@
     "i18next": "^11.6.0",
     "jest": "20.0.4",
     "lodash": "^4.17.10",
-    "node-sass": "^4.9.3",
+    "node-sass": "4.13.0",
     "normalize.css": "^8.0.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -56,6 +55,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "lint": "eslint --init",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
@@ -102,6 +102,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "eslint": "4.10.0",
     "jimp": "^0.3.9",
     "responsive-loader": "^1.1.0"
   }
