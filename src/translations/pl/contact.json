@@ -68,9 +68,9 @@
         "required": "Zgoda na przetwarzanie danych jest niezbędna, bym mógł odpowiedzieć na wiadomość."
       },
       "info": [
-        "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danych osobowych w związku z wysłaniem zapytania przez formularz kontaktowy.",
-        "Podanie tych danych jest dobrowolne, ale niezbędne do przetworzenia zapytania. Dane wpisane w formularzu kontaktowym nie będą przechowywane w żadnej bazie danych i będą przetworzone tylko w celu udzielenia odpowiedzi na przesłane zapytanie.",
-        "Administratorem danych osobowych jest Aleksander Fret."
+        "Wysyłając wiadomość mam świadomość że, podane dane będą przetwarzane przez Pana Aleksandra Freta w celu nawiązania korespondencji.",
+        "Wiem że, mogę wystąpić o skasowanie moich danych osobowych lub je skorygować. Pamiętam że, prawa te wynikają z rozporządzenia ogólnego o ochronie danych osobowych (UE 2016/679). Wiem że, przysługuje mi prawo do skargi do Prezesa Urzędu Ochrony Danych Osobowych na mocy ustawy o ochronie danych osobowych (Dz.U. 2018 poz. 1000).",
+        "Przyjmuję do wiadomości że dane będą przetwarzane przez onet.pl dostawcę usług poczty elektronicznej."
       ]
     },
     "emailcopy": {

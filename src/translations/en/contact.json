@@ -68,9 +68,9 @@
         "required": "Consent to data processing is essential so that I can respond to your message."
       },
       "info": [
-        "I agree to the processing of personal data in accordance with the law on the protection of personal data regarding sending a message via the contact form.",
-        "Providing this data is voluntary, but necessary to process the request. The data entered in the contact form won't be save in any database and will be processed only to respond to the message.",
-        "The personal data administrator is Aleksander Fret."
+        "By sending a message I am aware that the data provided will be processed by Mr. Aleksander Fret for correspondence.",
+        "I know that I can request deleting or changing my personal data. I remember that these rights result from the General Regulation on the protection of personal data (EU 2016/679). I know that I have the right to complain to the President of the Office for Personal Data Protection under the Personal Data Protection Act (Journal of Laws 2018 item 1000).",
+        "I acknowledge that the data will be processed by onet.pl an e-mail service provider."
       ]
     },
     "emailcopy": {
