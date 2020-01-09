@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import CV from './components/CV/CV';
-import { BrowserRouter } from 'react-router-dom';
-import { I18nextProvider } from 'react-i18next';
-import i18next from 'i18next';
+import "core-js/stable";
+import React from "react";
+import ReactDOM from "react-dom";
+import "./scss/index.scss";
+import CV from "./components/CV/CV";
+import { BrowserRouter } from "react-router-dom";
+import { I18nextProvider } from "react-i18next";
+import i18next from "i18next";
 
 import common_en from "./translations/en/common.json";
 import contact_en from "./translations/en/contact.json";
@@ -27,7 +28,7 @@ import ui_pl from "./translations/pl/ui.json";
 
 i18next.init({
   interpolation: { escapeValue: false },
-  lng: 'en',
+  lng: "en",
   resources: {
     en: {
       ui: ui_en,
@@ -38,7 +39,7 @@ i18next.init({
       home: home_en,
       portfolio: portfolio_en,
       profile: profile_en,
-      skills: skills_en,
+      skills: skills_en
     },
     pl: {
       ui: ui_pl,
@@ -49,9 +50,9 @@ i18next.init({
       home: home_pl,
       portfolio: portfolio_pl,
       profile: profile_pl,
-      skills: skills_pl,
-    },
-  },
+      skills: skills_pl
+    }
+  }
 });
 
 ReactDOM.render(
@@ -60,5 +61,5 @@ ReactDOM.render(
       <CV />
     </I18nextProvider>
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
