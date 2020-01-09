@@ -1,7 +1,11 @@
 {
   "name": "aleksanderfret",
   "version": "2.0.0",
+  "description": "Event planning application",
+  "main": "src/index.js",
+  "author": "Aleksander Fret",
   "private": true,
+  "type": "module",
   "dependencies": {
     "axios": "0.19.1",
     "core-js": "3.6.2",
@@ -13,7 +17,11 @@
     "react-router-dom": "5.1.2",
     "react-transition-group": "4.3.0"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "webpack --progress --config ./webpack.config.prod.js",
+    "dev": "webpack-dev-server --open --config ./webpack.config.dev.js",
+    "lint": "eslint . --ext \".js,.jsx\""
+  },
   "devDependencies": {
     "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",

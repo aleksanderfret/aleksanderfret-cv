@@ -1,10 +1,9 @@
-import path from "path";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import HtmlWebPackPlugin from "html-webpack-plugin";
-import autoprefixer from "autoprefixer";
-import WebpackPwaManifest from "webpack-pwa-manifest";
+const autoprefixer = require("autoprefixer");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
-export default config = {
+module.exports = {
   mode: "development",
   entry: "./src/index.js",
   devtool: "inline-source-map",
@@ -60,16 +59,24 @@ export default config = {
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)$/,
-        loader: "url-loader?limit=100000"
+        test: /\.(jpe?g|png)$/i,
+        loader: "responsive-loader",
+        options: {
+          sizes: [300, 400, 500, 600, 700, 800, 900, 1000, 1200],
+          quality: 95,
+          name: "images/[name]-[width]-[hash:8].[ext]"
+        }
       },
       {
-        test: /\.(png|jpg)$/,
-        use: "file-loader"
-      },
-      {
-        test: /\.md$/,
-        use: [{ loader: "html-loader" }, { loader: "markdown-loader" }]
+        test: /\.(pdf)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "pdf/[name].[ext]"
+            }
+          }
+        ]
       }
     ]
   },
@@ -86,7 +93,7 @@ export default config = {
   },
   plugins: [
     new CleanWebpackPlugin({ verbose: true }),
-    new HtmlWebpackPlugin({
+    new HtmlWebPackPlugin({
       favicon: "./public/icons/favicon.ico",
       template: "./public/index.html",
       inlineSource: ".(js|css)$"
