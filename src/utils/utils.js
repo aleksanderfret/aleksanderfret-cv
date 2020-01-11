@@ -1,4 +1,1 @@
-export const dateToAttr = (text) => {
-  return text.replace(/\.|\//g, '-');
-}
-
+export const dateToAttr = text => text.replace(/\.|\//g, '-');

@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { withTranslation, Trans } from "react-i18next";
-import { routes } from "../../../../data/routes.js";
-import classes from "./Profile.scss";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { withTranslation, Trans } from 'react-i18next';
+
+import { routes } from '../../../../data/routes';
+import classes from './Profile.scss';
 
 class Profile extends Component {
   constructor(props) {
@@ -15,54 +16,58 @@ class Profile extends Component {
   }
 
   getRoute = advantage => {
-    for (let key in routes) {
-      if (
-        advantage.indexOf(
-          `${routes[key].labels[this.props.i18n.language]}</1>`
-        ) !== -1
-      ) {
-        return routes[key].route;
-      }
-    }
+    const {
+      i18n: { language }
+    } = this.props;
+
+    return Object.keys(routes).filter(
+      key => advantage.indexOf(`${routes[key].labels[language]}</1>`) !== -1
+    )[0];
   };
 
   getAdvantage = (advantage, index, translationKey) => {
-    let adventageJsx = null;
-    if (advantage.indexOf("<1>") !== -1) {
-      adventageJsx = (
+    let advantageJsx = null;
+
+    if (advantage.indexOf('<1>') !== -1) {
+      advantageJsx = (
         <Trans i18nKey={translationKey}>
-          Tresc <Link to={this.getRoute(advantage)}>link</Link>koniec
+          Tresc
+          <Link to={this.getRoute(advantage)}>link</Link>
+          koniec
         </Trans>
       );
     } else {
-      adventageJsx = advantage;
+      advantageJsx = advantage;
     }
-    return <p key={index}>{adventageJsx}</p>;
+
+    return <p key={index}>{advantageJsx}</p>;
   };
 
   render() {
+    const { t } = this.props;
+
     return (
       <div className={classes.Profile}>
         <h3 ref={this.header} tabIndex={-1}>
-          {this.props.t("title")}
+          {t('title')}
         </h3>
-        {this.props
-          .t("professions", { returnObjects: true })
-          .map((profession, professionIndex) => (
-            <div className={classes.Profession} key={professionIndex}>
+        {t('professions', { returnObjects: true }).map(
+          (profession, professionIndex) => (
+            <div className={classes.Profession} key={profession.name}>
               <h4>{profession.name}</h4>
-              {profession.advantages.map((advantage, adventageIndex) =>
+              {profession.advantages.map((advantage, advantageIndex) =>
                 this.getAdvantage(
                   advantage,
-                  adventageIndex,
-                  `professions.${professionIndex}.advantages.${adventageIndex}`
+                  advantageIndex,
+                  `professions.${professionIndex}.advantages.${advantageIndex}`
                 )
               )}
             </div>
-          ))}
+          )
+        )}
       </div>
     );
   }
 }
 
-export default withTranslation("profile")(Profile);
+export default withTranslation('profile')(Profile);

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
+
 import Overlay from '../../UI/Overlay/Overlay';
 import Logo from '../../UI/Logo/Logo';
 import classes from './SidePanel.scss';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
 class SidePanel extends Component {
-
   componentDidMount() {
     document.addEventListener('keydown', this.onPressEscape);
   }
@@ -15,49 +15,50 @@ class SidePanel extends Component {
     document.removeEventListener('keydown', this.onPressEscape);
   }
 
-  onPressEscape = (event) => {
+  onPressEscape = event => {
     if (event.keyCode === 27) {
-      this.props.closeSidePanel();
+      const { closeSidePanel } = this.props;
+
+      closeSidePanel();
     }
-  }
+  };
 
   render() {
-    const sidePanelClasses = [classes.SidePanel];
+    const { isOpen, closeSidePanel } = this.props;
+    const { SidePanel: sidePanelClass } = classes;
+    const sidePanelClasses = [sidePanelClass];
+
     return (
-      <React.Fragment>
-        <Overlay
-          type={'dark'}
-          isShown={this.props.isOpen}
-          clicked={this.props.closeSidePanel} />
+      <>
+        <Overlay type="dark" isShown={isOpen} clicked={closeSidePanel} />
         <CSSTransition
           mountOnEnter
           unmountOnExit
-          in={this.props.isOpen}
+          in={isOpen}
           timeout={300}
           classNames={{
             enter: '',
             enterActive: classes.Open,
             exit: '',
             exitActive: classes.Close
-          }}>
+          }}
+        >
           <div className={sidePanelClasses.join(' ')}>
             <header className={classes.Header}>
-              <Logo
-                isTextLogo
-                logoType='shortLogo'
-                clicked={this.props.closeSidePanel} />
+              <Logo isTextLogo logoType="shortLogo" clicked={closeSidePanel} />
             </header>
             <nav>
               <NavigationItems
-                navType='sidePanel'
+                navType="sidePanel"
                 icons
-                clicked={this.props.closeSidePanel} />
+                clicked={closeSidePanel}
+              />
             </nav>
           </div>
         </CSSTransition>
-      </React.Fragment>
+      </>
     );
   }
-};
+}
 
 export default SidePanel;

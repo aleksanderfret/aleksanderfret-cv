@@ -1,20 +1,20 @@
-const autoprefixer = require("autoprefixer");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const path = require("path");
+const autoprefixer = require('autoprefixer');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  mode: "development",
-  entry: "./src/index.js",
-  devtool: "inline-source-map",
+  mode: 'development',
+  entry: './src/index.js',
+  devtool: 'inline-source-map',
   output: {
-    path: path.join(__dirname, "./dist/public"),
-    filename: "bundle.js",
-    publicPath: "/"
+    path: path.join(__dirname, './dist/public'),
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
-    modules: [path.resolve(__dirname, "src"), "tests", "node_modules"],
-    extensions: [".js", ".jsx", ".json"]
+    modules: [path.resolve(__dirname, 'src'), 'tests', 'node_modules'],
+    extensions: ['.js', '.jsx', '.json']
   },
 
   module: {
@@ -23,35 +23,35 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
       {
         test: /\.s?css$/,
         exclude: /node_modules/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: "[name]__[local]__[hash:base64:5]"
+                localIdentName: '[name]__[local]__[hash:base64:5]'
               }
             }
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               plugins: [autoprefixer]
             }
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               sourceMap: true,
               sassOptions: {
                 indentWidth: 2,
-                includePaths: ["./src/scss/base", "./src/scss/partials"]
+                includePaths: ['./src/scss/base', './src/scss/partials']
               }
             }
           }
@@ -59,24 +59,24 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png)$/i,
-        loader: "responsive-loader",
+        loader: 'responsive-loader',
         options: {
           sizes: [300, 400, 500, 600, 700, 800, 900, 1000, 1200],
           quality: 95,
-          name: "images/[name]-[width]-[hash:8].[ext]"
+          name: 'images/[name]-[width]-[hash:8].[ext]'
         }
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)$/,
-        loader: "url-loader?limit=100000"
+        loader: 'url-loader?limit=100000'
       },
       {
         test: /\.(pdf)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "pdf/[name].[ext]"
+              name: 'pdf/[name].[ext]'
             }
           }
         ]
@@ -97,9 +97,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ verbose: true }),
     new HtmlWebPackPlugin({
-      favicon: "./public/icons/favicon.ico",
-      template: "./public/index.html",
-      inlineSource: ".(js|css)$"
+      favicon: './public/icons/favicon.ico',
+      template: './public/index.html',
+      inlineSource: '.(js|css)$'
     })
   ]
 };

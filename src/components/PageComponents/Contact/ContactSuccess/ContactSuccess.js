@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import classes from "./ContactSuccess.scss";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
+
+import classes from './ContactSuccess.scss';
 
 class ContactSuccess extends Component {
   constructor(props) {
@@ -13,21 +14,21 @@ class ContactSuccess extends Component {
   }
 
   render() {
+    const { t } = this.props;
+
     return (
       <div className={classes.ContactSuccess}>
         <h3 ref={this.header} tabIndex={-1}>
-          {this.props.t("title")}
+          {t('title')}
         </h3>
         <div className={classes.SuccessMessage}>
-          {this.props
-            .t("form.success", { returnObjects: true })
-            .map((message, index) => (
-              <p key={index}>{message}</p>
-            ))}
+          {t('form.success', { returnObjects: true }).map(message => (
+            <p key={message}>{message}</p>
+          ))}
         </div>
       </div>
     );
   }
 }
 
-export default withTranslation("contact")(ContactSuccess);
+export default withTranslation('contact')(ContactSuccess);

@@ -12,10 +12,10 @@
 .Studies {
   @include pageSubtitle;
   font-weight: 500;
-  @include slight-screens {
+  @include slightScreens {
     font-size: 1.2rem;
   }
-  @include medium-screens {
+  @include mediumScreens {
     font-size: 1.5rem;
     line-height: 1.8rem;
     font-weight: 300;

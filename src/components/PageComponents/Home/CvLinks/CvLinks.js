@@ -1,14 +1,17 @@
-import React from "react";
-import { withTranslation } from "react-i18next";
-import CvLink from "./CvLink/CvLink";
-import classes from "./CvLinks.scss";
+import React from 'react';
+import { withTranslation } from 'react-i18next';
+
+import CvLink from './CvLink/CvLink';
+import classes from './CvLinks.scss';
 
 const pageTiles = props => {
   const { t } = props;
+  const { CvLinks, CvLinkWrapper } = classes;
+
   return (
-    <ul className={classes.CvLinks}>
-      {t("tiles", { returnObjects: true }).map((tile, index) => (
-        <li key={index} className={classes.CvLinkWrapper}>
+    <ul className={CvLinks}>
+      {t('tiles', { returnObjects: true }).map(tile => (
+        <li key={tile.name} className={CvLinkWrapper}>
           <CvLink
             title={tile.name}
             route={tile.route}
@@ -20,4 +23,4 @@ const pageTiles = props => {
   );
 };
 
-export default withTranslation("home")(pageTiles);
+export default withTranslation('home')(pageTiles);

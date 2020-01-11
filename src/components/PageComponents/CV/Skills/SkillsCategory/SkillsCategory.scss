@@ -8,13 +8,13 @@
 .SkillsCategory h4 {
   @include pageSubtitle;
   margin-bottom: 0.5rem;
-  @include tiny-screens {
+  @include tinyScreens {
     font-size: 1.2rem;
   }
-  @include slight-screens {
+  @include slightScreens {
     font-size: 1.3rem;
   }
-  @include small-screens {
+  @include smallScreens {
     font-size: 1.5rem;
   }
 }
@@ -27,20 +27,20 @@
 }
 
 .Skill {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem;
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-    @include shadow();
-    font-size: 0.85rem;
-    @include tiny-screens {
-      font-size: 0.9rem;
-    }
-    @include slight-screens {
-      font-size: 0.95rem;
-    }
-    @include small-screens {
-      font-size: 1rem;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  @include shadow();
+  font-size: 0.85rem;
+  @include tinyScreens {
+    font-size: 0.9rem;
+  }
+  @include slightScreens {
+    font-size: 0.95rem;
+  }
+  @include smallScreens {
+    font-size: 1rem;
+  }
 }

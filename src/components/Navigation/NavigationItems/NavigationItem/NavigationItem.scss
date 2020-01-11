@@ -4,7 +4,7 @@
   width: 100%;
 }
 .SidePanelNavlink a.active {
-  color: $base-color;
+  color: $baseColor;
   font-weight: 500;
 }
 
@@ -13,26 +13,26 @@
   height: 100%;
   display: flex;
   text-decoration: none;
-  color: $middle-light-base-text;
+  color: $middleLightBaseText;
   padding: 1rem;
   transition: all 0.3s ease-out;
   &:hover {
-    color: $dark-base-text;
-    background-color: $extra-light-base-text;
+    color: $darkBaseText;
+    background-color: $extraLightBaseText;
     padding-left: 2.5rem;
   }
 }
 
 .SidePanelNavlink a span:first-child {
   width: 20%;
-  @include micro-screens {
-    width: 15%
+  @include microScreens {
+    width: 15%;
   }
 }
 .SidePanelNavlink a span:last-child {
   width: 80%;
-  @include tiny-screens {
-    width: 85%
+  @include tinyScreens {
+    width: 85%;
   }
 }
 
@@ -41,7 +41,7 @@
 }
 
 .ToolBarNavLink a.active {
-  color: $dark-base;
+  color: $darkBase;
   font-weight: 500;
   background-color: $aux-base;
 }

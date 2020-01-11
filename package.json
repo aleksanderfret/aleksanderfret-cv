@@ -7,7 +7,7 @@
   "private": true,
   "dependencies": {
     "axios": "0.19.1",
-    "core-js": "3.6.2",
+    "core-js": "3.6.3",
     "i18next": "19.0.3",
     "lodash": "4.17.15",
     "react": "16.12.0",
@@ -20,7 +20,9 @@
   "scripts": {
     "build": "webpack --progress --config ./webpack.config.dev.js",
     "dev": "webpack-dev-server --open --config ./webpack.config.dev.js",
-    "lint": "eslint . --ext \".js,.jsx\""
+    "format": "prettier --check \"src/**/*.{js,jsx}\"",
+    "lint": "eslint . --ext \".js,.jsx\"",
+    "stylelint": "stylelint src/**/*.scss --cache"
   },
   "devDependencies": {
     "@babel/cli": "7.7.7",
@@ -37,7 +39,7 @@
     "eslint": "6.8.0",
     "eslint-config-airbnb": "18.0.1",
     "eslint-config-prettier": "6.9.0",
-    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-import": "2.20.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.17.0",
@@ -47,6 +49,7 @@
     "jimp": "0.9.3",
     "mini-css-extract-plugin": "0.9.0",
     "node-sass": "4.13.0",
+    "npm-run-all": "4.1.5",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "path": "0.12.7",
     "postcss-loader": "3.0.0",
@@ -63,5 +66,11 @@
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.10.1",
     "webpack-manifest-plugin": "2.2.0"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 9",
+    "not op_mini all"
+  ]
 }

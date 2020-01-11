@@ -3,7 +3,7 @@
 .Content {
   width: 100%;
   position: relative;
-  @include wide-screens {
+  @include wideScreens {
     max-width: 1200px;
     margin: 0 auto;
   }

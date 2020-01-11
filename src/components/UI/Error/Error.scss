@@ -2,13 +2,13 @@
 
 .Error {
   margin: 0.5rem 0 0 0;
-  color: $error-color;
+  color: $errorColor;
   font-size: 0.85rem;
-  @include tiny-screens {
+  @include tinyScreens {
     font-size: 0.9rem;
     line-height: 1.2rem;
   }
-  @include small-screens {
+  @include smallScreens {
     font-size: 1rem;
     line-height: 1.4rem;
   }

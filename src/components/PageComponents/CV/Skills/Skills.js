@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import SkillsCategory from "./SkillsCategory/SkillsCategory";
-import classes from "./Skills.scss";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
+
+import SkillsCategory from './SkillsCategory/SkillsCategory';
+import classes from './Skills.scss';
 
 class Skills extends Component {
   constructor(props) {
@@ -14,14 +15,17 @@ class Skills extends Component {
   }
 
   render() {
+    const { t } = this.props;
+    const { Skills: skillsClass, SkillsItems } = classes;
+
     return (
-      <div className={classes.Skills}>
+      <div className={skillsClass}>
         <h3 ref={this.header} tabIndex={-1}>
-          {this.props.t("title")}
+          {t('title')}
         </h3>
         <ul>
-          {this.props.t("skills", { returnObjects: true }).map(skills => (
-            <li className={classes.SkillsItems} key={skills.type}>
+          {t('skills', { returnObjects: true }).map(skills => (
+            <li className={SkillsItems} key={skills.type}>
               <SkillsCategory {...skills} />
             </li>
           ))}
@@ -31,4 +35,4 @@ class Skills extends Component {
   }
 }
 
-export default withTranslation("skills")(Skills);
+export default withTranslation('skills')(Skills);

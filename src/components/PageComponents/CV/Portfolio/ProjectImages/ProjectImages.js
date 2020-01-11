@@ -1,4 +1,5 @@
 import kebabCase from 'lodash/kebabCase';
+
 import aleksanderFret from '../../../../../assets/images/portfolio/aleksander-fret-cv.jpg';
 import aleksanderFretDetails from '../../../../../assets/images/details/aleksander-fret-cv.jpg';
 import amusementParks from '../../../../../assets/images/portfolio/amusement-parks.jpg';
@@ -23,57 +24,55 @@ import artistDetails from '../../../../../assets/images/details/artist.jpg';
 export const TARGET = {
   PORTFOLIO: 'portfolio',
   DETAILS: 'details'
-}
+};
 
 const images = {
   aleksanderFret: {
     [TARGET.PORTFOLIO]: aleksanderFret,
-    [TARGET.DETAILS]: aleksanderFretDetails,
+    [TARGET.DETAILS]: aleksanderFretDetails
   },
   amusementParks: {
     [TARGET.PORTFOLIO]: amusementParks,
-    [TARGET.DETAILS]: amusementParksDetails,
+    [TARGET.DETAILS]: amusementParksDetails
   },
   myReads: {
     [TARGET.PORTFOLIO]: myReads,
-    [TARGET.DETAILS]: myReadsDetails,
+    [TARGET.DETAILS]: myReadsDetails
   },
   restaurantReviews: {
     [TARGET.PORTFOLIO]: restaurantReviews,
-    [TARGET.DETAILS]: restaurantReviewsDetails,
+    [TARGET.DETAILS]: restaurantReviewsDetails
   },
   arcadeGame: {
     [TARGET.PORTFOLIO]: arcadeGame,
-    [TARGET.DETAILS]: arcadeGameDetails,
+    [TARGET.DETAILS]: arcadeGameDetails
   },
   memoryGame: {
     [TARGET.PORTFOLIO]: memoryGame,
-    [TARGET.DETAILS]: memoryGameDetails,
+    [TARGET.DETAILS]: memoryGameDetails
   },
   pixelArtMaker: {
     [TARGET.PORTFOLIO]: pixelArtMaker,
-    [TARGET.DETAILS]: pixelArtMakerDetails,
+    [TARGET.DETAILS]: pixelArtMakerDetails
   },
   wilmat: {
     [TARGET.PORTFOLIO]: wilmat,
-    [TARGET.DETAILS]: wilmatDetails,
+    [TARGET.DETAILS]: wilmatDetails
   },
   psychotherapist: {
     [TARGET.PORTFOLIO]: psychotherapist,
-    [TARGET.DETAILS]: psychotherapistDetails,
+    [TARGET.DETAILS]: psychotherapistDetails
   },
   artist: {
     [TARGET.PORTFOLIO]: artist,
-    [TARGET.DETAILS]: artistDetails,
-  },
-}
+    [TARGET.DETAILS]: artistDetails
+  }
+};
 
-export const getSlug = (index) => {
+export const getSlug = index => {
   const keys = Object.keys(images);
+
   return kebabCase(keys[index]);
-}
+};
 
-
-export const getImage = (projectId, imageType) => {
-  return images[projectId][imageType];
-}
+export const getImage = (projectId, imageType) => images[projectId][imageType];

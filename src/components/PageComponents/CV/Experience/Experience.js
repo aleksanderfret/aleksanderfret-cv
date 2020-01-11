@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import classes from "./Experience.scss";
-import Work from "./Work/Work";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
+
+import classes from './Experience.scss';
+import Work from './Work/Work';
 
 class Experience extends Component {
   constructor(props) {
@@ -14,18 +15,18 @@ class Experience extends Component {
   }
 
   render() {
+    const { t } = this.props;
+    const { Experience: experienceClass } = classes;
+
     return (
-      <div className={classes.Experience}>
+      <div className={experienceClass}>
         <h3 ref={this.header} tabIndex={-1}>
-          {this.props.t("title")}
+          {t('title')}
         </h3>
         <ul>
-          {this.props.t("works", { returnObjects: true }).map((work, index) => (
-            <li key={index}>
-              <Work
-                {...work}
-                labels={this.props.t("labels", { returnObjects: true })}
-              />
+          {t('works', { returnObjects: true }).map(work => (
+            <li key={work.company}>
+              <Work {...work} labels={t('labels', { returnObjects: true })} />
             </li>
           ))}
         </ul>
@@ -34,4 +35,4 @@ class Experience extends Component {
   }
 }
 
-export default withTranslation("experience")(Experience);
+export default withTranslation('experience')(Experience);

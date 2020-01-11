@@ -10,7 +10,7 @@
   align-items: flex-end;
   margin: 0 0 2rem 0;
   @include pageTile;
-  @include medium-screens {
+  @include mediumScreens {
     margin: 0 0 2rem 0;
   }
 }
@@ -24,14 +24,14 @@
   width: 100%;
   margin: 4.5rem auto 0 auto;
   z-index: 10;
-  @include small-screens {
+  @include smallScreens {
     width: 60%;
   }
-  @include medium-screens {
+  @include mediumScreens {
     margin: 4.5rem 0 0 0;
     width: calc(40% - 1rem);
   }
-  @include large-screens {
+  @include largeScreens {
     margin: 2.5rem 0 0 0;
   }
 }
@@ -42,24 +42,24 @@
   left: 2rem;
   z-index: 20;
   @include shadow(0);
-  @include tiny-screens {
+  @include tinyScreens {
     left: 25%;
   }
-  @include small-screens {
+  @include smallScreens {
     left: 30%;
   }
-  @include medium-screens {
+  @include mediumScreens {
     left: 10%;
   }
-  @include large-screens {
+  @include largeScreens {
     top: 5%;
     left: 30%;
   }
-  @include extra-large-screens {
+  @include extraLargeScreens {
     top: 15%;
     left: 32%;
   }
-  @include wide-screens {
+  @include wideScreens {
     top: 10%;
     left: 32%;
   }
@@ -70,7 +70,7 @@
   display: inline-block;
   border-radius: 5px 5px 5px 0;
   top: 0;
-  color: $reverse-color;
+  color: $reverseColor;
   background-color: $light-base;
   font-size: 1.3rem;
   padding: 0.5rem;
@@ -79,22 +79,22 @@
 
 .Welcome::after {
   content: '';
-	width: 0;
+  width: 0;
   height: 0;
   top: 100%;
   left: 0;
   padding: 0;
   margin: 0;
   position: absolute;
-	border-left: 16px solid transparent;
-	border-right: 16px solid transparent;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
   border-top: 16px solid $light-base;
 }
 
 .Introduction {
   position: relative;
   z-index: 10;
-  color: $base-text-color;
+  color: $baseTextColor;
   font-size: 0.95rem;
   line-height: 1.2rem;
   padding: 1rem;
@@ -102,23 +102,23 @@
   p:first-child {
     margin-bottom: 0.5rem;
   }
-  @include tiny-screens {
+  @include tinyScreens {
     font-size: 1rem;
     line-height: 1.3rem;
   }
-  @include medium-screens {
+  @include mediumScreens {
     margin: 0;
     width: 60%;
   }
-  @include normal-screens {
+  @include normalScreens {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-  @include large-screens {
+  @include largeScreens {
     font-size: 1rem;
     line-height: 1.4rem;
   }
-  @include wide-screens {
+  @include wideScreens {
     font-size: 1.15rem;
     line-height: 1.5rem;
     p:first-child {

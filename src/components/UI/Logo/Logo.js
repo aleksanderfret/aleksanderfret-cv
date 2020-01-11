@@ -1,41 +1,51 @@
-import React from "react";
-import { withTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
-import afretLogo from "../../../assets/images/afret_logo.svg";
-import classes from "./Logo.scss";
+import React from 'react';
+import { withTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 
-const logo = props => {
-  const logoClasses = [classes.Logo];
-  if (props.logoType === "shortLogo") {
-    logoClasses.push(classes.ShortLogo);
-  } else if (props.logoType === "smallLogo") {
-    logoClasses.push(classes.SmallLogo);
+import afretLogo from '../../../assets/images/afret_logo.svg';
+import classes from './Logo.scss';
+
+const logo = ({ clicked, isTextLogo, logoType, t }) => {
+  const {
+    Logo: logoClass,
+    ShortLogo,
+    SmallLogo,
+    BigLogo,
+    LogoImage,
+    LogoText
+  } = classes;
+  const logoClasses = [logoClass];
+
+  if (logoType === 'shortLogo') {
+    logoClasses.push(ShortLogo);
+  } else if (logoType === 'smallLogo') {
+    logoClasses.push(SmallLogo);
   } else {
-    logoClasses.push(classes.BigLogo);
+    logoClasses.push(BigLogo);
   }
 
   return (
     <NavLink
       to="/"
       exact
-      onClick={props.clicked}
-      className={logoClasses.join(" ")}
+      onClick={clicked}
+      className={logoClasses.join(' ')}
       aria-labelledby="logo-text"
     >
       <img
-        className={classes.LogoImage}
+        className={LogoImage}
         src={afretLogo}
-        alt={`${props.t("title")} logo`}
-        aria-label={`${props.t("title")} ${props.t("subtitle")}`}
+        alt={`${t('title')} logo`}
+        aria-label={`${t('title')} ${t('subtitle')}`}
       />
-      {props.isTextLogo && (
-        <div id="logo-text" className={classes.LogoText}>
-          <h1>{props.t("title")}</h1>
-          <h2>{props.t("subtitle")}</h2>
+      {isTextLogo && (
+        <div id="logo-text" className={LogoText}>
+          <h1>{t('title')}</h1>
+          <h2>{t('subtitle')}</h2>
         </div>
       )}
     </NavLink>
   );
 };
 
-export default withTranslation("ui")(logo);
+export default withTranslation('ui')(logo);

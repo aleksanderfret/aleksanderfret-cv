@@ -1,19 +1,22 @@
 import React from 'react';
+
 import classes from './Image.scss';
 
-const image = (props) => {
-  const imageClasses = [classes.Image];
-  if (props.imageClass) {
-    imageClasses.push(props.imageClass);
+const image = ({ imageClass, src, srcSet, sizes, alt }) => {
+  const { Image: imageStyle } = classes;
+  const imageClasses = [imageStyle];
+  if (imageClass) {
+    imageClasses.push(imageClass);
   }
 
-  return(
+  return (
     <img
       className={imageClasses.join(' ')}
-      src={props.src}
-      sizes={props.sizes}
-      srcSet={props.srcSet}
-      alt={props.alt} />
+      src={src}
+      sizes={sizes}
+      srcSet={srcSet}
+      alt={alt}
+    />
   );
 };
 

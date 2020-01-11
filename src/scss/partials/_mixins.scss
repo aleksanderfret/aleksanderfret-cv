@@ -1,63 +1,63 @@
-@mixin micro-screens(){
+@mixin microScreens() {
   @media only screen and (min-width: 320px) {
     @content;
   }
 }
 
-@mixin tiny-screens(){
+@mixin tinyScreens() {
   @media only screen and (min-width: 400px) {
     @content;
   }
 }
 
-@mixin slight-screens(){
+@mixin slightScreens() {
   @media only screen and (min-width: 500px) {
     @content;
   }
 }
 
-@mixin small-screens(){
+@mixin smallScreens() {
   @media only screen and (min-width: 600px) {
     @content;
   }
 }
 
-@mixin medium-screens(){
+@mixin mediumScreens() {
   @media only screen and (min-width: 800px) {
     @content;
   }
 }
 
-@mixin normal-screens(){
+@mixin normalScreens() {
   @media only screen and (min-width: 900px) {
     @content;
   }
 }
 
-@mixin large-screens(){
+@mixin largeScreens() {
   @media only screen and (min-width: 1000px) {
     @content;
   }
 }
 
-@mixin extra-large-screens(){
+@mixin extraLargeScreens() {
   @media only screen and (min-width: 1100px) {
     @content;
   }
 }
 
-@mixin wide-screens(){
+@mixin wideScreens() {
   @media only screen and (min-width: 1200px) {
     @content;
   }
 }
 
-@mixin page-header {
+@mixin pageHeader {
   font: {
     size: 2.5rem;
-    variant:  small-caps;
+    variant: small-caps;
   }
-  color: $base-color;
+  color: $baseColor;
   text-transform: capitalize;
 }
 
@@ -67,33 +67,32 @@
   } @else if $level == 0 {
     filter: drop-shadow(0 0 2px #333);
   } @else if $level == 1 {
-    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.9);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.9);
   } @else if $level == 2 {
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
   } @else if $level == 3 {
-    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
   } @else if $level == 4 {
-    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
   } @else {
-    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
   }
 }
 @mixin insetShadow($level: 1) {
   @if $level == 0 {
     box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
   } @else {
-    box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2);
-
+    box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
   }
 }
 
-@mixin header($page: 'usual'){
+@mixin header($page: 'usual') {
   @if $page == 'usual' {
-    height: $toolbar-height;
-    background-color: $base-color;
+    height: $toolbarHeight;
+    background-color: $baseColor;
   } @else {
-    height: calc($toolbar-height + $big-logo-height);
-    background: $base-gradient;
+    height: calc($toolbarHeight + $bigLogoHeight);
+    background: $baseGradient;
   }
 }
 
@@ -102,50 +101,50 @@
   width: 90%;
   height: 100%;
   margin: 2rem auto;
-  @include small-screens {
+  @include smallScreens {
     width: 95%;
   }
 }
 
 @mixin pageTile {
   position: relative;
-  color: $base-text-color;
-  background-color: $base-background-color;
+  color: $baseTextColor;
+  background-color: $baseBackgroundColor;
   @include shadow();
 }
 
-@mixin pageTitle{
+@mixin pageTitle {
   position: relative;
   font-size: 1.2rem;
   text-transform: capitalize;
-  color: $base-color;
+  color: $baseColor;
   width: 100%;
   text-align: left;
   margin: 0 0 1.5rem 0;
   &:focus {
     outline: 0;
   }
-  @include tiny-screens {
+  @include tinyScreens {
     font-size: 1.5rem;
   }
-  @include slight-screens {
+  @include slightScreens {
     font-size: 1.75rem;
   }
-  @include small-screens {
+  @include smallScreens {
     font-size: 2.25rem;
   }
 }
 
 @mixin cvItem {
   font-size: 0.85rem;
-  @include slight-screens {
+  @include slightScreens {
     font-size: 0.9rem;
   }
-  @include medium-screens {
+  @include mediumScreens {
     font-size: 0.95rem;
     line-height: 1.3rem;
   }
-  @include normal-screens {
+  @include normalScreens {
     font-size: 1rem;
     line-height: 1.4;
   }
@@ -153,36 +152,36 @@
   p > span:first-child:after {
     content: ' ';
   }
-  p span:last-child time{
+  p span:last-child time {
     font-style: italic;
   }
 }
 
 @mixin pageSubtitle {
   width: 100%;
-  color: $base-color;
+  color: $baseColor;
   font-size: 1rem;
 }
 
 @mixin categoryTitle {
   font-weight: 500;
-  color: $low-light-base-text;
+  color: $lowLightBaseText;
   margin: 1.25rem 0 0.1rem 0;
-  @include slight-screens {
+  @include slightScreens {
     font-size: 1rem;
   }
-  @include medium-screens{
+  @include mediumScreens {
     font-size: 1.25rem;
     font-weight: 300;
-    color: $dark-base-text;
+    color: $darkBaseText;
     margin-bottom: 0.3rem;
   }
 }
 
 @mixin mainContactFormControls {
   display: block;
-  border: 1px solid $base-background-color;
-  border-bottom: 1px solid $extra-light-base-text;
+  border: 1px solid $baseBackgroundColor;
+  border-bottom: 1px solid $extraLightBaseText;
   width: calc(100% - 1.5rem);
   min-width: calc(100% - 40px);
   max-width: calc(100% - 40px);
@@ -190,37 +189,37 @@
   padding: 0.5rem;
   font-size: 0.85rem;
   &.Invalid {
-    border: 1px solid $error-color;
+    border: 1px solid $errorColor;
     border-right: none;
-    color: $error-color;
+    color: $errorColor;
     &.Invalid + button {
-      border: 1px solid $error-color;
+      border: 1px solid $errorColor;
       border-left: none;
     }
     &:focus,
     &:active,
     &:hover {
-      border: 2px solid $error-color;
+      border: 2px solid $errorColor;
       border-right: none;
     }
     &:hover + button {
-      border: 2px solid $error-color;
+      border: 2px solid $errorColor;
       border-left: none;
     }
     &:focus,
     &:active {
-      background-color: $light-error-color;
+      background-color: $lightErrorColor;
     }
     &:focus + button,
     &:active + button {
-      background-color: $light-error-color;
-      border: 2px solid $error-color;
+      background-color: $lightErrorColor;
+      border: 2px solid $errorColor;
       border-left: none;
     }
     &:focus + button:hover,
     &:active + button:hover {
-      background-color: $light-error-color;
-      border: 2px solid $error-color;
+      background-color: $lightErrorColor;
+      border: 2px solid $errorColor;
       border-left: none;
     }
   }
@@ -228,33 +227,33 @@
   &:active,
   &:hover {
     outline: 0;
-    border: 1px solid $extra-light-base-text;
+    border: 1px solid $extraLightBaseText;
     border-right: none;
   }
   &:hover + button {
-    border: 1px solid $extra-light-base-text;
+    border: 1px solid $extraLightBaseText;
     border-left: none;
   }
   &:focus,
   &:active {
-    background-color: $body-background;
+    background-color: $bodyBackground;
   }
   &:focus + button,
   &:active + button {
-    background-color: $body-background;
-    border: 1px solid $extra-light-base-text;
+    background-color: $bodyBackground;
+    border: 1px solid $extraLightBaseText;
     border-left: none;
   }
   &:focus + button:hover,
   &:active + button:hover {
-    background-color: $body-background;
-    border: 1px solid $extra-light-base-text;
+    background-color: $bodyBackground;
+    border: 1px solid $extraLightBaseText;
     border-left: none;
   }
-  @include tiny-screens {
+  @include tinyScreens {
     font-size: 0.9rem;
   }
-  @include slight-screens {
+  @include slightScreens {
     font-size: 1rem;
   }
 }

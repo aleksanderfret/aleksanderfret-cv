@@ -1,15 +1,18 @@
 import React from 'react';
+
 import classes from './SkillsCategory.scss';
 
-const skillsCategory = (props) => {
+const skillsCategory = ({ skills, type }) => {
+  const { Skill } = classes;
+
   return (
     <div className={classes.SkillsCategory}>
-      <h4>{props.type}</h4>
+      <h4>{type}</h4>
       <ul>
-        {props.skills.map((skill) => (
-          <li
-            key={skill.name}
-            className={classes.Skill}>{skill.name}</li>
+        {skills.map(({ name }) => (
+          <li key={name} className={Skill}>
+            {name}
+          </li>
         ))}
       </ul>
     </div>

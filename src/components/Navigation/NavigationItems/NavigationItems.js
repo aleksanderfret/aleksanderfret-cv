@@ -1,23 +1,25 @@
-import React from "react";
-import { withTranslation } from "react-i18next";
-import NavigationItem from "./NavigationItem/NavigationItem";
-import FontIcon from "../../UI/FontIcon/FontIcon";
-import classes from "./NavigationItems.scss";
+import React from 'react';
+import { withTranslation } from 'react-i18next';
+
+import NavigationItem from './NavigationItem/NavigationItem';
+import FontIcon from '../../UI/FontIcon/FontIcon';
+import classes from './NavigationItems.scss';
 
 const navigationItems = props => {
   const navigationClasses = [];
-  if (props.navType === "toolbar") {
+  const { navType, t } = props;
+
+  if (navType === 'toolbar') {
     navigationClasses.push(classes.NavigationItems);
   }
 
-  const { t } = props;
   return (
-    <ul className={navigationClasses.join(" ")}>
-      {t("pages", { returnObjects: true }).map((page, index) => (
+    <ul className={navigationClasses.join(' ')}>
+      {t('pages', { returnObjects: true }).map((page, index) => (
         <NavigationItem
           navType={props.navType}
           clicked={props.clicked}
-          key={index}
+          key={page.route}
           position={index}
           link={`/${page.route}`}
         >
@@ -33,4 +35,4 @@ const navigationItems = props => {
   );
 };
 
-export default withTranslation("ui")(navigationItems);
+export default withTranslation('ui')(navigationItems);

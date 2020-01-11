@@ -1,85 +1,127 @@
 import React, { Component } from 'react';
 
-const withValidation = (WrappedComponent) => {
+const withValidation = WrappedComponent => {
   const Control = class extends Component {
     state = {
       error: null,
-      touched: false,
-    }
+      touched: false
+    };
 
     componentDidUpdate(prevProps) {
-      if (this.props.externalError && prevProps.externalError !== this.props.externalError) {
-        this.setState(() => ({
-          error: this.props.config.errors[this.props.externalError] || 'unknown error',
-          touched: true
-        }));
-        this.props.changed({
-          isValid: !this.props.externalError,
-        });
+      const { externalError } = this.props;
+      const { externalError: prevExternalError } = prevProps;
+      const hasExternalErrorChanged =
+        externalError && prevExternalError !== externalError;
+      if (hasExternalErrorChanged) {
+        this.updateError();
       }
     }
+
+    updateError = () => {
+      const {
+        changed,
+        config: { errors },
+        externalError
+      } = this.props;
+      this.setState(() => ({
+        error: errors[externalError] || 'unknown error',
+        touched: true
+      }));
+      changed({
+        isValid: !externalError
+      });
+    };
 
     checkValidity = (value, rules) => {
       if (!rules) {
         return;
       }
-      if (rules.required &&
-        ((typeof value === 'boolean' && !value) ||
-          (typeof value !== 'boolean' && value.trim() === ''))) {
-        return this.props.config.errors.required;
-      }
-      if (rules.pattern && !rules.pattern.test(value)) {
-        return this.props.config.errors.pattern;
-      }
-      return null;
-    }
 
-    controlChangeHandler = (value) => {
-      if (typeof value === 'boolean' || this.props.config.type === 'captcha') {
-        this.controlOnBlurHandler(value);
-      } else {
-        if (this.state.error) {
-          const error = this.checkValidity(value, this.props.config.rules);
-          this.setState(() => ({ error }));
+      const { pattern, required } = rules;
+      const {
+        config: {
+          errors: { pattern: patternMessage, required: requiredMessage }
         }
+      } = this.props;
+      if (
+        required &&
+        ((typeof value === 'boolean' && !value) ||
+          (typeof value !== 'boolean' && value.trim() === ''))
+      ) {
+        return requiredMessage;
       }
-    }
+      if (pattern && !pattern.test(value)) {
+        return patternMessage;
+      }
 
-    controlOnBlurHandler = (value) => {
+      return null;
+    };
+
+    controlChangeHandler = value => {
+      const {
+        config: { rules, type }
+      } = this.props;
+      const { error } = this.state;
+      if (typeof value === 'boolean' || type === 'captcha') {
+        this.controlOnBlurHandler(value);
+      } else if (error) {
+        const newError = this.checkValidity(value, rules);
+        this.setState(() => ({ error: newError }));
+      }
+    };
+
+    controlOnBlurHandler = value => {
+      const {
+        changed,
+        config: { rules }
+      } = this.props;
       const touched = true;
-      const error = this.checkValidity(value, this.props.config.rules);
+      const error = this.checkValidity(value, rules);
 
       this.setState(() => ({ touched, error }));
-      this.props.changed({
+      changed({
         value,
-        isValid: !error,
+        isValid: !error
       });
-    }
+    };
 
     getValidationClasses = () => {
-      let validationClasses = [];
-      if (this.props.config.rules.required) {
+      const validationClasses = [];
+      const {
+        config: {
+          rules,
+          rules: { required }
+        }
+      } = this.props;
+      const { error, touched } = this.state;
+      const editedAnaInvalid = rules && error && touched;
+
+      if (required) {
         validationClasses.push('Required');
       }
-      if (this.props.config.rules && this.state.error && this.state.touched) {
+      if (editedAnaInvalid) {
         validationClasses.push('Invalid');
       }
+
       return validationClasses;
-    }
+    };
 
     render() {
+      const { error } = this.state;
+
       return (
         <WrappedComponent
           {...this.props}
           blurHandler={this.controlOnBlurHandler}
           changeHandler={this.controlChangeHandler}
           getValidationClasses={this.getValidationClasses}
-          error={this.state.error}
+          error={error}
         />
       );
     }
-  }
+  };
+
   return Control;
-}
+};
 
 export default withValidation;

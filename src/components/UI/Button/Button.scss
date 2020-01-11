@@ -2,13 +2,13 @@
 
 .Button {
   cursor: pointer;
-  color: $reverse-color;
+  color: $reverseColor;
 }
 
 .MenuButton,
 .LanguageButton {
-  width: $toolbar-height;
-  height: $toolbar-height;
+  width: $toolbarHeight;
+  height: $toolbarHeight;
 }
 
 .MenuButton {
@@ -19,7 +19,7 @@
     font-size: 2rem;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
   }
-  @include normal-screens {
+  @include normalScreens {
     display: none;
   }
 }
@@ -30,22 +30,21 @@
   margin: 0 auto;
   font-size: 0.75rem;
   text-align: center;
-  width: calc(#{$toolbar-height}/3);
-  height: calc(#{$toolbar-height}/3);
-  line-height: calc(#{$toolbar-height}/3);
-  color: $reverse-color;
-  border: 2px solid $reverse-color;
+  width: calc(#{$toolbarHeight} / 3);
+  height: calc(#{$toolbarHeight} / 3);
+  line-height: calc(#{$toolbarHeight} / 3);
+  color: $reverseColor;
+  border: 2px solid $reverseColor;
   border-radius: 5px;
-  font-weight: $text-bold;
+  font-weight: $textBold;
   transition: all 0.2s ease-out;
   transform: scale(1);
-
 }
 .LanguageButton:hover span {
   transform: scale(1.2);
-    color: $base-color;
-    background-color: $base-background-color;
-    @include shadow(3);
+  color: $baseColor;
+  background-color: $baseBackgroundColor;
+  @include shadow(3);
 }
 
 .AlwaysDisplayed {
@@ -55,8 +54,8 @@
 .StandardButton {
   display: block;
   margin: 0 auto;
-  background-color: $accessory-color;
-  color: $reverse-color;
+  background-color: $accessoryColor;
+  color: $reverseColor;
   border-radius: 5px;
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
@@ -71,29 +70,29 @@
     opacity: 0.5;
     box-shadow: none;
     &:hover {
-      background-color: $accessory-color;
+      background-color: $accessoryColor;
     }
   }
 }
 
 .controlHelpButton {
   width: 40px;
-  color: $extra-light-base-text;
-  border-bottom: 1px solid $extra-light-base-text;
+  color: $extraLightBaseText;
+  border-bottom: 1px solid $extraLightBaseText;
   font-size: 0.75rem;
   transition: font-size 0.3s, color 0.3s, text-shadow 0.3s;
   transition-timing-function: ease-in-out;
   &:hover,
   &:focus {
     outline: 0;
-    color: $low-light-base-text;
+    color: $lowLightBaseText;
     font-size: 0.85rem;
     text-shadow: 0px 0px 3px rgba(50, 50, 50, 0.5);
   }
 }
 
 .linkButton {
-  color: $base-color;
+  color: $baseColor;
   font-style: italic;
   display: inline;
   text-align: inherit;
@@ -101,22 +100,22 @@
     text-decoration: underline;
   }
   &:focus {
-    outline: 1px solid $extra-light-base-text;
+    outline: 1px solid $extraLightBaseText;
   }
 }
 
 .closeButton {
-  color: $reverse-color;
-  border: 4px solid $dark-base-text;
+  color: $reverseColor;
+  border: 4px solid $darkBaseText;
   position: absolute;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: $dark-base-text;
+  background-color: $darkBaseText;
   right: -10px;
   top: -10px;
   &:hover {
-    background-color: $reverse-color;
-    color: $dark-base-text;
+    background-color: $reverseColor;
+    color: $darkBaseText;
   }
 }

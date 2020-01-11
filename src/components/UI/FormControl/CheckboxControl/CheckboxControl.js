@@ -1,11 +1,12 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import withValidation from "../withValidation/withValidation";
-import Error from "../../Error/Error";
-import FontIcon from "../../../UI/FontIcon/FontIcon";
-import Label from "../ControlLabel/ControlLabel";
-import classes from "./CheckboxControl.scss";
-import * as icons from "../../FontIcon/FontIconTypes/FontIconsTypes";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
+
+import withValidation from '../withValidation/withValidation';
+import Error from '../../Error/Error';
+import FontIcon from '../../FontIcon/FontIcon';
+import Label from '../ControlLabel/ControlLabel';
+import classes from './CheckboxControl.scss';
+import { OK } from '../../FontIcon/FontIconTypes/FontIconsTypes';
 
 class CheckboxControl extends Component {
   state = {
@@ -13,15 +14,17 @@ class CheckboxControl extends Component {
   };
 
   onPressOK = event => {
-    if (event.keyCode === 13 || event.keyCode === 32) {
+    if (event.code === 'Space' || event.code === 'Enter') {
       this.checkboxClickHandler();
     }
   };
 
   checkboxClickHandler = () => {
-    const checked = !this.state.checked;
-    this.setState(() => ({ checked }));
-    this.props.changeHandler(checked);
+    const { checked } = this.state;
+    const { changeHandler } = this.props;
+
+    this.setState(() => ({ checked: !checked }));
+    changeHandler(!checked);
   };
 
   labelClickedHandler = event => {
@@ -30,46 +33,63 @@ class CheckboxControl extends Component {
   };
 
   render() {
-    const validationClasses = this.props
-      .getValidationClasses()
-      .map(validationClass => classes[validationClass] || "");
-    const checkboxClasses = [classes.Checkbox, ...validationClasses];
+    const { Checkbox: checkboxClass } = classes;
+    const { checked } = this.state;
+    const {
+      config: {
+        label,
+        labelButtonValue,
+        rules: { required },
+        subtype
+      },
+      error,
+      getValidationClasses,
+      name,
+      openTip,
+      t,
+      value
+    } = this.props;
+    const validationClasses = getValidationClasses().map(
+      validationClass => classes[validationClass] || ''
+    );
+    const checkboxClasses = [checkboxClass, ...validationClasses];
 
     return (
-      <React.Fragment>
+      <>
         <span
-          className={checkboxClasses.join(" ")}
-          name={this.props.name}
-          id={this.props.name}
-          role={this.props.config.subtype}
-          checked={this.state.checked}
-          aria-checked={this.state.checked}
+          className={checkboxClasses.join(' ')}
+          name={name}
+          id={name}
+          role={subtype}
+          checked={checked}
+          aria-checked={checked}
           tabIndex="0"
-          value={this.props.value}
-          aria-labelledby={`${this.props.name}`}
+          value={value}
+          aria-labelledby={`${name}`}
           onClick={this.checkboxClickHandler}
           onFocus={() => {
-            document.addEventListener("keydown", this.onPressOK);
+            document.addEventListener('keydown', this.onPressOK);
           }}
           onBlur={() => {
-            document.removeEventListener("keydown", this.onPressOK);
+            document.removeEventListener('keydown', this.onPressOK);
           }}
         >
-          {this.state.checked && <FontIcon iconType={icons.OK} />}
+          {checked && <FontIcon iconType={OK} />}
         </span>
-        {this.props.config.label && (
+        {label && (
           <Label
-            label={this.props.config.label}
+            label={label}
+            labelButtonValue={labelButtonValue}
             clicked={this.labelClickedHandler}
-            required={this.props.config.rules.required}
-            controlId={this.props.name}
-            openTip={this.props.openTip}
+            required={required}
+            controlId={name}
+            openTip={openTip}
           />
         )}
-        {this.props.error && <Error message={this.props.t(this.props.error)} />}
-      </React.Fragment>
+        {error && <Error message={t(error)} />}
+      </>
     );
   }
 }
 
-export default withValidation(withTranslation("contact")(CheckboxControl));
+export default withValidation(withTranslation('contact')(CheckboxControl));

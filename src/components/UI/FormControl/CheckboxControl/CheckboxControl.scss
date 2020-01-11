@@ -5,22 +5,22 @@
   display: block;
   width: 2rem;
   height: 2rem;
-  border: 1px solid $extra-light-base-text;
+  border: 1px solid $extraLightBaseText;
   margin-right: 0.5rem;
   &:hover,
   &:active,
   &:focus {
     outline: 0;
-    background-color: $body-background;
+    background-color: $bodyBackground;
   }
 }
 
-.Checkbox[aria-checked=true] {
+.Checkbox[aria-checked='true'] {
   text-align: center;
   background-color: $light-base;
   line-height: 2rem;
   border: 1px solid $light-base;
-  color: $reverse-color;
+  color: $reverseColor;
   font-size: 1.3rem;
 }
 
@@ -29,10 +29,10 @@
 }
 
 .Invalid {
-  border: 1px solid $error-color;
+  border: 1px solid $errorColor;
   &:hover,
   &:focus,
   &:active {
-    background-color: $light-error-color;
+    background-color: $lightErrorColor;
   }
 }

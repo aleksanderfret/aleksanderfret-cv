@@ -1,19 +1,22 @@
-import React from "react";
-import { withTranslation } from "react-i18next";
-import FontIcon from "../UI/FontIcon/FontIcon";
-import classes from "./Social.scss";
+import React from 'react';
+import { withTranslation } from 'react-i18next';
+
+import FontIcon from '../UI/FontIcon/FontIcon';
+import classes from './Social.scss';
 
 const social = props => {
-  const linkClass = classes[props.theme] ? classes[props.theme] : "";
+  const { theme, t } = props;
+  const linkClass = classes[theme] ? classes[theme] : '';
 
   return (
     <ul className={classes.Social}>
-      {props.t("social", { returnObjects: true }).map(link => (
+      {t('social', { returnObjects: true }).map(link => (
         <li key={link.name}>
           <a
             className={linkClass}
             href={link.url}
             target="_blank"
+            rel="noopener noreferrer"
             title={link.label}
             aria-label={link.label}
           >
@@ -25,4 +28,4 @@ const social = props => {
   );
 };
 
-export default withTranslation("contact")(social);
+export default withTranslation('contact')(social);

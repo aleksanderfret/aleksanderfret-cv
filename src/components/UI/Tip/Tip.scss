@@ -3,20 +3,20 @@
 .TipWrapper {
   @include shadow(-1);
   position: absolute;
-  background-color: $base-background-color;
-  background-color: $base-color;
+  background-color: $baseBackgroundColor;
+  background-color: $baseColor;
   width: 100%;
   bottom: 3.5rem;
   max-width: 600px;
   z-index: 100;
   border-radius: 5px 5px 0px 5px;
   font-size: 0.75rem;
-  @include small-screens {
+  @include smallScreens {
     width: 90%;
     margin: 0 5%;
   }
-  @include medium-screens {
-    margin: 0 calc((100% - 600px)/2);
+  @include mediumScreens {
+    margin: 0 calc((100% - 600px) / 2);
   }
 }
 
@@ -24,8 +24,8 @@
   position: relative;
   width: 100%;
   padding: 1.5rem;
-  color: $reverse-color;
-  background-color: $dark-base-text;
+  color: $reverseColor;
+  background-color: $darkBaseText;
   border-radius: 5px 5px 0px 5px;
   &:after {
     content: '';
@@ -38,7 +38,7 @@
     position: absolute;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-top: 15px solid $dark-base-text;
+    border-top: 15px solid $darkBaseText;
   }
   p:not(:first-of-type) {
     margin: 0.75rem 0 0 0;

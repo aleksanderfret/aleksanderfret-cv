@@ -3,7 +3,7 @@
 .Toolbar {
   position: relative;
   width: 100%;
-  height: $toolbar-height;
+  height: $toolbarHeight;
   display: flex;
   justify-content: space-between;
   align-items: 'center';
@@ -14,12 +14,12 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: calc(100% - (#{$toolbar-height}*2));
+  width: calc(100% - (#{$toolbarHeight} * 2));
   nav {
     display: none;
   }
-  @include normal-screens {
-    width: calc(100% - #{$toolbar-height});
+  @include normalScreens {
+    width: calc(100% - #{$toolbarHeight});
     justify-content: flex-start;
     margin-left: 1rem;
     nav {

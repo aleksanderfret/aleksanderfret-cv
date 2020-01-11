@@ -10,57 +10,57 @@
     background-color: $light-base;
     @include shadow(4);
     * {
-      color: $reverse-color;
+      color: $reverseColor;
     }
   }
-  @include slight-screens {
+  @include slightScreens {
     height: 140px;
   }
-  @include large-screens {
+  @include largeScreens {
     height: 150px;
   }
-  @include wide-screens {
+  @include wideScreens {
     height: 140px;
   }
 }
 
 .CvLink a {
   text-decoration: none;
-  color: $middle-light-base-text;
+  color: $middleLightBaseText;
   height: 100%;
   display: flex;
 }
 
 .Icon {
   display: none;
-  @include tiny-screens {
+  @include tinyScreens {
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     width: 30%;
     height: 100%;
-    color: $extra-light-base-text;
+    color: $extraLightBaseText;
     font-size: 3.5rem;
     line-height: 100%;
   }
-  @include slight-screens {
+  @include slightScreens {
     font-size: 4.5rem;
   }
-  @include small-screens {
+  @include smallScreens {
     display: none;
   }
-  @include medium-screens {
+  @include mediumScreens {
     display: flex;
     font-size: 3.5rem;
   }
-  @include normal-screens {
+  @include normalScreens {
     font-size: 4.25rem;
   }
-  @include large-screens {
+  @include largeScreens {
     font-size: 4.75rem;
   }
-  @include wide-screens {
+  @include wideScreens {
     font-size: 3.5rem;
   }
 }
@@ -70,39 +70,38 @@
 }
 
 .CvLink h3 {
-  color: $base-color;
+  color: $baseColor;
   font-size: 1.5rem;
   margin: 0 0 0.3rem 0;
-  @include tiny-screens {
+  @include tinyScreens {
     font-size: 1.3rem;
   }
-  @include slight-screens {
+  @include slightScreens {
     font-size: 1.5rem;
   }
-  @include small-screens {
+  @include smallScreens {
     font-size: 1.3rem;
   }
-  @include medium-screens {
+  @include mediumScreens {
     font-size: 1.25rem;
   }
-  @include normal-screens {
+  @include normalScreens {
     font-size: 1.3rem;
   }
-  @include large-screens {
+  @include largeScreens {
     font-size: 1.6rem;
   }
-  @include large-screens {
+  @include largeScreens {
     font-size: 1.3rem;
   }
-
 }
 
 .CvLink ul {
   width: 100%;
-  @include large-screens {
+  @include largeScreens {
     font-size: 1.1rem;
   }
-  @include large-screens {
+  @include largeScreens {
     font-size: 1rem;
   }
 }

@@ -1,39 +1,45 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import { withTranslation } from "react-i18next";
-import Layout from "../Layot/Layout";
-import PageController from "../PageController/PageController";
-import ProjectDetails from "../PageComponents/CV/Portfolio/ProjectDetails/ProjectDetails";
-import ContactSuccess from "../PageComponents/Contact/ContactSuccess/ContactSuccess";
-import Home from "../PageComponents/Home/Home";
-import NotFound from "../PageComponents/NotFound/NotFound";
-import classes from "./CV.scss";
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
+
+import Layout from '../Layout/Layout';
+import PageController from '../PageController/PageController';
+import ProjectDetails from '../PageComponents/CV/Portfolio/ProjectDetails/ProjectDetails';
+import ContactSuccess from '../PageComponents/Contact/ContactSuccess/ContactSuccess';
+import Home from '../PageComponents/Home/Home';
+import NotFound from '../PageComponents/NotFound/NotFound';
+import classes from './CV.scss';
 
 class CV extends Component {
   state = {
-    language: "en"
-  };
-
-  toggleLanguage = () => {
-    const { i18n } = this.props;
-    const lang = this.state.language === "en" ? "pl" : "en";
-    this.setState(() => ({ language: lang }));
-    i18n.changeLanguage(lang);
-    window.recaptchaOptions.lang = lang;
+    language: 'en'
   };
 
   componentDidMount() {
+    const { language: lang } = this.state;
+
     window.recaptchaOptions = {
-      lang: this.state.language,
+      lang,
       useRecaptchaNet: true,
       removeOnUnmount: true
     };
   }
 
+  toggleLanguage = () => {
+    const { i18n } = this.props;
+    const { language } = this.state;
+    const lang = language === 'en' ? 'pl' : 'en';
+
+    this.setState(() => ({ language: lang }));
+    i18n.changeLanguage(lang);
+    window.recaptchaOptions.lang = lang;
+  };
+
   render() {
-    console.log(classes);
+    const { CV: cvClass } = classes;
+
     return (
-      <div className={classes.CV}>
+      <div className={cvClass}>
         <Layout toggleLanguage={this.toggleLanguage}>
           <Switch>
             <Route path="/contact/success" component={ContactSuccess} />
@@ -48,4 +54,4 @@ class CV extends Component {
   }
 }
 
-export default withTranslation("ui")(CV);
+export default withTranslation('ui')(CV);

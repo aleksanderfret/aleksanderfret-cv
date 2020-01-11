@@ -5,11 +5,11 @@
   &:first-child {
     padding-bottom: 0.25rem;
   }
-  @include tiny-screens {
+  @include tinyScreens {
     font-size: 0.9rem;
     line-height: 1.2rem;
   }
-  @include small-screens {
+  @include smallScreens {
     font-size: 1rem;
     line-height: 1.4rem;
   }
@@ -20,7 +20,7 @@ span + .Label.Required:before {
   font-size: 0.6rem;
   vertical-align: super;
 }
-.Label.Required:first-child:after,{
+.Label.Required:first-child:after {
   content: ' *';
 }
 span + .Label.Required:before {

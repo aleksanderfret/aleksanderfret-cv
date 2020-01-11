@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import Tip from "../Tip/Tip";
-import CheckboxControl from "./CheckboxControl/CheckboxControl";
-import InputControl from "./InputControl/InputControl";
-import TextareaControl from "./TextareaControl/TextareaControl";
-import CaptchaControl from "./CaptchaControl/CaptchaControl";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
 
-import classes from "./FormControl.scss";
+import Tip from '../Tip/Tip';
+import CheckboxControl from './CheckboxControl/CheckboxControl';
+import InputControl from './InputControl/InputControl';
+import TextareaControl from './TextareaControl/TextareaControl';
+import CaptchaControl from './CaptchaControl/CaptchaControl';
+import classes from './FormControl.scss';
 
 class FormControl extends Component {
   controls = {
@@ -18,28 +18,38 @@ class FormControl extends Component {
 
   getFormControl = () => {
     let ControlComponent;
-    if (this.props.config.type === "input") {
-      ControlComponent = this.controls[this.props.config.subtype];
+    const {
+      config: { subtype, type }
+    } = this.props;
+
+    if (type === 'input') {
+      ControlComponent = this.controls[subtype];
       if (!ControlComponent) {
         ControlComponent = this.controls.input;
       }
     } else {
-      ControlComponent = this.controls[this.props.config.type];
+      ControlComponent = this.controls[type];
     }
+
     return <ControlComponent {...this.props} />;
   };
 
   render() {
+    const {
+      config: { info },
+      closeTip,
+      isTipOpen,
+      t
+    } = this.props;
+
     return (
       <div className={classes.FormControl}>
         {this.getFormControl()}
-        {this.props.isTipOpen && (
-          <Tip closeTip={this.props.closeTip}>
-            {this.props
-              .t(this.props.config.info, { returnObjects: true })
-              .map((message, index) => (
-                <p key={index}>{message}</p>
-              ))}
+        {isTipOpen && (
+          <Tip closeTip={closeTip}>
+            {t(info, { returnObjects: true }).map(message => (
+              <p key={message}>{message}</p>
+            ))}
           </Tip>
         )}
       </div>
@@ -47,4 +57,4 @@ class FormControl extends Component {
   }
 }
 
-export default withTranslation("contact")(FormControl);
+export default withTranslation('contact')(FormControl);
