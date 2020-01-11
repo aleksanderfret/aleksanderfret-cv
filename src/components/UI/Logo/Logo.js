@@ -1,40 +1,41 @@
-import React from 'react';
-import { translate } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
-import afretLogo from '../../../assets/images/afret_logo.svg';
-import classes from './Logo.scss';
+import React from "react";
+import { withTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
+import afretLogo from "../../../assets/images/afret_logo.svg";
+import classes from "./Logo.scss";
 
-const logo = (props) => {
+const logo = props => {
   const logoClasses = [classes.Logo];
-  if (props.logoType === 'shortLogo') {
+  if (props.logoType === "shortLogo") {
     logoClasses.push(classes.ShortLogo);
-  } else if (props.logoType === 'smallLogo') {
+  } else if (props.logoType === "smallLogo") {
     logoClasses.push(classes.SmallLogo);
   } else {
     logoClasses.push(classes.BigLogo);
   }
 
-  return(
+  return (
     <NavLink
-      to='/'
+      to="/"
       exact
       onClick={props.clicked}
-      className={logoClasses.join(' ')}
-      aria-labelledby='logo-text'>
+      className={logoClasses.join(" ")}
+      aria-labelledby="logo-text"
+    >
       <img
         className={classes.LogoImage}
         src={afretLogo}
-        alt={`${props.t('title')} logo`}
-        aria-label={`${props.t('title')} ${props.t('subtitle')}`} />
-      {props.isTextLogo &&
-        <div id='logo-text' className={classes.LogoText}>
-          <h1>{props.t('title')}</h1>
-          <h2>{props.t('subtitle')}</h2>
+        alt={`${props.t("title")} logo`}
+        aria-label={`${props.t("title")} ${props.t("subtitle")}`}
+      />
+      {props.isTextLogo && (
+        <div id="logo-text" className={classes.LogoText}>
+          <h1>{props.t("title")}</h1>
+          <h2>{props.t("subtitle")}</h2>
         </div>
-      }
+      )}
     </NavLink>
-
   );
 };
 
-export default translate('ui')(logo);
+export default withTranslation("ui")(logo);

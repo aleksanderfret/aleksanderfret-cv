@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { translate } from 'react-i18next';
-import Project from './Project/Project';
-import classes from './Portfolio.scss';
+import React, { Component } from "react";
+import { withTranslation } from "react-i18next";
+import Project from "./Project/Project";
+import classes from "./Portfolio.scss";
 
 class Portfolio extends Component {
   constructor(props) {
@@ -16,19 +16,18 @@ class Portfolio extends Component {
   render() {
     return (
       <div className={classes.Portfolio}>
-        <h3
-          ref={this.header}
-          tabIndex={-1}>{this.props.t('title')}</h3>
+        <h3 ref={this.header} tabIndex={-1}>
+          {this.props.t("title")}
+        </h3>
         <ul className={classes.Projects}>
-          {this.props.t('works', { returnObjects: true }).map((work, index) => (
-            <li
-              key={index}>
+          {this.props.t("works", { returnObjects: true }).map((work, index) => (
+            <li key={index}>
               <Project
                 id={work.id}
                 name={work.name}
                 imageAlt={work.imageAlt}
                 technologies={work.technologies}
-                labels={this.props.t('labels', { returnObjects: true })}
+                labels={this.props.t("labels", { returnObjects: true })}
               />
             </li>
           ))}
@@ -38,4 +37,4 @@ class Portfolio extends Component {
   }
 }
 
-export default translate('portfolio')(Portfolio);
+export default withTranslation("portfolio")(Portfolio);

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import axios from "axios";
 import { contactFormConfig } from "../../../data/controls";
 import Social from "../../Social/Social";
@@ -228,4 +228,4 @@ class Contact extends Component {
   }
 }
 
-export default withRouter(translate("contact")(Contact));
+export default withRouter(withTranslation("contact")(Contact));
