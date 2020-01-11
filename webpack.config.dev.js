@@ -20,7 +20,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(jsx?)$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
@@ -34,8 +34,6 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              localsConvention: "camelCaseOnly",
-              sourceMap: true,
               modules: {
                 localIdentName: "[name]__[local]__[hash:base64:5]"
               }
@@ -50,6 +48,7 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
+              sourceMap: true,
               sassOptions: {
                 indentWidth: 2,
                 includePaths: ["./src/scss/base", "./src/scss/partials"]
@@ -66,6 +65,10 @@ module.exports = {
           quality: 95,
           name: "images/[name]-[width]-[hash:8].[ext]"
         }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        loader: "url-loader?limit=100000"
       },
       {
         test: /\.(pdf)$/,
