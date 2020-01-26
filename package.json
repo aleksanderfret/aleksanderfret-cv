@@ -5,6 +5,14 @@
   "main": "src/index.js",
   "author": "Aleksander Fret",
   "private": true,
+  "scripts": {
+    "build": "webpack --progress --config ./webpack.config.dev.js",
+    "check": "npm-run-all lint format stylelint",
+    "dev": "webpack-dev-server --open --config ./webpack.config.dev.js",
+    "format": "prettier --check \"src/**/*.{js,jsx}\"",
+    "lint": "eslint . --ext \".js,.jsx\"",
+    "stylelint": "stylelint src/**/*.scss --cache"
+  },
   "dependencies": {
     "axios": "0.19.1",
     "core-js": "3.6.3",
@@ -16,13 +24,6 @@
     "react-i18next": "11.2.7",
     "react-router-dom": "5.1.2",
     "react-transition-group": "4.3.0"
-  },
-  "scripts": {
-    "build": "webpack --progress --config ./webpack.config.dev.js",
-    "dev": "webpack-dev-server --open --config ./webpack.config.dev.js",
-    "format": "prettier --check \"src/**/*.{js,jsx}\"",
-    "lint": "eslint . --ext \".js,.jsx\"",
-    "stylelint": "stylelint src/**/*.scss --cache"
   },
   "devDependencies": {
     "@babel/cli": "7.7.7",
