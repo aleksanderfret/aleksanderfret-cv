@@ -13,13 +13,14 @@ const controlLabel = ({
   required,
   t
 }) => {
-  const labelClasses = [classes.Label];
+  const { Label, Required } = classes;
+  const labelClasses = [Label];
   if (required) {
-    labelClasses.push(classes.Required);
+    labelClasses.push(Required);
   }
 
-  const labelButton = (
-    <Trans i18nKey={label}>
+  const getLabelButton = () => (
+    <Trans i18nKey={`contact:${label}`}>
       start
       <Button
         btnType="linkButton"
@@ -28,13 +29,13 @@ const controlLabel = ({
           openTip(event, controlId);
         }}
       >
-        {t(labelButtonValue)}
+        {{ value: t(labelButtonValue) }}
       </Button>
       end
     </Trans>
   );
 
-  const labelText = labelButtonValue ? labelButton : t(label);
+  const labelText = labelButtonValue ? getLabelButton() : t(label);
 
   return (
     <label

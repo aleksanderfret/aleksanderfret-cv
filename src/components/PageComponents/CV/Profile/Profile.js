@@ -21,39 +21,39 @@ class Profile extends Component {
     } = this.props;
 
     return Object.keys(routes).filter(
-      key => advantage.indexOf(`${routes[key].labels[language]}</1>`) !== -1
+      key => advantage.indexOf(routes[key].labels[language]) !== -1
     )[0];
   };
 
   getAdvantage = (advantage, index, translationKey) => {
-    let advantageJsx = null;
-
-    if (advantage.indexOf('<1>') !== -1) {
-      advantageJsx = (
-        <Trans i18nKey={translationKey}>
-          Tresc
-          <Link to={this.getRoute(advantage)}>link</Link>
-          koniec
-        </Trans>
+    const advantageJsx =
+      advantage.indexOf('<1>') !== -1 ? (
+        <>
+          <Trans i18nKey={`profile:${translationKey}`}>
+            start
+            <Link to={this.getRoute(advantage)}>link</Link>
+            end
+          </Trans>
+        </>
+      ) : (
+        advantage
       );
-    } else {
-      advantageJsx = advantage;
-    }
 
     return <p key={index}>{advantageJsx}</p>;
   };
 
   render() {
     const { t } = this.props;
+    const { Profile, Profession } = classes;
 
     return (
-      <div className={classes.Profile}>
+      <div className={Profile}>
         <h3 ref={this.header} tabIndex={-1}>
           {t('title')}
         </h3>
         {t('professions', { returnObjects: true }).map(
           (profession, professionIndex) => (
-            <div className={classes.Profession} key={profession.name}>
+            <div className={Profession} key={profession.name}>
               <h4>{profession.name}</h4>
               {profession.advantages.map((advantage, advantageIndex) =>
                 this.getAdvantage(

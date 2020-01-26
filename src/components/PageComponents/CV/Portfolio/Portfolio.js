@@ -32,7 +32,6 @@ class Portfolio extends Component {
                   name={name}
                   imageAlt={imageAlt}
                   technologies={technologies}
-                  labels={t('labels', { returnObjects: true })}
                 />
               </li>
             )

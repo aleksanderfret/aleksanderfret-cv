@@ -63,7 +63,7 @@
       }
     },
     "rodo": {
-      "label": "I've read <1>{{value}}<1/> and I accept it.",
+      "label": "I've read <1>{{value}}</1> and I accept it.",
       "labelButtonValue": "the information about data processing",
       "errors": {
         "required": "Consent to data processing is essential so that I can respond to your message."

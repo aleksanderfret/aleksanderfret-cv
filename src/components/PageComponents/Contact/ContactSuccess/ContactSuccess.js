@@ -15,13 +15,14 @@ class ContactSuccess extends Component {
 
   render() {
     const { t } = this.props;
+    const { ContactSuccess: contactSuccessClass, SuccessMessage } = classes;
 
     return (
-      <div className={classes.ContactSuccess}>
+      <div className={contactSuccessClass}>
         <h3 ref={this.header} tabIndex={-1}>
           {t('title')}
         </h3>
-        <div className={classes.SuccessMessage}>
+        <div className={SuccessMessage}>
           {t('form.success', { returnObjects: true }).map(message => (
             <p key={message}>{message}</p>
           ))}

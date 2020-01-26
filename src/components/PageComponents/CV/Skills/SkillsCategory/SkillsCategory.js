@@ -3,10 +3,10 @@ import React from 'react';
 import classes from './SkillsCategory.scss';
 
 const skillsCategory = ({ skills, type }) => {
-  const { Skill } = classes;
+  const { Skill, SkillsCategory } = classes;
 
   return (
-    <div className={classes.SkillsCategory}>
+    <div className={SkillsCategory}>
       <h4>{type}</h4>
       <ul>
         {skills.map(({ name }) => (

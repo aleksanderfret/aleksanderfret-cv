@@ -101,7 +101,7 @@ class ProjectDetails extends Component {
       routes: { next, prev }
     } = this.state;
     const { t } = this.props;
-    const { src, srcSet, imageAlt } = getImage(id, TARGET.DETAILS);
+    const { src, srcSet } = getImage(id, TARGET.DETAILS);
     const projectDate = (
       <span>
         <time dateTime={dateToAttr(startDate)}>{startDate}</time>
@@ -143,7 +143,9 @@ class ProjectDetails extends Component {
             src={src}
             srcSet={srcSet}
             sizes="100vw"
-            alt={imageAlt}
+            alt={t('labels.imageAlt', {
+              name
+            })}
             imageClass="Project"
           />
           <div className={Description}>
@@ -163,7 +165,7 @@ class ProjectDetails extends Component {
                   href={projectURL}
                   rel="noopener noreferrer"
                   target="_blank"
-                  aria-label={t('labels.visitArea', {
+                  aria-label={t('labels.visitAria', {
                     name
                   })}
                 >

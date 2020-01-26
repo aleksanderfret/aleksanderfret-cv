@@ -25,7 +25,7 @@ class SidePanel extends Component {
 
   render() {
     const { isOpen, closeSidePanel } = this.props;
-    const { SidePanel: sidePanelClass } = classes;
+    const { Close, Header, Open, SidePanel: sidePanelClass } = classes;
     const sidePanelClasses = [sidePanelClass];
 
     return (
@@ -38,13 +38,13 @@ class SidePanel extends Component {
           timeout={300}
           classNames={{
             enter: '',
-            enterActive: classes.Open,
+            enterActive: Open,
             exit: '',
-            exitActive: classes.Close
+            exitActive: Close
           }}
         >
           <div className={sidePanelClasses.join(' ')}>
-            <header className={classes.Header}>
+            <header className={Header}>
               <Logo isTextLogo logoType="shortLogo" clicked={closeSidePanel} />
             </header>
             <nav>

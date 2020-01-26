@@ -5,30 +5,30 @@ import NavigationItem from './NavigationItem/NavigationItem';
 import FontIcon from '../../UI/FontIcon/FontIcon';
 import classes from './NavigationItems.scss';
 
-const navigationItems = props => {
+const navigationItems = ({ clicked, icons, navType, t }) => {
   const navigationClasses = [];
-  const { navType, t } = props;
+  const { MenuIcon, NavigationItems: navigationItemsClass } = classes;
 
   if (navType === 'toolbar') {
-    navigationClasses.push(classes.NavigationItems);
+    navigationClasses.push(navigationItemsClass);
   }
 
   return (
     <ul className={navigationClasses.join(' ')}>
-      {t('pages', { returnObjects: true }).map((page, index) => (
+      {t('pages', { returnObjects: true }).map(({ name, route }) => (
         <NavigationItem
-          navType={props.navType}
-          clicked={props.clicked}
-          key={page.route}
-          position={index}
-          link={`/${page.route}`}
+          navType={navType}
+          clicked={clicked}
+          key={route}
+          position={route}
+          link={`/${route}`}
         >
-          {props.icons && (
-            <span className={classes.MenuIcon}>
-              <FontIcon iconType={page.route} />
+          {icons && (
+            <span className={MenuIcon}>
+              <FontIcon iconType={route} />
             </span>
           )}
-          <span>{page.name}</span>
+          <span>{name}</span>
         </NavigationItem>
       ))}
     </ul>

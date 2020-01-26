@@ -8,11 +8,20 @@ import classes from './Project.scss';
 
 const project = ({ id, imageAlt, name, technologies }) => {
   const { src, srcSet } = getImage(id, TARGET.PORTFOLIO);
+  const {
+    Info,
+    Content,
+    Overlay,
+    Project: projectClass,
+    ProjectName,
+    Preview,
+    Technologies
+  } = classes;
 
   return (
     <Link to={`/portfolio/${kebabCase(id)}`} aria-label={name}>
-      <div className={classes.Project}>
-        <div className={classes.Preview}>
+      <div className={projectClass}>
+        <div className={Preview}>
           <Image
             src={src}
             srcSet={srcSet}
@@ -21,11 +30,11 @@ const project = ({ id, imageAlt, name, technologies }) => {
             imageClass="Project"
           />
         </div>
-        <div className={classes.Info}>
-          <div className={classes.Overlay} />
-          <div className={classes.Content}>
-            <h4 className={classes.ProjectName}>{name}</h4>
-            <ul className={classes.Technologies}>
+        <div className={Info}>
+          <div className={Overlay} />
+          <div className={Content}>
+            <h4 className={ProjectName}>{name}</h4>
+            <ul className={Technologies}>
               {technologies.map(technology => (
                 <li key={technology}>{technology}</li>
               ))}

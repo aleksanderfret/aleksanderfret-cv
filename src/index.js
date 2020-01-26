@@ -2,7 +2,7 @@ import 'core-js/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { I18nextProvider } from 'react-i18next';
+import { initReactI18next } from 'react-i18next';
 import i18next from 'i18next';
 
 import CV from './components/CV/CV';
@@ -26,7 +26,8 @@ import skillsPl from './translations/pl/skills.json';
 import uiPl from './translations/pl/ui.json';
 import './scss/index.scss';
 
-i18next.init({
+i18next.use(initReactI18next).init({
+  debug: true,
   interpolation: { escapeValue: false },
   lng: 'en',
   resources: {
@@ -57,9 +58,7 @@ i18next.init({
 
 ReactDOM.render(
   <BrowserRouter>
-    <I18nextProvider i18n={i18next}>
-      <CV />
-    </I18nextProvider>
+    <CV />
   </BrowserRouter>,
   document.getElementById('root')
 );

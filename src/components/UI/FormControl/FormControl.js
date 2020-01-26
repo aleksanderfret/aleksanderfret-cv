@@ -41,9 +41,10 @@ class FormControl extends Component {
       isTipOpen,
       t
     } = this.props;
+    const { FormControl: formControlClass } = classes;
 
     return (
-      <div className={classes.FormControl}>
+      <div className={formControlClass}>
         {this.getFormControl()}
         {isTipOpen && (
           <Tip closeTip={closeTip}>
