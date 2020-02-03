@@ -91,7 +91,7 @@
     height: $toolbarHeight;
     background-color: $baseColor;
   } @else {
-    height: calc($toolbarHeight + $bigLogoHeight);
+    height: $headerHeigh;
     background: $baseGradient;
   }
 }

@@ -1,12 +1,15 @@
 const autoprefixer = require('autoprefixer');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
-  devtool: 'inline-source-map',
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, './dist'),
@@ -30,7 +33,7 @@ module.exports = {
         test: /\.s?css$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -48,7 +51,6 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
               sassOptions: {
                 indentWidth: 2,
                 includePaths: ['./src/scss/base', './src/scss/partials']
@@ -83,23 +85,25 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    port: 3000,
-    open: true,
-    inline: true,
-    hot: true,
-    disableHostCheck: true,
-    watchOptions: {
-      ignored: /node_modules/
-    },
-    historyApiFallback: true
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true
+      }),
+      new OptimizeCssAssetsPlugin()
+    ]
   },
   plugins: [
     new CleanWebpackPlugin({ verbose: true }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css'
+    }),
     new HtmlWebPackPlugin({
       favicon: './public/icons/favicon.ico',
       template: './public/index.html',
-      inlineSource: '.(js|css)$'
-    })
+      inject: true
+    }),
+    new HtmlWebpackInlineSourcePlugin()
   ]
 };
