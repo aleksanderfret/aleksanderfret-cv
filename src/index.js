@@ -27,7 +27,6 @@ import uiPl from './translations/pl/ui.json';
 import './scss/index.scss';
 
 i18next.use(initReactI18next).init({
-  debug: true,
   interpolation: { escapeValue: false },
   lng: 'en',
   resources: {
