@@ -1,36 +1,38 @@
 import React from 'react';
-import { translate } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
+
 import NavigationItem from './NavigationItem/NavigationItem';
 import FontIcon from '../../UI/FontIcon/FontIcon';
 import classes from './NavigationItems.scss';
 
-const navigationItems = (props) => {
+const navigationItems = ({ clicked, icons, navType, t }) => {
   const navigationClasses = [];
-  if (props.navType === 'toolbar') {
-    navigationClasses.push(classes.NavigationItems);
+  const { MenuIcon, NavigationItems: navigationItemsClass } = classes;
+
+  if (navType === 'toolbar') {
+    navigationClasses.push(navigationItemsClass);
   }
 
-  const { t } = props;
   return (
     <ul className={navigationClasses.join(' ')}>
-      {t('pages', { returnObjects: true }).map((page, index) => (
+      {t('pages', { returnObjects: true }).map(({ name, route }) => (
         <NavigationItem
-          navType={props.navType}
-          clicked={props.clicked}
-          key={index}
-          position={index}
-          link={`/${page.route}`}>
-          {props.icons &&
-            <span className={classes.MenuIcon}>
-              <FontIcon
-                iconType={page.route} />
+          navType={navType}
+          clicked={clicked}
+          key={route}
+          position={route}
+          link={`/${route}`}
+        >
+          {icons && (
+            <span className={MenuIcon}>
+              <FontIcon iconType={route} />
             </span>
-          }
-          <span>{page.name}</span>
+          )}
+          <span>{name}</span>
         </NavigationItem>
       ))}
     </ul>
   );
 };
 
-export default translate('ui')(navigationItems);
+export default withTranslation('ui')(navigationItems);

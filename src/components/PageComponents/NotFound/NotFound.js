@@ -1,15 +1,16 @@
 import React from 'react';
-import { translate } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
+
 import classes from './NotFound.scss';
 
-const notFound = (props) => {
+const notFound = ({ t }) => {
+  const { NotFound, NotFoundMessage } = classes;
+
   return (
-    <div className={classes.NotFound}>
-      <p className={classes.NotFoundMessage}>
-        {props.t('notFound')}
-      </p>
+    <div className={NotFound}>
+      <p className={NotFoundMessage}>{t('notFound')}</p>
     </div>
   );
 };
 
-export default translate('ui')(notFound);
+export default withTranslation('ui')(notFound);

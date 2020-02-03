@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { translate } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
+
 import Project from './Project/Project';
 import classes from './Portfolio.scss';
 
@@ -14,28 +15,31 @@ class Portfolio extends Component {
   }
 
   render() {
+    const { t } = this.props;
+    const { Portfolio: portfolioClass, Projects } = classes;
+
     return (
-      <div className={classes.Portfolio}>
-        <h3
-          ref={this.header}
-          tabIndex={-1}>{this.props.t('title')}</h3>
-        <ul className={classes.Projects}>
-          {this.props.t('works', { returnObjects: true }).map((work, index) => (
-            <li
-              key={index}>
-              <Project
-                id={work.id}
-                name={work.name}
-                imageAlt={work.imageAlt}
-                technologies={work.technologies}
-                labels={this.props.t('labels', { returnObjects: true })}
-              />
-            </li>
-          ))}
+      <div className={portfolioClass}>
+        <h3 ref={this.header} tabIndex={-1}>
+          {t('title')}
+        </h3>
+        <ul className={Projects}>
+          {t('works', { returnObjects: true }).map(
+            ({ name, id, imageAlt, technologies }) => (
+              <li key={name}>
+                <Project
+                  id={id}
+                  name={name}
+                  imageAlt={imageAlt}
+                  technologies={technologies}
+                />
+              </li>
+            )
+          )}
         </ul>
       </div>
     );
   }
 }
 
-export default translate('portfolio')(Portfolio);
+export default withTranslation('portfolio')(Portfolio);

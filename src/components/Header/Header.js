@@ -1,22 +1,25 @@
 import React from 'react';
+
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import Logo from '../UI/Logo/Logo';
 import classes from './Header.scss';
 
-const header = (props) => {
-  const headerClasses = [classes.Header];
-  headerClasses.push(props.isHomePage ? classes.Home : classes.Usual);
-  return(
+const header = props => {
+  const { isHomePage, toggleLanguage, toggleSidePanel } = props;
+  const { Header, Home, Usual } = classes;
+  const headerClasses = [Header];
+  headerClasses.push(isHomePage ? Home : Usual);
+
+  return (
     <header className={headerClasses.join(' ')}>
       <Toolbar
-        isHomePage={props.isHomePage}
-        toggleSidePanel={props.toggleSidePanel}
-        toggleLanguage={props.toggleLanguage} />
-      {props.isHomePage &&
-        <Logo
-          isTextLogo
-          logoType={!props.isHomePage ? 'smallLogo': 'bigLogo'}/>
-      }
+        isHomePage={isHomePage}
+        toggleSidePanel={toggleSidePanel}
+        toggleLanguage={toggleLanguage}
+      />
+      {isHomePage && (
+        <Logo isTextLogo logoType={!isHomePage ? 'smallLogo' : 'bigLogo'} />
+      )}
     </header>
   );
 };

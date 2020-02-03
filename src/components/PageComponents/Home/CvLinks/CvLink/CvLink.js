@@ -1,27 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FontIcon from '../../../../UI/FontIcon/FontIcon';
-import classes from './CvLink.scss';
 
-const pageTile = (props) => {
-  return(
-    <div className={classes.CvLink}>
-      <Link to={`/${props.route}`}>
-        <div className={classes.Icon}>
-          <FontIcon
-            iconType={props.route}/>
-        </div>
-        <div className={classes.Info}>
-          <h3>{props.title}</h3>
-          <ul>
-            {props.content.map(((text, index) => (
-              <li key={index}>{text}</li>
-            )))}
-          </ul>
-        </div>
-      </Link>
-    </div>
-  );
-};
+import FontIcon from '../../../../UI/FontIcon/FontIcon';
+import { CvLink, Icon, Info } from './CvLink.scss';
+
+const pageTile = ({ content, route, title }) => (
+  <div className={CvLink}>
+    <Link to={`/${route}`}>
+      <div className={Icon}>
+        <FontIcon iconType={route} />
+      </div>
+      <div className={Info}>
+        <h3>{title}</h3>
+        <ul>
+          {content.map(text => (
+            <li key={text}>{text}</li>
+          ))}
+        </ul>
+      </div>
+    </Link>
+  </div>
+);
 
 export default pageTile;

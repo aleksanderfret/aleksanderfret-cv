@@ -8,14 +8,14 @@
   @include pageTitle;
 }
 
- .Projects {
-   display: flex;
-   flex-wrap: wrap;
-   a {
+.Projects {
+  display: flex;
+  flex-wrap: wrap;
+  a {
     text-decoration: none;
-    color: $reverse-color;
+    color: $reverseColor;
   }
- }
+}
 
 .Projects > li {
   width: 100%;
@@ -23,8 +23,8 @@
   &:last-child {
     margin-bottom: 0;
   }
-  @include small-screens {
-    width: calc((100% - 1.5rem)/2);
+  @include smallScreens {
+    width: calc((100% - 1.5rem) / 2);
     display: flex;
     margin: 1.5rem 1.5rem 0 0;
     &:nth-of-type(even) {
@@ -35,15 +35,15 @@
       margin-top: 0;
     }
   }
-  @include wide-screens {
-    width: calc((100% - 3rem)/3);
+  @include wideScreens {
+    width: calc((100% - 3rem) / 3);
     &:nth-of-type(even) {
       margin-right: 1.5rem;
-    };
+    }
     &:nth-child(3) {
       margin-top: 0;
     }
-    &:nth-child(3n+3) {
+    &:nth-child(3n + 3) {
       margin-right: 0;
     }
   }

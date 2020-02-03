@@ -1,29 +1,30 @@
 // === COLORS ===
-$base-color: #045ba8;
-$dark-base: darken($base-color, 10%);
-$light-base: lighten($base-color, 10%);
-$aux-base:lighten($base-color, 30%);
-$accessory-color: #06b100;
-$reverse-color: #fff;
-$base-background-color: #fff;
-$body-background: #f7f7f7;
-$base-gradient: linear-gradient(180deg, $base-color 12%, $light-base 88%);
-$error-color: #ff0000;
-$light-error-color: lighten($error-color, 45%);
+$baseColor: #045ba8;
+$darkBase: darken($baseColor, 10%);
+$light-base: lighten($baseColor, 10%);
+$aux-base: lighten($baseColor, 30%);
+$accessoryColor: #06b100;
+$reverseColor: #fff;
+$baseBackgroundColor: #fff;
+$bodyBackground: #f7f7f7;
+$baseGradient: linear-gradient(180deg, $baseColor 12%, $light-base 88%);
+$errorColor: #ff0000;
+$lightErrorColor: lighten($errorColor, 45%);
 
-$base-text-color: #333;
-$dark-base-text: darken($base-text-color, 20%);
-$low-light-base-text: lighten($base-text-color, 10%);
-$middle-light-base-text: lighten($base-text-color, 30%);
-$extra-light-base-text: lighten($base-text-color, 60%);
+$baseTextColor: #333;
+$darkBaseText: darken($baseTextColor, 20%);
+$lowLightBaseText: lighten($baseTextColor, 10%);
+$middleLightBaseText: lighten($baseTextColor, 30%);
+$extraLightBaseText: lighten($baseTextColor, 60%);
 
 // === FONTS ===
-$text-font: "Roboto", sans-serif;
-$text-size: 20px;
-$text-line: 1;
-$text-light: 300;
-$text-bold: 500;
+$textFont: 'Roboto', sans-serif;
+$textSize: 20px;
+$textLine: 1;
+$textLight: 300;
+$textBold: 500;
 
 // === SIZES ===
-$toolbar-height: 80px;
-$big-logo-height: 250px;
+$toolbarHeight: 80px;
+$bigLogoHeight: 250px;
+$headerHeigh: 330px;

@@ -1,20 +1,24 @@
 import React from 'react';
+
 import Social from '../Social/Social';
 import classes from './Footer.scss';
 
-const footer = (props) => {
+const footer = () => {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
+  const { Footer } = classes;
   const startYear = 2018;
   const date =
-    (currentYear > startYear)
-      ? `${startYear}-${currentYear}`
-      : startYear;
+    currentYear > startYear ? `${startYear}-${currentYear}` : startYear;
+  const text = ` ${date} Aleksander Fret`;
 
   return (
-    <div className={classes.Footer}>
-      <Social theme='light' />
-      <p>&copy; {date} Aleksander Fret</p>
+    <div className={Footer}>
+      <Social theme="light" />
+      <p>
+        &copy;
+        {text}
+      </p>
     </div>
   );
 };

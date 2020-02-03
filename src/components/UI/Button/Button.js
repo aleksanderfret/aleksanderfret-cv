@@ -1,27 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 import classes from './Button.scss';
 
-class Button extends Component {
+const Button = ({
+  btnType,
+  children,
+  clicked,
+  disabled,
+  isDisplayed,
+  label
+}) => {
+  const { Button: buttonClass, AlwaysDisplayed } = classes;
+  const buttonClasses = [buttonClass];
 
-  render() {
-    const buttonClasses = [classes.Button];
-    if (classes[this.props.btnType]) {
-      buttonClasses.push(classes[this.props.btnType]);
-    }
-    if (this.props.isDisplayed) {
-      buttonClasses.push(classes.AlwaysDisplayed);
-    }
-    return (
-      <button
-        disabled={this.props.disabled}
-        onClick={this.props.clicked}
-        className={buttonClasses.join(' ')}
-        title={this.props.label}
-        aria-label={this.props.label}
-      >{this.props.children}
-      </button>
-    );
+  if (classes[btnType]) {
+    buttonClasses.push(classes[btnType]);
   }
-}
+  if (isDisplayed) {
+    buttonClasses.push(AlwaysDisplayed);
+  }
+
+  return (
+    <button
+      disabled={disabled}
+      onClick={clicked}
+      className={buttonClasses.join(' ')}
+      title={label}
+      type="button"
+      aria-label={label}
+    >
+      {children}
+    </button>
+  );
+};
 
 export default Button;

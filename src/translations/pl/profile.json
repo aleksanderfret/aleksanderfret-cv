@@ -1,6 +1,7 @@
 {
   "title": "profil zawodowy",
-  "professions": [{
+  "professions": [
+    {
       "key": "frontend",
       "imageAlt": "Fragment mojego kodu",
       "name": "JavaScript developer",

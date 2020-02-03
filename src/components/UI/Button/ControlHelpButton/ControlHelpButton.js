@@ -1,18 +1,20 @@
 import React from 'react';
-import Button from '../Button';
-import { translate } from 'react-i18next';
-import FontIcon from '../../FontIcon/FontIcon';
-import * as icons from '../../FontIcon/FontIconTypes/FontIconsTypes';
+import { withTranslation } from 'react-i18next';
 
-const controlHelpButton = (props) => {
+import Button from '../Button';
+import FontIcon from '../../FontIcon/FontIcon';
+import { HELP } from '../../FontIcon/FontIconTypes/FontIconsTypes';
+
+const controlHelpButton = ({ clicked, label, t }) => {
   return (
     <Button
-      btnType='controlHelpButton'
-      label={props.t('labels.controlHelpButton', { control: props.label })}
-      clicked={props.clicked}
-    ><FontIcon iconType={icons.HELP} />
+      btnType="controlHelpButton"
+      label={t('labels.controlHelpButton', { control: label })}
+      clicked={clicked}
+    >
+      <FontIcon iconType={HELP} />
     </Button>
   );
 };
 
-export default translate('ui')(controlHelpButton);
+export default withTranslation('ui')(controlHelpButton);

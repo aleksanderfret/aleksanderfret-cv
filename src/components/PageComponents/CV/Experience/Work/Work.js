@@ -1,42 +1,60 @@
 import React from 'react';
+
 import { dateToAttr } from '../../../../../utils/utils';
 import classes from './Work.scss';
 
-const work = (props) => {
-  const workDate = (<span>
-    <time dateTime={dateToAttr(props.startDate)}>{props.startDate}</time>
-    {props.endDate !== props.startDate &&
-      <time dateTime={dateToAttr(props.endDate)}>{`-${props.endDate}`}</time>
-    }
-  </span>);
+const work = ({
+  company,
+  duties,
+  labels: { dutiesLabel, projectsLabel, projectLabel },
+  endDate,
+  position,
+  projects,
+  startDate
+}) => {
+  const { Duties, PositionName, Projects, Work } = classes;
+  const workDate = (
+    <span>
+      <time dateTime={dateToAttr(startDate)}>{startDate}</time>
+      {endDate !== startDate && (
+        <time dateTime={dateToAttr(endDate)}>{`-${endDate}`}</time>
+      )}
+    </span>
+  );
+
   return (
-    <div className={classes.Work}>
-      <h4 className={classes.PositionName}>{props.position}</h4>
-      <h5>{props.company}</h5>
+    <div className={Work}>
+      <h4 className={PositionName}>{position}</h4>
+      <h5>{company}</h5>
       <p>{workDate}</p>
-      {props.duties &&
-        <React.Fragment>
-          <h5>{props.labels.duties}</h5>
-          <ul className={classes.Duties}>
-            {props.duties.map((duty, index) => (
-              <li key={index}>{duty}</li>
+      {duties && (
+        <>
+          <h5>{dutiesLabel}</h5>
+          <ul className={Duties}>
+            {duties.map(duty => (
+              <li key={duty}>{duty}</li>
             ))}
           </ul>
-        </React.Fragment>
-      }
-      {props.projects &&
-        <React.Fragment>
-          <h5>{props.projects.length > 1 ? props.labels.projects : props.labels.project}</h5>
-          <ul className={classes.Projects}>
-            {props.projects.map((project, index) => (
-              (project.url !== '') ?
-                <li key={index}><a href={project.url} target="_blank" >{project.name}</a></li>
-                :
-                <li key={index}>{project.name}</li>
-            ))}
+        </>
+      )}
+      {projects && (
+        <>
+          <h5>{projects.length > 1 ? projectsLabel : projectLabel}</h5>
+          <ul className={Projects}>
+            {projects.map(({ name, url }) =>
+              url !== '' ? (
+                <li key={name}>
+                  <a href={url} rel="noopener noreferrer" target="_blank">
+                    {name}
+                  </a>
+                </li>
+              ) : (
+                <li key={name}>{name}</li>
+              )
+            )}
           </ul>
-        </React.Fragment>
-      }
+        </>
+      )}
     </div>
   );
 };

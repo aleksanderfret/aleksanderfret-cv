@@ -41,4 +41,4 @@ export const routes = {
       pl: 'kontakt'
     }
   }
-}
+};

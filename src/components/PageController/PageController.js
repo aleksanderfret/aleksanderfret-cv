@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Contact from '../PageComponents/Contact/Contact';
 import Experience from '../PageComponents/CV/Experience/Experience';
 import Education from '../PageComponents/CV/Education/Education';
@@ -19,18 +20,25 @@ class PageController extends Component {
   };
 
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.match.params.page !== this.props.match.params.page;
+    const {
+      match: {
+        params: { page }
+      }
+    } = this.props;
+
+    return nextProps.match.params.page !== page;
   }
 
   render() {
-    const ComponentName = this.pages[this.props.match.params.page] || this.pages.notfound;
+    const {
+      match: {
+        params: { page }
+      }
+    } = this.props;
+    const ComponentName = this.pages[page] || this.pages.notfound;
     const componentToLoad = <ComponentName />;
 
-    return (
-      <React.Fragment>
-        {componentToLoad}
-      </React.Fragment>
-    );
+    return <>{componentToLoad}</>;
   }
 }
 

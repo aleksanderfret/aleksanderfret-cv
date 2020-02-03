@@ -17,53 +17,51 @@
   &:last-child {
     margin: 0;
   }
-}
 
-.Profession h4 {
-  @include pageSubtitle;
-  margin-bottom: 1.25rem;
-  @include tiny-screens {
-    font-size: 1.2rem;
+  h4 {
+    @include pageSubtitle;
+    margin-bottom: 1.25rem;
+    @include tinyScreens {
+      font-size: 1.2rem;
+    }
+    @include slightScreens {
+      font-size: 1.3rem;
+    }
+    @include smallScreens {
+      font-size: 1.5rem;
+    }
   }
-  @include slight-screens {
-    font-size: 1.3rem;
-  }
-  @include small-screens {
-    font-size: 1.5rem;
-  }
-}
 
-.Profession {
   p {
     width: 100%;
-    color: $base-text-color;
-    background-color: $base-background-color;
+    color: $baseTextColor;
+    background-color: $baseBackgroundColor;
     font-size: 0.85rem;
     line-height: 1.1rem;
     padding: 0 0 1rem 0;
     &:last-of-type {
       padding: 0;
     }
-    @include tiny-screens {
+    @include tinyScreens {
       font-size: 0.9rem;
       line-height: 1.2rem;
     }
-    @include slight-screens {
+    @include slightScreens {
       font-size: 1rem;
       line-height: 1.4rem;
     }
-    @include medium-screens {
+    @include mediumScreens {
       font-size: 1.1rem;
       line-height: 1.5rem;
     }
   }
-}
 
-.Profession a {
-  color: $base-color;
-  font-style: italic;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+  a {
+    color: $baseColor;
+    font-style: italic;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

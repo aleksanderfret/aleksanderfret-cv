@@ -35,8 +35,8 @@
 }
 .Links a {
   display: block;
-  background-color: $accessory-color;
-  color: $reverse-color;
+  background-color: $accessoryColor;
+  color: $reverseColor;
   border-radius: 5px;
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
@@ -74,8 +74,8 @@
     text-decoration: none;
     width: 40px;
     height: 40px;
-    color: $extra-light-base-text;
-    background-color: darken($body-background, 5%);
+    color: $extraLightBaseText;
+    background-color: darken($bodyBackground, 5%);
     margin-left: 0.5rem;
     transition: all 0.3 ease-in;
     @include shadow();
@@ -83,8 +83,8 @@
       margin-left: 0;
     }
     &:hover {
-      background-color: darken($body-background, 7.5%);
-      color: $middle-light-base-text;
+      background-color: darken($bodyBackground, 7.5%);
+      color: $middleLightBaseText;
     }
   }
 }

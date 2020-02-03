@@ -2,10 +2,10 @@
 
 .Footer {
   width: 100%;
-  min-height: $toolbar-height;
+  min-height: $toolbarHeight;
   background-color: $light-base;
   border-top: 8px solid $aux-base;
-  color: $reverse-color;
+  color: $reverseColor;
   font-size: 0.85rem;
   @include shadow(2);
   display: flex;

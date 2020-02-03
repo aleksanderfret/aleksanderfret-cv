@@ -63,7 +63,8 @@
       }
     },
     "rodo": {
-      "label": "Zapoznałem się z <1>informacją o przetwarzaniu danych</1> i ją akceptuję.",
+      "label": "Zapoznałem się z <1>{{value}}</1> i ją akceptuję.",
+      "labelButtonValue": "informacją o przetwarzaniu danych",
       "errors": {
         "required": "Zgoda na przetwarzanie danych jest niezbędna, bym mógł odpowiedzieć na wiadomość."
       },

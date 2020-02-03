@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { translate } from 'react-i18next';
-import classes from './Education.scss';
+import { withTranslation } from 'react-i18next';
+
 import School from './School/School';
+import classes from './Education.scss';
 
 class Education extends Component {
   constructor(props) {
@@ -14,17 +15,20 @@ class Education extends Component {
   }
 
   render() {
+    const { t } = this.props;
+    const { Education: EducationClass } = classes;
+
     return (
-      <div className={classes.Education}>
-        <h3
-          ref={this.header}
-          tabIndex={-1}>{this.props.t('title')}</h3>
+      <div className={EducationClass}>
+        <h3 ref={this.header} tabIndex={-1}>
+          {t('title')}
+        </h3>
         <ul>
-          {this.props.t('education', { returnObjects: true }).map((school, index) => (
-            <li key={index}>
+          {t('education', { returnObjects: true }).map(school => (
+            <li key={school.name}>
               <School
                 {...school}
-                labels={this.props.t('labels', { returnObjects: true })}
+                labels={t('labels', { returnObjects: true })}
               />
             </li>
           ))}
@@ -32,7 +36,6 @@ class Education extends Component {
       </div>
     );
   }
-
 }
 
-export default translate('education')(Education);
+export default withTranslation('education')(Education);

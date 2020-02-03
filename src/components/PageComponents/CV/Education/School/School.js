@@ -1,19 +1,24 @@
 import React from 'react';
+
 import { dateToAttr } from '../../../../../utils/utils';
 import classes from './School.scss';
 
-const school = (props) => {
-  const studiesDate = (<span>
-    <time dateTime={dateToAttr(props.startDate)}>{props.startDate}</time>
-    {props.endDate !== props.startDate &&
-      <time dateTime={dateToAttr(props.endDate)}>{`-${props.endDate}`}</time>
-    }
-  </span>);
+const school = ({ endDate, name, school: schoolName, startDate, type }) => {
+  const { School, Studies } = classes;
+  const studiesDate = (
+    <span>
+      <time dateTime={dateToAttr(startDate)}>{startDate}</time>
+      {endDate !== startDate && (
+        <time dateTime={dateToAttr(endDate)}>{`-${endDate}`}</time>
+      )}
+    </span>
+  );
+
   return (
-    <div className={classes.School}>
-      <h4 className={classes.Studies}>{props.name}</h4>
-      <p>{props.type}</p>
-      <h5>{props.school}</h5>
+    <div className={School}>
+      <h4 className={Studies}>{name}</h4>
+      <p>{type}</p>
+      <h5>{schoolName}</h5>
       <p>{studiesDate}</p>
     </div>
   );

@@ -1,0 +1,29 @@
+@import 'partials';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font: normal normal $textLight $textSize/$textLine $textFont;
+  background-color: $bodyBackground;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

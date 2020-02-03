@@ -2,7 +2,7 @@
 
 .Logo {
   position: relative;
-  color: $reverse-color;
+  color: $reverseColor;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -23,9 +23,9 @@
   flex-direction: row;
   justify-content: center;
   height: 50%;
-  margin: calc((#{$toolbar-height}/2)/2) 0;
+  margin: calc((#{$toolbarHeight} / 2) / 2) 0;
   .LogoImage {
-    height: calc(#{$toolbar-height}/2);
+    height: calc(#{$toolbarHeight} / 2);
     margin: 0;
   }
   .LogoText {
@@ -37,9 +37,9 @@
   flex-direction: row;
   justify-content: center;
   height: 50%;
-  margin: calc((#{$toolbar-height}/2)/2) 0;
+  margin: calc((#{$toolbarHeight} / 2) / 2) 0;
   .LogoImage {
-    height: calc(#{$toolbar-height}/2);
+    height: calc(#{$toolbarHeight} / 2);
     margin: 0;
   }
   .LogoText {
@@ -56,7 +56,7 @@
       font-size: 0.6rem;
       letter-spacing: 0.11rem;
     }
-    @supports (-ms-accelerator:true){
+    @supports (-ms-accelerator: true) {
       h1 {
         font-size: 1.1rem;
         line-height: 1.5rem;
@@ -66,7 +66,7 @@
         letter-spacing: 0.11rem;
       }
     }
-    @supports (-ms-ime-align:auto) {
+    @supports (-ms-ime-align: auto) {
       h1 {
         font-size: 1.1rem;
         line-height: 1.5rem;
@@ -77,13 +77,13 @@
       }
     }
 
-    @include tiny-screens {
+    @include tinyScreens {
       display: flex;
     }
-    @include normal-screens {
+    @include normalScreens {
       display: none;
     }
-    @include wide-screens {
+    @include wideScreens {
       display: flex;
     }
   }
@@ -94,13 +94,13 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: $big-logo-height;
+  height: $bigLogoHeight;
   .LogoImage {
     height: 60px;
     margin: 0 0 5px 0;
   }
   .LogoText {
-    padding: 0 0 $toolbar-height 0;
+    padding: 0 0 $toolbarHeight 0;
     justify-content: center;
     h1 {
       font-size: 1.8rem;
@@ -111,4 +111,3 @@
     }
   }
 }
-

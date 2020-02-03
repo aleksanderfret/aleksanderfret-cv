@@ -9,8 +9,8 @@
   z-index: 125;
   top: 0;
   left: 0;
-  color: $base-text-color;
-  background-color: $base-background-color;
+  color: $baseTextColor;
+  background-color: $baseBackgroundColor;
   @include shadow(1);
 }
 
@@ -41,7 +41,7 @@
 }
 
 .Header {
-  background: $base-color;
+  background: $baseColor;
   height: 80px;
   display: flex;
   flex-direction: row;

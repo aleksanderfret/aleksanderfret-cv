@@ -1,14 +1,18 @@
 import React from 'react';
+
 import classes from './Overlay.scss';
 
-const overlay = (props) => {
-  const overlayClasses = [classes.Overlay];
-  if (classes[props.type]) {
-    overlayClasses.push(classes[props.type]);
+const Overlay = ({ clicked, isShown, type }) => {
+  const { Overlay: overlayClass } = classes;
+  const overlayClasses = [overlayClass];
+
+  if (classes[type]) {
+    overlayClasses.push(classes[type]);
   }
-  return (
-    props.isShown ? <div className={overlayClasses.join(' ')} onClick={props.clicked}></div> : null
-  );
+
+  return isShown ? (
+    <div className={overlayClasses.join(' ')} onClick={clicked} />
+  ) : null;
 };
 
-export default overlay;
+export default Overlay;

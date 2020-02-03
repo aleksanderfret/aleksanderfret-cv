@@ -1,6 +1,6 @@
 import React from 'react';
 
-const fontIcon = (props) => {
+const fontIcon = ({ iconType }) => {
   const icons = {
     language: 'fas fa-language',
     menu: 'fas fa-bars',
@@ -19,18 +19,16 @@ const fontIcon = (props) => {
     ok: 'fas fa-check',
     next: 'fas fa-chevron-right',
     prev: 'fas fa-chevron-left',
-    all: 'fas fa-th',
-  }
+    all: 'fas fa-th'
+  };
 
   const iconClasses = [];
 
-  if (icons[props.iconType]) {
-    iconClasses.push(icons[props.iconType]);
+  if (icons[iconType]) {
+    iconClasses.push(icons[iconType]);
   }
 
-  return (
-    <i className={iconClasses.join(' ')}></i>
-  );
+  return <i className={iconClasses.join(' ')} />;
 };
 
 export default fontIcon;
