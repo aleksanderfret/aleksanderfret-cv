@@ -12,6 +12,7 @@
     "dev": "webpack-dev-server --open --config ./webpack.config.dev.js",
     "format": "prettier --check \"src/**/*.{js,jsx}\"",
     "lint": "eslint . --ext \".js,.jsx\"",
+    "postinstall": "node scripts/enhanceGitHooks.js",
     "prod": "webpack --progress --config ./webpack.config.prod.js",
     "stylelint": "stylelint src/**/*.scss --cache"
   },
