@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const fs = require('fs-extra');
 const { normalize } = require('path');
+
+const fs = require('fs-extra');
 
 const cliArguments = process.argv.slice(2);
 const sourcePath = cliArguments[0];

@@ -81,19 +81,12 @@
     "not op_mini all"
   ],
   "lint-staged": {
-    "*.{js,jsx,json,scss,css,md}, !*.min.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{js,jsx}, !*.min.js": [
+    "*.{js,jsx,json,scss,css,md,html}": "prettier --write",
+    "*.{js,jsx}": [
       "eslint -c .eslintrc --fix",
-      "echo test",
-      "git add"
+      "echo test"
     ],
-    "**/*.scss": [
-      "stylelint --syntax scss",
-      "git add"
-    ]
+    "*.scss": "stylelint --syntax scss"
   },
   "husky": {
     "hooks": {
