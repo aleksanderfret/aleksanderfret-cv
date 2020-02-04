@@ -44,10 +44,10 @@ class Profile extends Component {
 
   render() {
     const { t } = this.props;
-    const { Profile, Profession } = classes;
+    const { Profile: ProfileClass, Profession } = classes;
 
     return (
-      <div className={Profile}>
+      <div className={ProfileClass}>
         <h3 ref={this.header} tabIndex={-1}>
           {t('title')}
         </h3>
