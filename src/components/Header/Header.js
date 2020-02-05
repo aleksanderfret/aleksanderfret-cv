@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Toolbar from '../Navigation/Toolbar/Toolbar';
-import Logo from '../UI/Logo/Logo';
+import Toolbar from 'components/Navigation/Toolbar/Toolbar';
+import Logo from 'components/UI/Logo/Logo';
 import classes from './Header.scss';
 
 const header = props => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { dateToAttr } from '../../../../../utils/utils';
+import { dateToAttr } from 'utils/utils';
 import classes from './Work.scss';
 
 const work = ({

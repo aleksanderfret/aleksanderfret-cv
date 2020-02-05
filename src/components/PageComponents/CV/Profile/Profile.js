@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withTranslation, Trans } from 'react-i18next';
 
-import { routes } from '../../../../data/routes';
+import { routes } from 'data/routes';
 import classes from './Profile.scss';
 
 class Profile extends Component {

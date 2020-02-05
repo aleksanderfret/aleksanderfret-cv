@@ -4,15 +4,19 @@ import { withTranslation } from 'react-i18next';
 import camelCase from 'lodash/camelCase';
 import findIndex from 'lodash/findIndex';
 
-import { dateToAttr } from '../../../../../utils/utils';
-import { getImage, getSlug, TARGET } from '../ProjectImages/ProjectImages';
-import FontIcon from '../../../../UI/FontIcon/FontIcon';
+import { dateToAttr } from 'utils/utils';
+import {
+  getImage,
+  getSlug,
+  TARGET
+} from 'components/PageComponents/CV/Portfolio/ProjectImages/ProjectImages';
+import FontIcon from 'components/UI/FontIcon/FontIcon';
 import {
   ALL,
   NEXT,
   PREV
-} from '../../../../UI/FontIcon/FontIconTypes/FontIconsTypes';
-import Image from '../../../../UI/Image/Image';
+} from 'components/UI/FontIcon/FontIconTypes/FontIconsTypes';
+import Image from 'components/UI/Image/Image';
 import classes from './ProjectDetails.scss';
 
 class ProjectDetails extends Component {

@@ -3,11 +3,11 @@ import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import axios from 'axios';
 
-import { contactFormConfig } from '../../../data/controls';
-import Social from '../../Social/Social';
-import Button from '../../UI/Button/Button';
-import FormControl from '../../UI/FormControl/FormControl';
-import Spinner from '../../UI/Spinner/Spinner';
+import { contactFormConfig } from './controls';
+import Social from 'components/Social/Social';
+import Button from 'components/UI/Button/Button';
+import FormControl from 'components/UI/FormControl/FormControl';
+import Spinner from 'components/UI/Spinner/Spinner';
 import classes from './Contact.scss';
 
 class Contact extends Component {

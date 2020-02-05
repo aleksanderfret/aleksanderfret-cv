@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Button from '../Button/Button';
-import FontIcon from '../FontIcon/FontIcon';
+import Button from 'components/UI/Button/Button';
+import FontIcon from 'components/UI/FontIcon/FontIcon';
 import classes from './Tip.scss';
 
 class Tip extends Component {

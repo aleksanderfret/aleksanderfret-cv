@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 
-import withValidation from '../withValidation/withValidation';
-import Error from '../../Error/Error';
-import FontIcon from '../../FontIcon/FontIcon';
-import Label from '../ControlLabel/ControlLabel';
+import withValidation from 'components/UI/FormControl/withValidation/withValidation';
+import Error from 'components/UI/Error/Error';
+import FontIcon from 'components/UI/FontIcon/FontIcon';
+import Label from 'components/UI/FormControl/ControlLabel/ControlLabel';
 import classes from './CheckboxControl.scss';
-import { OK } from '../../FontIcon/FontIconTypes/FontIconsTypes';
+import { OK } from 'components/UI/FontIcon/FontIconTypes/FontIconsTypes';
 
 class CheckboxControl extends Component {
   state = {

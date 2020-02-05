@@ -2,8 +2,8 @@ import React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { withTranslation } from 'react-i18next';
 
-import withValidation from '../withValidation/withValidation';
-import Error from '../../Error/Error';
+import withValidation from 'components/UI/FormControl/withValidation/withValidation';
+import Error from 'components/UI/Error/Error';
 import classes from './CaptchaControl.scss';
 
 const CaptchaControl = ({ changeHandler, error, i18n: { language }, t }) => {

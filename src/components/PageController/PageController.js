@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import Contact from '../PageComponents/Contact/Contact';
-import Experience from '../PageComponents/CV/Experience/Experience';
-import Education from '../PageComponents/CV/Education/Education';
-import Skills from '../PageComponents/CV/Skills/Skills';
-import Portfolio from '../PageComponents/CV/Portfolio/Portfolio';
-import Profile from '../PageComponents/CV/Profile/Profile';
-import NotFound from '../PageComponents/NotFound/NotFound';
+import Contact from 'components/PageComponents/Contact/Contact';
+import Experience from 'components/PageComponents/CV/Experience/Experience';
+import Education from 'components/PageComponents/CV/Education/Education';
+import Skills from 'components/PageComponents/CV/Skills/Skills';
+import Portfolio from 'components/PageComponents/CV/Portfolio/Portfolio';
+import Profile from 'components/PageComponents/CV/Profile/Profile';
+import NotFound from 'components/PageComponents/NotFound/NotFound';
 
 class PageController extends Component {
   pages = {

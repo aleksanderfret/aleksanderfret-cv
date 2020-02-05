@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 
-import Tip from '../Tip/Tip';
+import Tip from 'components/UI/Tip/Tip';
 import CheckboxControl from './CheckboxControl/CheckboxControl';
 import InputControl from './InputControl/InputControl';
 import TextareaControl from './TextareaControl/TextareaControl';

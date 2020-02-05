@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Overlay from '../Overlay/Overlay';
+import Overlay from 'components/UI/Overlay/Overlay';
 import { Spinner, SpinnerWrapper } from './Spinner.scss';
 
 const spinner = () => (

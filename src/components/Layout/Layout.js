@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import SidePanel from '../Navigation/SidePanel/SidePanel';
+import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
+import SidePanel from 'components/Navigation/SidePanel/SidePanel';
 import classes from './Layout.scss';
 
 class Layout extends Component {
