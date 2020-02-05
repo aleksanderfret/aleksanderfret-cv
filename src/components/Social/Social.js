@@ -1,7 +1,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
-import FontIcon from '../UI/FontIcon/FontIcon';
+import FontIcon from 'components/UI/FontIcon/FontIcon';
 import classes from './Social.scss';
 
 const social = props => {

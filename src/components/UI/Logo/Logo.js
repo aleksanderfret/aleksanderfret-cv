@@ -2,7 +2,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 
-import afretLogo from '../../../assets/images/afret_logo.svg';
+import afretLogo from 'assets/images/afret_logo.svg';
 import classes from './Logo.scss';
 
 const logo = ({ clicked, isTextLogo, logoType, t }) => {

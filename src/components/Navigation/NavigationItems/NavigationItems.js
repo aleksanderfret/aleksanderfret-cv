@@ -2,7 +2,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 
 import NavigationItem from './NavigationItem/NavigationItem';
-import FontIcon from '../../UI/FontIcon/FontIcon';
+import FontIcon from 'components/UI/FontIcon/FontIcon';
 import classes from './NavigationItems.scss';
 
 const navigationItems = ({ clicked, icons, navType, t }) => {

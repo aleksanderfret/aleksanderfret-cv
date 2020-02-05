@@ -1,7 +1,7 @@
 import React from 'react';
 import { withTranslation, Trans } from 'react-i18next';
 
-import Button from '../../Button/Button';
+import Button from 'components/UI/Button/Button';
 import classes from './ControlLabel.scss';
 
 const controlLabel = ({

@@ -1,9 +1,9 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
-import Button from '../Button';
-import FontIcon from '../../FontIcon/FontIcon';
-import { HELP } from '../../FontIcon/FontIconTypes/FontIconsTypes';
+import Button from 'components/UI/Button/Button';
+import FontIcon from 'components/UI/FontIcon/FontIcon';
+import { HELP } from 'components/UI/FontIcon/FontIconTypes/FontIconsTypes';
 
 const controlHelpButton = ({ clicked, label, t }) => {
   return (

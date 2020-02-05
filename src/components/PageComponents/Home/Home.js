@@ -1,13 +1,13 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
-import Image from '../../UI/Image/Image';
-import Button from '../../UI/Button/Button';
+import Image from 'components/UI/Image/Image';
+import Button from 'components/UI/Button/Button';
 import CvLinks from './CvLinks/CvLinks';
 import classes from './Home.scss';
-import afretImg from '../../../assets/images/aleksander-fret.jpg';
-import enCV from '../../../assets/cv/aleksander_fret_cv_en.pdf';
-import plCV from '../../../assets/cv/aleksander_fret_cv_pl.pdf';
+import afretImg from 'assets/images/aleksander-fret.jpg';
+import enCV from 'assets/cv/aleksander_fret_cv_en.pdf';
+import plCV from 'assets/cv/aleksander_fret_cv_pl.pdf';
 
 const home = props => {
   const { t } = props;

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 
-import withValidation from '../withValidation/withValidation';
-import Label from '../ControlLabel/ControlLabel';
-import Error from '../../Error/Error';
-import ControlHelpButton from '../../Button/ControlHelpButton/ControlHelpButton';
+import withValidation from 'components/UI/FormControl/withValidation/withValidation';
+import Label from 'components/UI/FormControl/ControlLabel/ControlLabel';
+import Error from 'components/UI/Error/Error';
+import ControlHelpButton from 'components/UI/Button/ControlHelpButton/ControlHelpButton';
 import classes from './TextareaControl.scss';
 
 class TextareaControl extends Component {

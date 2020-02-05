@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import Overlay from '../../UI/Overlay/Overlay';
-import Logo from '../../UI/Logo/Logo';
+import Overlay from 'components/UI/Overlay/Overlay';
+import Logo from 'components/UI/Logo/Logo';
+import NavigationItems from 'components/Navigation/NavigationItems/NavigationItems';
 import classes from './SidePanel.scss';
-import NavigationItems from '../NavigationItems/NavigationItems';
 
 class SidePanel extends Component {
   componentDidMount() {

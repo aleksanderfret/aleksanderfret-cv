@@ -1,11 +1,11 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 
-import Logo from '../../UI/Logo/Logo';
-import FontIcon from '../../UI/FontIcon/FontIcon';
-import Button from '../../UI/Button/Button';
-import NavigationItems from '../NavigationItems/NavigationItems';
-import * as icons from '../../UI/FontIcon/FontIconTypes/FontIconsTypes';
+import Logo from 'components/UI/Logo/Logo';
+import FontIcon from 'components/UI/FontIcon/FontIcon';
+import Button from 'components/UI/Button/Button';
+import NavigationItems from 'components/Navigation/NavigationItems/NavigationItems';
+import * as icons from 'components/UI/FontIcon/FontIconTypes/FontIconsTypes';
 import classes from './Toolbar.scss';
 
 const toolBar = props => {

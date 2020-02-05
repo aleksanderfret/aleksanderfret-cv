@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import kebabCase from 'lodash/kebabCase';
 
-import { getImage, TARGET } from '../ProjectImages/ProjectImages';
-import Image from '../../../../UI/Image/Image';
+import {
+  getImage,
+  TARGET
+} from 'components/PageComponents/CV/Portfolio/ProjectImages/ProjectImages';
+import Image from 'components/UI/Image/Image';
 import classes from './Project.scss';
 
 const project = ({ id, imageAlt, name, technologies }) => {

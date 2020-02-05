@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 
-import Layout from '../Layout/Layout';
-import PageController from '../PageController/PageController';
-import ProjectDetails from '../PageComponents/CV/Portfolio/ProjectDetails/ProjectDetails';
-import ContactSuccess from '../PageComponents/Contact/ContactSuccess/ContactSuccess';
-import Home from '../PageComponents/Home/Home';
-import NotFound from '../PageComponents/NotFound/NotFound';
+import Layout from 'components/Layout/Layout';
+import PageController from 'components/PageController/PageController';
+import ProjectDetails from 'components/PageComponents/CV/Portfolio/ProjectDetails/ProjectDetails';
+import ContactSuccess from 'components/PageComponents/Contact/ContactSuccess/ContactSuccess';
+import Home from 'components/PageComponents/Home/Home';
+import NotFound from 'components/PageComponents/NotFound/NotFound';
 import classes from './CV.scss';
 
 class CV extends Component {
