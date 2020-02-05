@@ -4,7 +4,7 @@ This is my a personal website/online CV.
 
 ## Version
 
-2.0.0 - 2020.01.11
+2.0.0 - 2020.02.05
 
 ## Technologies
 
@@ -14,7 +14,7 @@ JS ES6, React, SASS, HTML, RWD, PHP
 
 ### Front-end
 
-Following dependencies were used:
+Following main dependencies were used:
 
 - [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 - [react-transition-group](https://github.com/reactjs/react-transition-group)
