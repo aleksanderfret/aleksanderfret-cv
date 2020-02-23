@@ -40,7 +40,7 @@ const home = props => {
       </section>
       <section>
         <Button
-          clicked={() => {
+          onClick={() => {
             const cv = props.i18n.language === 'pl' ? plCV : enCV;
             window.open(cv);
           }}

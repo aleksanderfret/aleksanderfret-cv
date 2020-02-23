@@ -14,31 +14,30 @@ class TextareaControl extends Component {
 
   onChangeHandler = event => {
     const { value } = event.target;
-    const { changeHandler } = this.props;
-    this.setState(() => ({ value }));
-    changeHandler(value);
+    const { onChange } = this.props;
+
+    this.setState(
+      () => ({ value }),
+      () => onChange(value)
+    );
   };
 
   render() {
     const { Textarea: textareaClass } = classes;
     const {
-      blurHandler,
-      config: {
-        info,
-        label,
-        rules: { required }
-      },
+      onBlur,
+      config: { info, label, required },
       error,
-      getValidationClasses,
       name,
       openTip,
       t
     } = this.props;
     const { value } = this.state;
-    const validationClasses = getValidationClasses().map(
-      validationClass => classes[validationClass] || ''
-    );
-    const textareaClasses = [textareaClass, ...validationClasses];
+    const textareaClasses = [textareaClass];
+
+    if (error) {
+      textareaClasses.push(classes.Invalid);
+    }
 
     return (
       <>
@@ -50,7 +49,7 @@ class TextareaControl extends Component {
           name={name}
           onChange={this.onChangeHandler}
           onBlur={event => {
-            blurHandler(event.target.value);
+            onBlur(event.target.value);
           }}
         />
         {info && (

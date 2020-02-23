@@ -15,67 +15,30 @@
     "name": {
       "label": "Name and last name",
       "placeholder": "$t(form.name.label)",
-      "info": [
-        "The name field can only contain letters, spaces, dashes and apostrophes. Expected number of characters: from 5 to 60."
-      ],
-      "errors": {
-        "required": "The name and last name are required.",
-        "pattern": "Entered name is invalid. $t(form.name.info.0)"
-      }
+      "info": ["Please use min 3 and max 32 characters."],
+      "error": "Enter a valid name. $t(form.name.info.0)"
     },
     "email": {
       "label": "E-mail",
       "placeholder": "$t(form.email.label)",
-      "info": [
-        "The format of e-mail is name@domain, for example  name-of-my-mailbox@mailboxdomain.com."
-      ],
-      "errors": {
-        "required": "The e-mail address is required.",
-        "pattern": "Entered e-mail address is invalid. $t(form.email.info.0)"
-      }
-    },
-    "subject": {
-      "label": "Subject",
-      "placeholder": "$t(form.subject.label)",
-      "info": [
-        "The subject field can only contain letters, numbers, spaces, and characters ,.)-:(!?'. Expected number of characters: from 5 to 500."
-      ],
-      "errors": {
-        "required": "The subject is required.",
-        "pattern": "Entered subject is invalid. $t(form.subject.info.0)"
-      }
+      "info": ["The format of e-mail is local-part@mailboxdomain"],
+      "error": "Entered a valid e-mail address"
     },
     "message": {
       "label": "Message",
       "placeholder": "$t(form.message.label)",
-      "info": [
-        "The message field can only contain letters, numbers, spaces, and characters ,.)-:(!?'. Expected number of characters: from 5 to 2000."
-      ],
-      "errors": {
-        "required": "The message is required.",
-        "pattern": "Entered message is invalid. $t(form.message.info.0)"
-      }
-    },
-    "captcha": {
-      "errors": {
-        "required": "Please check the reCAPTCHA field.",
-        "pattern": "Validation against robots was unsuccessful. Please try again."
-      }
+      "info": ["Please use min 5 and max 2000 characters."],
+      "error": "Enter a valid message. $t(form.message.info.0)"
     },
     "rodo": {
       "label": "I've read <1>{{value}}</1> and I accept it.",
       "labelButtonValue": "the information about data processing",
-      "errors": {
-        "required": "Consent to data processing is essential so that I can respond to your message."
-      },
+      "error": "Consent to data processing is essential so that I can respond to your message.",
       "info": [
         "By sending a message I am aware that the data provided will be processed by Mr. Aleksander Fret for correspondence.",
         "I know that I can request deleting or changing my personal data. I remember that these rights result from the General Regulation on the protection of personal data (EU 2016/679). I know that I have the right to complain to the President of the Office for Personal Data Protection under the Personal Data Protection Act (Journal of Laws 2018 item 1000).",
         "I acknowledge that the data will be processed by kylos.pl an e-mail service provider."
       ]
-    },
-    "emailcopy": {
-      "label": "Send me a copy of the message."
     },
     "submit": {
       "label": "Send",
@@ -92,11 +55,6 @@
       "name": "github",
       "url": "https://github.com/alemikolo",
       "label": "my GitHub account"
-    },
-    {
-      "name": "bitbucket",
-      "url": "https://bitbucket.org/alemikolo/",
-      "label": "my Bitbucket account"
     },
     {
       "name": "twitter",

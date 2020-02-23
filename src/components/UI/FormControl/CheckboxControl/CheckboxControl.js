@@ -15,44 +15,43 @@ class CheckboxControl extends Component {
 
   onPressOK = event => {
     if (event.code === 'Space' || event.code === 'Enter') {
-      this.checkboxClickHandler();
+      this.checkboxClickHandler(event);
     }
   };
 
-  checkboxClickHandler = () => {
+  checkboxClickHandler = event => {
     const { checked } = this.state;
-    const { changeHandler } = this.props;
+    const { onChange } = this.props;
+    const newValue = !checked;
 
-    this.setState(() => ({ checked: !checked }));
-    changeHandler(!checked);
+    this.setState(
+      () => ({ checked: newValue }),
+      () => onChange(newValue ? 'accepted' : '')
+    );
   };
 
   labelClickedHandler = event => {
     event.preventDefault();
-    this.checkboxClickHandler();
+    this.checkboxClickHandler(event);
   };
 
   render() {
     const { Checkbox: checkboxClass } = classes;
     const { checked } = this.state;
     const {
-      config: {
-        label,
-        labelButtonValue,
-        rules: { required },
-        subtype
-      },
+      config: { label, labelButtonValue, required, subtype },
       error,
-      getValidationClasses,
       name,
       openTip,
       t,
       value
     } = this.props;
-    const validationClasses = getValidationClasses().map(
-      validationClass => classes[validationClass] || ''
-    );
-    const checkboxClasses = [checkboxClass, ...validationClasses];
+
+    const checkboxClasses = [checkboxClass];
+
+    if (error) {
+      checkboxClasses.push(classes.Invalid);
+    }
 
     return (
       <>

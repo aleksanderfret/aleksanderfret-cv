@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import axios from 'axios';
 
-import { contactFormConfig } from './controls';
+import controlsConfig from './controls';
 import Social from 'components/Social/Social';
 import Button from 'components/UI/Button/Button';
 import FormControl from 'components/UI/FormControl/FormControl';
@@ -17,42 +17,28 @@ class Contact extends Component {
     this.state = {
       contactFormData: {
         name: {
-          backendError: '',
-          value: '',
-          isValid: true
-        },
-        email: {
-          backendError: '',
+          isBackendError: false,
           value: '',
           isValid: false
         },
-        subject: {
-          backendError: '',
+        email: {
+          isBackendError: false,
           value: '',
           isValid: false
         },
         message: {
-          backendError: '',
+          isBackendError: false,
           value: '',
           isValid: false
         },
         rodo: {
-          backendError: '',
-          value: false,
+          isBackendError: false,
+          value: '',
           isValid: false
-        },
-        emailcopy: {
-          value: false,
-          isValid: true
         }
-        // captcha: {
-        //   backendError: '',
-        //   value: '',
-        //   isValid: false,
-        // }
       },
-      formIsValid: false,
-      sending: false,
+      isFormValid: false,
+      pending: false,
       visibleTipId: null,
       errorMessage: ''
     };
@@ -64,79 +50,82 @@ class Contact extends Component {
 
   createFormControls = () => {
     const { contactFormData, visibleTipId } = this.state;
-    const formElementArray = Object.keys(contactFormConfig).map(key => ({
-      id: key,
-      config: contactFormConfig[key]
+    const formElementArray = Object.keys(controlsConfig).map(key => ({
+      field: key,
+      config: controlsConfig[key]
     }));
-    const formControls = formElementArray.map(formElement => (
-      <FormControl
-        externalError={contactFormData[formElement.id].backendError}
-        key={formElement.id}
-        name={formElement.id}
-        config={formElement.config}
-        closeTip={this.closeTipHandler}
-        openTip={event => {
-          this.openTipHandler(event, formElement.id);
-        }}
-        isTipOpen={formElement.id === visibleTipId}
-        changed={params => {
-          this.formControlChangeHandler(params, formElement.id);
-        }}
-      />
-    ));
+    const formControls = formElementArray.map(control => {
+      const { field, config } = control;
+
+      return (
+        <FormControl
+          externalError={contactFormData[field].isBackendError}
+          key={field}
+          name={field}
+          config={config}
+          closeTip={this.closeTipHandler}
+          openTip={event => this.openTipHandler(event, field)}
+          isTipOpen={field === visibleTipId}
+          onChange={params => this.handleFormUpdate(params, field)}
+        />
+      );
+    });
 
     return formControls;
   };
 
-  formControlChangeHandler = (params, id) => {
+  handleFormUpdate = (params, id) => {
     const { contactFormData } = this.state;
+    const { value, isValid } = params;
     const updatedContactForm = {
       ...contactFormData
     };
     const updatedFormElement = {
       ...updatedContactForm[id]
     };
+    const updatedState = {};
 
-    if (params.value !== undefined) {
-      updatedFormElement.value = params.value;
+    if (value !== undefined) {
+      updatedFormElement.value = value;
     }
 
-    updatedFormElement.isValid = params.isValid;
+    if (isValid !== undefined) {
+      updatedFormElement.isValid = isValid;
+      updatedState.isFormValid = this.checkIsFormValid(isValid, id);
+    }
     updatedContactForm[id] = updatedFormElement;
-    const formIsValid = this.checkIsFormValid(params.isValid, id);
-    this.setState(() => ({
-      contactFormData: updatedContactForm,
-      formIsValid
-    }));
+    updatedState.contactFormData = { ...updatedContactForm };
+    this.setState(() => ({ ...updatedState }));
   };
 
   checkIsFormValid = (isValid, id) => {
     const { contactFormData } = this.state;
-    let formIsValid = true;
+    let isFormValid = true;
 
     Object.keys(contactFormData).forEach(key => {
       const isControlValid =
         key === id ? isValid : contactFormData[key].isValid;
-      formIsValid = isControlValid && formIsValid;
+      isFormValid = isControlValid && isFormValid;
 
-      if (!formIsValid) {
-        return formIsValid;
+      if (!isFormValid) {
+        return isFormValid;
       }
     });
 
-    return formIsValid;
+    return isFormValid;
   };
 
   createContactForm = () => {
     const { t } = this.props;
-    const { formIsValid } = this.state;
+    const { isFormValid, pending } = this.state;
     const form = (
-      <form onSubmit={this.contactHandler} noValidate>
+      <form noValidate>
         {this.createFormControls()}
         <Button
           btnType="StandardButton"
           label={t('form.submit.aria')}
-          disabled={formIsValid}
+          disabled={!isFormValid || pending}
+          onClick={this.contactHandler}
         >
           {t('form.submit.label')}
         </Button>
@@ -148,7 +137,7 @@ class Contact extends Component {
 
   contactHandler = event => {
     event.preventDefault();
-    this.setState({ sending: true });
+    this.setState({ pending: true });
 
     const { contactFormData } = this.state;
     const {
@@ -160,34 +149,30 @@ class Contact extends Component {
       .post('api/Public/index.php', contactFormData)
       .then(response => {
         if (response.status === 200) {
-          this.setState(() => ({ sending: false }));
+          history.push(`${url}/success`);
         }
-        history.push(`${url}/success`);
       })
       .catch(error => {
         const {
-          response: { data, status }
+          response: { data: errors, status }
         } = error;
         let errorMessage = '';
 
         switch (status) {
           case 406:
-            if (data) {
-              const errors = { ...data };
+            if (errors) {
               const updatedContactForm = {
                 ...contactFormData
               };
 
               Object.keys(updatedContactForm).forEach(key => {
-                updatedContactForm[key].backendError = errors[key];
-                if (errors[key]) {
-                  updatedContactForm[key].isValid = false;
-                }
+                updatedContactForm[key].isBackendError = errors[key];
+                updatedContactForm[key].isValid = !errors[key];
               });
 
               this.setState(() => ({
                 contactFormData: updatedContactForm,
-                formIsValid: false
+                isFormValid: false
               }));
             }
             break;
@@ -202,9 +187,9 @@ class Contact extends Component {
         }
         this.setState(() => ({ errorMessage }));
       })
-      .then(() => {
+      .finally(() => {
         this.setState(() => ({
-          sending: false
+          pending: false
         }));
       });
   };
@@ -221,7 +206,7 @@ class Contact extends Component {
   render() {
     const form = this.createContactForm();
     const { t } = this.props;
-    const { errorMessage, sending } = this.state;
+    const { errorMessage, pending } = this.state;
     const { Contact: contactForm, ErrorMessage, Form, SocialWrapper } = classes;
 
     return (
@@ -237,7 +222,7 @@ class Contact extends Component {
           {errorMessage && <h4 className={ErrorMessage}>{t(errorMessage)}</h4>}
           {form}
         </div>
-        {sending && <Spinner />}
+        {pending && <Spinner />}
       </div>
     );
   }

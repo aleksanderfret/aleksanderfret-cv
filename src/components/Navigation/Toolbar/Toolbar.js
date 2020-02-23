@@ -17,7 +17,7 @@ const toolBar = props => {
       <Button
         isDisplayed={isHomePage}
         btnType="MenuButton"
-        clicked={toggleSidePanel}
+        onClick={toggleSidePanel}
         label={t('menu')}
       >
         <FontIcon iconType={icons.MENU} />
@@ -33,7 +33,7 @@ const toolBar = props => {
       <Button
         isDisplayed
         btnType="LanguageButton"
-        clicked={toggleLanguage}
+        onClick={toggleLanguage}
         label={t('language-info')}
       >
         <span>{t('language-code')}</span>

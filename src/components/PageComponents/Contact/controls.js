@@ -1,16 +1,22 @@
-export const contactFormConfig = {
+import isEmail from 'validator/lib/isEmail';
+import isLength from 'validator/lib/isLength';
+
+const isEqual = p => v => v === p;
+const validate = f => o => v => f(v, o);
+
+const checkLength = validate(isLength);
+const checkIsAccepted = isEqual('accepted');
+
+export default {
   name: {
     type: 'input',
     subtype: 'text',
     label: 'form.name.label',
     info: 'form.name.info',
-    rules: {
-      required: true,
-      pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ -']{3,60}$/
-    },
-    errors: {
-      required: 'form.name.errors.required',
-      pattern: 'form.name.errors.pattern'
+    required: true,
+    validation: {
+      message: 'form.name.error',
+      validate: checkLength({ min: 3, max: 32 })
     }
   },
   email: {
@@ -18,40 +24,20 @@ export const contactFormConfig = {
     subtype: 'email',
     label: 'form.email.label',
     info: 'form.email.info',
-    rules: {
-      required: true,
-      pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-z]{2,6}$/
-    },
-    errors: {
-      required: 'form.email.errors.required',
-      pattern: 'form.email.errors.pattern'
-    }
-  },
-  subject: {
-    type: 'input',
-    subtype: 'text',
-    label: 'form.subject.label',
-    info: 'form.subject.info',
-    rules: {
-      required: true,
-      pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ0-9,.)-:(!? ']{5,500}$/
-    },
-    errors: {
-      required: 'form.subject.errors.required',
-      pattern: 'form.subject.errors.pattern'
+    required: true,
+    validation: {
+      message: 'form.email.error',
+      validate: isEmail
     }
   },
   message: {
     type: 'textarea',
     label: 'form.message.label',
     info: 'form.message.info',
-    rules: {
-      required: true,
-      pattern: /^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ0-9,.)-:(!? '\n]{5,2000}$/
-    },
-    errors: {
-      required: 'form.message.errors.required',
-      pattern: 'form.message.errors.pattern'
+    required: true,
+    validation: {
+      message: 'form.message.error',
+      validate: checkLength({ min: 5, max: 2000 })
     }
   },
   rodo: {
@@ -59,33 +45,11 @@ export const contactFormConfig = {
     subtype: 'checkbox',
     label: 'form.rodo.label',
     labelButtonValue: 'form.rodo.labelButtonValue',
-    rules: {
-      required: true
+    required: true,
+    validation: {
+      message: 'form.rodo.error',
+      validate: checkIsAccepted
     },
-    errors: {
-      required: 'form.rodo.errors.required'
-    },
-    value: 1
-  },
-  emailcopy: {
-    type: 'input',
-    subtype: 'checkbox',
-    label: 'form.emailcopy.label',
-    rules: {
-      required: false
-    },
-    errors: {},
-    value: 1
+    value: 'accepted'
   }
-  // captcha: {
-  //   type: 'captcha',
-  //   rules: {
-  //     required: true,
-  //     pattern: /^.+$/,
-  //   },
-  //   errors: {
-  //     required: 'form.captcha.errors.required',
-  //     pattern: 'form.captcha.errors.pattern',
-  //   }
-  // }
 };

@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 const withValidation = WrappedComponent => {
   const Control = class extends Component {
     state = {
-      error: null,
-      touched: false
+      error: null
     };
 
     componentDidUpdate(prevProps) {
@@ -19,91 +18,54 @@ const withValidation = WrappedComponent => {
 
     updateError = () => {
       const {
-        changed,
-        config: { errors },
+        onChange,
+        config: {
+          validation: { message }
+        },
         externalError
       } = this.props;
-      this.setState(() => ({
-        error: errors[externalError] || 'unknown error',
-        touched: true
-      }));
-      changed({
-        isValid: !externalError
-      });
+
+      this.setState(
+        () => ({ error: message }),
+        () => onChange({ isValid: !externalError })
+      );
     };
 
-    checkValidity = (value, rules) => {
-      if (!rules) {
-        return;
-      }
+    checkValidity = (type, value, validation) => {
+      const { message, validate } = validation;
+      const shouldNotValidate = type !== 'checkbox' && value.trim() === '';
 
-      const { pattern, required } = rules;
-      const {
-        config: {
-          errors: { pattern: patternMessage, required: requiredMessage }
-        }
-      } = this.props;
-      if (
-        required &&
-        ((typeof value === 'boolean' && !value) ||
-          (typeof value !== 'boolean' && value.trim() === ''))
-      ) {
-        return requiredMessage;
-      }
-      if (pattern && !pattern.test(value)) {
-        return patternMessage;
-      }
-
-      return null;
+      return shouldNotValidate || validate(value) ? null : message;
     };
 
-    controlChangeHandler = value => {
+    handleControlChange = value => {
       const {
-        config: { rules, type }
+        config: { subtype },
+        onChange
       } = this.props;
-      const { error } = this.state;
-      if (typeof value === 'boolean' || type === 'captcha') {
-        this.controlOnBlurHandler(value);
-      } else if (error) {
-        const newError = this.checkValidity(value, rules);
-        this.setState(() => ({ error: newError }));
+
+      if (subtype === 'checkbox') {
+        this.handleControlOnBlur(value);
+      } else {
+        onChange(value);
       }
     };
 
-    controlOnBlurHandler = value => {
+    handleControlOnBlur = value => {
       const {
-        changed,
-        config: { rules }
+        onChange,
+        config: { subtype, validation }
       } = this.props;
-      const touched = true;
-      const error = this.checkValidity(value, rules);
+      const error = this.checkValidity(subtype, value, validation);
 
-      this.setState(() => ({ touched, error }));
-      changed({
-        value,
-        isValid: !error
-      });
-    };
-
-    getValidationClasses = () => {
-      const validationClasses = [];
-      const {
-        config: {
-          rules,
-          rules: { required }
-        }
-      } = this.props;
-      const { error, touched } = this.state;
-      const editedAnaInvalid = rules && error && touched;
-
-      if (required) {
-        validationClasses.push('Required');
-      }
-      if (editedAnaInvalid) {
-        validationClasses.push('Invalid');
-      }
-
-      return validationClasses;
+      this.setState(
+        () => ({ error }),
+        () =>
+          onChange({
+            value,
+            isValid: !error
+          })
+      );
     };
 
     render() {
@@ -112,9 +74,8 @@ const withValidation = WrappedComponent => {
       return (
         <WrappedComponent
           {...this.props}
-          blurHandler={this.controlOnBlurHandler}
-          changeHandler={this.controlChangeHandler}
-          getValidationClasses={this.getValidationClasses}
+          onBlur={this.handleControlOnBlur}
+          onChange={this.handleControlChange}
           error={error}
         />
       );

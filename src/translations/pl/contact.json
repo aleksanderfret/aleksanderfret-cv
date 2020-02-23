@@ -15,67 +15,30 @@
     "name": {
       "label": "Imię i nazwisko",
       "placeholder": "$t(form.name.label)",
-      "info": [
-        "Pole imię i nazwisko może zawierać tylko litery, cyfry, spacje, myślniki i apostrofy. Oczekiwana liczba znaków: od 5 do 60."
-      ],
-      "errors": {
-        "required": "Imię i nazwisko są wymagane.",
-        "pattern": "Wprowadzone dane są nieprawidłowe. $t(form.name.info.0)"
-      }
+      "info": ["Proszę użyj minimum 3 i maksymalnie 32 znaków."],
+      "error": "Wprowadź poprawne imię. $t(form.name.info.0)"
     },
     "email": {
       "label": "E-mail",
       "placeholder": "$t(form.email.label)",
-      "info": [
-        "Format adresu e-mail to nazwa@domena, przykładowo nazwa-mojego-konta-pocztowego@domenapoczty.pl"
-      ],
-      "errors": {
-        "required": "Adres e-mail jest wymagany.",
-        "pattern": "Wprowadzony adres e-mail jest nieprawidłowy. $t(form.email.info.0)"
-      }
-    },
-    "subject": {
-      "label": "Temat",
-      "placeholder": "$t(form.subject.label)",
-      "info": [
-        "Pole temat może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Oczekiwana liczba znaków: od 5 do 500."
-      ],
-      "errors": {
-        "required": "Temat jest wymagany.",
-        "pattern": "Wprowadzony temat jest nieprawidłowy. $t(form.subject.info.0)"
-      }
+      "info": ["Format adresu e-mail to mojego-konto@domenapoczty"],
+      "error": "Wprowadź poprawny adres e-mail. $t(form.email.info.0)"
     },
     "message": {
       "label": "Wiadomość",
       "placeholder": "$t(form.message.label)",
-      "info": [
-        "Pole wadmość może składać się tylko z liter, cyfr, spacji oraz znaków ,.)-:(!?'. Oczekiwana liczba znaków: od 5 do 2000."
-      ],
-      "errors": {
-        "required": "Wiadomość jest wymagana.",
-        "pattern": "Wprowadzona wiadomość jest nieprawidłowa. $t(form.message.info.0)"
-      }
-    },
-    "captcha": {
-      "errors": {
-        "required": "Proszę zaznaczyć pole reCAPTCHA.",
-        "pattern": "Walidacja przeciwko robotom nie powiodła się. Proszę spróbuj ponownie."
-      }
+      "info": ["Proszę użyj minimum 5 i maksymalnie 2000 znaków."],
+      "error": "Wprowadź poprawną wiadomość. $t(form.message.info.0)"
     },
     "rodo": {
       "label": "Zapoznałem się z <1>{{value}}</1> i ją akceptuję.",
       "labelButtonValue": "informacją o przetwarzaniu danych",
-      "errors": {
-        "required": "Zgoda na przetwarzanie danych jest niezbędna, bym mógł odpowiedzieć na wiadomość."
-      },
+      "errors": "Zgoda na przetwarzanie danych jest niezbędna, bym mógł odpowiedzieć na wiadomość.",
       "info": [
         "Wysyłając wiadomość mam świadomość że, podane dane będą przetwarzane przez Pana Aleksandra Freta w celu nawiązania korespondencji.",
         "Wiem że, mogę wystąpić o skasowanie moich danych osobowych lub je skorygować. Pamiętam że, prawa te wynikają z rozporządzenia ogólnego o ochronie danych osobowych (UE 2016/679). Wiem że, przysługuje mi prawo do skargi do Prezesa Urzędu Ochrony Danych Osobowych na mocy ustawy o ochronie danych osobowych (Dz.U. 2018 poz. 1000).",
         "Przyjmuję do wiadomości że dane będą przetwarzane przez kylos.pl dostawcę usług poczty elektronicznej."
       ]
-    },
-    "emailcopy": {
-      "label": "Wyślij mi kopię wiadomości."
     },
     "submit": {
       "label": "Wyśli",
@@ -92,11 +55,6 @@
       "name": "github",
       "url": "https://github.com/alemikolo",
       "label": "moje konto na GitHub"
-    },
-    {
-      "name": "bitbucket",
-      "url": "https://bitbucket.org/alemikolo/",
-      "label": "moje konto na Bitbucket"
     },
     {
       "name": "twitter",

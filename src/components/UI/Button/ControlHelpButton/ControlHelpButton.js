@@ -10,7 +10,7 @@ const controlHelpButton = ({ clicked, label, t }) => {
     <Button
       btnType="controlHelpButton"
       label={t('labels.controlHelpButton', { control: label })}
-      clicked={clicked}
+      onClick={clicked}
     >
       <FontIcon iconType={HELP} />
     </Button>

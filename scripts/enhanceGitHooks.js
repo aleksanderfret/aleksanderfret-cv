@@ -29,6 +29,9 @@ fi
 `;
 
   const defaultHookContent = fs.readFileSync(defaultHookPath, 'utf8');
+  if (defaultHookContent.contains(additionalHookCode)) {
+    return;
+  }
 
   const newHookContent = `${defaultHookContent}${EOL}${additionalHookCode}`;
 

@@ -37,7 +37,7 @@ class Tip extends Component {
     return (
       <div className={TipWrapper}>
         <div className={tipClass} ref={this.tip}>
-          <Button btnType="closeButton" clicked={closeTip} label={label}>
+          <Button btnType="closeButton" onClick={closeTip} label={label}>
             <FontIcon iconType="close" />
           </Button>
           {children}

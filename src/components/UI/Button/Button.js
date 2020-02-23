@@ -5,10 +5,10 @@ import classes from './Button.scss';
 const Button = ({
   btnType,
   children,
-  clicked,
   disabled,
   isDisplayed,
-  label
+  label,
+  onClick
 }) => {
   const { Button: buttonClass, AlwaysDisplayed } = classes;
   const buttonClasses = [buttonClass];
@@ -23,7 +23,7 @@ const Button = ({
   return (
     <button
       disabled={disabled}
-      onClick={clicked}
+      onClick={onClick}
       className={buttonClasses.join(' ')}
       title={label}
       type="button"

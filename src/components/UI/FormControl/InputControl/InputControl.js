@@ -14,31 +14,30 @@ class InputControl extends Component {
 
   onChangeHandler = event => {
     const { value } = event.target;
-    const { changeHandler } = this.props;
-    this.setState(() => ({ value }));
-    changeHandler(value);
+    const { onChange } = this.props;
+    this.setState(
+      () => ({ value }),
+      () => onChange(value)
+    );
   };
 
   render() {
     const { Input: inputClass } = classes;
     const {
-      blurHandler,
-      config: {
-        info,
-        label,
-        rules: { required, subtype }
-      },
+      onBlur,
+      config: { info, label, required, subtype },
       error,
-      getValidationClasses,
       name,
       openTip,
       t
     } = this.props;
     const { value } = this.state;
-    const validationClasses = getValidationClasses().map(
-      validationClass => classes[validationClass] || ''
-    );
-    const inputClasses = [inputClass, ...validationClasses];
+
+    const inputClasses = [inputClass];
+
+    if (error) {
+      inputClasses.push(classes.Invalid);
+    }
 
     return (
       <>
@@ -51,7 +50,7 @@ class InputControl extends Component {
           name={name}
           onChange={this.onChangeHandler}
           onBlur={event => {
-            blurHandler(event.target.value);
+            onBlur(event.target.value);
           }}
         />
         {info && (

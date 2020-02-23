@@ -24,7 +24,7 @@ const controlLabel = ({
       start
       <Button
         btnType="linkButton"
-        clicked={event => {
+        onClick={event => {
           event.stopPropagation();
           openTip(event, controlId);
         }}
