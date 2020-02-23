@@ -15,14 +15,7 @@
       "name": "Aleksander Fret – CV",
       "type": "Personal website",
       "description": "My CV online – you're just watching it :-)",
-      "technologies": [
-        "JS ES6",
-        "React",
-        "SASS",
-        "HTML",
-        "RWD",
-        "PHP"
-      ],
+      "technologies": ["JS ES6", "React", "SASS", "HTML", "RWD", "PHP"],
       "imageAlt": "Aleksander Fret website preview",
       "projectURL": "",
       "codeURL": "https://github.com/alemikolo/aleksanderfret",
@@ -55,12 +48,7 @@
       "name": "MyReads",
       "type": "Application",
       "description": "Application for browsing a set of books, allowing for its filtering and adding books to the one of three shelves (categories). The project was created during Front-End Developer Nanodegree Program (Udacity, Google) in order to strengthen skills of using React library as well as using API.",
-      "technologies": [
-        "JS ES6",
-        "React",
-        "CSS",
-        "HTML"
-      ],
+      "technologies": ["JS ES6", "React", "CSS", "HTML"],
       "imageAlt": "MyReads application preview",
       "projectURL": "",
       "codeURL": "https://github.com/alemikolo/myreads",
@@ -91,11 +79,7 @@
       "name": "Arcade Game",
       "type": "Application",
       "description": "This arcade game is focused on OOP with JS ES6 (especially encapsulation and inheritance). It was created in the scope of Front-End Web Developer Nanodegree Program (Udacity, Google).",
-      "technologies": [
-        "JS ES6",
-        "CSS",
-        "HTML"
-      ],
+      "technologies": ["JS ES6", "CSS", "HTML"],
       "imageAlt": "Arcade Game application preview",
       "projectURL": "http://www.arcadegame.fret.com.pl",
       "codeURL": "https://github.com/alemikolo/arcadegame",
@@ -107,11 +91,7 @@
       "name": "Memory Game",
       "type": "Application",
       "description": "Classic memory game created in the scope of Front-End Web Developer Nanodegree Program (Udacity, Google). Besides the main functionality, application offers confguration options (difficulty level, appearance).",
-      "technologies": [
-        "JavaScript",
-        "CSS",
-        "HTML"
-      ],
+      "technologies": ["JavaScript", "CSS", "HTML"],
       "imageAlt": "Memory Game application preview",
       "projectURL": "http://www.memorygame.fret.com.pl",
       "codeURL": "https://github.com/alemikolo/memory-game",
@@ -123,12 +103,7 @@
       "name": "Pixel Art Maker",
       "type": "Application",
       "description": "This graphic application was created in the scope of Front-End Web Developer Nanodegree Program (Udacity, Google). It provides various tools to draw on grid-based canvas.",
-      "technologies": [
-        "JavaScript",
-        "jQuery",
-        "CSS",
-        "HTML"
-      ],
+      "technologies": ["JavaScript", "jQuery", "CSS", "HTML"],
       "imageAlt": "Pixel Art Maker application preview",
       "projectURL": "http://www.pixel-art-maker.fret.com.pl",
       "codeURL": "https://github.com/alemikolo/pixel-art-maker",
@@ -150,7 +125,7 @@
       ],
       "imageAlt": "Wilmat company website preview",
       "projectURL": "http://www.wilmat.com.pl",
-      "codeURL": "https://bitbucket.org/alemikolo/wilmat.com.pl/src/",
+      "codeURL": "https://github.com/alemikolo/wilmat",
       "startDate": "10/2016",
       "endDate": "10/2016"
     },
@@ -159,16 +134,10 @@
       "name": "Psychotherapist website",
       "type": "Personal website",
       "description": "The website of Emilia Fret, the psychotherapist.",
-      "technologies": [
-        "JavaScript",
-        "jQuery",
-        "PHP",
-        "CSS",
-        "HTML"
-      ],
+      "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML"],
       "imageAlt": "Emilia Fret website preview",
       "projectURL": "",
-      "codeURL": "https://bitbucket.org/alemikolo/psychoterapia.fret.com.pl/src",
+      "codeURL": "https://github.com/alemikolo/psychotherapy",
       "startDate": "06/2015",
       "endDate": "06/2015"
     },
@@ -177,16 +146,10 @@
       "name": "Artist website",
       "type": "Personal website",
       "description": "The website of Ewa Fret, the artist (ilustrations, handicrafts).",
-      "technologies": [
-        "JavaScript",
-        "jQuery",
-        "PHP",
-        "CSS",
-        "HTML"
-      ],
+      "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML"],
       "imageAlt": "Ewa Fret website preview",
       "projectURL": "http://www.ewa.fret.com.pl",
-      "codeURL": "https://bitbucket.org/alemikolo/ewa.fret.com.pl/src",
+      "codeURL": "https://github.com/alemikolo/ewafret",
       "startDate": "01/2015",
       "endDate": "01/2015"
     }
