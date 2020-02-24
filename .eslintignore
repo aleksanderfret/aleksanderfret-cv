@@ -3,3 +3,5 @@
 *.scss.d.ts
 *.min.js
 node_modules/*
+public/api/*
+dist/*

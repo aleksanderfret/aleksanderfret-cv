@@ -29,7 +29,7 @@ fi
 `;
 
   const defaultHookContent = fs.readFileSync(defaultHookPath, 'utf8');
-  if (defaultHookContent.contains(additionalHookCode)) {
+  if (defaultHookContent.includes(additionalHookCode)) {
     return;
   }
 
