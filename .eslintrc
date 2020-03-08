@@ -1,9 +1,14 @@
 {
   "env": {
     "browser": true,
+    "node": true,
     "es6": true
   },
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
+  ],
   "globals": {
     "document": false,
     "window": false
@@ -23,6 +28,9 @@
       "webpack": {
         "config": "webpack.config.dev.js"
       }
+    },
+    "react": {
+      "version": "detect"
     }
   },
   "plugins": ["react", "react-hooks", "import", "jsx-a11y"],

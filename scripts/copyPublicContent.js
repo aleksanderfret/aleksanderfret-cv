@@ -4,9 +4,7 @@ const { normalize } = require('path');
 const fs = require('fs-extra');
 
 const cliArguments = process.argv.slice(2);
-const sourcePath = cliArguments[0];
-const targetPath = cliArguments[1];
-const blackList = cliArguments[2];
+const [sourcePath, targetPath, blackList] = cliArguments;
 
 const checkIfContainsFile = paths => file => {
   if (Array.isArray(paths)) {

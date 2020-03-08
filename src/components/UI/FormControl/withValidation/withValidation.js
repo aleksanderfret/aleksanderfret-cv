@@ -82,6 +82,8 @@ const withValidation = WrappedComponent => {
     }
   };
 
+  Control.displayName = 'ValidatedControl';
+
   return Control;
 };
 
