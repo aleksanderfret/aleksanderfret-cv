@@ -44,6 +44,7 @@ export default {
     type: 'input',
     subtype: 'checkbox',
     label: 'form.rodo.label',
+    info: 'form.rodo.info',
     labelButtonValue: 'form.rodo.labelButtonValue',
     required: true,
     validation: {
