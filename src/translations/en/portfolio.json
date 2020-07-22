@@ -18,7 +18,7 @@
       "technologies": ["JS ES6", "React", "SASS", "HTML", "RWD", "PHP"],
       "imageAlt": "Aleksander Fret website preview",
       "projectURL": "",
-      "codeURL": "https://github.com/alemikolo/aleksanderfret",
+      "codeURL": "https://github.com/aleksanderfret/aleksanderfret",
       "startDate": "08/2018",
       "endDate": "09/2018"
     },
@@ -39,7 +39,7 @@
       ],
       "imageAlt": "Amusement Parks application preview",
       "projectURL": "http://www.amusementparks.fret.com.pl",
-      "codeURL": "https://github.com/alemikolo/neighborhoodmap",
+      "codeURL": "https://github.com/aleksanderfret/neighborhoodmap",
       "startDate": "08/2018",
       "endDate": "08/2018"
     },
@@ -51,7 +51,7 @@
       "technologies": ["JS ES6", "React", "CSS", "HTML"],
       "imageAlt": "MyReads application preview",
       "projectURL": "",
-      "codeURL": "https://github.com/alemikolo/myreads",
+      "codeURL": "https://github.com/aleksanderfret/myreads",
       "startDate": "07/2018",
       "endDate": "07/2018"
     },
@@ -70,7 +70,7 @@
       ],
       "imageAlt": "Restaurant Reviews application preview",
       "projectURL": "",
-      "codeURL": "https://github.com/alemikolo/mws-restaurant-stage-1",
+      "codeURL": "https://github.com/aleksanderfret/mws-restaurant-stage-1",
       "startDate": "06/2018",
       "endDate": "06/2018"
     },
@@ -82,7 +82,7 @@
       "technologies": ["JS ES6", "CSS", "HTML"],
       "imageAlt": "Arcade Game application preview",
       "projectURL": "http://www.arcadegame.fret.com.pl",
-      "codeURL": "https://github.com/alemikolo/arcadegame",
+      "codeURL": "https://github.com/aleksanderfret/arcadegame",
       "startDate": "04/2018",
       "endDate": "04/2018"
     },
@@ -94,7 +94,7 @@
       "technologies": ["JavaScript", "CSS", "HTML"],
       "imageAlt": "Memory Game application preview",
       "projectURL": "http://www.memorygame.fret.com.pl",
-      "codeURL": "https://github.com/alemikolo/memory-game",
+      "codeURL": "https://github.com/aleksanderfret/memory-game",
       "startDate": "03/2018",
       "endDate": "03/2018"
     },
@@ -106,7 +106,7 @@
       "technologies": ["JavaScript", "jQuery", "CSS", "HTML"],
       "imageAlt": "Pixel Art Maker application preview",
       "projectURL": "http://www.pixel-art-maker.fret.com.pl",
-      "codeURL": "https://github.com/alemikolo/pixel-art-maker",
+      "codeURL": "https://github.com/aleksanderfret/pixel-art-maker",
       "startDate": "01/2018",
       "endDate": "01/2018"
     },
@@ -125,7 +125,7 @@
       ],
       "imageAlt": "Wilmat company website preview",
       "projectURL": "http://www.wilmat.com.pl",
-      "codeURL": "https://github.com/alemikolo/wilmat",
+      "codeURL": "https://github.com/aleksanderfret/wilmat",
       "startDate": "10/2016",
       "endDate": "10/2016"
     },
@@ -137,7 +137,7 @@
       "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML"],
       "imageAlt": "Emilia Fret website preview",
       "projectURL": "",
-      "codeURL": "https://github.com/alemikolo/psychotherapy",
+      "codeURL": "https://github.com/aleksanderfret/psychotherapy",
       "startDate": "06/2015",
       "endDate": "06/2015"
     },
@@ -149,7 +149,7 @@
       "technologies": ["JavaScript", "jQuery", "PHP", "CSS", "HTML"],
       "imageAlt": "Ewa Fret website preview",
       "projectURL": "http://www.ewa.fret.com.pl",
-      "codeURL": "https://github.com/alemikolo/ewafret",
+      "codeURL": "https://github.com/aleksanderfret/ewafret",
       "startDate": "01/2015",
       "endDate": "01/2015"
     }

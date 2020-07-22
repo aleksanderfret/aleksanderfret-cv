@@ -4,7 +4,7 @@ This is my a personal website/online CV.
 
 ## Version
 
-2.0.0 - 2020.02.05
+2.0.1 - 2020.07.22
 
 ## Technologies
 
