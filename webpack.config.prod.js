@@ -104,7 +104,6 @@ module.exports = {
       favicon: './public/icons/favicon.ico',
       template: './public/index.html',
       inject: true
-    }),
-    new HtmlWebpackInlineSourcePlugin()
+    })
   ]
 };
