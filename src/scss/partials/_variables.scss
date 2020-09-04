@@ -1,21 +1,22 @@
+@use "sass:color";
 // === COLORS ===
 $baseColor: #045ba8;
-$darkBase: darken($baseColor, 10%);
-$light-base: lighten($baseColor, 10%);
-$aux-base: lighten($baseColor, 30%);
+$darkBase: color.adjust($baseColor, $lightness: -10%);
+$light-base: color.adjust($baseColor, $lightness: 10%);
+$aux-base: color.adjust($baseColor, $lightness: 30%);
 $accessoryColor: #06b100;
 $reverseColor: #fff;
 $baseBackgroundColor: #fff;
 $bodyBackground: #f7f7f7;
 $baseGradient: linear-gradient(180deg, $baseColor 12%, $light-base 88%);
 $errorColor: #ff0000;
-$lightErrorColor: lighten($errorColor, 45%);
+$lightErrorColor: color.adjust($errorColor, $lightness: 45%);
 
 $baseTextColor: #333;
-$darkBaseText: darken($baseTextColor, 20%);
-$lowLightBaseText: lighten($baseTextColor, 10%);
-$middleLightBaseText: lighten($baseTextColor, 30%);
-$extraLightBaseText: lighten($baseTextColor, 60%);
+$darkBaseText: color.adjust($baseTextColor, $lightness: -20%);
+$lowLightBaseText: color.adjust($baseTextColor, $lightness: 10%);
+$middleLightBaseText: color.adjust($baseTextColor, $lightness: 30%);
+$extraLightBaseText: color.adjust($baseTextColor, $lightness: 60%);
 
 // === FONTS ===
 $textFont: 'Roboto', sans-serif;

@@ -1,4 +1,4 @@
-@import 'partials';
+@use '../partials/partials' as p;
 
 * {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  font: normal normal $textLight $textSize/$textLine $textFont;
+  font: normal normal p.$textLight p.$textSize/p.$textLine p.$textFont;
   background-color: $bodyBackground;
 }
 

@@ -1,3 +1,5 @@
+@use "variables";
+
 @mixin microScreens() {
   @media only screen and (min-width: 320px) {
     @content;
@@ -57,7 +59,7 @@
     size: 2.5rem;
     variant: small-caps;
   }
-  color: $baseColor;
+  color: variables.$baseColor;
   text-transform: capitalize;
 }
 
@@ -88,11 +90,11 @@
 
 @mixin header($page: 'usual') {
   @if $page == 'usual' {
-    height: $toolbarHeight;
-    background-color: $baseColor;
+    height: variables.$toolbarHeight;
+    background-color: variables.$baseColor;
   } @else {
-    height: $headerHeigh;
-    background: $baseGradient;
+    height: variables.$headerHeigh;
+    background: variables.$baseGradient;
   }
 }
 
@@ -108,8 +110,8 @@
 
 @mixin pageTile {
   position: relative;
-  color: $baseTextColor;
-  background-color: $baseBackgroundColor;
+  color: variables.$baseTextColor;
+  background-color: variables.$baseBackgroundColor;
   @include shadow();
 }
 
@@ -117,7 +119,7 @@
   position: relative;
   font-size: 1.2rem;
   text-transform: capitalize;
-  color: $baseColor;
+  color: variables.$baseColor;
   width: 100%;
   text-align: left;
   margin: 0 0 1.5rem 0;
@@ -159,13 +161,13 @@
 
 @mixin pageSubtitle {
   width: 100%;
-  color: $baseColor;
+  color: variables.$baseColor;
   font-size: 1rem;
 }
 
 @mixin categoryTitle {
   font-weight: 500;
-  color: $lowLightBaseText;
+  color: variables.$lowLightBaseText;
   margin: 1.25rem 0 0.1rem 0;
   @include slightScreens {
     font-size: 1rem;
@@ -173,15 +175,15 @@
   @include mediumScreens {
     font-size: 1.25rem;
     font-weight: 300;
-    color: $darkBaseText;
+    color: variables.$darkBaseText;
     margin-bottom: 0.3rem;
   }
 }
 
 @mixin mainContactFormControls {
   display: block;
-  border: 1px solid $baseBackgroundColor;
-  border-bottom: 1px solid $extraLightBaseText;
+  border: 1px solid variables.$baseBackgroundColor;
+  border-bottom: 1px solid variables.$extraLightBaseText;
   width: calc(100% - 1.5rem);
   min-width: calc(100% - 40px);
   max-width: calc(100% - 40px);
@@ -189,37 +191,37 @@
   padding: 0.5rem;
   font-size: 0.85rem;
   &.Invalid {
-    border: 1px solid $errorColor;
+    border: 1px solid variables.$errorColor;
     border-right: none;
-    color: $errorColor;
+    color: variables.$errorColor;
     &.Invalid + button {
-      border: 1px solid $errorColor;
+      border: 1px solid variables.$errorColor;
       border-left: none;
     }
     &:focus,
     &:active,
     &:hover {
-      border: 2px solid $errorColor;
+      border: 2px solid variables.$errorColor;
       border-right: none;
     }
     &:hover + button {
-      border: 2px solid $errorColor;
+      border: 2px solid variables.$errorColor;
       border-left: none;
     }
     &:focus,
     &:active {
-      background-color: $lightErrorColor;
+      background-color: variables.$lightErrorColor;
     }
     &:focus + button,
     &:active + button {
-      background-color: $lightErrorColor;
-      border: 2px solid $errorColor;
+      background-color: variables.$lightErrorColor;
+      border: 2px solid variables.$errorColor;
       border-left: none;
     }
     &:focus + button:hover,
     &:active + button:hover {
-      background-color: $lightErrorColor;
-      border: 2px solid $errorColor;
+      background-color: variables.$lightErrorColor;
+      border: 2px solid variables.$errorColor;
       border-left: none;
     }
   }
@@ -227,27 +229,27 @@
   &:active,
   &:hover {
     outline: 0;
-    border: 1px solid $extraLightBaseText;
+    border: 1px solid variables.$extraLightBaseText;
     border-right: none;
   }
   &:hover + button {
-    border: 1px solid $extraLightBaseText;
+    border: 1px solid variables.$extraLightBaseText;
     border-left: none;
   }
   &:focus,
   &:active {
-    background-color: $bodyBackground;
+    background-color: variables.$bodyBackground;
   }
   &:focus + button,
   &:active + button {
-    background-color: $bodyBackground;
-    border: 1px solid $extraLightBaseText;
+    background-color: variables.$bodyBackground;
+    border: 1px solid variables.$extraLightBaseText;
     border-left: none;
   }
   &:focus + button:hover,
   &:active + button:hover {
-    background-color: $bodyBackground;
-    border: 1px solid $extraLightBaseText;
+    background-color: variables.$bodyBackground;
+    border: 1px solid variables.$extraLightBaseText;
     border-left: none;
   }
   @include tinyScreens {

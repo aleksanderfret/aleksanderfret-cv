@@ -1,5 +1,5 @@
 // partials
-@import 'partials';
+@use 'partials/partials';
 
 //globals
 
@@ -17,8 +17,9 @@ html {
 }
 
 body {
-  font: normal normal $textLight $textSize/$textLine $textFont;
-  background-color: $bodyBackground;
+  font: normal normal variables.$textLight
+    variables.$textSize/variables.$textLine variables.$textFont;
+  background-color: variables.$bodyBackground;
 }
 
 ol,
