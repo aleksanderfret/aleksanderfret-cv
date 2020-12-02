@@ -1,15 +1,19 @@
 import React from 'react';
 
 import Overlay from 'components/UI/Overlay/Overlay';
-import { Spinner, SpinnerWrapper } from './Spinner.scss';
+import classes from './Spinner.scss';
 
-const spinner = () => (
-  <>
-    <Overlay isShown type="bright" />
-    <div className={SpinnerWrapper}>
-      <div className={Spinner}>Loading...</div>
-    </div>
-  </>
-);
+const spinner = () => {
+  const { Spinner, SpinnerWrapper } = classes;
+
+  return (
+    <>
+      <Overlay isShown type="bright" />
+      <div className={SpinnerWrapper}>
+        <div className={Spinner}>Loading...</div>
+      </div>
+    </>
+  );
+};
 
 export default spinner;

@@ -8,7 +8,6 @@ import ProjectDetails from 'components/PageComponents/CV/Portfolio/ProjectDetail
 import ContactSuccess from 'components/PageComponents/Contact/ContactSuccess/ContactSuccess';
 import Home from 'components/PageComponents/Home/Home';
 import NotFound from 'components/PageComponents/NotFound/NotFound';
-import classes from './CV.scss';
 
 class CV extends Component {
   state = {
@@ -36,10 +35,8 @@ class CV extends Component {
   };
 
   render() {
-    const { CV: cvClass } = classes;
-
     return (
-      <div className={cvClass}>
+      <div>
         <Layout toggleLanguage={this.toggleLanguage}>
           <Switch>
             <Route path="/contact/success" component={ContactSuccess} />
