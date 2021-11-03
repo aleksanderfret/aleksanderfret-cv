@@ -29,7 +29,7 @@
     "react-router-dom": "5.2.0",
     "react-transition-group": "4.4.1",
     "stylelint-webpack-plugin": "2.1.1",
-    "validator": "13.5.1"
+    "validator": "13.7.0"
   },
   "devDependencies": {
     "@babel/cli": "7.12.8",
